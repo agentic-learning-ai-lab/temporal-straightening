@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Temporal straightening improves latent planning with world models.">
+  <meta property="og:title" content="Temporal Straightening for Latent Planning" />
+  <meta property="og:description" content="Temporal straightening improves latent planning with world models." />
+  <meta property="og:url" content="https://agenticlearning.ai/temporal-straightening/" />
+  <meta property="og:image" content="static/images/wall_teaser.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:title" content="Temporal Straightening for Latent Planning">
+  <meta name="twitter:description" content="Temporal straightening improves latent planning with world models.">
+  <meta name="twitter:image" content="static/images/wall_teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="latent planning, world models, representation learning, temporal straightening">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Temporal Straightening for Latent Planning</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://agenticlearning.ai/css/lab-theme.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+  <div class="lab-header">
+    <a href="https://agenticlearning.ai/" class="lab-link">
+      <img src="/assets/images/logos/logo.svg" alt="Agentic Learning AI Lab" class="lab-logo">
+    </a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">Temporal Straightening for Latent Planning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Ying Wang<sup>1</sup>,</span>
+              <span class="author-block">Oumayma Bounou<sup>1</sup>,</span>
+              <span class="author-block">Gaoyue Zhou<sup>1</sup>,</span>
+              <span class="author-block">Randall Balestriero<sup>2</sup>,</span>
+              <span class="author-block">Tim G. J. Rudner<sup>3</sup>,</span>
+              <span class="author-block">Yann LeCun<sup>1</sup><sup>*</sup>,</span>
+              <span class="author-block">and Mengye Ren<sup>1</sup><sup>*</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>New York University</span>
+              <span class="author-block"><sup>2</sup>Brown University</span>
+              <span class="author-block"><sup>3</sup>University of Toronto</span>
+            </div>
+            <div class="is-size-6 publication-authors note-line">
+              <span class="author-block"><sup>*</sup> Equal advising.</span>
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.12231" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/agentic-learning-ai-lab/temporal-straightening" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            Learning good representations is essential for latent planning with world models. While pretrained visual encoders produce strong semantic visual features, they are not tailored to planning and contain information irrelevant -- or even detrimental -- to planning. Inspired by the perceptual straightening hypothesis in human visual processing, we introduce temporal straightening to improve representation learning for latent planning. Using a curvature regularizer that encourages locally straightened latent trajectories, we jointly learn an encoder and a predictor. We show that reducing curvature this way makes the Euclidean distance in latent space a better proxy for the geodesic distance and improves the conditioning of the planning objective. We demonstrate empirically that temporal straightening makes gradient-based planning more stable and yields significantly higher success rates across a suite of goal-reaching tasks.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small teaser-section">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/wall_teaser.png" alt="Temporal straightening teaser" class="center">
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Method</h2>
+      <p class="section-summary">
+        Inspired by the perceptual straightening hypothesis in human vision, which posits that visual systems transform complex videos into straighter internal representations, we introduce a simple approach to straighten latent trajectories for planning. Concretely, we jointly learn an encoder and a predictor of a world model, while imposing regularization on the curvature of latent trajectories during training. The training objective is:
+      </p>
+      <div class="content method-loss">
+        <p class="equation"><strong>L</strong><sub>pred</sub> = || z&#770;<sub>t+1</sub> - sg(z<sub>t+1</sub>) ||<sub>2</sub><sup>2</sup></p>
+        <p class="equation"><strong>L</strong><sub>curv</sub> = 1 - C, where C = cos(z<sub>t+1</sub> - z<sub>t</sub>, z<sub>t+2</sub> - z<sub>t+1</sub>)</p>
+        <p class="equation"><strong>L</strong><sub>total</sub> = <strong>L</strong><sub>pred</sub> + &lambda;<strong>L</strong><sub>curv</sub></p>
+        <p class="loss-note">
+          Here, <code>sg</code> denotes stop-gradient and <code>&lambda;</code> controls the strength of the straightening.
+        </p>
+      </div>
+      <div class="hero-body">
+        <img src="static/images/architecture.png" alt="Training and planning architecture">
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">How Good Is the Embedding Space?</h2>
+      <p class="section-summary">
+        We inspect the learned embedding space by measuring latent trajectory curvatures, PCA projections of latent trajectories, and latent Euclidean distances to understand the impact of straightening.
+      </p>
+      <div class="content takeaway-list">
+        <ol>
+          <li><em>implicit straightening</em> can happen when training the encoder using the predictor loss alone;</li>
+          <li>adding straightening regularization further decreases curvature of the resulting embeddings;</li>
+          <li>straightening encourages the latent Euclidean distance to better align with the geodesic distance;</li>
+          <li>near-perfect reconstruction can be attained with a very low feature dimensionality.</li>
+        </ol>
+      </div>
+      <div class="hero-body">
+        <img src="static/images/curvature_bars.png" alt="Latent curvature and success rate">
+        <figcaption>
+          Latent Curvature and Open-Loop GD Success Rate for Different Encoders. Higher cosine similarity indicates lower curvature.
+        </figcaption>
+      </div>
+      <p class="section-summary">
+        We visualize the Euclidean distance between the embedding of a target state (denoted by the star) and all other states in the maze. Blue indicates smaller distance, and red indicates larger distance. 
+      </p>
+      <div class="columns is-multiline is-centered analysis-grid heatmap-gallery">
+        <div class="column is-half">
+          <img src="static/images/heatmaps/umaze_gt.png" alt="UMaze ground-truth heatmap">
+          <figcaption>UMaze: ground-truth geodesic distance.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/umaze_resnet_global.png" alt="UMaze ResNet global heatmap">
+          <figcaption>UMaze: ResNet-global after straightening.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/umaze_dino_cls.png" alt="UMaze DINO CLS heatmap">
+          <figcaption>UMaze: DINO CLS.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/umaze_dino_patch.png" alt="UMaze DINO patch heatmap">
+          <figcaption>UMaze: DINO patch.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/medium_gt.png" alt="Medium ground-truth heatmap">
+          <figcaption>Medium: ground-truth geodesic distance.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/medium_resnet_global.png" alt="Medium ResNet global heatmap">
+          <figcaption>Medium: ResNet-global after straightening.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/medium_dino_cls.png" alt="Medium DINO CLS heatmap">
+          <figcaption>Medium: DINO CLS.</figcaption>
+        </div>
+        <div class="column is-half">
+          <img src="static/images/heatmaps/medium_dino_patch.png" alt="Medium DINO patch heatmap">
+          <figcaption>Medium: DINO patch.</figcaption>
+        </div>
+      </div>
+      <p class="section-summary">
+        We also visualize the learned trajectory representations using PCA. While latent trajectories are highly curved in the pretrained embedding space, they become significantly smoother after straightening, and Euclidean distance becomes a more faithful proxy for geodesic progress toward the goal.
+      </p>
+      <div class="analysis-grid pca-section">
+        <div class="carousel results-carousel pca-carousel">
+          <div class="item"><img src="static/images/pca/wall_exp_pca_mse.png" alt="Wall PCA overview"></div>
+          <div class="item"><img src="static/images/pca/wall_exp1_pca_mse.png" alt="Wall PCA example 1"></div>
+          <div class="item"><img src="static/images/pca/wall_exp2_pca_mse.png" alt="Wall PCA example 2"></div>
+          <div class="item"><img src="static/images/pca/wall_exp3_pca_mse.png" alt="Wall PCA example 3"></div>
+        </div>
+      </div>
+      <div class="analysis-grid pca-section">
+        <div class="carousel results-carousel pca-carousel">
+          <div class="item"><img src="static/images/pca/umaze_exp_pca_mse.png" alt="UMaze PCA overview"></div>
+          <div class="item"><img src="static/images/pca/umaze_exp1_pca_mse.png" alt="UMaze PCA example 1"></div>
+          <div class="item"><img src="static/images/pca/umaze_exp2_pca_mse.png" alt="UMaze PCA example 2"></div>
+          <div class="item"><img src="static/images/pca/umaze_exp3_pca_mse.png" alt="UMaze PCA example 3"></div>
+        </div>
+      </div>
+      <div class="analysis-grid pca-section">
+        <div class="carousel results-carousel pca-carousel">
+          <div class="item"><img src="static/images/pca/medium_exp1_pca_mse.png" alt="Medium PCA example 1"></div>
+          <div class="item"><img src="static/images/pca/medium_exp2_pca_mse.png" alt="Medium PCA example 2"></div>
+          <div class="item"><img src="static/images/pca/medium_exp3_pca_mse.png" alt="Medium PCA example 3"></div>
+        </div>
+      </div>
+      <div class="analysis-grid pca-section">
+        <div class="carousel results-carousel pca-carousel">
+          <div class="item"><img src="static/images/pca/pusht_exp_pca_mse.png" alt="PushT PCA overview"></div>
+          <div class="item"><img src="static/images/pca/pusht_exp1_pca_mse.png" alt="PushT PCA example 1"></div>
+          <div class="item"><img src="static/images/pca/pusht_exp2_pca_mse.png" alt="PushT PCA example 2"></div>
+          <div class="item"><img src="static/images/pca/pusht_exp3_pca_mse.png" alt="PushT PCA example 3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="container is-max-desktop">
+      <h2 class="title is-4">Planning</h2>
+      <p class="section-summary">
+        We performgradient-based planning using our models on four environments: Wall, PointMaze-UMaze, PointMaze-Medium, and PushT. We report both open-loop planning and closed-loop MPC. Open-loop planning optimizes a length-H action sequence using the terminal embedding distance to the target, while MPC executes the first action and replans at every step. Across environments, temporal straightening substantially improves planning performance.
+      </p>
+      <div class="hero-body">
+        <img src="static/images/results_table.png" alt="Main planning results table">
+      </div>
+      <p class="section-summary">
+        Closed-loop MPC replans at every step. The success-rate curves below show that straightening reaches high MPC success quickly, especially on Wall and UMaze.
+      </p>
+      <div class="columns is-multiline is-centered analysis-grid mpc-grid">
+        <div class="column is-3-desktop is-6-tablet">
+          <img src="static/images/mpc/wall_mpc.png" alt="Wall MPC results">
+          <figcaption>Wall.</figcaption>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <img src="static/images/mpc/umaze_mpc.png" alt="UMaze MPC results">
+          <figcaption>PointMaze-UMaze.</figcaption>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <img src="static/images/mpc/medium_mpc.png" alt="Medium MPC results">
+          <figcaption>PointMaze-Medium.</figcaption>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <img src="static/images/mpc/pusht_mpc.png" alt="PushT MPC results">
+          <figcaption>PushT.</figcaption>
+        </div>
+      </div>
+      <p class="section-summary">
+        Below are examples of open-loop planning across the four environments.
+      </p>
+      <div class="columns is-multiline planning-grid">
+        <div class="column is-3-desktop is-6-tablet">
+          <div class="carousel results-carousel small-carousel">
+            <div class="item item-video"><video poster="static/images/wall_teaser.png" autoplay controls muted loop playsinline><source src="static/videos/wall_exp1.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video poster="static/images/wall_teaser.png" autoplay controls muted loop playsinline><source src="static/videos/wall_exp2.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video poster="static/images/wall_teaser.png" autoplay controls muted loop playsinline><source src="static/videos/wall_exp3.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video poster="static/images/wall_teaser.png" autoplay controls muted loop playsinline><source src="static/videos/wall_exp4.mp4" type="video/mp4"></video></div>
+          </div>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <div class="carousel results-carousel small-carousel">
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/umaze_exp1.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/umaze_exp2.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/umaze_exp3.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/umaze_exp4.mp4" type="video/mp4"></video></div>
+          </div>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <div class="carousel results-carousel small-carousel">
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/medium_exp1.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/medium_exp2.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/medium_exp3.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/medium_exp4.mp4" type="video/mp4"></video></div>
+          </div>
+        </div>
+        <div class="column is-3-desktop is-6-tablet">
+          <div class="carousel results-carousel small-carousel">
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/pusht_exp1.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/pusht_exp2.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/pusht_exp3.mp4" type="video/mp4"></video></div>
+            <div class="item item-video"><video autoplay controls muted loop playsinline><source src="static/videos/pusht_exp4.mp4" type="video/mp4"></video></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small" id="BibTeX">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title">BibTeX</h2>
+            <pre class="bibtex-block"><code>@misc{wang2026temporalstraighteninglatentplanning,
+      title={Temporal Straightening for Latent Planning}, 
+      author={Ying Wang and Oumayma Bounou and Gaoyue Zhou and Randall Balestriero and Tim G. J. Rudner and Yann LeCun and Mengye Ren},
+      year={2026},
+      eprint={2603.12231},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.12231}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built from the same academic project page template style used in the reference site and adapted for Temporal Straightening for Latent Planning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lab-attribution">
+      Part of the <a href="https://agenticlearning.ai/" target="_blank">Agentic Learning AI Lab</a> at New York University
+    </div>
+  </footer>
+</body>
+</html>

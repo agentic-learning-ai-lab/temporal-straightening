@@ -1,0 +1,259 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.lab-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 2rem;
+}
+
+.lab-link {
+  color: #000;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.lab-logo {
+  display: block;
+  height: 80px;
+  max-width: 200px;
+  padding-bottom: 15px;
+  width: auto;
+}
+
+.footer .icon-link {
+  color: #000;
+  font-size: 25px;
+}
+
+.link-block a {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.publication-title,
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.note-line {
+  color: #666;
+  margin-top: 0.4rem;
+}
+
+.publication-video {
+  border-radius: 10px !important;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.publication-video iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-body img,
+.analysis-grid img,
+.results-carousel,
+.takeaway-list,
+.planning-grid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teaser-section .hero-body {
+  padding-bottom: 1rem;
+  padding-top: 0;
+}
+
+.section-summary {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 auto 1.25rem;
+  max-width: 54rem;
+  text-align: left;
+}
+
+.hero-body {
+  text-align: center;
+}
+
+.hero-body img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+figcaption {
+  color: #666;
+  font-style: italic;
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+.analysis-grid img {
+  display: block;
+  width: 100%;
+}
+
+.analysis-grid {
+  margin-top: 1rem;
+}
+
+.takeaway-list {
+  margin: 0 auto;
+  max-width: 54rem;
+}
+
+.takeaway-list ol {
+  margin-left: 1.25rem;
+}
+
+.method-loss {
+  margin: 0 auto 1rem;
+  max-width: 42rem;
+  text-align: center;
+}
+
+.method-loss .equation {
+  font-family: 'Castoro', serif;
+  font-size: 1.15rem;
+  margin: 0.45rem 0;
+}
+
+.loss-note {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.heatmap-grid .column {
+  padding-top: 0;
+}
+
+.heatmap-gallery {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heatmap-gallery .column {
+  padding-top: 0;
+}
+
+.heatmap-gallery img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.pair-grid,
+.triple-grid {
+  align-items: stretch;
+}
+
+.carousel-title {
+  margin-bottom: 0.75rem !important;
+  margin-top: 2rem !important;
+}
+
+.pca-section {
+  width: 100%;
+}
+
+.planning-grid {
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.mpc-grid {
+  margin-bottom: 1.5rem;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  font-size: 0;
+  margin: 5px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.results-carousel .item-video {
+  background: #fff;
+}
+
+.results-carousel video {
+  border-radius: 10px;
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+
+.small-carousel {
+  max-width: 260px;
+}
+
+.pca-carousel {
+  width: 100%;
+}
+
+.pca-carousel .item {
+  padding: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.lab-attribution {
+  color: #666;
+  font-size: 0.95rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.bibtex-block {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .lab-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .lab-logo {
+    height: 60px;
+  }
+
+  .section-summary {
+    font-size: 1rem;
+  }
+}
