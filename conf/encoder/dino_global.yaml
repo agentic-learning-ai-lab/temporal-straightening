@@ -1,0 +1,31 @@
+_target_: models.dino.DinoV2Encoder
+name: "dinov2_vits14"
+feature_key: "x_norm_patchtokens"
+projector: "global"
+
+projector_out_dim: 384
+hidden_dim: 384
+projector_target_hw: 1
+projector_config:
+  _target_: models.dino.GlobalProjector
+  in_dim: 384
+  out_dim: ${encoder.projector_out_dim}
+  hidden: ${encoder.hidden_dim}
+  conv_layers:
+    - kernel_size: 3
+      stride: 2
+      padding: 1
+      in_dim: ${encoder.hidden_dim}
+      out_dim: ${encoder.hidden_dim}
+    - kernel_size: 3
+      stride: 2
+      padding: 1
+      in_dim: ${encoder.hidden_dim}
+      out_dim: ${encoder.hidden_dim}
+    - kernel_size: 3
+      stride: 2
+      padding: 1
+      in_dim: ${encoder.hidden_dim}
+      out_dim: ${encoder.hidden_dim}
+  pool_hw: ${encoder.projector_target_hw}
+  name: global

@@ -1,0 +1,2 @@
+_target_: models.encoder.resnet.SmallResNet
+dim: 384

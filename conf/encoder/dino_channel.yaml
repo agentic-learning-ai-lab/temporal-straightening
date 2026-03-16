@@ -1,0 +1,27 @@
+_target_: models.dino.DinoV2Encoder
+name: "dinov2_vits14"
+feature_key: "x_norm_patchtokens"
+projector: "channel"
+
+agg_type: "mlp" # mean | flatten | mlp
+agg_mlp_hidden_dim: 512
+agg_out_dim: 128
+
+projector_out_dim: 8
+hidden_dim: 192
+projector_config:
+  _target_: models.dino.ChannelProjector
+  in_dim: 384
+  out_dim: ${encoder.projector_out_dim}
+  norm_type: "layer"
+  conv_layers:
+    - kernel_size: 3
+      stride: 1
+      padding: 1
+      in_dim: 384
+      out_dim: ${encoder.hidden_dim}
+    - kernel_size: 3
+      stride: 1
+      padding: 1
+      in_dim: ${encoder.hidden_dim}
+      out_dim: ${encoder.projector_out_dim}

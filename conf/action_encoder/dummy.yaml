@@ -1,0 +1,2 @@
+_target_: models.dummy.DummyRepeatActionEncoder
+use_layernorm: True
