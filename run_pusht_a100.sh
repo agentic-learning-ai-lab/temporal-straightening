@@ -280,8 +280,8 @@ PY
 plan-status)
   for c in $CONDS; do
     drv="$(cond_dir "$c")/plan"
-    gd=$(grep -l "Success rate" "$drv"/gd_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ')
-    mpc=$(grep -l "Success rate" "$drv"/mpc_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ')
+    gd=$(grep -l "Success rate" "$drv"/gd_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ' || true)
+    mpc=$(grep -l "Success rate" "$drv"/mpc_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ' || true)
     echo "===== $c   gd $gd/15   mpc $mpc/15   (15 = 3 seeds x 5 chunks) ====="
     [ -f "$drv/driver.log" ] && tail -1 "$drv/driver.log" | sed 's/^/  /' || echo "  (not started)"
   done
