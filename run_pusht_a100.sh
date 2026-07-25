@@ -95,6 +95,18 @@ fi
 # crash every run. setup_a100.sh sets this; we're standalone, so set it here too.
 export WANDB_MODE="${WANDB_MODE:-disabled}"
 
+# Planning imports `env` to register the pusht gym id, which transitively imports
+# pointmaze -> mujoco_py. mujoco_py won't load unless mujoco210/bin is on
+# LD_LIBRARY_PATH. (Training didn't hit this; it never imported the gym env.)
+if [ -d "$HOME/.mujoco/mujoco210/bin" ]; then
+  case ":${LD_LIBRARY_PATH:-}:" in
+    *":$HOME/.mujoco/mujoco210/bin:"*) ;;  # already present
+    *) export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:-}:$HOME/.mujoco/mujoco210/bin" ;;
+  esac
+fi
+export MUJOCO_PY_FORCE_CPU="${MUJOCO_PY_FORCE_CPU:-1}"   # presence-tested -> OSMesa, not EGL
+export MUJOCO_GL="${MUJOCO_GL:-osmesa}"
+
 # cond -> "encoder=<..> training.straighten=<..> training.encoder_lr=<..>"
 cond_flags() {
   case "$1" in
