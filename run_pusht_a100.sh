@@ -47,12 +47,21 @@
 # EPOCHS default is 2 to match the paper's PushT protocol (A.3). This is
 #   intentional and PushT-specific — see the EPOCHS line below.
 #
+# PLANNING reproduces Table 1's PushT column (GD planner, open-loop + MPC). Each
+#   condition plans on its own GPU, detached, no smoke test. Hyperparams are the
+#   plan-config defaults (= Table 4). PushT-specific: objective.alpha=1 on both,
+#   plus objective.mode=staged for MPC (README + paper 5.3). 50 samples x 3 seeds,
+#   run as 5x10 chunks and pooled (40GB can't hold a 50-eval 588-token GD batch).
+#
 # STAGES (JupyterHub terminal):
 #   export DATASET_DIR=/home/jupyter-deuk-c4e4/data     # must contain pusht_noise/
 #   bash run_pusht_a100.sh train                 # all 4, one per free GPU, detached, 2 epochs
 #   bash run_pusht_a100.sh train channel_on cls  # OR just the ones you name
 #   bash run_pusht_a100.sh dims                  # verify shapes on the LIVE runs
 #   bash run_pusht_a100.sh status                # epochs done + checkpoints
+#   bash run_pusht_a100.sh plan                  # after training: all 4 plan, one per GPU, detached
+#   bash run_pusht_a100.sh plan-status           # planning progress
+#   bash run_pusht_a100.sh plan-summary          # success rates vs paper Table 1
 set -euo pipefail
 
 REPO="${REPO:-$(cd "$(dirname "$0")" && pwd)}"
@@ -62,11 +71,17 @@ DATA="${DATA:-${DATASET_DIR:-$HOME/data}/pusht_noise}"
 # Wall/PointMaze use 20; PushT is the documented exception. Do not bump this to 20.
 EPOCHS="${EPOCHS:-2}"
 FREE_MIB="${FREE_MIB:-2000}"   # a GPU with less than this used (MiB) counts as free
+
+# --- planning (Table 1 GD planner; hyperparams from Table 4, all plan-config defaults) ---
+SEEDS="${SEEDS:-100 200 300}"   # 3 data seeds (Table 1 = mean +/- std over three)
+NEVALS="${NEVALS:-50}"          # 50 test samples per seed (Table 1)
+CHUNK="${CHUNK:-10}"            # 40GB can't hold a 50-eval 588-token GD batch -> 5x10, pooled
+PLAN_DECODE="${PLAN_DECODE:-false}"  # success rate is unaffected; skip decode for speed/robustness
 STAGE="${1:-}"; shift || true
 
 ALL_CONDS="cls patch channel_off channel_on"
 
-usage() { echo "usage: bash run_pusht_a100.sh {train|dims|status} [cond ...]"; echo "  conds: $ALL_CONDS"; exit 1; }
+usage() { echo "usage: bash run_pusht_a100.sh {train|dims|status|plan|plan-status|plan-summary} [cond ...]"; echo "  conds: $ALL_CONDS"; exit 1; }
 [ -n "$STAGE" ] || usage
 [ -f "$REPO/train.py" ] || { echo "!! run from the repo root (train.py not found)"; exit 1; }
 
@@ -174,6 +189,141 @@ status)
     [ -f "$log" ] && tail -2 "$log" | sed 's/^/  /' || echo "  (no log yet)"
     [ -n "$run" ] && ls -1 "$run/checkpoints/" 2>/dev/null | sed 's/^/  ckpt: /' || echo "  (no run dir yet)"
   done
+  ;;
+
+plan)
+  # Fan out: one detached (setsid+nohup) planning job PER CONDITION, each pinned
+  # to its own GPU. Each job runs open-loop GD + GD-MPC x 3 seeds x 5 chunks.
+  [ -d "$DATA" ] || { echo "!! dataset dir missing: $DATA (need it for the valid split)"; exit 1; }
+
+  # No smoke test. Just verify each condition has a finished checkpoint + frozen
+  # config so a doomed job doesn't launch (file checks only -- nothing is run).
+  for c in $CONDS; do
+    RUN="$(find_run_dir "$c")"
+    [ -n "$RUN" ]                                   || { echo "!! $c: no run dir -- train first"; exit 1; }
+    [ -f "$RUN/hydra.yaml" ]                        || { echo "!! $c: missing $RUN/hydra.yaml"; exit 1; }
+    [ -f "$RUN/checkpoints/model_${EPOCHS}.pth" ]   || { echo "!! $c: missing checkpoints/model_${EPOCHS}.pth"; exit 1; }
+  done
+
+  if [ -n "${GPUS:-}" ]; then
+    read -r -a GPU_ARR <<< "$(echo "$GPUS" | tr ',' ' ')"
+  else
+    mapfile -t GPU_ARR < <(nvidia-smi --query-gpu=index,memory.used --format=csv,noheader,nounits \
+      | awk -F',' -v t="$FREE_MIB" '($2+0)<t {gsub(/ /,"",$1); print $1}')
+  fi
+  N_GPU=${#GPU_ARR[@]}
+  [ "$N_GPU" -gt 0 ] || { echo "!! no free GPU (used < ${FREE_MIB} MiB). Set GPUS=... to force."; exit 1; }
+  echo "[gpu] planning GPUs: ${GPU_ARR[*]}"
+
+  i=0
+  for c in $CONDS; do
+    if [ "$i" -ge "$N_GPU" ]; then
+      echo "!! only $N_GPU GPU(s) -- skipping '$c' and after. Re-run 'plan $c ...' when a GPU frees."
+      break
+    fi
+    g="${GPU_ARR[$i]}"; i=$((i+1))
+    drv="$(cond_dir "$c")/plan"; mkdir -p "$drv"
+    echo "----- plan '$c' on GPU $g -> $drv -----"
+    # Re-invoke this script's hidden per-condition worker, detached, pinned to $g.
+    CUDA_VISIBLE_DEVICES="$g" setsid nohup bash "$0" _plan_one "$c" > "$drv/driver.log" 2>&1 &
+    echo "  pid $!"
+  done
+  echo ""
+  echo "Detached. Monitor:  bash run_pusht_a100.sh plan-status"
+  echo "Summarize:          bash run_pusht_a100.sh plan-summary"
+  ;;
+
+_plan_one)
+  # Hidden worker: full planning suite for ONE condition on the current GPU.
+  c="$CONDS"
+  RUN="$(find_run_dir "$c")"; RUN="$(cd "$RUN" && pwd)"   # plan.py needs an absolute path
+  drv="$(cond_dir "$c")/plan"; mkdir -p "$drv"
+
+  # plan.py reads env.dataset from the FROZEN hydra.yaml (CLI overrides don't reach it).
+  # Point it at the actual data dir; pusht is video, so no frame-file flags to set.
+  python - "$RUN/hydra.yaml" "$DATA" <<'PY'
+import sys
+from omegaconf import OmegaConf
+p, data = sys.argv[1], sys.argv[2]
+cfg = OmegaConf.load(p)
+cfg.env.dataset.data_path = data
+OmegaConf.save(cfg, p)
+print(f"[config] set data_path={data} in {p}")
+PY
+
+  OFFSETS=$(python -c "print(' '.join(str(o) for o in range(0, $NEVALS, $CHUNK)))")
+  # tag | plan-config | PushT-specific objective overrides (README + paper 5.3)
+  for spec in \
+      "gd|plan_gd.yaml|objective.alpha=1" \
+      "mpc|plan_gd_mpc.yaml|objective.alpha=1 objective.mode=staged"; do
+    tag="${spec%%|*}"; rest="${spec#*|}"; cfg="${rest%%|*}"; extra="${rest#*|}"
+    for S in $SEEDS; do
+      for O in $OFFSETS; do
+        OO=$(printf "%02d" "$O")
+        echo "===== $c $tag seed $S chunk $OO (n_evals=$CHUNK) ====="
+        python plan.py --config-name "$cfg" \
+          ckpt_base_path="$RUN" \
+          model_epoch="$EPOCHS" \
+          n_evals="$CHUNK" \
+          +eval_start_index="$O" \
+          seed="$S" \
+          decode_for_viz="$PLAN_DECODE" \
+          $extra \
+          hydra.run.dir="$drv/${tag}_seed_${S}/chunk_${OO}" \
+          2>&1 | tee "$drv/${tag}_seed${S}_chunk${OO}.log"
+      done
+    done
+  done
+  echo "PLAN_DONE cond=$c"
+  ;;
+
+plan-status)
+  for c in $CONDS; do
+    drv="$(cond_dir "$c")/plan"
+    gd=$(grep -l "Success rate" "$drv"/gd_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ')
+    mpc=$(grep -l "Success rate" "$drv"/mpc_seed*_chunk*.log 2>/dev/null | wc -l | tr -d ' ')
+    echo "===== $c   gd $gd/15   mpc $mpc/15   (15 = 3 seeds x 5 chunks) ====="
+    [ -f "$drv/driver.log" ] && tail -1 "$drv/driver.log" | sed 's/^/  /' || echo "  (not started)"
+  done
+  ;;
+
+plan-summary)
+  python - "$PUSHT_ROOT" "$NEVALS" "$CHUNK" "$CONDS" <<'PY'
+import sys, os, re, glob, statistics as st
+root, nevals, chunk = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
+conds = sys.argv[4].split()
+folder = {"cls":"cls_reproduction","patch":"patch_reproduction",
+          "channel_off":"patchproj_reproduction","channel_on":"straightening_reproduction"}
+# Paper Table 1, PushT, GD planner: (open-loop, MPC)
+paper = {"cls":("19.33 +/- 8.22","28.00 +/- 1.63"),
+         "patch":("56.00 +/- 4.32","66.00 +/- 4.90"),
+         "channel_off":("70.00 +/- 1.63","78.67 +/- 0.94"),
+         "channel_on":("77.33 +/- 6.18","85.33 +/- 4.99")}
+offsets = list(range(0, nevals, chunk))
+def rate(cond, tag):
+    drv = os.path.join(root, folder[cond], "plan")
+    seed_means = []
+    for s in ("100","200","300"):
+        chunks = []
+        for o in offsets:
+            log = os.path.join(drv, f"{tag}_seed{s}_chunk{o:02d}.log")
+            if not os.path.exists(log): return None
+            vals = re.findall(r"Success rate:\s*([0-9.]+)", open(log, errors="ignore").read())
+            if not vals: return None
+            chunks.append(float(vals[-1]) * 100.0)
+        seed_means.append(sum(chunks)/len(chunks))   # equal chunks -> pooled 50-sample rate
+    m = sum(seed_means)/len(seed_means)
+    sd = st.pstdev(seed_means) if len(seed_means) > 1 else 0.0
+    return m, sd, seed_means
+print(f"\nPushT GD planner — OURS vs paper Table 1 (50 samples x 3 seeds)\n")
+print(f"{'condition':<13} {'open-loop (ours)':>20}  {'paper':>16}   {'MPC (ours)':>18}  {'paper':>16}")
+for c in conds:
+    ol, mpc = rate(c,"gd"), rate(c,"mpc")
+    ol_s  = f"{ol[0]:.2f} +/- {ol[1]:.2f}"  if ol  else "(pending)"
+    mpc_s = f"{mpc[0]:.2f} +/- {mpc[1]:.2f}" if mpc else "(pending)"
+    print(f"{c:<13} {ol_s:>20}  {paper[c][0]:>16}   {mpc_s:>18}  {paper[c][1]:>16}")
+print("\n(open-loop = plan_gd.yaml objective.alpha=1; MPC = plan_gd_mpc.yaml alpha=1 mode=staged)")
+PY
   ;;
 
 *) usage ;;
