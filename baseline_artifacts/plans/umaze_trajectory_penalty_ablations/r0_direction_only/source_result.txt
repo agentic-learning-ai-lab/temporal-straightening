@@ -1,0 +1,7 @@
+===== UMAZE TEMPORAL-STRAIGHTENING BASELINE (open-loop GD, PAPER PROTOCOL) =====
+config: DINOv2 patch + channel proj -> 14x14x8, straightening ON (aggcos, lambda=0.1)
+n_evals=50/seed, seeds=100 200 300 -> 150 evals total
+per-seed success (%): 96.00, 98.00, 94.00
+OURS  = 96.00 +/- 1.63 %  (mean +/- pop-std, n=3)
+PAPER = 94.00 +/- 1.63 %  (Table 1/5, UMaze open-loop GD, DINOv2 patch+proj dim8, straightening ON)
+PAPER control (straightening OFF) = 44.00 +/- 7.12 %

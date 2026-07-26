@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "seed": 200,
+  "n_evals": 50,
+  "eval_seeds": [
+    1,
+    201,
+    401,
+    601,
+    801,
+    1001,
+    1201,
+    1401,
+    1601,
+    1801,
+    2001,
+    2201,
+    2401,
+    2601,
+    2801,
+    3001,
+    3201,
+    3401,
+    3601,
+    3801,
+    4001,
+    4201,
+    4401,
+    4601,
+    4801,
+    5001,
+    5201,
+    5401,
+    5601,
+    5801,
+    6001,
+    6201,
+    6401,
+    6601,
+    6801,
+    7001,
+    7201,
+    7401,
+    7601,
+    7801,
+    8001,
+    8201,
+    8401,
+    8601,
+    8801,
+    9001,
+    9201,
+    9401,
+    9601,
+    9801
+  ],
+  "chunks": [
+    {
+      "eval_start_index": 0,
+      "n_evals": 10,
+      "path": "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/chunk_0",
+      "first_seed": 1,
+      "last_seed": 1801
+    },
+    {
+      "eval_start_index": 10,
+      "n_evals": 10,
+      "path": "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/chunk_10",
+      "first_seed": 2001,
+      "last_seed": 3801
+    },
+    {
+      "eval_start_index": 20,
+      "n_evals": 10,
+      "path": "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/chunk_20",
+      "first_seed": 4001,
+      "last_seed": 5801
+    },
+    {
+      "eval_start_index": 30,
+      "n_evals": 10,
+      "path": "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/chunk_30",
+      "first_seed": 6001,
+      "last_seed": 7801
+    },
+    {
+      "eval_start_index": 40,
+      "n_evals": 10,
+      "path": "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/chunk_40",
+      "first_seed": 8001,
+      "last_seed": 9801
+    }
+  ],
+  "metrics": {
+    "final_eval": {
+      "final_eval/mean_div_proprio_emb": 11.995178205006859,
+      "final_eval/mean_div_visual_emb": 46.658103226627695,
+      "final_eval/mean_proprio_dist": 1.4871700525283813,
+      "final_eval/mean_state_dist": 2.562849688529968,
+      "final_eval/mean_visual_dist": 0.5710784375667572,
+      "final_eval/success_rate": 0.88
+    },
+    "mpc": {
+      "mpc/mean_div_proprio_emb": 11.995178205006859,
+      "mpc/mean_div_visual_emb": 46.658103226627695,
+      "mpc/mean_proprio_dist": 1.4871700525283813,
+      "mpc/mean_state_dist": 2.562849688529968,
+      "mpc/mean_visual_dist": 0.5710784375667572,
+      "mpc/success_rate": 0.88
+    }
+  }
+}

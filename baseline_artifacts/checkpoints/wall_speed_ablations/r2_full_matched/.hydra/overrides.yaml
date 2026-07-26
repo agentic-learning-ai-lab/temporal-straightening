@@ -1,0 +1,3 @@
+- training.straighten=aggr2_5e-2
+- training.epochs=17
+- ckpt_base_path=/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/checkpoints/wall_speed_ablations/r2_full_matched

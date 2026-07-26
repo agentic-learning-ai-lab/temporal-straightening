@@ -53,4 +53,4 @@ No simulator is touched. The output latent trajectory is fully differentiable wi
 
 ## The loss-flag parser
 
-`training.straighten` arrives as a string like `"cos1e-1+aggspeed1e-1"` and is tokenized in `__init__` into `(curvature_mode, straighten_scale)` and `(speed_constancy_mode, speed_constancy_scale)`. Full DSL table in [The Straightening Loss](The%20Straightening%20Loss.md). The `speed`/`aggspeed` branch is the reproduction study's addition to this otherwise paper-original file.
+`training.straighten` arrives as a string like `"cos1e-1+aggspeed1e-1"` and is tokenized in `__init__` into `(curvature_mode, straighten_scale)` and `(speed_constancy_mode, speed_constancy_scale)`. It also accepts the reproduction study's R0--R4 trajectory-penalty tokens, including pooled forms such as `aggr2_5e-2` and the tunable R3 form `aggr3b1_1e-1`. Full DSL table in [The Straightening Loss](The%20Straightening%20Loss.md). The `speed`/`aggspeed` and R0--R4 branches are additions to this otherwise paper-original file.

@@ -1,0 +1,182 @@
+{
+  "status": "complete",
+  "conditions": {
+    "off": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/wall_dino_projector_full/off/seed_100/aggregate.json",
+        "baseline_artifacts/plans/wall_dino_projector_full/off/seed_200/aggregate.json",
+        "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 9.473575427799222,
+          "final_eval/mean_div_visual_emb": 29.6700058910391,
+          "final_eval/mean_proprio_dist": 2.5006632208824158,
+          "final_eval/mean_state_dist": 4.240791773796081,
+          "final_eval/mean_visual_dist": 0.45989159643650057,
+          "final_eval/success_rate": 0.84
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 8.865458264687271,
+          "final_eval/mean_div_visual_emb": 24.693845598321083,
+          "final_eval/mean_proprio_dist": 4.588039910793304,
+          "final_eval/mean_state_dist": 7.735000324249268,
+          "final_eval/mean_visual_dist": 0.5256781220436096,
+          "final_eval/success_rate": 0.74
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 7.1923973532468795,
+          "final_eval/mean_div_visual_emb": 25.777341990309438,
+          "final_eval/mean_proprio_dist": 3.8866304397583007,
+          "final_eval/mean_state_dist": 6.632660627365112,
+          "final_eval/mean_visual_dist": 0.5519385755062103,
+          "final_eval/success_rate": 0.84
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 8.510477015244458,
+          "population_std": 0.9645213381246227
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 26.713731159889875,
+          "population_std": 2.1366892337424765
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 3.6584445238113403,
+          "population_std": 0.8673088533209106
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 6.20281757513682,
+          "population_std": 1.4585259992372985
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.5125027646621069,
+          "population_std": 0.038715665395828554
+        },
+        "final_eval/success_rate": {
+          "mean": 0.8066666666666666,
+          "population_std": 0.04714045207910316
+        }
+      }
+    },
+    "on": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/wall_dino_projector_full/on/seed_100/aggregate.json",
+        "baseline_artifacts/plans/wall_dino_projector_full/on/seed_200/aggregate.json",
+        "baseline_artifacts/plans/wall_dino_projector_full/on/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 10.342504279761554,
+          "final_eval/mean_div_visual_emb": 28.376722597266866,
+          "final_eval/mean_proprio_dist": 0.9706122040748596,
+          "final_eval/mean_state_dist": 1.6955520868301392,
+          "final_eval/mean_visual_dist": 0.4237964689731598,
+          "final_eval/success_rate": 1.0
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 10.01026623698504,
+          "final_eval/mean_div_visual_emb": 29.243042437689525,
+          "final_eval/mean_proprio_dist": 1.1966125130653382,
+          "final_eval/mean_state_dist": 2.083757734298706,
+          "final_eval/mean_visual_dist": 0.4906908988952637,
+          "final_eval/success_rate": 0.92
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 7.579266079048159,
+          "final_eval/mean_div_visual_emb": 32.18767645951893,
+          "final_eval/mean_proprio_dist": 1.3055310249328613,
+          "final_eval/mean_state_dist": 2.184468626976013,
+          "final_eval/mean_visual_dist": 0.49084377884864805,
+          "final_eval/success_rate": 0.88
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 9.310678865264917,
+          "population_std": 1.2317841278603845
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 29.935813831491775,
+          "population_std": 1.6311123991735457
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 1.1575852473576864,
+          "population_std": 0.13948715530516376
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 1.9879261493682863,
+          "population_std": 0.21078838568536015
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.46844371557235714,
+          "population_std": 0.03157043252514598
+        },
+        "final_eval/success_rate": {
+          "mean": 0.9333333333333332,
+          "population_std": 0.049888765156985884
+        }
+      }
+    }
+  },
+  "paired_delta": {
+    "treatment_minus_baseline": "on-off",
+    "metrics": {
+      "final_eval/mean_div_proprio_emb": {
+        "mean": 0.8002018500204597,
+        "population_std": 0.31322039731564394,
+        "standard_error": 0.18083788070586856
+      },
+      "final_eval/mean_div_visual_emb": {
+        "mean": 3.222082671601901,
+        "population_std": 3.2820070759873867,
+        "standard_error": 1.8948676688035744
+      },
+      "final_eval/mean_proprio_dist": {
+        "mean": -2.5008592764536535,
+        "population_std": 0.7620189707684594,
+        "standard_error": 0.4399518579007716
+      },
+      "final_eval/mean_state_dist": {
+        "mean": -4.214891425768534,
+        "population_std": 1.278706475812161,
+        "standard_error": 0.7382615280246688
+      },
+      "final_eval/mean_visual_dist": {
+        "mean": -0.04405904908974965,
+        "population_std": 0.01205458099336708,
+        "standard_error": 0.006959715581488631
+      },
+      "final_eval/success_rate": {
+        "mean": 0.1266666666666667,
+        "population_std": 0.061824123303304696,
+        "standard_error": 0.03569417423157558
+      }
+    }
+  }
+}
