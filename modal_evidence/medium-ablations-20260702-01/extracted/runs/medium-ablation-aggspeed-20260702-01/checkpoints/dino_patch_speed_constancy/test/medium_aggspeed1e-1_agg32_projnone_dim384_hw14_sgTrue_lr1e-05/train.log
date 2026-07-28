@@ -1,0 +1,233 @@
+[2026-07-02 19:52:38,294][__main__][INFO] - Model saved dir: /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:52:38,781][accelerate.utils.other][WARNING] - Detected kernel version 4.19.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[2026-07-02 19:52:38,782][__main__][INFO] - Accelerate mixed precision: bf16
+[2026-07-02 19:52:38,782][__main__][INFO] - rank: 0  model_name: dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05_f5_h3_p1
+[2026-07-02 19:52:38,783][__main__][INFO] - device: cuda   model_name: dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05_f5_h3_p1
+[2026-07-02 19:52:38,783][__main__][INFO] - Decoder training will start at epoch 1
+[2026-07-02 19:52:40,260][__main__][INFO] - Loading dataset from /mnt/ts/datasets/medium_random_50x100/point_maze_medium ...
+[2026-07-02 19:52:40,487][__main__][INFO] - dataloader batch size: 32
+[2026-07-02 19:52:40,488][__main__][INFO] - Train encoder, predictor, decoder:            True            True            True
+[2026-07-02 19:52:42,156][dinov2][INFO] - using MLP layer as FFN
+[2026-07-02 19:52:42,756][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+[2026-07-02 19:52:42,757][__main__][INFO] - Encoder base_model is frozen.
+[2026-07-02 19:52:42,758][__main__][INFO] - Encoder base_model frozen; non-backbone encoder modules are trainable.
+[2026-07-02 19:52:43,397][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-02 19:52:43,397][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-02 19:52:43,398][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 19:52:43,398][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 19:52:43,399][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-02 19:52:43,399][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-02 19:52:43,400][models.visual_world_model][INFO] - emb_dim: 404
+[2026-07-02 19:52:43,400][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-02 19:52:43,401][models.visual_world_model][INFO] - Speed constancy enabled: mode=aggcos, scale=0.1
+[2026-07-02 19:52:43,401][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-02 19:52:43,402][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-02 19:52:43,402][models.visual_world_model][INFO] - Model emb_dim: 404
+[2026-07-02 19:52:43,404][__main__][INFO] - [model] trainable params: 30262963 / 52319539
+[2026-07-02 19:52:43,405][__main__][INFO] - [model] trainable: proprio_encoder.patch_embed.weight shape=(10, 4, 1)
+[2026-07-02 19:52:43,405][__main__][INFO] - [model] trainable: proprio_encoder.patch_embed.bias shape=(10,)
+[2026-07-02 19:52:43,405][__main__][INFO] - [model] trainable: proprio_encoder.norm.weight shape=(10,)
+[2026-07-02 19:52:43,406][__main__][INFO] - [model] trainable: proprio_encoder.norm.bias shape=(10,)
+[2026-07-02 19:52:43,406][__main__][INFO] - [model] trainable: action_encoder.patch_embed.weight shape=(10, 10, 1)
+[2026-07-02 19:52:43,407][__main__][INFO] - [model] trainable: action_encoder.patch_embed.bias shape=(10,)
+[2026-07-02 19:52:43,407][__main__][INFO] - [model] trainable: action_encoder.norm.weight shape=(10,)
+[2026-07-02 19:52:43,408][__main__][INFO] - [model] trainable: action_encoder.norm.bias shape=(10,)
+[2026-07-02 19:52:43,408][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.0.weight shape=(384, 384, 3, 3)
+[2026-07-02 19:52:43,409][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.0.bias shape=(384,)
+[2026-07-02 19:52:43,409][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.1.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,410][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.1.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,410][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.1.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,410][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.1.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,411][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.2.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,413][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.2.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,413][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.2.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,414][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.2.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,414][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.3.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,415][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.3.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,415][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.3.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,415][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.3.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,416][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.4.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,416][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.4.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,417][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.4.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,417][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.4.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,418][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.6.weight shape=(384, 192, 4, 4)
+[2026-07-02 19:52:43,419][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.6.bias shape=(192,)
+[2026-07-02 19:52:43,419][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.8.weight shape=(192, 384, 4, 4)
+[2026-07-02 19:52:43,419][__main__][INFO] - [model] trainable: decoder.upsample_b.blocks.8.bias shape=(384,)
+[2026-07-02 19:52:43,420][__main__][INFO] - [model] trainable: decoder.dec.blocks.0.weight shape=(384, 384, 3, 3)
+[2026-07-02 19:52:43,420][__main__][INFO] - [model] trainable: decoder.dec.blocks.0.bias shape=(384,)
+[2026-07-02 19:52:43,421][__main__][INFO] - [model] trainable: decoder.dec.blocks.1.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,421][__main__][INFO] - [model] trainable: decoder.dec.blocks.1.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,421][__main__][INFO] - [model] trainable: decoder.dec.blocks.1.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,422][__main__][INFO] - [model] trainable: decoder.dec.blocks.1.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,422][__main__][INFO] - [model] trainable: decoder.dec.blocks.2.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,423][__main__][INFO] - [model] trainable: decoder.dec.blocks.2.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,423][__main__][INFO] - [model] trainable: decoder.dec.blocks.2.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,424][__main__][INFO] - [model] trainable: decoder.dec.blocks.2.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,425][__main__][INFO] - [model] trainable: decoder.dec.blocks.3.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,425][__main__][INFO] - [model] trainable: decoder.dec.blocks.3.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,426][__main__][INFO] - [model] trainable: decoder.dec.blocks.3.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,426][__main__][INFO] - [model] trainable: decoder.dec.blocks.3.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,427][__main__][INFO] - [model] trainable: decoder.dec.blocks.4.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-02 19:52:43,427][__main__][INFO] - [model] trainable: decoder.dec.blocks.4.conv.1.bias shape=(128,)
+[2026-07-02 19:52:43,427][__main__][INFO] - [model] trainable: decoder.dec.blocks.4.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-02 19:52:43,428][__main__][INFO] - [model] trainable: decoder.dec.blocks.4.conv.3.bias shape=(384,)
+[2026-07-02 19:52:43,428][__main__][INFO] - [model] trainable: decoder.dec.blocks.6.weight shape=(384, 192, 4, 4)
+[2026-07-02 19:52:43,428][__main__][INFO] - [model] trainable: decoder.dec.blocks.6.bias shape=(192,)
+[2026-07-02 19:52:43,429][__main__][INFO] - [model] trainable: decoder.dec.blocks.8.weight shape=(192, 3, 4, 4)
+[2026-07-02 19:52:43,429][__main__][INFO] - [model] trainable: decoder.dec.blocks.8.bias shape=(3,)
+[2026-07-02 19:52:43,429][__main__][INFO] - [model] trainable: predictor.pos_embedding shape=(1, 588, 404)
+[2026-07-02 19:52:43,430][__main__][INFO] - [model] trainable: predictor.transformer.norm.weight shape=(404,)
+[2026-07-02 19:52:43,431][__main__][INFO] - [model] trainable: predictor.transformer.norm.bias shape=(404,)
+[2026-07-02 19:52:43,431][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,431][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,432][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,432][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,432][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,433][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,433][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,434][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,434][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,435][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,435][__main__][INFO] - [model] trainable: predictor.transformer.layers.0.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,435][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,436][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,436][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,437][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,437][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,437][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,438][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,438][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,438][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,439][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,439][__main__][INFO] - [model] trainable: predictor.transformer.layers.1.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,439][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,440][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,440][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,441][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,441][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,441][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,442][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,442][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,442][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,443][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,443][__main__][INFO] - [model] trainable: predictor.transformer.layers.2.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,443][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,444][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,444][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,444][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,445][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,446][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,447][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,447][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,447][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,448][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,448][__main__][INFO] - [model] trainable: predictor.transformer.layers.3.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,449][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,449][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,450][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,450][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,450][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,451][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,452][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,452][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,453][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,453][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,453][__main__][INFO] - [model] trainable: predictor.transformer.layers.4.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,453][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.0.norm.weight shape=(404,)
+[2026-07-02 19:52:43,454][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.0.norm.bias shape=(404,)
+[2026-07-02 19:52:43,455][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.0.to_qkv.weight shape=(3072, 404)
+[2026-07-02 19:52:43,455][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.0.to_out.0.weight shape=(404, 1024)
+[2026-07-02 19:52:43,455][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.0.to_out.0.bias shape=(404,)
+[2026-07-02 19:52:43,455][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.0.weight shape=(404,)
+[2026-07-02 19:52:43,456][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.0.bias shape=(404,)
+[2026-07-02 19:52:43,456][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.1.weight shape=(2048, 404)
+[2026-07-02 19:52:43,457][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.1.bias shape=(2048,)
+[2026-07-02 19:52:43,457][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.4.weight shape=(404, 2048)
+[2026-07-02 19:52:43,457][__main__][INFO] - [model] trainable: predictor.transformer.layers.5.1.net.4.bias shape=(404,)
+[2026-07-02 19:52:43,461][__main__][INFO] - Epoch 1 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 19:52:55,005][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:54:16,530][__main__][INFO] - Epoch 1  Training loss: 2.3356                  Validation loss: 2.0845
+[2026-07-02 19:54:18,950][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:54:18,951][__main__][INFO] - Epoch 2 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 19:54:29,192][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:55:40,730][__main__][INFO] - Epoch 2  Training loss: 1.9697                  Validation loss: 1.8194
+[2026-07-02 19:55:43,034][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:55:43,035][__main__][INFO] - Epoch 3 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 19:55:53,576][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:57:02,733][__main__][INFO] - Epoch 3  Training loss: 1.7250                  Validation loss: 1.5930
+[2026-07-02 19:57:05,105][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:57:05,106][__main__][INFO] - Epoch 4 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 19:57:14,970][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:58:25,796][__main__][INFO] - Epoch 4  Training loss: 1.5115                  Validation loss: 1.3935
+[2026-07-02 19:58:28,179][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:58:28,180][__main__][INFO] - Epoch 5 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 19:58:38,116][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:59:50,187][__main__][INFO] - Epoch 5  Training loss: 1.3221                  Validation loss: 1.2167
+[2026-07-02 19:59:52,401][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 19:59:52,402][__main__][INFO] - Epoch 6 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:00:01,429][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:01:13,554][__main__][INFO] - Epoch 6  Training loss: 1.1533                  Validation loss: 1.0595
+[2026-07-02 20:01:15,753][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:01:15,754][__main__][INFO] - Epoch 7 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:01:25,818][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:02:36,638][__main__][INFO] - Epoch 7  Training loss: 1.0029                  Validation loss: 0.9199
+[2026-07-02 20:02:38,874][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:02:38,874][__main__][INFO] - Epoch 8 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:02:47,866][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:03:59,799][__main__][INFO] - Epoch 8  Training loss: 0.8693                  Validation loss: 0.7959
+[2026-07-02 20:04:01,997][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:04:01,998][__main__][INFO] - Epoch 9 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:04:11,056][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:05:20,161][__main__][INFO] - Epoch 9  Training loss: 0.7509                  Validation loss: 0.6861
+[2026-07-02 20:05:22,362][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:05:22,363][__main__][INFO] - Epoch 10 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:05:31,428][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:06:39,603][__main__][INFO] - Epoch 10  Training loss: 0.6461                  Validation loss: 0.5891
+[2026-07-02 20:06:41,999][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:06:41,999][__main__][INFO] - Epoch 11 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:06:51,095][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:07:58,459][__main__][INFO] - Epoch 11  Training loss: 0.5544                  Validation loss: 0.5038
+[2026-07-02 20:08:00,853][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:08:00,854][__main__][INFO] - Epoch 12 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:08:09,880][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:09:18,370][__main__][INFO] - Epoch 12  Training loss: 0.4740                  Validation loss: 0.4287
+[2026-07-02 20:09:20,627][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:09:20,628][__main__][INFO] - Epoch 13 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:09:29,780][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:10:38,462][__main__][INFO] - Epoch 13  Training loss: 0.4039                  Validation loss: 0.3643
+[2026-07-02 20:10:40,934][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:10:40,935][__main__][INFO] - Epoch 14 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:10:50,448][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:12:00,823][__main__][INFO] - Epoch 14  Training loss: 0.3434                  Validation loss: 0.3070
+[2026-07-02 20:12:03,174][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:12:03,175][__main__][INFO] - Epoch 15 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:12:12,461][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:13:19,802][__main__][INFO] - Epoch 15  Training loss: 0.2914                  Validation loss: 0.2599
+[2026-07-02 20:13:22,068][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:13:22,069][__main__][INFO] - Epoch 16 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:13:31,267][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:14:37,741][__main__][INFO] - Epoch 16  Training loss: 0.2467                  Validation loss: 0.2185
+[2026-07-02 20:14:40,072][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:14:40,072][__main__][INFO] - Epoch 17 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:14:49,100][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:15:54,623][__main__][INFO] - Epoch 17  Training loss: 0.2088                  Validation loss: 0.1829
+[2026-07-02 20:15:56,969][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:15:56,970][__main__][INFO] - Epoch 18 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:16:05,885][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:17:10,930][__main__][INFO] - Epoch 18  Training loss: 0.1761                  Validation loss: 0.1535
+[2026-07-02 20:17:13,162][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:17:13,164][__main__][INFO] - Epoch 19 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:17:22,011][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:18:26,397][__main__][INFO] - Epoch 19  Training loss: 0.1491                  Validation loss: 0.1302
+[2026-07-02 20:18:28,678][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:18:28,679][__main__][INFO] - Epoch 20 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-02 20:18:37,500][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05
+[2026-07-02 20:19:41,719][__main__][INFO] - Epoch 20  Training loss: 0.1268                  Validation loss: 0.1094
+[2026-07-02 20:19:43,971][__main__][INFO] - Saved model to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05

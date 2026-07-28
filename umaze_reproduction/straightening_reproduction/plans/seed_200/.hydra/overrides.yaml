@@ -1,0 +1,5 @@
+- ckpt_base_path=/workspace/ts_umaze_baseline_FINAL
+- model_epoch=20
+- n_evals=50
+- seed=200
+- decode_for_viz=true

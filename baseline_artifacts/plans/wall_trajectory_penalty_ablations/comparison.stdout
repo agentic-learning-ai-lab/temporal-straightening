@@ -1,0 +1,396 @@
+{
+  "status": "complete",
+  "conditions": {
+    "r0": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_dino_projector_full/on/seed_100/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_dino_projector_full/on/seed_200/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_dino_projector_full/on/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 10.342504279761554,
+          "final_eval/mean_div_visual_emb": 28.376722597266866,
+          "final_eval/mean_proprio_dist": 0.9706122040748596,
+          "final_eval/mean_state_dist": 1.6955520868301392,
+          "final_eval/mean_visual_dist": 0.4237964689731598,
+          "final_eval/success_rate": 1.0
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 10.01026623698504,
+          "final_eval/mean_div_visual_emb": 29.243042437689525,
+          "final_eval/mean_proprio_dist": 1.1966125130653382,
+          "final_eval/mean_state_dist": 2.083757734298706,
+          "final_eval/mean_visual_dist": 0.4906908988952637,
+          "final_eval/success_rate": 0.92
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 7.579266079048159,
+          "final_eval/mean_div_visual_emb": 32.18767645951893,
+          "final_eval/mean_proprio_dist": 1.3055310249328613,
+          "final_eval/mean_state_dist": 2.184468626976013,
+          "final_eval/mean_visual_dist": 0.49084377884864805,
+          "final_eval/success_rate": 0.88
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 9.310678865264917,
+          "population_std": 1.2317841278603845
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 29.935813831491775,
+          "population_std": 1.6311123991735457
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 1.1575852473576864,
+          "population_std": 0.13948715530516376
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 1.9879261493682863,
+          "population_std": 0.21078838568536015
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.46844371557235714,
+          "population_std": 0.03157043252514598
+        },
+        "final_eval/success_rate": {
+          "mean": 0.9333333333333332,
+          "population_std": 0.049888765156985884
+        }
+      }
+    },
+    "r1": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r1_speed_only/seed_100/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r1_speed_only/seed_200/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r1_speed_only/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 10.201186471138465,
+          "final_eval/mean_div_visual_emb": 26.199041633724416,
+          "final_eval/mean_proprio_dist": 4.1897132396698,
+          "final_eval/mean_state_dist": 7.146780109405517,
+          "final_eval/mean_visual_dist": 0.894547975063324,
+          "final_eval/success_rate": 0.34
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 11.248274274791068,
+          "final_eval/mean_div_visual_emb": 27.780332115133703,
+          "final_eval/mean_proprio_dist": 3.7375279903411864,
+          "final_eval/mean_state_dist": 6.001151037216187,
+          "final_eval/mean_visual_dist": 0.7709144473075866,
+          "final_eval/success_rate": 0.48
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 8.417627030729415,
+          "final_eval/mean_div_visual_emb": 24.741967192604573,
+          "final_eval/mean_proprio_dist": 2.7856935024261475,
+          "final_eval/mean_state_dist": 4.68690972328186,
+          "final_eval/mean_visual_dist": 0.6881353855133057,
+          "final_eval/success_rate": 0.62
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 9.955695925552982,
+          "population_std": 1.1685718237967095
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 26.240446980487565,
+          "population_std": 1.2407527695366483
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 3.5709782441457114,
+          "population_std": 0.5851620682117428
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 5.944946956634522,
+          "population_std": 1.0050239642706902
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.784532602628072,
+          "population_std": 0.08481599651376985
+        },
+        "final_eval/success_rate": {
+          "mean": 0.48,
+          "population_std": 0.11430952132988163
+        }
+      }
+    },
+    "r2": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_100/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_200/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r2_full_matched/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 9.930670394517822,
+          "final_eval/mean_div_visual_emb": 45.83190517656978,
+          "final_eval/mean_proprio_dist": 1.551632332801819,
+          "final_eval/mean_state_dist": 2.6209850788116453,
+          "final_eval/mean_visual_dist": 0.5562302768230438,
+          "final_eval/success_rate": 0.88
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 11.995178205006859,
+          "final_eval/mean_div_visual_emb": 46.658103226627695,
+          "final_eval/mean_proprio_dist": 1.4871700525283813,
+          "final_eval/mean_state_dist": 2.562849688529968,
+          "final_eval/mean_visual_dist": 0.5710784375667572,
+          "final_eval/success_rate": 0.88
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 10.50736312750048,
+          "final_eval/mean_div_visual_emb": 46.47883657764352,
+          "final_eval/mean_proprio_dist": 1.7191896915435791,
+          "final_eval/mean_state_dist": 2.849259042739868,
+          "final_eval/mean_visual_dist": 0.5854125499725342,
+          "final_eval/success_rate": 0.8
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 10.811070575675053,
+          "population_std": 0.8697611877023458
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 46.322948326947,
+          "population_std": 0.35484894862348887
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 1.5859973589579264,
+          "population_std": 0.09778886947302386
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.677697936693827,
+          "population_std": 0.12361186763847125
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.5709070881207784,
+          "population_std": 0.011914229224400686
+        },
+        "final_eval/success_rate": {
+          "mean": 0.8533333333333334,
+          "population_std": 0.03771236166328251
+        }
+      }
+    },
+    "r3": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r3_beta1/seed_100/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r3_beta1/seed_200/aggregate.json",
+        "/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/plans/wall_trajectory_penalty_ablations/r3_beta1/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 9.26585399501626,
+          "final_eval/mean_div_visual_emb": 41.433302839693916,
+          "final_eval/mean_proprio_dist": 1.4606112241744995,
+          "final_eval/mean_state_dist": 2.527778649330139,
+          "final_eval/mean_visual_dist": 0.5948670148849488,
+          "final_eval/success_rate": 0.88
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 11.250161599886919,
+          "final_eval/mean_div_visual_emb": 42.53257053514921,
+          "final_eval/mean_proprio_dist": 1.4704763412475585,
+          "final_eval/mean_state_dist": 2.532745862007141,
+          "final_eval/mean_visual_dist": 0.5788805246353149,
+          "final_eval/success_rate": 0.92
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 8.58553880174387,
+          "final_eval/mean_div_visual_emb": 42.0711780746675,
+          "final_eval/mean_proprio_dist": 1.6249618053436279,
+          "final_eval/mean_state_dist": 2.7333584785461427,
+          "final_eval/mean_visual_dist": 0.5841340780258178,
+          "final_eval/success_rate": 0.82
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 9.700518132215683,
+          "population_std": 1.1304138912278734
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 42.01235048317021,
+          "population_std": 0.4506978889891606
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 1.518683123588562,
+          "population_std": 0.07525821674037649
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.597960996627808,
+          "population_std": 0.0957619509785038
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.5859605391820272,
+          "population_std": 0.006653016252886884
+        },
+        "final_eval/success_rate": {
+          "mean": 0.8733333333333334,
+          "population_std": 0.04109609335312655
+        }
+      }
+    }
+  },
+  "paired_deltas": {
+    "r1": {
+      "treatment_minus_baseline": "r1-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 0.6450170602880654,
+          "population_std": 0.5794660432450709,
+          "standard_error": 0.33455487605378903
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": -3.6953668510042106,
+          "population_std": 2.667907661045673,
+          "standard_error": 1.5403172062777841
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 2.413392996788025,
+          "population_std": 0.7156224863643728,
+          "standard_error": 0.4131648351406199
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 3.9570208072662356,
+          "population_std": 1.2041632886116984,
+          "standard_error": 0.6952239988282292
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.31608888705571486,
+          "population_std": 0.11448383011137693,
+          "standard_error": 0.06609727013266285
+        },
+        "final_eval/success_rate": {
+          "mean": -0.4533333333333333,
+          "population_std": 0.16357125528513725,
+          "standard_error": 0.09443790827055899
+        }
+      }
+    },
+    "r2": {
+      "treatment_minus_baseline": "r2-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 1.5003917104101359,
+          "population_std": 1.4059053003888078,
+          "standard_error": 0.8116998036345999
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 16.387134495455225,
+          "population_std": 1.4821682051048113,
+          "standard_error": 0.8557302122015673
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.4284121116002401,
+          "population_std": 0.11903886492729666,
+          "standard_error": 0.06872712070980223
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 0.689771787325541,
+          "population_std": 0.18307217554618266,
+          "standard_error": 0.10569676983271899
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.10246337254842125,
+          "population_std": 0.021968873170716975,
+          "standard_error": 0.012683734838906193
+        },
+        "final_eval/success_rate": {
+          "mean": -0.08,
+          "population_std": 0.032659863237109024,
+          "standard_error": 0.01885618083164126
+        }
+      }
+    },
+    "r3": {
+      "treatment_minus_baseline": "r3-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 0.38983926695076515,
+          "population_std": 1.0413416309196224,
+          "standard_error": 0.601218870929808
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 12.076536651678433,
+          "population_std": 1.553623330449768,
+          "standard_error": 0.8969848480544564
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.3610978762308756,
+          "population_std": 0.09302585823972659,
+          "standard_error": 0.05370850429630211
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 0.6100348472595214,
+          "population_std": 0.1623205826931466,
+          "standard_error": 0.0937158321129051
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.11751682360966999,
+          "population_std": 0.037925410098309076,
+          "standard_error": 0.021896245729385696
+        },
+        "final_eval/success_rate": {
+          "mean": -0.06000000000000002,
+          "population_std": 0.04898979485566356,
+          "standard_error": 0.0282842712474619
+        }
+      }
+    }
+  }
+}

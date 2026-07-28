@@ -1,0 +1,7 @@
+- ckpt_base_path=/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/checkpoints/wall_speed_ablations/r3_beta1
+- model_name=r3_beta1
+- model_epoch=20
+- n_evals=10
+- +wandb_logging=false
+- seed=100
+- +eval_start_index=10

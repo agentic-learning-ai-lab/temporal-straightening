@@ -1,0 +1,37 @@
+{
+  "run_id": "medium-full-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-full-20260702-01",
+  "dataset": "/mnt/ts/datasets/medium_random_50x100/point_maze_medium",
+  "epochs": 20,
+  "n_episodes": 50,
+  "episode_length": 100,
+  "policy": "random",
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "authors_dino_patch_straightened",
+      "encoder": "dino",
+      "straighten": "cos1e-1",
+      "error": "CalledProcessError(1, ['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/authors_dino_patch_straightened/test/medium_cos1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=authors_dino_patch_straightened', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/authors_dino_patch_straightened', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/authors_dino_patch_straightened', 'hydra.job.chdir=True'])",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 428, in run_medium\n    result = _train_and_plan_variant(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 280, in _train_and_plan_variant\n    _run_command(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 143, in _run_command\n    raise subprocess.CalledProcessError(code, args)\nsubprocess.CalledProcessError: Command '['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/authors_dino_patch_straightened/test/medium_cos1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=authors_dino_patch_straightened', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/authors_dino_patch_straightened', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/authors_dino_patch_straightened', 'hydra.job.chdir=True']' returned non-zero exit status 1.\n",
+      "elapsed_minutes": 18.59
+    },
+    {
+      "variant": "dino_patch_no_straightening",
+      "encoder": "dino",
+      "straighten": "False",
+      "error": "CalledProcessError(1, ['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_patch_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=dino_patch_no_straightening', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_patch_no_straightening', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_patch_no_straightening', 'hydra.job.chdir=True'])",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 428, in run_medium\n    result = _train_and_plan_variant(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 280, in _train_and_plan_variant\n    _run_command(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 143, in _run_command\n    raise subprocess.CalledProcessError(code, args)\nsubprocess.CalledProcessError: Command '['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_patch_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=dino_patch_no_straightening', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_patch_no_straightening', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_patch_no_straightening', 'hydra.job.chdir=True']' returned non-zero exit status 1.\n",
+      "elapsed_minutes": 17.47
+    },
+    {
+      "variant": "dino_cls_no_straightening",
+      "encoder": "dino_cls",
+      "straighten": "False",
+      "error": "CalledProcessError(1, ['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=dino_cls_no_straightening', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_cls_no_straightening', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_cls_no_straightening', 'hydra.job.chdir=True'])",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 428, in run_medium\n    result = _train_and_plan_variant(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 280, in _train_and_plan_variant\n    _run_command(\n  File \"/workspace/temporal-straightening/modal_medium_runner.py\", line 143, in _run_command\n    raise subprocess.CalledProcessError(code, args)\nsubprocess.CalledProcessError: Command '['python', 'plan.py', '--config-name', 'plan_gd.yaml', 'ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05', 'model_name=dino_cls_no_straightening', 'model_epoch=20', 'n_evals=50', 'goal_H=25', 'goal_source=dset', 'objective.alpha=0', 'objective.mode=last', 'planner._target_=planning.gd.GDPlanner', 'planner.name=gd', 'planner.horizon=25', 'planner.lr=1', 'planner.sample_type=randn', 'planner.action_noise=0.003', 'planner.opt_steps=1000', 'planner.eval_every=-1', 'decode_for_viz=false', 'wandb_logging=false', 'hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_cls_no_straightening', 'hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans/dino_cls_no_straightening', 'hydra.job.chdir=True']' returned non-zero exit status 1.\n",
+      "elapsed_minutes": 13.91
+    }
+  ]
+}

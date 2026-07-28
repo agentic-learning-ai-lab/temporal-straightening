@@ -1,0 +1,2 @@
+R0 direction-only plan logs imported from pusht_reproduction/straightening/.
+Same config: dino_channel + aggcos1e-1, 2 epochs, objective.alpha=1 at planning.

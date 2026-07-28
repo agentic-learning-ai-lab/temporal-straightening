@@ -1,0 +1,9 @@
+- env=point_maze_medium
+- ckpt_base_path=/mnt/ts/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy
+- encoder=dino
+- training.straighten=aggspeed1e-1
+- training.epochs=20
+- training.batch_size=32
+- env.num_workers=0
+- training.reconstruct_every_x_batch=999999
+- plan_settings.plan_cfg_path=null

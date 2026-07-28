@@ -1,0 +1,11 @@
+===== UMAZE / DINOv2 (CLS) / NO STRAIGHTENING (open-loop GD) =====
+config: DINOv2 CLS token, dim 1x384, no projector, straightening OFF
+n_evals=50/seed, seeds=100 200 300 -> 150 evals total
+hardware: 1x A100-SXM4-40GB (of 8), un-chunked
+per-seed success (%): 28.00, 8.00, 14.00
+OURS  = 16.67 +/- 8.38 %  (mean +/- pop-std, n=3)
+PAPER = 25.33 +/- 0.94 %  (Wang et al. ICML 2026, arXiv:2603.12231v2,
+        Table 1 row 1: DINOv2 (CLS), 1x384, Lcurv OFF, PointMaze-UMaze, Open-loop)
+        Unshaded row => a DINO-WM baseline (Zhou et al. 2025) as reported by Wang et al.
+NOTE: Table 1 has no CLS + straightening row. This validates the
+      pipeline across encoders; it does NOT test straightening.

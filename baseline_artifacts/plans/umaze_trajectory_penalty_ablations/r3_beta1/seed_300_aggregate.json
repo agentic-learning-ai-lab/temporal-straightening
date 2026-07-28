@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "seed": 300,
+  "n_evals": 50,
+  "eval_seeds": [
+    1,
+    301,
+    601,
+    901,
+    1201,
+    1501,
+    1801,
+    2101,
+    2401,
+    2701,
+    3001,
+    3301,
+    3601,
+    3901,
+    4201,
+    4501,
+    4801,
+    5101,
+    5401,
+    5701,
+    6001,
+    6301,
+    6601,
+    6901,
+    7201,
+    7501,
+    7801,
+    8101,
+    8401,
+    8701,
+    9001,
+    9301,
+    9601,
+    9901,
+    10201,
+    10501,
+    10801,
+    11101,
+    11401,
+    11701,
+    12001,
+    12301,
+    12601,
+    12901,
+    13201,
+    13501,
+    13801,
+    14101,
+    14401,
+    14701
+  ],
+  "chunks": [
+    {
+      "eval_start_index": 0,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/chunk_0/logs.json",
+      "first_seed": 1,
+      "last_seed": 2701
+    },
+    {
+      "eval_start_index": 10,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/chunk_10/logs.json",
+      "first_seed": 3001,
+      "last_seed": 5701
+    },
+    {
+      "eval_start_index": 20,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/chunk_20/logs.json",
+      "first_seed": 6001,
+      "last_seed": 8701
+    },
+    {
+      "eval_start_index": 30,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/chunk_30/logs.json",
+      "first_seed": 9001,
+      "last_seed": 11701
+    },
+    {
+      "eval_start_index": 40,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/chunk_40/logs.json",
+      "first_seed": 12001,
+      "last_seed": 14701
+    }
+  ],
+  "metrics": {
+    "final_eval": {
+      "final_eval/mean_div_proprio_emb": 5.113071874011302,
+      "final_eval/mean_div_visual_emb": 16.744427901235845,
+      "final_eval/mean_proprio_dist": 0.8485305786132813,
+      "final_eval/mean_state_dist": 2.555432891845703,
+      "final_eval/mean_visual_dist": 0.42313536352040815,
+      "final_eval/success_rate": 0.9
+    },
+    "mpc": {
+      "mpc/mean_div_proprio_emb": 5.113071874011302,
+      "mpc/mean_div_visual_emb": 16.744427901235845,
+      "mpc/mean_proprio_dist": 0.8485305786132813,
+      "mpc/mean_state_dist": 2.555432891845703,
+      "mpc/mean_visual_dist": 0.42313536352040815,
+      "mpc/success_rate": 0.9
+    }
+  }
+}

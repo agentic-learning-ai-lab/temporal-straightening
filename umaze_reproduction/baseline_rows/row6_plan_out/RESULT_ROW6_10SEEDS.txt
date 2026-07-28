@@ -1,0 +1,23 @@
+===== UMAZE / DINOv2 (patch) 14x14x384 / NO STRAIGHTENING (open-loop GD) =====
+config: encoder=dino, frozen patch tokens, no projector, straightening OFF
+n_evals=50/seed as 5x10-eval chunks, seeds=100 200 300 400 500 600 700 800 900 1000
+hardware: 1x A100-SXM4-40GB (of 8), CHUNKED (40GB < the >=48GB a 588-token batch needs)
+aggregation: equal-weighted mean across chunks per seed (as wall_baseline.json),
+             then across 10 data-sampling seeds
+
+per-seed success (%): 46, 46, 34, 48, 38, 32, 32, 40, 38, 38
+OURS = 39.20 +/- 5.53 %   (mean +/- population std, n=10 seeds, 500 evals total)
+
+--- THE PAPER GIVES TWO NUMBERS FOR THIS CONFIG; WE ADJUDICATE ---
+  Table 1 (open-loop) = 35.33 +/- 4.11 %   ->  |ours - T1| = 3.87  = 2.2 SE  (MATCH)
+  Table 5 (GD)        = 63.33 +/- 8.22 %   ->  |ours - T5| = 24.13 = 13.8 SE (REFUTED)
+
+VERDICT: Table 1 (35.33) is reproducible; Table 5 (63.33) is not. With 10 seeds
+(SE 1.75) the 63.33 value is ~14 SE away -- not attributable to seed variance.
+Supporting evidence that the error is specific to THIS cell: Table 5's other four
+UMaze rows match Table 1 exactly (44.00, 94.00, 14.67, 64.67); only this
+DINOv2(patch) 14x14x384 Lcurv-off row disagrees between the two tables.
+
+NOTE: the 3-seed run of these same seeds (100/200/300) gave 42.00 +/- 5.66; the
+10-seed mean of 39.20 is the more stable estimate. Either way the verdict holds.
+Supersedes the 7-seed RESULT_ROW6.txt written by the sweep run.

@@ -1,0 +1,20 @@
+===== UMAZE / DINOv2 (patch) 14x14x384 / NO STRAIGHTENING (open-loop GD) =====
+config: encoder=dino, frozen patch tokens, no projector, straightening OFF
+Table 1 row 6 baseline reproduction. 50 evals/seed, chunked 5x10 (40GB box).
+The paper gives TWO values for this config; we adjudicate.
+
+--- 3 SEEDS (paper protocol: 100/200/300) ---
+per-seed (%): 46, 46, 34
+OURS  = 42.00 +/- 5.66 %   (n=3)
+  Table 1 (open-loop) = 35.33 +/- 4.11    |diff| 6.67
+  Table 5 (GD)        = 63.33 +/- 8.22    |diff| 21.33
+
+--- 10 SEEDS (100..1000, our extended sweep) ---
+per-seed (%): 46, 46, 34, 48, 38, 32, 32, 40, 38, 38
+OURS  = 39.20 +/- 5.53 %   (n=10, SE 1.75)
+  Table 1 (open-loop) = 35.33 +/- 4.11    |diff| 3.87 = 2.2 SE  (MATCH)
+  Table 5 (GD)        = 63.33 +/- 8.22    |diff| 24.13 = 13.8 SE  (REFUTED)
+
+VERDICT: Table 1 (35.33) reproduces; Table 5 (63.33) does not (~14 SE off, n=10).
+Table 5's other four UMaze rows match Table 1 exactly (44.00, 94.00, 14.67, 64.67),
+so the discrepancy is isolated to THIS cell -- a specific reporting error.

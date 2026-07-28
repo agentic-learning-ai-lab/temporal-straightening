@@ -1,0 +1,261 @@
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/Cython/Distutils/old_build_ext.py:15: DeprecationWarning: dep_util is Deprecated. Use functions from setuptools instead.
+  from distutils.dep_util import newer, newer_group
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+Warning: Mujoco-based envs failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'mjrl'
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+pybullet build time: Jan 29 2025 23:16:28
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/dlami/nvme/home/jupyter-deuk-c4e4/temporal-straightening/custom_resolvers.py:4: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=None)
+[2026-07-25 16:21:56,865][__main__][INFO] - Planning result saved dir: /opt/dlami/nvme/home/jupyter-deuk-c4e4/pusht-reproduction/straightening_reproduction/plan/mpc_seed_200/chunk_40
+/home/jupyter-deuk-c4e4/.conda/envs/ts310/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+Using cache found in /home/jupyter-deuk-c4e4/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385
+Loaded 18685 rollouts
+Loaded 21 rollouts
+[2026-07-25 16:21:59,331][dinov2][INFO] - using MLP layer as FFN
+[2026-07-25 16:21:59,763][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+Resuming from epoch 2: /home/jupyter-deuk-c4e4/pusht-reproduction/straightening_reproduction/test/pusht_aggmlpcos1e-1_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05/checkpoints/model_2.pth
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-25 16:22:00,104][models.visual_world_model][INFO] - Trajectory penalty disabled
+[2026-07-25 16:22:00,105][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-25 16:22:00,105][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-25 16:22:00,105][models.visual_world_model][INFO] - Model emb_dim: 28
+[timing] setup_model_s=3.241
+eval_seed:  [8001, 8201, 8401, 8601, 8801, 9001, 9201, 9401, 9601, 9801]
+Dumped plan targets to /opt/dlami/nvme/home/jupyter-deuk-c4e4/pusht-reproduction/straightening_reproduction/plan/mpc_seed_200/chunk_40/plan_targets.pkl
+[timing] setup_workspace_s=6.642
+
+MPC iter 0 Eval ------- 
+Success rate:  0.0
+{'success': array([False, False, False, False, False, False, False, False, False,
+       False]), 'state_dist': array([149.79288, 133.20612, 253.60239, 262.2019 , 227.79065, 277.68396,
+       111.758  , 195.75175, 171.42583, 149.70389], dtype=float32)}
+self.is_success:  [False False False False False False False False False False]
+
+MPC iter 1 Eval ------- 
+Success rate:  0.0
+{'success': array([False, False, False, False, False, False, False, False, False,
+       False]), 'state_dist': array([116.181305, 114.16055 , 250.67549 , 264.24847 , 206.93285 ,
+       178.76807 , 118.447556, 262.2838  , 220.76547 , 166.82553 ],
+      dtype=float32)}
+self.is_success:  [False False False False False False False False False False]
+
+MPC iter 2 Eval ------- 
+Success rate:  0.0
+{'success': array([False, False, False, False, False, False, False, False, False,
+       False]), 'state_dist': array([102.9648  ,  98.101974, 228.46883 , 280.27338 , 176.13847 ,
+       148.50047 , 164.304   , 200.93433 , 294.449   , 186.52576 ],
+      dtype=float32)}
+self.is_success:  [False False False False False False False False False False]
+
+MPC iter 3 Eval ------- 
+Success rate:  0.1
+{'success': array([False, False, False, False, False, False,  True, False, False,
+       False]), 'state_dist': array([ 91.39629 ,  98.1965  , 271.25247 , 232.38522 , 154.69756 ,
+        90.681145, 227.5788  , 159.6484  , 307.63904 , 206.78284 ],
+      dtype=float32)}
+self.is_success:  [False False False False False False  True False False False]
+
+MPC iter 4 Eval ------- 
+Success rate:  0.2
+{'success': array([False, False, False,  True, False, False,  True, False, False,
+       False]), 'state_dist': array([ 72.34981 ,  60.56959 , 255.5096  ,  84.835915,  93.125916,
+        75.52759 , 227.5788  , 121.94072 , 369.5382  , 642.08594 ],
+      dtype=float32)}
+self.is_success:  [False False False  True False False  True False False False]
+
+MPC iter 5 Eval ------- 
+Success rate:  0.4
+{'success': array([False,  True,  True,  True, False, False,  True, False, False,
+       False]), 'state_dist': array([ 30.155119,  25.118319,  69.93072 ,  84.835915, 104.139084,
+        96.58645 , 227.5788  , 122.58021 , 386.28293 , 111.000656],
+      dtype=float32)}
+self.is_success:  [False  True  True  True False False  True False False False]
+
+MPC iter 6 Eval ------- 
+Success rate:  0.5
+{'success': array([False,  True,  True,  True, False,  True,  True, False, False,
+       False]), 'state_dist': array([ 45.80545 ,  25.118319,  69.93072 ,  84.835915,  55.33038 ,
+        58.139835, 227.5788  , 169.1106  , 248.0852  , 130.70872 ],
+      dtype=float32)}
+self.is_success:  [False  True  True  True False  True  True False False False]
+
+MPC iter 7 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 160.21207 , 240.77475 , 128.12112 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 8 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 197.2964  , 191.65132 , 125.109184],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 9 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 211.5426  , 165.51773 , 126.61627 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 10 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 155.36836 , 147.88013 , 127.153755],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 11 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 193.24103 , 149.1754  , 126.67376 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 12 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 204.34045 , 146.70847 , 127.269905],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 13 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 163.8475  , 146.30878 , 126.992065],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 14 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 182.26118 , 146.12782 , 127.02841 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 15 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 209.1854  , 145.7047  , 127.03652 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 16 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 161.90726 , 145.71324 , 127.033844],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 17 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 192.3256  , 145.67845 , 127.03288 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 18 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 203.19351 , 145.69186 , 127.03416 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+
+MPC iter 19 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 151.52986 , 145.68605 , 127.02973 ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True  True  True False False False]
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True,  True,  True, False, False,
+       False]), 'state_dist': array([ 71.681175,  25.118319,  69.93072 ,  84.835915,  68.531006,
+        58.139835, 227.5788  , 151.52986 , 145.68605 , 127.02973 ],
+      dtype=float32)}
+[timing] perform_planning_s=449.349
+[timing] total_planning_main_s=459.232

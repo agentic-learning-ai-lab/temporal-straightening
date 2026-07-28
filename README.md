@@ -106,6 +106,15 @@ Straightening options:
 - `training.straighten=False` disables straightening.
 - `training.straighten=cos1e-1` enables patch-wise curvature regularization.
 - `training.straighten=aggcos1e-1` enables pooled-feature curvature regularization.
+- `training.straighten=r0_1e-1` through `r4_1e-1` select the R0--R4
+  trajectory-penalty family on patch features.
+- Prefix an R token with `agg` for pooled features, for example
+  `training.straighten=aggr1_1e-1`.
+- R3 tokens include beta before the scale, for example
+  `training.straighten=aggr3b1_1e-1`.
+
+The R0--R4 formulas, scale-invariance properties, and matched Wall settings are
+documented in [The Straightening Loss](docs/The%20Straightening%20Loss.md).
 
 To change pooling head (agg_type can be `mlp|flatten|mean`), check 
 

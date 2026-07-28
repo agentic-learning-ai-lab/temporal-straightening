@@ -1,0 +1,12 @@
+{
+  "local_run_root": "modal_evidence/medium-full-20260702-01/full_artifacts/runs/medium-full-20260702-01",
+  "local_dataset_root": "modal_evidence/medium-full-20260702-01/full_artifacts/datasets/medium_random_50x100/point_maze_medium",
+  "total_run_files": 2632,
+  "image_or_media_files": 2520,
+  "checkpoint_pth_files": 63,
+  "train_valid_png_files": 120,
+  "rollout_plot_png_files": 2400,
+  "dataset_files": 53,
+  "dataset_episode_obs_files": 50,
+  "representative_contact_sheet": "modal_evidence/medium-full-20260702-01/epoch20_validation_contact_sheet.png"
+}

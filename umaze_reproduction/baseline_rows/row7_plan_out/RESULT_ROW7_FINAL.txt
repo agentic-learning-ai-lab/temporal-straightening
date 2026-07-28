@@ -1,0 +1,19 @@
+===== UMAZE / DINOv2 (patch) + proj 14x14x8 / NO STRAIGHTENING (open-loop GD) =====
+config: encoder=dino_channel, projector channel dim 8, straightening OFF, encoder_lr=1e-6
+Table 1 row 7 baseline reproduction. 50 evals/seed, chunked 5x10 (40GB box).
+
+--- 3 SEEDS (paper protocol: 100/200/300) ---
+per-seed (%): 48, 50, 66
+OURS  = 54.67 +/- 8.06 %   (n=3)
+PAPER = 44.00 +/- 7.12 %
+
+--- 10 SEEDS (100..1000, our extended sweep) ---
+per-seed (%): 48, 50, 66, 62, 58, 52, 46, 54, 50, 42
+OURS  = 52.80 +/- 7.00 %   (n=10, SE 2.21)
+PAPER = 44.00 +/- 7.12 %
+  |ours - paper| = 8.80 = 4.0 SE
+
+READING: baseline reproduces ABOVE the paper. The 3-seed mean (54.7) is
+inflated by seed 300; 10 seeds settle to 52.8, still ~9 pts high.
+Paper's headline is 44->94 with straightening; our faithful run is 52.8->96.0,
+a +43 gain (vs the advertised +50) because the baseline runs hotter.

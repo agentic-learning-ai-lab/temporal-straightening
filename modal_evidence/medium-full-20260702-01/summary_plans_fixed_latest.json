@@ -1,0 +1,31 @@
+{
+  "run_id": "medium-full-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-full-20260702-01",
+  "epochs": 20,
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "dino_cls_no_straightening",
+      "encoder": "dino_cls",
+      "straighten": "False",
+      "model_dir": "/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "plan_dir": "/mnt/ts/runs/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening",
+      "plan": {
+        "final_eval/success_rate": 0.22,
+        "final_eval/mean_state_dist": 3.5456480979919434,
+        "final_eval/mean_visual_dist": 0.29708466198979594,
+        "final_eval/mean_proprio_dist": 1.4222931861877441,
+        "final_eval/mean_div_visual_emb": 36.9257926940918,
+        "final_eval/mean_div_proprio_emb": 17.049652099609375
+      },
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.0785,
+        "val_loss": 0.0691
+      },
+      "elapsed_minutes": 1.48
+    }
+  ]
+}

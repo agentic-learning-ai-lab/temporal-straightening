@@ -1,0 +1,390 @@
+
+$ python plan.py --config-name plan_gd.yaml ckpt_base_path=/mnt/ts/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05 model_name=dino_cls_speed_constancy model_epoch=20 n_evals=50 goal_H=25 goal_source=dset objective.alpha=0 objective.mode=last planner.max_iter=1 planner.n_taken_actions=25 planner.sub_planner.horizon=25 planner.sub_planner.lr=1 planner.sub_planner.sample_type=randn planner.sub_planner.action_noise=0.003 planner.sub_planner.opt_steps=1000 planner.sub_planner.eval_every=-1 decode_for_viz=false +wandb_logging=false hydra.run.dir=/mnt/ts/runs/medium-ablation-cls-speed-20260702-01/plans/dino_cls_speed_constancy hydra.sweep.dir=/mnt/ts/runs/medium-ablation-cls-speed-20260702-01/plans/dino_cls_speed_constancy hydra.job.chdir=True
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/opt/conda/lib/python3.10/site-packages/wandb/util.py:118: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+  sentry_hub = sentry_sdk.Hub(sentry_client)
+/opt/conda/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import parse_version
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Compiling /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx because it depends on /opt/conda/lib/python3.10/site-packages/mujoco_py/pxd/mujoco.pxd.
+[1/1] Cythonizing /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+INFO:absl:MUJOCO_GL=osmesa, attempting to import specified OpenGL backend.
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO:absl:MuJoCo library version is: 3.2.7
+pybullet build time: Jan 29 2025 23:16:28
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/workspace/temporal-straightening/custom_resolvers.py:4: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=None)
+[2026-07-02 20:15:07,517][__main__][INFO] - Planning result saved dir: /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-cls-speed-20260702-01/plans/dino_cls_speed_constancy
+Loaded 50 rollouts
+[[42, 17, 30, 34, 20, 25, 0, 8, 36, 18, 28, 39, 3, 2, 41, 1, 37, 6, 14, 12, 11, 32, 43, 16, 5, 38, 31, 44, 26, 45, 15, 47, 4, 10, 21, 19, 33, 27, 13, 48, 46, 23, 22, 35, 7], [24, 49, 29, 40, 9]]
+Using cache found in /mnt/ts/torch_home/hub/facebookresearch_dinov2_main
+[2026-07-02 20:15:08,425][dinov2][INFO] - using MLP layer as FFN
+[2026-07-02 20:15:08,779][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+Resuming from epoch 20: /mnt/ts/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_20.pth
+[2026-07-02 20:15:09,394][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-02 20:15:09,395][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-02 20:15:09,395][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 20:15:09,397][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 20:15:09,397][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-02 20:15:09,398][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-02 20:15:09,398][models.visual_world_model][INFO] - emb_dim: 404
+[2026-07-02 20:15:09,399][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-02 20:15:09,399][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-02 20:15:09,399][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-02 20:15:09,400][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-02 20:15:09,400][models.visual_world_model][INFO] - Model emb_dim: 404
+[timing] setup_model_s=1.885
+eval_seed:  [1, 101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901, 2001, 2101, 2201, 2301, 2401, 2501, 2601, 2701, 2801, 2901, 3001, 3101, 3201, 3301, 3401, 3501, 3601, 3701, 3801, 3901, 4001, 4101, 4201, 4301, 4401, 4501, 4601, 4701, 4801, 4901]
+Dumped plan targets to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-ablation-cls-speed-20260702-01/plans/dino_cls_speed_constancy/plan_targets.pkl
+[timing] setup_workspace_s=8.901
+
+  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 1/1000 [00:00<05:20,  3.11it/s]
+  0%|          | 5/1000 [00:00<01:13, 13.62it/s]
+  1%|          | 9/1000 [00:00<00:49, 20.21it/s]
+  1%|▏         | 13/1000 [00:00<00:40, 24.50it/s]
+  2%|▏         | 17/1000 [00:00<00:35, 27.53it/s]
+  2%|▏         | 21/1000 [00:00<00:33, 29.62it/s]
+  2%|▎         | 25/1000 [00:01<00:30, 31.60it/s]
+  3%|▎         | 29/1000 [00:01<00:29, 32.89it/s]
+  3%|▎         | 33/1000 [00:01<00:28, 33.93it/s]
+  4%|▎         | 37/1000 [00:01<00:28, 33.82it/s]
+  4%|▍         | 41/1000 [00:01<00:28, 33.89it/s]
+  4%|▍         | 45/1000 [00:01<00:27, 34.55it/s]
+  5%|▍         | 49/1000 [00:01<00:27, 35.11it/s]
+  5%|▌         | 53/1000 [00:01<00:27, 34.84it/s]
+  6%|▌         | 57/1000 [00:01<00:27, 34.61it/s]
+  6%|▌         | 61/1000 [00:02<00:27, 34.56it/s]
+  6%|▋         | 65/1000 [00:02<00:27, 34.16it/s]
+  7%|▋         | 69/1000 [00:02<00:27, 34.45it/s]
+  7%|▋         | 73/1000 [00:02<00:26, 34.79it/s]
+  8%|▊         | 77/1000 [00:02<00:26, 35.20it/s]
+  8%|▊         | 81/1000 [00:02<00:25, 35.67it/s]
+  8%|▊         | 85/1000 [00:02<00:25, 35.80it/s]
+  9%|▉         | 89/1000 [00:02<00:25, 36.05it/s]
+  9%|▉         | 93/1000 [00:02<00:25, 35.89it/s]
+ 10%|▉         | 97/1000 [00:03<00:25, 34.99it/s]
+ 10%|█         | 101/1000 [00:03<00:25, 34.73it/s]
+ 10%|█         | 105/1000 [00:03<00:25, 35.41it/s]
+ 11%|█         | 109/1000 [00:03<00:25, 35.42it/s]
+ 11%|█▏        | 113/1000 [00:03<00:25, 34.97it/s]
+ 12%|█▏        | 117/1000 [00:03<00:25, 34.60it/s]
+ 12%|█▏        | 121/1000 [00:03<00:25, 34.55it/s]
+ 12%|█▎        | 125/1000 [00:03<00:25, 34.73it/s]
+ 13%|█▎        | 129/1000 [00:03<00:24, 35.07it/s]
+ 13%|█▎        | 133/1000 [00:04<00:24, 35.31it/s]
+ 14%|█▎        | 137/1000 [00:04<00:24, 35.52it/s]
+ 14%|█▍        | 141/1000 [00:04<00:24, 35.43it/s]
+ 14%|█▍        | 145/1000 [00:04<00:24, 35.12it/s]
+ 15%|█▍        | 149/1000 [00:04<00:24, 35.07it/s]
+ 15%|█▌        | 153/1000 [00:04<00:23, 35.40it/s]
+ 16%|█▌        | 157/1000 [00:04<00:23, 35.35it/s]
+ 16%|█▌        | 161/1000 [00:04<00:23, 35.42it/s]
+ 16%|█▋        | 165/1000 [00:04<00:23, 35.60it/s]
+ 17%|█▋        | 169/1000 [00:05<00:23, 35.79it/s]
+ 17%|█▋        | 173/1000 [00:05<00:23, 35.51it/s]
+ 18%|█▊        | 177/1000 [00:05<00:23, 35.64it/s]
+ 18%|█▊        | 181/1000 [00:05<00:22, 36.13it/s]
+ 18%|█▊        | 185/1000 [00:05<00:22, 36.33it/s]
+ 19%|█▉        | 189/1000 [00:05<00:22, 35.30it/s]
+ 19%|█▉        | 193/1000 [00:05<00:23, 34.97it/s]
+ 20%|█▉        | 197/1000 [00:05<00:22, 35.20it/s]
+ 20%|██        | 201/1000 [00:06<00:22, 35.04it/s]
+ 20%|██        | 205/1000 [00:06<00:22, 35.10it/s]
+ 21%|██        | 209/1000 [00:06<00:22, 35.54it/s]
+ 21%|██▏       | 213/1000 [00:06<00:21, 35.89it/s]
+ 22%|██▏       | 217/1000 [00:06<00:21, 36.05it/s]
+ 22%|██▏       | 221/1000 [00:06<00:21, 36.24it/s]
+ 22%|██▎       | 225/1000 [00:06<00:21, 36.19it/s]
+ 23%|██▎       | 229/1000 [00:06<00:21, 35.95it/s]
+ 23%|██▎       | 233/1000 [00:06<00:21, 35.80it/s]
+ 24%|██▎       | 237/1000 [00:07<00:21, 36.07it/s]
+ 24%|██▍       | 241/1000 [00:07<00:21, 35.46it/s]
+ 24%|██▍       | 245/1000 [00:07<00:21, 35.69it/s]
+ 25%|██▍       | 249/1000 [00:07<00:20, 36.21it/s]
+ 25%|██▌       | 253/1000 [00:07<00:20, 36.04it/s]
+ 26%|██▌       | 257/1000 [00:07<00:21, 35.19it/s]
+ 26%|██▌       | 261/1000 [00:07<00:21, 35.18it/s]
+ 26%|██▋       | 265/1000 [00:07<00:20, 35.22it/s]
+ 27%|██▋       | 269/1000 [00:07<00:20, 35.33it/s]
+ 27%|██▋       | 273/1000 [00:08<00:20, 35.99it/s]
+ 28%|██▊       | 277/1000 [00:08<00:19, 36.61it/s]
+ 28%|██▊       | 281/1000 [00:08<00:19, 37.11it/s]
+ 28%|██▊       | 285/1000 [00:08<00:19, 37.40it/s]
+ 29%|██▉       | 289/1000 [00:08<00:19, 36.24it/s]
+ 29%|██▉       | 293/1000 [00:08<00:19, 35.64it/s]
+ 30%|██▉       | 297/1000 [00:08<00:19, 35.82it/s]
+ 30%|███       | 301/1000 [00:08<00:19, 35.90it/s]
+ 30%|███       | 305/1000 [00:08<00:19, 36.13it/s]
+ 31%|███       | 309/1000 [00:09<00:19, 35.76it/s]
+ 31%|███▏      | 313/1000 [00:09<00:19, 35.25it/s]
+ 32%|███▏      | 317/1000 [00:09<00:19, 34.91it/s]
+ 32%|███▏      | 321/1000 [00:09<00:19, 34.96it/s]
+ 32%|███▎      | 325/1000 [00:09<00:19, 34.63it/s]
+ 33%|███▎      | 329/1000 [00:09<00:19, 34.83it/s]
+ 33%|███▎      | 333/1000 [00:09<00:19, 34.85it/s]
+ 34%|███▎      | 337/1000 [00:09<00:18, 34.98it/s]
+ 34%|███▍      | 341/1000 [00:09<00:18, 34.72it/s]
+ 34%|███▍      | 345/1000 [00:10<00:18, 35.08it/s]
+ 35%|███▍      | 349/1000 [00:10<00:18, 35.50it/s]
+ 35%|███▌      | 353/1000 [00:10<00:18, 35.93it/s]
+ 36%|███▌      | 357/1000 [00:10<00:18, 35.38it/s]
+ 36%|███▌      | 361/1000 [00:10<00:18, 35.42it/s]
+ 36%|███▋      | 365/1000 [00:10<00:17, 35.75it/s]
+ 37%|███▋      | 369/1000 [00:10<00:17, 35.73it/s]
+ 37%|███▋      | 373/1000 [00:10<00:17, 35.93it/s]
+ 38%|███▊      | 377/1000 [00:10<00:17, 36.16it/s]
+ 38%|███▊      | 381/1000 [00:11<00:17, 36.29it/s]
+ 38%|███▊      | 385/1000 [00:11<00:16, 36.58it/s]
+ 39%|███▉      | 389/1000 [00:11<00:16, 36.56it/s]
+ 39%|███▉      | 393/1000 [00:11<00:16, 36.48it/s]
+ 40%|███▉      | 397/1000 [00:11<00:16, 35.48it/s]
+ 40%|████      | 401/1000 [00:11<00:17, 35.16it/s]
+ 40%|████      | 405/1000 [00:11<00:17, 34.94it/s]
+ 41%|████      | 409/1000 [00:11<00:16, 34.89it/s]
+ 41%|████▏     | 413/1000 [00:11<00:16, 34.88it/s]
+ 42%|████▏     | 417/1000 [00:12<00:16, 35.27it/s]
+ 42%|████▏     | 421/1000 [00:12<00:16, 35.27it/s]
+ 42%|████▎     | 425/1000 [00:12<00:16, 35.73it/s]
+ 43%|████▎     | 429/1000 [00:12<00:16, 35.58it/s]
+ 43%|████▎     | 433/1000 [00:12<00:15, 35.82it/s]
+ 44%|████▎     | 437/1000 [00:12<00:15, 35.99it/s]
+ 44%|████▍     | 441/1000 [00:12<00:15, 35.87it/s]
+ 44%|████▍     | 445/1000 [00:12<00:15, 35.64it/s]
+ 45%|████▍     | 449/1000 [00:12<00:15, 35.51it/s]
+ 45%|████▌     | 453/1000 [00:13<00:15, 35.54it/s]
+ 46%|████▌     | 457/1000 [00:13<00:15, 35.72it/s]
+ 46%|████▌     | 461/1000 [00:13<00:15, 35.46it/s]
+ 46%|████▋     | 465/1000 [00:13<00:14, 35.73it/s]
+ 47%|████▋     | 469/1000 [00:13<00:14, 35.64it/s]
+ 47%|████▋     | 473/1000 [00:13<00:14, 35.50it/s]
+ 48%|████▊     | 477/1000 [00:13<00:14, 35.80it/s]
+ 48%|████▊     | 481/1000 [00:13<00:14, 35.78it/s]
+ 48%|████▊     | 485/1000 [00:13<00:14, 35.72it/s]
+ 49%|████▉     | 489/1000 [00:14<00:14, 34.98it/s]
+ 49%|████▉     | 493/1000 [00:14<00:14, 35.10it/s]
+ 50%|████▉     | 497/1000 [00:14<00:14, 35.27it/s]
+ 50%|█████     | 501/1000 [00:14<00:14, 35.52it/s]
+ 50%|█████     | 505/1000 [00:14<00:13, 35.69it/s]
+ 51%|█████     | 509/1000 [00:14<00:13, 35.54it/s]
+ 51%|█████▏    | 513/1000 [00:14<00:13, 35.56it/s]
+ 52%|█████▏    | 517/1000 [00:14<00:13, 35.94it/s]
+ 52%|█████▏    | 521/1000 [00:14<00:13, 36.71it/s]
+ 52%|█████▎    | 525/1000 [00:15<00:12, 37.07it/s]
+ 53%|█████▎    | 529/1000 [00:15<00:12, 37.27it/s]
+ 53%|█████▎    | 533/1000 [00:15<00:12, 37.44it/s]
+ 54%|█████▎    | 537/1000 [00:15<00:12, 37.12it/s]
+ 54%|█████▍    | 541/1000 [00:15<00:12, 36.65it/s]
+ 55%|█████▍    | 545/1000 [00:15<00:12, 36.89it/s]
+ 55%|█████▍    | 549/1000 [00:15<00:12, 37.12it/s]
+ 55%|█████▌    | 553/1000 [00:15<00:11, 37.75it/s]
+ 56%|█████▌    | 557/1000 [00:15<00:11, 38.06it/s]
+ 56%|█████▌    | 561/1000 [00:16<00:11, 37.81it/s]
+ 56%|█████▋    | 565/1000 [00:16<00:11, 37.36it/s]
+ 57%|█████▋    | 569/1000 [00:16<00:11, 36.92it/s]
+ 57%|█████▋    | 573/1000 [00:16<00:11, 36.61it/s]
+ 58%|█████▊    | 577/1000 [00:16<00:11, 36.55it/s]
+ 58%|█████▊    | 581/1000 [00:16<00:11, 36.59it/s]
+ 58%|█████▊    | 585/1000 [00:16<00:11, 36.26it/s]
+ 59%|█████▉    | 589/1000 [00:16<00:11, 36.65it/s]
+ 59%|█████▉    | 593/1000 [00:16<00:11, 36.58it/s]
+ 60%|█████▉    | 597/1000 [00:17<00:11, 36.52it/s]
+ 60%|██████    | 601/1000 [00:17<00:10, 36.28it/s]
+ 60%|██████    | 605/1000 [00:17<00:10, 36.45it/s]
+ 61%|██████    | 609/1000 [00:17<00:10, 36.40it/s]
+ 61%|██████▏   | 613/1000 [00:17<00:10, 36.55it/s]
+ 62%|██████▏   | 617/1000 [00:17<00:10, 36.56it/s]
+ 62%|██████▏   | 621/1000 [00:17<00:10, 36.49it/s]
+ 62%|██████▎   | 625/1000 [00:17<00:10, 36.26it/s]
+ 63%|██████▎   | 629/1000 [00:17<00:10, 36.39it/s]
+ 63%|██████▎   | 633/1000 [00:18<00:10, 36.65it/s]
+ 64%|██████▎   | 637/1000 [00:18<00:09, 36.51it/s]
+ 64%|██████▍   | 641/1000 [00:18<00:09, 36.06it/s]
+ 64%|██████▍   | 645/1000 [00:18<00:09, 36.18it/s]
+ 65%|██████▍   | 649/1000 [00:18<00:09, 35.95it/s]
+ 65%|██████▌   | 653/1000 [00:18<00:09, 36.03it/s]
+ 66%|██████▌   | 657/1000 [00:18<00:09, 36.00it/s]
+ 66%|██████▌   | 661/1000 [00:18<00:09, 36.18it/s]
+ 66%|██████▋   | 665/1000 [00:18<00:09, 36.01it/s]
+ 67%|██████▋   | 669/1000 [00:19<00:09, 35.98it/s]
+ 67%|██████▋   | 673/1000 [00:19<00:09, 35.76it/s]
+ 68%|██████▊   | 677/1000 [00:19<00:08, 36.08it/s]
+ 68%|██████▊   | 681/1000 [00:19<00:08, 35.83it/s]
+ 68%|██████▊   | 685/1000 [00:19<00:08, 35.78it/s]
+ 69%|██████▉   | 689/1000 [00:19<00:08, 36.07it/s]
+ 69%|██████▉   | 693/1000 [00:19<00:08, 36.21it/s]
+ 70%|██████▉   | 697/1000 [00:19<00:08, 36.25it/s]
+ 70%|███████   | 701/1000 [00:19<00:08, 36.23it/s]
+ 70%|███████   | 705/1000 [00:20<00:08, 36.64it/s]
+ 71%|███████   | 709/1000 [00:20<00:07, 36.75it/s]
+ 71%|███████▏  | 713/1000 [00:20<00:07, 36.55it/s]
+ 72%|███████▏  | 717/1000 [00:20<00:07, 36.27it/s]
+ 72%|███████▏  | 721/1000 [00:20<00:07, 35.97it/s]
+ 72%|███████▎  | 725/1000 [00:20<00:07, 35.94it/s]
+ 73%|███████▎  | 729/1000 [00:20<00:07, 36.27it/s]
+ 73%|███████▎  | 733/1000 [00:20<00:07, 36.21it/s]
+ 74%|███████▎  | 737/1000 [00:20<00:07, 36.23it/s]
+ 74%|███████▍  | 741/1000 [00:21<00:07, 35.90it/s]
+ 74%|███████▍  | 745/1000 [00:21<00:07, 35.72it/s]
+ 75%|███████▍  | 749/1000 [00:21<00:07, 35.46it/s]
+ 75%|███████▌  | 753/1000 [00:21<00:06, 35.45it/s]
+ 76%|███████▌  | 757/1000 [00:21<00:06, 35.29it/s]
+ 76%|███████▌  | 761/1000 [00:21<00:06, 35.50it/s]
+ 76%|███████▋  | 765/1000 [00:21<00:06, 35.71it/s]
+ 77%|███████▋  | 769/1000 [00:21<00:06, 36.31it/s]
+ 77%|███████▋  | 773/1000 [00:21<00:06, 37.03it/s]
+ 78%|███████▊  | 777/1000 [00:22<00:05, 37.45it/s]
+ 78%|███████▊  | 781/1000 [00:22<00:05, 38.05it/s]
+ 78%|███████▊  | 785/1000 [00:22<00:05, 37.35it/s]
+ 79%|███████▉  | 789/1000 [00:22<00:05, 36.90it/s]
+ 79%|███████▉  | 793/1000 [00:22<00:05, 36.75it/s]
+ 80%|███████▉  | 797/1000 [00:22<00:05, 36.69it/s]
+ 80%|████████  | 801/1000 [00:22<00:05, 36.99it/s]
+ 80%|████████  | 805/1000 [00:22<00:05, 37.36it/s]
+ 81%|████████  | 809/1000 [00:22<00:05, 37.71it/s]
+ 81%|████████▏ | 813/1000 [00:22<00:04, 38.05it/s]
+ 82%|████████▏ | 817/1000 [00:23<00:04, 38.20it/s]
+ 82%|████████▏ | 821/1000 [00:23<00:04, 37.48it/s]
+ 82%|████████▎ | 825/1000 [00:23<00:04, 36.96it/s]
+ 83%|████████▎ | 829/1000 [00:23<00:04, 36.82it/s]
+ 83%|████████▎ | 833/1000 [00:23<00:04, 37.17it/s]
+ 84%|████████▎ | 837/1000 [00:23<00:04, 37.48it/s]
+ 84%|████████▍ | 841/1000 [00:23<00:04, 37.63it/s]
+ 84%|████████▍ | 845/1000 [00:23<00:04, 37.27it/s]
+ 85%|████████▍ | 849/1000 [00:23<00:04, 36.78it/s]
+ 85%|████████▌ | 853/1000 [00:24<00:04, 36.61it/s]
+ 86%|████████▌ | 857/1000 [00:24<00:03, 36.42it/s]
+ 86%|████████▌ | 861/1000 [00:24<00:03, 36.20it/s]
+ 86%|████████▋ | 865/1000 [00:24<00:03, 36.18it/s]
+ 87%|████████▋ | 869/1000 [00:24<00:03, 36.04it/s]
+ 87%|████████▋ | 873/1000 [00:24<00:03, 35.78it/s]
+ 88%|████████▊ | 877/1000 [00:24<00:03, 35.95it/s]
+ 88%|████████▊ | 881/1000 [00:24<00:03, 35.67it/s]
+ 88%|████████▊ | 885/1000 [00:24<00:03, 35.55it/s]
+ 89%|████████▉ | 889/1000 [00:25<00:03, 35.52it/s]
+ 89%|████████▉ | 893/1000 [00:25<00:03, 35.60it/s]
+ 90%|████████▉ | 897/1000 [00:25<00:02, 35.55it/s]
+ 90%|█████████ | 901/1000 [00:25<00:02, 35.77it/s]
+ 90%|█████████ | 905/1000 [00:25<00:02, 35.90it/s]
+ 91%|█████████ | 909/1000 [00:25<00:02, 36.46it/s]
+ 91%|█████████▏| 913/1000 [00:25<00:02, 36.59it/s]
+ 92%|█████████▏| 917/1000 [00:25<00:02, 36.60it/s]
+ 92%|█████████▏| 921/1000 [00:25<00:02, 36.70it/s]
+ 92%|█████████▎| 925/1000 [00:26<00:02, 37.18it/s]
+ 93%|█████████▎| 929/1000 [00:26<00:01, 37.07it/s]
+ 93%|█████████▎| 933/1000 [00:26<00:01, 36.98it/s]
+ 94%|█████████▎| 937/1000 [00:26<00:01, 36.95it/s]
+ 94%|█████████▍| 941/1000 [00:26<00:01, 36.59it/s]
+ 94%|█████████▍| 945/1000 [00:26<00:01, 36.16it/s]
+ 95%|█████████▍| 949/1000 [00:26<00:01, 36.02it/s]
+ 95%|█████████▌| 953/1000 [00:26<00:01, 36.17it/s]
+ 96%|█████████▌| 957/1000 [00:26<00:01, 35.84it/s]
+ 96%|█████████▌| 961/1000 [00:27<00:01, 36.35it/s]
+ 96%|█████████▋| 965/1000 [00:27<00:00, 36.25it/s]
+ 97%|█████████▋| 969/1000 [00:27<00:00, 36.01it/s]
+ 97%|█████████▋| 973/1000 [00:27<00:00, 36.14it/s]
+ 98%|█████████▊| 977/1000 [00:27<00:00, 36.20it/s]
+ 98%|█████████▊| 981/1000 [00:27<00:00, 36.06it/s]
+ 98%|█████████▊| 985/1000 [00:27<00:00, 35.79it/s]
+ 99%|█████████▉| 989/1000 [00:27<00:00, 35.84it/s]
+ 99%|█████████▉| 993/1000 [00:27<00:00, 35.73it/s]
+100%|█████████▉| 997/1000 [00:28<00:00, 36.01it/s]
+100%|██████████| 1000/1000 [00:28<00:00, 35.56it/s]
+MPC iter 0 Eval ------- 
+Success rate:  0.22
+{'success': array([ True, False, False, False, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False, False,  True, False,  True,  True, False,
+       False, False, False,  True, False, False, False,  True, False,
+       False, False, False,  True, False, False, False, False, False,
+        True, False,  True, False, False]), 'state_dist': array([2.905217 , 3.6436753, 5.016943 , 1.0163331, 4.1173654, 5.012302 ,
+       1.4485893, 6.0099373, 5.7751904, 5.9768066, 2.7669652, 3.3093529,
+       1.381998 , 3.835572 , 4.3877325, 3.7646458, 1.650597 , 1.9635764,
+       4.286479 , 1.987413 , 2.4326267, 2.7642052, 0.5493734, 2.983575 ,
+       1.4908022, 4.220575 , 5.8618746, 4.76957  , 1.9162697, 2.8875468,
+       2.7117603, 3.8846054, 4.1382837, 4.889439 , 1.2887754, 1.9382081,
+       4.841173 , 2.8501706, 3.8432426, 1.3546035, 4.167213 , 4.536463 ,
+       3.5711527, 4.7036037, 4.84565  , 4.890924 , 5.5731454, 4.3544736,
+       4.552119 , 4.214299 ], dtype=float32)}
+self.is_success:  [ True False False False False False False False False False False False
+ False  True False False False False False  True False False  True False
+  True  True False False False False  True False False False  True False
+ False False False  True False False False False False  True False  True
+ False False]
+Success rate:  0.22
+{'success': array([ True, False, False, False, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False, False,  True, False,  True,  True, False,
+       False, False, False,  True, False, False, False,  True, False,
+       False, False, False,  True, False, False, False, False, False,
+        True, False,  True, False, False]), 'state_dist': array([2.905217 , 3.6436753, 5.016943 , 1.0163331, 4.1173654, 5.012302 ,
+       1.4485893, 6.0099373, 5.7751904, 5.9768066, 2.7669652, 3.3093529,
+       1.381998 , 3.835572 , 4.3877325, 3.7646458, 1.650597 , 1.9635764,
+       4.286479 , 1.987413 , 2.4326267, 2.7642052, 0.5493734, 2.983575 ,
+       1.4908022, 4.220575 , 5.8618746, 4.76957  , 1.9162697, 2.8875468,
+       2.7117603, 3.8846054, 4.1382837, 4.889439 , 1.2887754, 1.9382081,
+       4.841173 , 2.8501706, 3.8432426, 1.3546035, 4.167213 , 4.536463 ,
+       3.5711527, 4.7036037, 4.84565  , 4.890924 , 5.5731454, 4.3544736,
+       4.552119 , 4.214299 ], dtype=float32)}
+[timing] perform_planning_s=31.680
+[timing] total_planning_main_s=42.466

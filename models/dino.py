@@ -1,3 +1,4 @@
+from __future__ import annotations
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -118,7 +119,7 @@ class DinoV2Encoder(nn.Module):
     ):
         super().__init__()
         self.name = name
-        self.base_model = torch.hub.load("facebookresearch/dinov2", name)
+        self.base_model = torch.hub.load("facebookresearch/dinov2:81b2b6419385", name)
         self.feature_key = feature_key
         self.emb_dim = self.base_model.num_features
         self.projector_name = projector

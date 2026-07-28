@@ -131,7 +131,11 @@ class PlanWorkspace:
         self.device = next(wm.parameters()).device
 
         # have different seeds for each planning instances
-        self.eval_seed = [cfg_dict["seed"] * n + 1 for n in range(cfg_dict["n_evals"])]
+        self.eval_start_index = cfg_dict.get("eval_start_index", 0)
+        self.eval_seed = [
+                        cfg_dict["seed"] * (n + self.eval_start_index) + 1
+                        for n in range(cfg_dict["n_evals"])
+        ]
         print("eval_seed: ", self.eval_seed)
         self.n_evals = cfg_dict["n_evals"]
         self.goal_source = cfg_dict["goal_source"]
@@ -284,7 +288,10 @@ class PlanWorkspace:
             raise ValueError("No trajectory in the dataset is long enough.")
 
         # sample init_states from dset
-        for i in range(self.n_evals):
+        # Consume the same RNG draws as the corresponding slice of a
+        # monolithic evaluation.  Merely offsetting ``eval_seed`` is not
+        # sufficient because Wall samples start/goal pairs with ``random``.
+        for i in range(self.eval_start_index + self.n_evals):
             max_offset = -1
             while max_offset < 0:  # filter out traj that are not long enough
                 traj_id = random.randint(0, len(self.dset) - 1)
@@ -298,6 +305,8 @@ class PlanWorkspace:
             }
             state = state[offset : offset + traj_len]
             act = act[offset : offset + self.goal_H]
+            if i < self.eval_start_index:
+                continue
             actions.append(act)
             states.append(state)
             observations.append(obs)

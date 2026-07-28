@@ -1,0 +1,6 @@
+- ckpt_base_path=/home/jupyter-deuk-e40b/ts_ckpts_row7/test/umaze_False_agg32_projchannel_dim8_hw14_sgTrue_lr1e-06
+- model_epoch=20
+- n_evals=10
+- +eval_start_index=0
+- seed=400
+- decode_for_viz=false

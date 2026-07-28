@@ -11,7 +11,7 @@ import numpy as np
 from tqdm import tqdm
 from omegaconf import OmegaConf, open_dict
 from einops import rearrange
-from accelerate import Accelerator
+from accelerate import Accelerator, DistributedDataParallelKwargs
 from torchvision import utils
 import torch.distributed as dist
 from pathlib import Path
@@ -62,6 +62,7 @@ class Trainer:
         self.accelerator = Accelerator(
             log_with="wandb",
             mixed_precision=mixed_precision,
+            kwargs_handlers=[DistributedDataParallelKwargs(find_unused_parameters=True, static_graph=True)],
         )
         log.info(f"Accelerate mixed precision: {mixed_precision}")
         log.info(
@@ -143,7 +144,7 @@ class Trainer:
                 num_workers=self.cfg.env.num_workers,
                 collate_fn=None,
                 pin_memory=True,
-                persistent_workers=True,
+                persistent_workers=self.cfg.env.num_workers > 0,
             )
             for x in ["train", "valid"]
         }

@@ -49,10 +49,16 @@ class VWorldModel(nn.Module):
         self.num_proprio_repeat = num_proprio_repeat
         self.proprio_dim = proprio_dim * num_proprio_repeat 
         self.action_dim = action_dim * num_action_repeat 
-        self.emb_dim = self.encoder.emb_dim + (self.action_dim + self.proprio_dim) * (concat_dim) # Not used
+        self.emb_dim = getattr(self.encoder, "module", self.encoder).emb_dim + (self.action_dim + self.proprio_dim) * (concat_dim) # Not used
         self.straighten = False
         self.straighten_scale = 0.0
         self.curvature_mode = None
+        self.speed_constancy_scale = 0.0
+        self.speed_constancy_mode = None
+        self.trajectory_penalty_mode = None
+        self.trajectory_penalty_scale = 0.0
+        self.trajectory_penalty_aggregate = False
+        self.trajectory_penalty_beta = 1.0
         self.stop_grad = bool(stop_grad)
         self.vcreg = bool(vcreg)
         self.std_coeff = float(vcreg_std_coeff)
@@ -63,16 +69,56 @@ class VWorldModel(nn.Module):
             )
 
         if isinstance(straighten, str):
-            if straighten.startswith("aggcos"):
-                suffix = straighten.replace("aggcos", "")
-                self.straighten_scale = float(suffix) if suffix else 1.0
-                self.curvature_mode = "aggcos"
-            elif straighten.startswith("cos"):
-                suffix = straighten.replace("cos", "")
-                self.straighten_scale = float(suffix) if suffix else 1.0
-                self.curvature_mode = "cos"
+            for token in straighten.split("+"):
+                if token.startswith("aggcos"):
+                    suffix = token.replace("aggcos", "", 1)
+                    self.straighten_scale = float(suffix) if suffix else 1.0
+                    self.curvature_mode = "aggcos"
+                elif token.startswith("cos"):
+                    suffix = token.replace("cos", "", 1)
+                    self.straighten_scale = float(suffix) if suffix else 1.0
+                    self.curvature_mode = "cos"
+                elif token.startswith("aggspeed"):
+                    suffix = token.replace("aggspeed", "", 1)
+                    self.speed_constancy_scale = float(suffix) if suffix else 1.0
+                    self.speed_constancy_mode = "aggcos"
+                elif token.startswith("speed"):
+                    suffix = token.replace("speed", "", 1)
+                    self.speed_constancy_scale = float(suffix) if suffix else 1.0
+                    self.speed_constancy_mode = "cos"
+                elif token.startswith("aggr") or token.startswith("r"):
+                    aggregate = token.startswith("aggr")
+                    payload = token[4:] if aggregate else token[1:]
+                    if not payload or payload[0] not in "01234":
+                        raise ValueError(
+                            f"Unknown trajectory penalty token '{token}'. Expected "
+                            "r0..r4 or aggr0..aggr4."
+                        )
+                    self.trajectory_penalty_mode = f"r{payload[0]}"
+                    remainder = payload[1:]
+                    if self.trajectory_penalty_mode == "r3":
+                        if not remainder.startswith("b") or "_" not in remainder:
+                            raise ValueError(
+                                "R3 tokens must have the form r3bBETA_SCALE or "
+                                "aggr3bBETA_SCALE."
+                            )
+                        beta_text, scale_text = remainder[1:].split("_", 1)
+                        self.trajectory_penalty_beta = float(beta_text)
+                    else:
+                        scale_text = remainder.removeprefix("_")
+                    self.trajectory_penalty_scale = (
+                        float(scale_text) if scale_text else 1.0
+                    )
+                    self.trajectory_penalty_aggregate = aggregate
 
         self.straighten = self.curvature_mode is not None and self.straighten_scale > 0
+        self.speed_constancy = (
+            self.speed_constancy_mode is not None and self.speed_constancy_scale > 0
+        )
+        self.trajectory_penalty = (
+            self.trajectory_penalty_mode is not None
+            and self.trajectory_penalty_scale > 0
+        )
 
         log.info("num_action_repeat: %s", self.num_action_repeat)
         log.info("num_proprio_repeat: %s", self.num_proprio_repeat)
@@ -89,6 +135,24 @@ class VWorldModel(nn.Module):
             )
         else:
             log.info("Straightening disabled")
+        if self.speed_constancy:
+            log.info(
+                "Speed constancy enabled: mode=%s, scale=%s",
+                self.speed_constancy_mode,
+                self.speed_constancy_scale,
+            )
+        else:
+            log.info("Speed constancy disabled")
+        if self.trajectory_penalty:
+            log.info(
+                "Trajectory penalty enabled: mode=%s, aggregate=%s, scale=%s, beta=%s",
+                self.trajectory_penalty_mode,
+                self.trajectory_penalty_aggregate,
+                self.trajectory_penalty_scale,
+                self.trajectory_penalty_beta,
+            )
+        else:
+            log.info("Trajectory penalty disabled")
         log.info("Stop-grad enabled: %s", self.stop_grad)
         log.info(
             "VCReg enabled: %s, apply_to=enc, std_coeff=%s, cov_coeff=%s",
@@ -101,10 +165,10 @@ class VWorldModel(nn.Module):
         assert concat_dim == 0 or concat_dim == 1, f"concat_dim {concat_dim} not supported."
         log.info("Model emb_dim: %s", self.emb_dim)
 
-        if "dino" in self.encoder.name:
+        if "dino" in getattr(self.encoder, "module", self.encoder).name:
             decoder_scale = 16  # from vqvae
             num_side_patches = image_size // decoder_scale
-            self.encoder_image_size = num_side_patches * encoder.patch_size
+            self.encoder_image_size = num_side_patches * getattr(encoder, "module", encoder).patch_size
             self.encoder_transform = transforms.Compose(
                 [transforms.Resize(self.encoder_image_size)]
             )
@@ -279,11 +343,11 @@ class VWorldModel(nn.Module):
             raise ValueError(f"Features must have at least 3 frames for curvature calculation, got {features.shape[1]}")
 
         if mode == "aggcos":
-            if not hasattr(self.encoder, "agg"):
+            if not hasattr(getattr(self.encoder, "module", self.encoder), "agg"):
                 raise ValueError("curvature mode 'aggcos' requires encoder.agg().")
             b, t, p, d = features.shape
             tokens = features.reshape(b * t, p, d)
-            z = self.encoder.agg(tokens).reshape(b, t, -1)
+            z = getattr(self.encoder, "module", self.encoder).agg(tokens).reshape(b, t, -1)
             v1 = z[:, 1:-1] - z[:, :-2]
             v2 = z[:, 2:] - z[:, 1:-1]
         elif mode == "cos":
@@ -293,6 +357,96 @@ class VWorldModel(nn.Module):
             raise ValueError(f"Unknown curvature mode '{mode}'. Use 'cos' or 'aggcos'.")
 
         return self._cos_curvature(v1, v2)
+
+    def total_speed_constancy(self, features, mode="cos", eps=1e-6, step_thresh=1e-6):
+        if features.shape[1] < 3:
+            raise ValueError(f"Features must have at least 3 frames for speed calculation, got {features.shape[1]}")
+
+        if mode == "aggcos":
+            if not hasattr(getattr(self.encoder, "module", self.encoder), "agg"):
+                raise ValueError("speed mode 'aggcos' requires encoder.agg().")
+            b, t, p, d = features.shape
+            tokens = features.reshape(b * t, p, d)
+            z = getattr(self.encoder, "module", self.encoder).agg(tokens).reshape(b, t, -1)
+            velocity = z[:, 1:] - z[:, :-1]
+        elif mode == "cos":
+            velocity = features[:, 1:] - features[:, :-1]
+        else:
+            raise ValueError(f"Unknown speed mode '{mode}'. Use 'cos' or 'aggcos'.")
+
+        speed = velocity.norm(dim=-1)
+        if speed.ndim == 3:
+            speed = rearrange(speed, "b t p -> (b p) t")
+        mean_speed = speed.mean(dim=1, keepdim=True)
+        loss = ((speed - mean_speed) / (mean_speed.detach() + eps)).pow(2)
+        if step_thresh > 0:
+            mask = mean_speed.squeeze(1) > step_thresh
+            loss = loss[mask]
+        return loss.mean()
+
+    def trajectory_penalties(
+        self,
+        features,
+        aggregate=False,
+        beta=1.0,
+        eps=1e-6,
+        step_thresh=1e-6,
+    ):
+        """Return the R0--R4 trajectory penalties averaged over valid steps.
+
+        ``features`` is either ``(batch, time, dim)`` or
+        ``(batch, time, patches, dim)``. With ``aggregate=True``, patch tokens
+        are pooled through ``encoder.agg`` before velocities are computed.
+        Otherwise each patch contributes an independent trajectory sample.
+        """
+        if features.shape[1] < 3:
+            raise ValueError(
+                "Features must have at least 3 frames for trajectory penalty "
+                f"calculation, got {features.shape[1]}"
+            )
+
+        if aggregate:
+            if features.ndim != 4:
+                raise ValueError(
+                    "aggregate=True requires features shaped (b, t, p, d)."
+                )
+            encoder = getattr(self.encoder, "module", self.encoder)
+            if not hasattr(encoder, "agg"):
+                raise ValueError("aggregate=True requires encoder.agg().")
+            b, t, p, d = features.shape
+            tokens = features.reshape(b * t, p, d)
+            features = encoder.agg(tokens).reshape(b, t, -1)
+
+        v1 = features[:, 1:-1] - features[:, :-2]
+        v2 = features[:, 2:] - features[:, 1:-1]
+        step1 = v1.norm(dim=-1)
+        step2 = v2.norm(dim=-1)
+        n1 = step1.clamp_min(eps)
+        n2 = step2.clamp_min(eps)
+        cosine = F.cosine_similarity(v1, v2, dim=-1, eps=eps)
+        ratio = n2 / n1
+
+        r0 = 1.0 - cosine
+        sqrt_ratio = ratio.sqrt()
+        r1 = (sqrt_ratio - sqrt_ratio.reciprocal()).square()
+        r2 = (v2 - v1).square().sum(dim=-1) / (n1 * n2)
+        r3 = r0 + float(beta) * r1
+        r4 = (v2 - v1).square().sum(dim=-1)
+
+        mask = (step1 > step_thresh) & (step2 > step_thresh)
+        valid = mask.to(dtype=features.dtype)
+        denominator = valid.sum().clamp_min(1.0)
+
+        def average(loss):
+            return (loss * valid).sum() / denominator
+
+        return {
+            "R0": average(r0),
+            "R1": average(r1),
+            "R2": average(r2),
+            "R3": average(r3),
+            "R4": average(r4),
+        }
 
     def forward(self, obs, act):
         """
@@ -368,6 +522,31 @@ class VWorldModel(nn.Module):
                 curvature_loss = self.total_curvature(feats, mode=self.curvature_mode)
                 loss = loss + curvature_loss * self.straighten_scale
                 loss_components["curvature_loss_used_for_training"] = curvature_loss
+
+            if self.speed_constancy and self.speed_constancy_scale > 0:
+                feats = self.visual_only(z)
+                speed_constancy_loss = self.total_speed_constancy(
+                    feats, mode=self.speed_constancy_mode
+                )
+                loss = loss + speed_constancy_loss * self.speed_constancy_scale
+                loss_components["speed_constancy_loss_used_for_training"] = (
+                    speed_constancy_loss
+                )
+
+            if self.trajectory_penalty and self.trajectory_penalty_scale > 0:
+                feats = self.visual_only(z)
+                penalties = self.trajectory_penalties(
+                    feats,
+                    aggregate=self.trajectory_penalty_aggregate,
+                    beta=self.trajectory_penalty_beta,
+                )
+                selected_penalty = penalties[self.trajectory_penalty_mode.upper()]
+                loss = loss + selected_penalty * self.trajectory_penalty_scale
+                for name, value in penalties.items():
+                    loss_components[f"trajectory_{name.lower()}_loss"] = value
+                loss_components["trajectory_penalty_used_for_training"] = (
+                    selected_penalty
+                )
         else:
             visual_pred = None
             z_pred = None

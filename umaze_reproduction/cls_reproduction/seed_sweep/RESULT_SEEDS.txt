@@ -1,0 +1,28 @@
+===== UMAZE / DINOv2 (CLS) / NO STRAIGHTENING / open-loop GD =====
+SEED SENSITIVITY SWEEP -- same checkpoint (model_20.pth), 50 evals/seed
+
+  seed  100:  28.00%   (14/50) (original)
+  seed  200:   8.00%   (4/50) (original)
+  seed  300:  14.00%   (7/50) (original)
+  seed  400:  36.00%   (18/50) 
+  seed  500:  28.00%   (14/50) 
+  seed  600:  18.00%   (9/50) 
+  seed  700:  28.00%   (14/50) 
+  seed  800:  34.00%   (17/50) 
+  seed  900:  22.00%   (11/50) 
+  seed 1000:  22.00%   (11/50) 
+
+OURS  = 23.80 +/- 8.32 %   (mean +/- pop-std, n=10)
+PAPER = 25.33 +/- 0.94 %   (n=3, Wang et al. ICML 2026 arXiv:2603.12231v2,
+        Table 1 row 1: DINOv2 (CLS) 1x384, Lcurv OFF, PointMaze-UMaze, Open-loop)
+
+FINDING: the mean reproduces (~1.5 points). The reported std does not.
+  Our 10 seeds span 8-36% with std 8.32.
+  The paper reports std 0.94 from 3 seeds (24/26/26).
+  Their own Table 1 supports ours: every other CLS cell has std 8-13
+  (Wall 12.68, Medium 8.16, PushT 8.22). UMaze's 0.94 is the outlier
+  within their own row -- three draws that happened to land tight.
+
+NOTE: our first 3 seeds (100/200/300) gave 16.67 +/- 8.38, which looked like
+      a reproduction gap. It was a bad draw: 8 and 14 are two of the three
+      lowest values in a 10-seed sample. More seeds, not retraining, resolved it.

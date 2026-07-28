@@ -6,7 +6,7 @@ defaults:
   - proprio_encoder: proprio
   - decoder: vqvae
   - predictor: vit
-  - override hydra/launcher: submitit_slurm
+#  - override hydra/launcher: submitit_slurm
 
 # base path to save model outputs. Checkpoints will be saved to ${ckpt_base_path}
 ckpt_base_path: ./checkpoints
@@ -17,17 +17,17 @@ hydra:
   sweep:
     dir: ${ckpt_base_path}/test/${oc.select:env.save_name,${env.name}}_${replace_substring:${training.straighten},agg,agg${oc.select:encoder.agg_type,}}_agg32_proj${oc.select:encoder.projector,none}_dim${oc.select:encoder.projector_out_dim,384}_hw${oc.select:encoder.projector_target_hw,14}_sg${training.stop_grad}_lr${training.encoder_lr}
     subdir: ${hydra.job.num}
-  launcher:
-    submitit_folder: ${hydra.sweep.dir}/.submitit/%j
-    nodes: 1
-    tasks_per_node: 1
-    cpus_per_task: 8
-    mem_gb: 512
-    gres: "gpu:h100:1"
-    timeout_min: 2880
-    setup: ["export DEBUGVAR=$(scontrol show hostnames $SLURM_JOB_NODELIST)",
-            export MASTER_ADDR="$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)",
-            "export MASTER_PORT=$(for port in $(shuf -i 30000-65500 -n 20); do if [[ $(netstat -tupln 2>&1 | grep $port | wc -l) -eq 0 ]] ; then echo $port; break; fi; done;)",]
+ # launcher:
+  #  submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+  #  nodes: 1
+  #  tasks_per_node: 1
+  #  cpus_per_task: 8
+  #  mem_gb: 512
+  #  gres: "gpu:h100:1"
+  #  timeout_min: 2880
+  #  setup: ["export DEBUGVAR=$(scontrol show hostnames $SLURM_JOB_NODELIST)",
+   #         export MASTER_ADDR="$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)",
+    #        "export MASTER_PORT=$(for port in $(shuf -i 30000-65500 -n 20); do if [[ $(netstat -tupln 2>&1 | grep $port | wc -l) -eq 0 ]] ; then echo $port; break; fi; done;)",]
 
 training:
   seed: 0

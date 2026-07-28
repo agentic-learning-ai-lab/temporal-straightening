@@ -1,0 +1,113 @@
+{
+  "environment": "umaze",
+  "baseline": "DINOv2 patch 14x14x8 + channel projector, straightening ON (aggcos lambda=0.1), open-loop GD",
+  "status": "complete",
+  "sampling_seeds": [
+    100,
+    200,
+    300
+  ],
+  "evaluations_per_seed": 50,
+  "total_evaluations": 150,
+  "chunk_offsets": [
+    0
+  ],
+  "per_seed_metrics": {
+    "100": {
+      "success_rate": 0.96,
+      "mean_state_dist": 2.7309789657592773,
+      "mean_visual_dist": 0.3931141050170068,
+      "mean_proprio_dist": 0.9002940654754639,
+      "mean_div_visual_emb": 16.966005325317383,
+      "mean_div_proprio_emb": 4.539411544799805
+    },
+    "200": {
+      "success_rate": 0.98,
+      "mean_state_dist": 2.5289289951324463,
+      "mean_visual_dist": 0.38012050914115647,
+      "mean_proprio_dist": 0.8353219628334045,
+      "mean_div_visual_emb": 16.988811492919922,
+      "mean_div_proprio_emb": 6.955146789550781
+    },
+    "300": {
+      "success_rate": 0.94,
+      "mean_state_dist": 2.9303371906280518,
+      "mean_visual_dist": 0.41240380527210885,
+      "mean_proprio_dist": 0.971234142780304,
+      "mean_div_visual_emb": 17.818782806396484,
+      "mean_div_proprio_emb": 5.544734954833984
+    }
+  },
+  "aggregate_metrics": {
+    "success_rate": {
+      "mean": 0.96,
+      "std_population": 0.016329931618554536,
+      "std_sample": 0.020000000000000018
+    },
+    "mean_state_dist": {
+      "mean": 2.7300817171732583,
+      "std_population": 0.16387543774470573,
+      "std_sample": 0.20070560192488
+    },
+    "mean_visual_dist": {
+      "mean": 0.3952128064767574,
+      "std_population": 0.013262885888386951,
+      "std_sample": 0.016243651471653797
+    },
+    "mean_proprio_dist": {
+      "mean": 0.9022833903630575,
+      "std_population": 0.05550374296454184,
+      "std_sample": 0.0679779245388596
+    },
+    "mean_div_visual_emb": {
+      "mean": 17.257866541544598,
+      "std_population": 0.3967369594174658,
+      "std_sample": 0.48590155633803417
+    },
+    "mean_div_proprio_emb": {
+      "mean": 5.67976442972819,
+      "std_population": 0.9908309349566718,
+      "std_sample": 1.213515106004317
+    }
+  },
+  "success_rate_percent": {
+    "per_seed": [
+      96.0,
+      98.0,
+      94.0
+    ],
+    "mean": 96.0,
+    "std_population": 1.632993161855452
+  },
+  "published_table1_5_percent": {
+    "mean": 94.0,
+    "std": 1.63
+  },
+  "checkpoint": "model_20.pth (epoch 20, straightening-ON run; not committed to repo due to size; identified by checkpoint_sha256)",
+  "checkpoint_sha256": "dbe075b1e79b4d56b8eb59e56eabc88c36affbb33e84c28b873213ab0a03e743",
+  "config": "conf/plan_gd.yaml",
+  "planner": {
+    "config": "conf/plan_gd.yaml",
+    "class": "planning.mpc.MPCPlanner",
+    "sub_planner": "planning.gd.GDPlanner",
+    "mode": "open-loop (max_iter=1, n_taken_actions=25=horizon -> full plan executed once, no replanning)",
+    "horizon": 25,
+    "optimizer": "Adam",
+    "learning_rate": 0.1,
+    "opt_steps": 100,
+    "max_iter": 1,
+    "n_taken_actions": 25,
+    "action_initialization": "zero",
+    "objective_mode": "last",
+    "decode_for_viz": true
+  },
+  "chunk_logs": [
+    "umaze_reproduction/plans/seed_100/logs.json",
+    "umaze_reproduction/plans/seed_200/logs.json",
+    "umaze_reproduction/plans/seed_300/logs.json"
+  ],
+  "aggregation": {
+    "mean_metrics": "mean over the single 50-eval batch per seed (no chunking; A100-80GB fit)",
+    "reported_std": "population standard deviation across three sampling seeds"
+  }
+}

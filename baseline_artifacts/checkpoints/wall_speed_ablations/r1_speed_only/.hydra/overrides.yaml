@@ -1,0 +1,2 @@
+- training.straighten=aggr1_1e-1
+- ckpt_base_path=/home/jupyter-deuk-e40b/temporal-straightening/baseline_artifacts/checkpoints/wall_speed_ablations/r1_speed_only

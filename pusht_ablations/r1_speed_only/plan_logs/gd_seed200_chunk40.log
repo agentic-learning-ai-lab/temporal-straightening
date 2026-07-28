@@ -1,0 +1,108 @@
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/Cython/Distutils/old_build_ext.py:15: DeprecationWarning: dep_util is Deprecated. Use functions from setuptools instead.
+  from distutils.dep_util import newer, newer_group
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+Warning: Mujoco-based envs failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'mjrl'
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+pybullet build time: Jan 29 2025 23:16:28
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-deuk-ef6d/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/dlami/nvme/home/jupyter-deuk-ef6d/temporal-straightening/custom_resolvers.py:4: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=None)
+[2026-07-27 04:23:17,093][__main__][INFO] - Planning result saved dir: /opt/dlami/nvme/home/jupyter-deuk-ef6d/temporal-straightening/pusht_ablations/r1_speed_only/hydra/seed_200/chunk_40
+Using cache found in /home/jupyter-deuk-ef6d/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385
+Loaded 18685 rollouts
+Loaded 21 rollouts
+[2026-07-27 04:23:18,893][dinov2][INFO] - using MLP layer as FFN
+[2026-07-27 04:23:20,014][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+Resuming from epoch 2: /home/jupyter-deuk-ef6d/temporal-straightening/baseline_artifacts/checkpoints/pusht_speed_ablations/r1_speed_only/checkpoints/model_2.pth
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-27 04:23:20,436][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-27 04:23:20,437][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-27 04:23:20,437][models.visual_world_model][INFO] - Trajectory penalty disabled
+[2026-07-27 04:23:20,437][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-27 04:23:20,437][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-27 04:23:20,437][models.visual_world_model][INFO] - Model emb_dim: 28
+[timing] setup_model_s=3.346
+eval_seed:  [8001, 8201, 8401, 8601, 8801, 9001, 9201, 9401, 9601, 9801]
+Dumped plan targets to /opt/dlami/nvme/home/jupyter-deuk-ef6d/temporal-straightening/pusht_ablations/r1_speed_only/hydra/seed_200/chunk_40/plan_targets.pkl
+[timing] setup_workspace_s=8.241
+  0%|                                                        | 0/100 [00:00<?, ?it/s]  1%|▍                                               | 1/100 [00:00<00:38,  2.59it/s]  2%|▉                                               | 2/100 [00:00<00:28,  3.48it/s]  3%|█▍                                              | 3/100 [00:00<00:24,  3.91it/s]  4%|█▉                                              | 4/100 [00:01<00:23,  4.16it/s]  5%|██▍                                             | 5/100 [00:01<00:22,  4.31it/s]  6%|██▉                                             | 6/100 [00:01<00:21,  4.40it/s]  7%|███▎                                            | 7/100 [00:01<00:20,  4.47it/s]  8%|███▊                                            | 8/100 [00:01<00:20,  4.51it/s]  9%|████▎                                           | 9/100 [00:02<00:20,  4.54it/s] 10%|████▋                                          | 10/100 [00:02<00:19,  4.56it/s] 11%|█████▏                                         | 11/100 [00:02<00:19,  4.57it/s] 12%|█████▋                                         | 12/100 [00:02<00:19,  4.58it/s] 13%|██████                                         | 13/100 [00:02<00:18,  4.59it/s] 14%|██████▌                                        | 14/100 [00:03<00:18,  4.59it/s] 15%|███████                                        | 15/100 [00:03<00:18,  4.60it/s] 16%|███████▌                                       | 16/100 [00:03<00:18,  4.60it/s] 17%|███████▉                                       | 17/100 [00:03<00:18,  4.60it/s] 18%|████████▍                                      | 18/100 [00:04<00:17,  4.60it/s] 19%|████████▉                                      | 19/100 [00:04<00:17,  4.60it/s] 20%|█████████▍                                     | 20/100 [00:04<00:17,  4.60it/s] 21%|█████████▊                                     | 21/100 [00:04<00:17,  4.60it/s] 22%|██████████▎                                    | 22/100 [00:04<00:16,  4.60it/s] 23%|██████████▊                                    | 23/100 [00:05<00:16,  4.60it/s] 24%|███████████▎                                   | 24/100 [00:05<00:16,  4.60it/s] 25%|███████████▊                                   | 25/100 [00:05<00:16,  4.60it/s] 26%|████████████▏                                  | 26/100 [00:05<00:16,  4.60it/s] 27%|████████████▋                                  | 27/100 [00:06<00:15,  4.60it/s] 28%|█████████████▏                                 | 28/100 [00:06<00:15,  4.60it/s] 29%|█████████████▋                                 | 29/100 [00:06<00:15,  4.60it/s] 30%|██████████████                                 | 30/100 [00:06<00:15,  4.60it/s] 31%|██████████████▌                                | 31/100 [00:06<00:14,  4.60it/s] 32%|███████████████                                | 32/100 [00:07<00:14,  4.60it/s] 33%|███████████████▌                               | 33/100 [00:07<00:14,  4.60it/s] 34%|███████████████▉                               | 34/100 [00:07<00:14,  4.60it/s] 35%|████████████████▍                              | 35/100 [00:07<00:14,  4.60it/s] 36%|████████████████▉                              | 36/100 [00:07<00:13,  4.60it/s] 37%|█████████████████▍                             | 37/100 [00:08<00:13,  4.60it/s] 38%|█████████████████▊                             | 38/100 [00:08<00:13,  4.60it/s] 39%|██████████████████▎                            | 39/100 [00:08<00:13,  4.60it/s] 40%|██████████████████▊                            | 40/100 [00:08<00:13,  4.60it/s] 41%|███████████████████▎                           | 41/100 [00:09<00:12,  4.60it/s] 42%|███████████████████▋                           | 42/100 [00:09<00:12,  4.60it/s] 43%|████████████████████▏                          | 43/100 [00:09<00:12,  4.60it/s] 44%|████████████████████▋                          | 44/100 [00:09<00:12,  4.61it/s] 45%|█████████████████████▏                         | 45/100 [00:09<00:11,  4.60it/s] 46%|█████████████████████▌                         | 46/100 [00:10<00:11,  4.60it/s] 47%|██████████████████████                         | 47/100 [00:10<00:11,  4.60it/s] 48%|██████████████████████▌                        | 48/100 [00:10<00:11,  4.61it/s] 49%|███████████████████████                        | 49/100 [00:10<00:11,  4.61it/s] 50%|███████████████████████▌                       | 50/100 [00:11<00:10,  4.61it/s] 51%|███████████████████████▉                       | 51/100 [00:11<00:10,  4.60it/s] 52%|████████████████████████▍                      | 52/100 [00:11<00:10,  4.60it/s] 53%|████████████████████████▉                      | 53/100 [00:11<00:10,  4.60it/s] 54%|█████████████████████████▍                     | 54/100 [00:11<00:09,  4.60it/s] 55%|█████████████████████████▊                     | 55/100 [00:12<00:09,  4.60it/s] 56%|██████████████████████████▎                    | 56/100 [00:12<00:09,  4.60it/s] 57%|██████████████████████████▊                    | 57/100 [00:12<00:09,  4.60it/s] 58%|███████████████████████████▎                   | 58/100 [00:12<00:09,  4.60it/s] 59%|███████████████████████████▋                   | 59/100 [00:12<00:08,  4.60it/s] 60%|████████████████████████████▏                  | 60/100 [00:13<00:08,  4.60it/s] 61%|████████████████████████████▋                  | 61/100 [00:13<00:08,  4.60it/s] 62%|█████████████████████████████▏                 | 62/100 [00:13<00:08,  4.60it/s] 63%|█████████████████████████████▌                 | 63/100 [00:13<00:08,  4.60it/s] 64%|██████████████████████████████                 | 64/100 [00:14<00:07,  4.61it/s] 65%|██████████████████████████████▌                | 65/100 [00:14<00:07,  4.61it/s] 66%|███████████████████████████████                | 66/100 [00:14<00:07,  4.61it/s] 67%|███████████████████████████████▍               | 67/100 [00:14<00:07,  4.60it/s] 68%|███████████████████████████████▉               | 68/100 [00:14<00:06,  4.60it/s] 69%|████████████████████████████████▍              | 69/100 [00:15<00:06,  4.60it/s] 70%|████████████████████████████████▉              | 70/100 [00:15<00:06,  4.60it/s] 71%|█████████████████████████████████▎             | 71/100 [00:15<00:06,  4.61it/s] 72%|█████████████████████████████████▊             | 72/100 [00:15<00:06,  4.61it/s] 73%|██████████████████████████████████▎            | 73/100 [00:16<00:05,  4.61it/s] 74%|██████████████████████████████████▊            | 74/100 [00:16<00:05,  4.61it/s] 75%|███████████████████████████████████▎           | 75/100 [00:16<00:05,  4.60it/s] 76%|███████████████████████████████████▋           | 76/100 [00:16<00:05,  4.61it/s] 77%|████████████████████████████████████▏          | 77/100 [00:16<00:04,  4.61it/s] 78%|████████████████████████████████████▋          | 78/100 [00:17<00:04,  4.60it/s] 79%|█████████████████████████████████████▏         | 79/100 [00:17<00:04,  4.60it/s] 80%|█████████████████████████████████████▌         | 80/100 [00:17<00:04,  4.60it/s] 81%|██████████████████████████████████████         | 81/100 [00:17<00:04,  4.60it/s] 82%|██████████████████████████████████████▌        | 82/100 [00:17<00:03,  4.60it/s] 83%|███████████████████████████████████████        | 83/100 [00:18<00:03,  4.59it/s] 84%|███████████████████████████████████████▍       | 84/100 [00:18<00:03,  4.59it/s] 85%|███████████████████████████████████████▉       | 85/100 [00:18<00:03,  4.59it/s] 86%|████████████████████████████████████████▍      | 86/100 [00:18<00:03,  4.59it/s] 87%|████████████████████████████████████████▉      | 87/100 [00:19<00:02,  4.60it/s] 88%|█████████████████████████████████████████▎     | 88/100 [00:19<00:02,  4.59it/s] 89%|█████████████████████████████████████████▊     | 89/100 [00:19<00:02,  4.60it/s] 90%|██████████████████████████████████████████▎    | 90/100 [00:19<00:02,  4.59it/s] 91%|██████████████████████████████████████████▊    | 91/100 [00:19<00:01,  4.60it/s] 92%|███████████████████████████████████████████▏   | 92/100 [00:20<00:01,  4.60it/s] 93%|███████████████████████████████████████████▋   | 93/100 [00:20<00:01,  4.60it/s] 94%|████████████████████████████████████████████▏  | 94/100 [00:20<00:01,  4.60it/s] 95%|████████████████████████████████████████████▋  | 95/100 [00:20<00:01,  4.60it/s] 96%|█████████████████████████████████████████████  | 96/100 [00:21<00:00,  4.60it/s] 97%|█████████████████████████████████████████████▌ | 97/100 [00:21<00:00,  4.60it/s] 98%|██████████████████████████████████████████████ | 98/100 [00:21<00:00,  4.60it/s] 99%|██████████████████████████████████████████████▌| 99/100 [00:21<00:00,  4.60it/s]100%|██████████████████████████████████████████████| 100/100 [00:21<00:00,  4.60it/s]100%|██████████████████████████████████████████████| 100/100 [00:21<00:00,  4.57it/s]
+MPC iter 0 Eval ------- 
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True, False,  True,  True, False,
+       False]), 'state_dist': array([18.9133   ,  4.2888136, 57.002903 , 21.302841 , 63.020073 ,
+       45.196274 , 16.758425 , 35.764175 , 87.72575  , 90.39505  ],
+      dtype=float32)}
+self.is_success:  [ True  True  True  True  True False  True  True False False]
+Success rate:  0.7
+{'success': array([ True,  True,  True,  True,  True, False,  True,  True, False,
+       False]), 'state_dist': array([18.9133   ,  4.2888136, 57.002903 , 21.302841 , 63.020073 ,
+       45.196274 , 16.758425 , 35.764175 , 87.72575  , 90.39505  ],
+      dtype=float32)}
+[timing] perform_planning_s=22.828
+[timing] total_planning_main_s=34.414

@@ -1,0 +1,102 @@
+{
+  "status": "partial; Modal spend limit stopped/blocked completion before final summaries and latent analysis",
+  "modal_error": "App creation failed: workspace billing cycle spend limit reached",
+  "rows": [
+    {
+      "variant": "dino_channel_no_straightening",
+      "run_id": "medium-adapter-none-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "False",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1064,
+        "val_loss": 0.0957
+      },
+      "plan": {
+        "exists": true,
+        "completed": false,
+        "last_progress": {
+          "percent": 0,
+          "step": 1,
+          "total": 1000
+        },
+        "success_rate": null
+      },
+      "evidence": {
+        "train_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-none-logs",
+        "plan_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-none-plan_gd.log"
+      }
+    },
+    {
+      "variant": "dino_channel_cos_straightened",
+      "run_id": "medium-adapter-cos-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2104,
+        "val_loss": 0.19
+      },
+      "plan": {
+        "exists": true,
+        "completed": false,
+        "last_progress": {
+          "percent": 48,
+          "step": 475,
+          "total": 1000
+        },
+        "success_rate": null
+      },
+      "evidence": {
+        "train_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-cos-logs",
+        "plan_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-cos-plan_gd.log"
+      }
+    },
+    {
+      "variant": "dino_channel_speed_constancy",
+      "run_id": "medium-adapter-speed-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "speed1e-1",
+      "train": {
+        "epoch": 17,
+        "train_loss": 0.0939,
+        "val_loss": 0.0742
+      },
+      "plan": {
+        "exists": false,
+        "completed": false,
+        "last_progress": null,
+        "success_rate": null
+      },
+      "evidence": {
+        "train_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-speed-logs",
+        "plan_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-speed-plan_gd.log"
+      }
+    },
+    {
+      "variant": "dino_channel_cos_plus_speed",
+      "run_id": "medium-adapter-cos-speed-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1+speed1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1856,
+        "val_loss": 0.168
+      },
+      "plan": {
+        "exists": true,
+        "completed": false,
+        "last_progress": {
+          "percent": 80,
+          "step": 805,
+          "total": 1000
+        },
+        "success_rate": null
+      },
+      "evidence": {
+        "train_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-cos-speed-logs",
+        "plan_log": "modal_evidence/medium-adapter-ablations-20260702-01/raw_volume/medium-adapter-cos-speed-plan_gd.log"
+      }
+    }
+  ]
+}
