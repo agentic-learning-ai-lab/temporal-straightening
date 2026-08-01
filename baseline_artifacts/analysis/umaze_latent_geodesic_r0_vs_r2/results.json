@@ -1,0 +1,46 @@
+{
+  "n_states": 469,
+  "grid_spacing": 0.1,
+  "grid_bounds": [
+    0.5,
+    3.1
+  ],
+  "goal_xy_requested": [
+    1.0,
+    1.0
+  ],
+  "goal_node": [
+    5,
+    5
+  ],
+  "goal_xy_evaluated": [
+    1.0,
+    1.0
+  ],
+  "r0_checkpoint": "/opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r0_direction_only/checkpoints/model_20.pth",
+  "r2_checkpoint": "/opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r2_full_matched/checkpoints/model_20.pth",
+  "r0": {
+    "spearman_rho": 0.9560095384073316,
+    "p_value": 7.011889463997008e-251,
+    "bootstrap_ci_95": [
+      0.9400665531448932,
+      0.9678716083327376
+    ]
+  },
+  "r2": {
+    "spearman_rho": 0.8565294046669715,
+    "p_value": 3.0198569315762584e-136,
+    "bootstrap_ci_95": [
+      0.8147428298033347,
+      0.8918105295347697
+    ]
+  },
+  "delta_r2_minus_r0": -0.09948013374036013,
+  "paired_bootstrap_delta_ci_95": [
+    -0.1298417945768133,
+    -0.0748837455523115
+  ],
+  "bootstrap_samples": 5000,
+  "seed": 20260723,
+  "device": "cuda:0"
+}

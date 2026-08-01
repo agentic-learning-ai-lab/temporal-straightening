@@ -1,0 +1,113 @@
+./setup_a100.sh: line 39: /tmp/setup_a100.log: Permission denied
+
+⚠️  $HOME is on EPHEMERAL storage (lv_ephemeral / /opt/dlami/nvme).
+⚠️  Checkpoints written here are LOST when this instance stops.
+⚠️  BACKUP_DIR is NOT set. Nothing will be backed up.
+⚠️  Find a persistent path (see the probe in the chat) and re-source with:
+⚠️     BACKUP_DIR=/some/persistent/path source setup_a100.sh
+⚠️     BACKUP_DIR=s3://your-bucket/ts    source setup_a100.sh
+
+>> creating ts310 (python 3.10)
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 24.7.1
+    latest version: 26.5.3
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+
+>> GL/OSMesa deps via conda-forge (no root needed, ~2-5 min)
+./setup_a100.sh: line 47: /tmp/setup_a100.log: Permission denied
+!! STEP FAILED: GL/OSMesa deps via conda-forge (no root needed, ~2-5 min)
+!! last 20 lines (full log: /tmp/setup_a100.log):
+!!   Requirement already satisfied: tqdm==4.66.4 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 204)) (4.66.4)
+!!   Requirement already satisfied: traitlets==5.14.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 205)) (5.14.3)
+!!   Requirement already satisfied: transformers==4.21.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 206)) (4.21.1)
+!!   Requirement already satisfied: trimesh==4.4.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 207)) (4.4.0)
+!!   Requirement already satisfied: triton==2.3.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 208)) (2.3.0)
+!!   Requirement already satisfied: typeguard==2.13.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 209)) (2.13.3)
+!!   Requirement already satisfied: typing-extensions==4.12.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 210)) (4.12.1)
+!!   Requirement already satisfied: urllib3==2.2.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 211)) (2.2.1)
+!!   Requirement already satisfied: virtualenv==20.26.2 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 212)) (20.26.2)
+!!   Requirement already satisfied: wandb==0.13.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 213)) (0.13.1)
+!!   Requirement already satisfied: wcwidth==0.2.13 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 214)) (0.2.13)
+!!   Requirement already satisfied: werkzeug==3.0.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 215)) (3.0.3)
+!!   Requirement already satisfied: wrapt==1.14.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 216)) (1.14.1)
+!!   Requirement already satisfied: zipp==3.19.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 217)) (3.19.1)
+!!   Requirement already satisfied: numpy>=1.17 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from accelerate==0.26.1->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 2)) (1.26.4)
+!!   Requirement already satisfied: wheel<1.0,>=0.23.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from astunparse==1.6.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 6)) (0.47.0)
+!!   Requirement already satisfied: setuptools!=50.0.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from dm-control==1.0.27->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 26)) (80.10.2)
+!!   Requirement already satisfied: pillow>=6.2.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from matplotlib==3.5.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 85)) (12.3.0)
+!!   Requirement already satisfied: imageio<3.0,>=2.5 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from moviepy==1.0.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 91)) (2.37.3)
+!!   Requirement already satisfied: setuptools<81 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (80.10.2)
+>> installing python deps (slow step, ~10-20 min)
+./setup_a100.sh: line 47: /tmp/setup_a100.log: Permission denied
+!! STEP FAILED: installing python deps (slow step, ~10-20 min)
+!! last 20 lines (full log: /tmp/setup_a100.log):
+!!   Requirement already satisfied: tqdm==4.66.4 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 204)) (4.66.4)
+!!   Requirement already satisfied: traitlets==5.14.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 205)) (5.14.3)
+!!   Requirement already satisfied: transformers==4.21.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 206)) (4.21.1)
+!!   Requirement already satisfied: trimesh==4.4.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 207)) (4.4.0)
+!!   Requirement already satisfied: triton==2.3.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 208)) (2.3.0)
+!!   Requirement already satisfied: typeguard==2.13.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 209)) (2.13.3)
+!!   Requirement already satisfied: typing-extensions==4.12.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 210)) (4.12.1)
+!!   Requirement already satisfied: urllib3==2.2.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 211)) (2.2.1)
+!!   Requirement already satisfied: virtualenv==20.26.2 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 212)) (20.26.2)
+!!   Requirement already satisfied: wandb==0.13.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 213)) (0.13.1)
+!!   Requirement already satisfied: wcwidth==0.2.13 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 214)) (0.2.13)
+!!   Requirement already satisfied: werkzeug==3.0.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 215)) (3.0.3)
+!!   Requirement already satisfied: wrapt==1.14.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 216)) (1.14.1)
+!!   Requirement already satisfied: zipp==3.19.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 217)) (3.19.1)
+!!   Requirement already satisfied: numpy>=1.17 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from accelerate==0.26.1->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 2)) (1.26.4)
+!!   Requirement already satisfied: wheel<1.0,>=0.23.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from astunparse==1.6.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 6)) (0.47.0)
+!!   Requirement already satisfied: setuptools!=50.0.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from dm-control==1.0.27->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 26)) (80.10.2)
+!!   Requirement already satisfied: pillow>=6.2.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from matplotlib==3.5.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 85)) (12.3.0)
+!!   Requirement already satisfied: imageio<3.0,>=2.5 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from moviepy==1.0.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 91)) (2.37.3)
+!!   Requirement already satisfied: setuptools<81 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (80.10.2)
+>> pinning setuptools<81 (wandb needs pkg_resources)
+./setup_a100.sh: line 47: /tmp/setup_a100.log: Permission denied
+!! STEP FAILED: pinning setuptools<81 (wandb needs pkg_resources)
+!! last 20 lines (full log: /tmp/setup_a100.log):
+!!   Requirement already satisfied: tqdm==4.66.4 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 204)) (4.66.4)
+!!   Requirement already satisfied: traitlets==5.14.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 205)) (5.14.3)
+!!   Requirement already satisfied: transformers==4.21.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 206)) (4.21.1)
+!!   Requirement already satisfied: trimesh==4.4.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 207)) (4.4.0)
+!!   Requirement already satisfied: triton==2.3.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 208)) (2.3.0)
+!!   Requirement already satisfied: typeguard==2.13.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 209)) (2.13.3)
+!!   Requirement already satisfied: typing-extensions==4.12.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 210)) (4.12.1)
+!!   Requirement already satisfied: urllib3==2.2.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 211)) (2.2.1)
+!!   Requirement already satisfied: virtualenv==20.26.2 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 212)) (20.26.2)
+!!   Requirement already satisfied: wandb==0.13.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 213)) (0.13.1)
+!!   Requirement already satisfied: wcwidth==0.2.13 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 214)) (0.2.13)
+!!   Requirement already satisfied: werkzeug==3.0.3 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 215)) (3.0.3)
+!!   Requirement already satisfied: wrapt==1.14.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 216)) (1.14.1)
+!!   Requirement already satisfied: zipp==3.19.1 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from -r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 217)) (3.19.1)
+!!   Requirement already satisfied: numpy>=1.17 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from accelerate==0.26.1->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 2)) (1.26.4)
+!!   Requirement already satisfied: wheel<1.0,>=0.23.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from astunparse==1.6.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 6)) (0.47.0)
+!!   Requirement already satisfied: setuptools!=50.0.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from dm-control==1.0.27->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 26)) (80.10.2)
+!!   Requirement already satisfied: pillow>=6.2.0 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from matplotlib==3.5.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 85)) (12.3.0)
+!!   Requirement already satisfied: imageio<3.0,>=2.5 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (from moviepy==1.0.3->-r /home/jupyter-deuk-e40b/ts-cls/reqs310.txt (line 91)) (2.37.3)
+!!   Requirement already satisfied: setuptools<81 in /opt/dlami/nvme/home/jupyter-deuk-e40b/.conda/envs/ts310/lib/python3.10/site-packages (80.10.2)
+>> installing MuJoCo 210
+!! no dataset zip at /home/jupyter-anusha-deuk2-a8e6/missing_point_maze.zip
+!! Drag point_maze.zip into the JupyterLab file panel (home dir), then re-source.
+!! (No ssh/scp on a JupyterHub box -- the file browser IS the upload path.)
+!! torch.hub dinov2 cache not found yet -- it appears on the first train run.
+!! Re-source this script after that, or resume will fail on ModuleNotFoundError.
+>> CUDA_VISIBLE_DEVICES=1  (of 8; override if you want another)
+0, NVIDIA A100-SXM4-40GB, 29013 MiB, 40960 MiB
+1, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+2, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+3, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+4, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+5, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+6, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+7, NVIDIA A100-SXM4-40GB, 0 MiB, 40960 MiB
+
+!! ===================================================================
+!! ONE OR MORE STEPS FAILED. Do NOT run prep/train yet.
+!! Full log:  less /tmp/setup_a100.log
+!! ===================================================================

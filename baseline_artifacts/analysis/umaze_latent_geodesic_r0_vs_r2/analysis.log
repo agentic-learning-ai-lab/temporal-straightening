@@ -1,0 +1,118 @@
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/Cython/Distutils/old_build_ext.py:15: DeprecationWarning: dep_util is Deprecated. Use functions from setuptools instead.
+  from distutils.dep_util import newer, newer_group
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+Warning: Mujoco-based envs failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'mjrl'
+Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'flow'
+Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
+No module named 'carla'
+pybullet build time: Jan 29 2025 23:16:28
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/pybullet_envs/env_bases.py:8: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import parse_version
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/pkg_resources/__init__.py:3148: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+Using cache found in /home/jupyter-anusha-deuk2-a8e6/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385
+/home/jupyter-anusha-deuk2-a8e6/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/jupyter-anusha-deuk2-a8e6/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/jupyter-anusha-deuk2-a8e6/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+WARNING:models.dino:Unknown projector 'none' for patch tokens; proceeding without projector.
+Using cache found in /home/jupyter-anusha-deuk2-a8e6/.cache/torch/hub/facebookresearch_dinov2_81b2b6419385
+WARNING:models.dino:Unknown projector 'none' for patch tokens; proceeding without projector.
+Rendering 469 valid grid states; goal node=(5, 5)
+Encoding R0 observations with /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r0_direction_only/checkpoints/model_20.pth
+Encoding R2 observations with /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r2_full_matched/checkpoints/model_20.pth
+{
+  "n_states": 469,
+  "grid_spacing": 0.1,
+  "grid_bounds": [
+    0.5,
+    3.1
+  ],
+  "goal_xy_requested": [
+    1.0,
+    1.0
+  ],
+  "goal_node": [
+    5,
+    5
+  ],
+  "goal_xy_evaluated": [
+    1.0,
+    1.0
+  ],
+  "r0_checkpoint": "/opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r0_direction_only/checkpoints/model_20.pth",
+  "r2_checkpoint": "/opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/checkpoints/umaze_q1_retrain/r2_full_matched/checkpoints/model_20.pth",
+  "r0": {
+    "spearman_rho": 0.9560095384073316,
+    "p_value": 7.011889463997008e-251,
+    "bootstrap_ci_95": [
+      0.9400665531448932,
+      0.9678716083327376
+    ]
+  },
+  "r2": {
+    "spearman_rho": 0.8565294046669715,
+    "p_value": 3.0198569315762584e-136,
+    "bootstrap_ci_95": [
+      0.8147428298033347,
+      0.8918105295347697
+    ]
+  },
+  "delta_r2_minus_r0": -0.09948013374036013,
+  "paired_bootstrap_delta_ci_95": [
+    -0.1298417945768133,
+    -0.0748837455523115
+  ],
+  "bootstrap_samples": 5000,
+  "seed": 20260723,
+  "device": "cuda:0"
+}
+Wrote analysis to /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/temporal-straightening/baseline_artifacts/analysis/umaze_latent_geodesic_r0_vs_r2

@@ -1,0 +1,1103 @@
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 24.7.1
+    latest version: 26.5.3
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310
+
+  added / updated specs:
+    - python=3.10
+
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_9 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_102 
+  libexpat           conda-forge/linux-64::libexpat-2.8.1-hecca717_1 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h3435931_0 
+  libgcc             conda-forge/linux-64::libgcc-15.2.0-he0feb66_20 
+  libgcc-ng          conda-forge/linux-64::libgcc-ng-15.2.0-h69a702a_20 
+  libgomp            conda-forge/linux-64::libgomp-15.2.0-he0feb66_20 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_0 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hb9d3cd8_1 
+  libsqlite          conda-forge/linux-64::libsqlite-3.53.3-h0c1763c_0 
+  libuuid            conda-forge/linux-64::libuuid-2.42.2-h5347b49_0 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.36-hd590300_1 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_2 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_0 
+  openssl            conda-forge/linux-64::openssl-3.6.3-h35e630c_0 
+  packaging          conda-forge/noarch::packaging-26.2-pyhc364b38_0 
+  pip                conda-forge/noarch::pip-26.1.2-pyh8b19718_0 
+  python             conda-forge/linux-64::python-3.10.20-h267e890_1_cpython 
+  readline           conda-forge/linux-64::readline-8.3-h853b02a_0 
+  setuptools         conda-forge/noarch::setuptools-83.0.0-pyh332efcf_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_hd70dff1_3 
+  tzdata             conda-forge/noarch::tzdata-2026c-h151e31d_0 
+  wheel              conda-forge/noarch::wheel-0.47.0-pyhd8ed1ab_0 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_6 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate /home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310
+
+  added / updated specs:
+    - glew
+    - glfw
+    - mesalib=23.3
+    - patchelf
+    - xorg-libx11
+    - xorg-libxext
+    - xorg-xproto
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    c-ares-1.34.8              |       hb03c661_0         206 KB  conda-forge
+    elfutils-0.190             |       h924a536_1         1.1 MB  conda-forge
+    glew-2.1.0                 |       h9c3ff4c_2         647 KB  conda-forge
+    glfw-3.4                   |       hd590300_0         163 KB  conda-forge
+    gmp-6.3.0                  |       hac33072_2         449 KB  conda-forge
+    gnutls-3.8.11              |       he7cfd77_0         1.9 MB  conda-forge
+    keyutils-1.6.3             |       hb9d3cd8_0         131 KB  conda-forge
+    krb5-1.22.2                |       hbde042b_1         1.3 MB  conda-forge
+    libarchive-3.7.7           |       h75ea233_4         846 KB  conda-forge
+    libcurl-8.21.0             |       hcf29cc6_1         468 KB  conda-forge
+    libdrm-2.4.127             |       hb03c661_0         304 KB  conda-forge
+    libedit-3.1.20250104       | pl5321h7949ede_0         132 KB  conda-forge
+    libglu-9.0.3               |       h5888daf_1         318 KB  conda-forge
+    libglvnd-1.7.0             |       ha4b6fd6_3         130 KB  conda-forge
+    libiconv-1.18              |       h3b78370_2         772 KB  conda-forge
+    libidn2-2.3.8              |       hfac485b_1         136 KB  conda-forge
+    libllvm17-17.0.6           |       ha7bfdaf_3        34.9 MB  conda-forge
+    liblzma-devel-5.8.3        |       hb03c661_0         480 KB  conda-forge
+    libmicrohttpd-1.0.2        |       hc2fc477_0         279 KB  conda-forge
+    libnghttp2-1.68.1          |       h877daf1_0         648 KB  conda-forge
+    libopengl-1.7.0            |       ha4b6fd6_3          51 KB  conda-forge
+    libpciaccess-0.19          |       hb03c661_0          28 KB  conda-forge
+    libssh2-1.11.1             |       hcf80075_0         298 KB  conda-forge
+    libstdcxx-15.2.0           |      h934c35e_20         5.6 MB  conda-forge
+    libstdcxx-ng-15.2.0        |      hdf11a46_20          28 KB  conda-forge
+    libtasn1-4.21.0            |       hb03c661_0         114 KB  conda-forge
+    libunistring-0.9.10        |       h7f98852_0         1.4 MB  conda-forge
+    libxcb-1.15                |       h0b41bf4_0         375 KB  conda-forge
+    libxkbcommon-1.7.0         |       h662e7e4_0         580 KB  conda-forge
+    libxml2-2.13.9             |       h04c0eec_0         681 KB  conda-forge
+    lz4-c-1.10.0               |       h5888daf_1         163 KB  conda-forge
+    lzo-2.10                   |    h280c20c_1002         187 KB  conda-forge
+    mesalib-23.3.4             |       hf257a20_0         3.7 MB  conda-forge
+    nettle-3.10.1              |       h4a9d5aa_0        1023 KB  conda-forge
+    p11-kit-0.25.3             |       he72ba39_0         3.1 MB  conda-forge
+    patchelf-0.17.2            |       h58526e2_0          92 KB  conda-forge
+    pthread-stubs-0.4          |    hb9d3cd8_1002           8 KB  conda-forge
+    tk-8.6.13                  |noxft_hd72426e_102         3.1 MB  conda-forge
+    wayland-1.23.1             |       h3e06ad9_0         314 KB  conda-forge
+    xkeyboard-config-2.42      |       h4ab18f5_0         380 KB  conda-forge
+    xorg-damageproto-1.2.1     |    hb9d3cd8_1003          27 KB  conda-forge
+    xorg-fixesproto-5.0        |    hb9d3cd8_1003          11 KB  conda-forge
+    xorg-glproto-1.4.17        |    hb9d3cd8_1003          23 KB  conda-forge
+    xorg-kbproto-1.0.7         |    hb9d3cd8_1003          30 KB  conda-forge
+    xorg-libx11-1.8.9          |       h8ee46fc_0         809 KB  conda-forge
+    xorg-libxau-1.0.12         |       hb03c661_1          15 KB  conda-forge
+    xorg-libxdamage-1.1.5      |       h7f98852_1          12 KB  conda-forge
+    xorg-libxdmcp-1.1.5        |       hb03c661_1          20 KB  conda-forge
+    xorg-libxext-1.3.4         |       h0b41bf4_2          49 KB  conda-forge
+    xorg-libxfixes-5.0.3       |    h7f98852_1004          18 KB  conda-forge
+    xorg-libxinerama-1.1.5     |       h27087fc_0          13 KB  conda-forge
+    xorg-libxrandr-1.5.2       |       h7f98852_1          29 KB  conda-forge
+    xorg-libxrender-0.9.11     |       hd590300_0          37 KB  conda-forge
+    xorg-randrproto-1.5.0      |    hb9d3cd8_1002          35 KB  conda-forge
+    xorg-renderproto-0.11.1    |    hb9d3cd8_1003          12 KB  conda-forge
+    xorg-util-macros-1.20.2    |       hb9d3cd8_0          43 KB  conda-forge
+    xorg-xextproto-7.3.0       |    hb9d3cd8_1004          30 KB  conda-forge
+    xorg-xf86vidmodeproto-2.3.1|    hb9d3cd8_1005          26 KB  conda-forge
+    xorg-xproto-7.0.31         |    hb9d3cd8_1008          72 KB  conda-forge
+    xz-5.8.3                   |       ha02ee65_0          24 KB  conda-forge
+    xz-gpl-tools-5.8.3         |       ha02ee65_0          33 KB  conda-forge
+    xz-tools-5.8.3             |       hb03c661_0          94 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        67.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  c-ares             conda-forge/linux-64::c-ares-1.34.8-hb03c661_0 
+  elfutils           conda-forge/linux-64::elfutils-0.190-h924a536_1 
+  glew               conda-forge/linux-64::glew-2.1.0-h9c3ff4c_2 
+  glfw               conda-forge/linux-64::glfw-3.4-hd590300_0 
+  gmp                conda-forge/linux-64::gmp-6.3.0-hac33072_2 
+  gnutls             conda-forge/linux-64::gnutls-3.8.11-he7cfd77_0 
+  icu                conda-forge/linux-64::icu-75.1-he02047a_0 
+  keyutils           conda-forge/linux-64::keyutils-1.6.3-hb9d3cd8_0 
+  krb5               conda-forge/linux-64::krb5-1.22.2-hbde042b_1 
+  libarchive         conda-forge/linux-64::libarchive-3.7.7-h75ea233_4 
+  libcurl            conda-forge/linux-64::libcurl-8.21.0-hcf29cc6_1 
+  libdrm             conda-forge/linux-64::libdrm-2.4.127-hb03c661_0 
+  libedit            conda-forge/linux-64::libedit-3.1.20250104-pl5321h7949ede_0 
+  libev              conda-forge/linux-64::libev-4.33-hd590300_2 
+  libglu             conda-forge/linux-64::libglu-9.0.3-h5888daf_1 
+  libglvnd           conda-forge/linux-64::libglvnd-1.7.0-ha4b6fd6_3 
+  libiconv           conda-forge/linux-64::libiconv-1.18-h3b78370_2 
+  libidn2            conda-forge/linux-64::libidn2-2.3.8-hfac485b_1 
+  libllvm17          conda-forge/linux-64::libllvm17-17.0.6-ha7bfdaf_3 
+  liblzma-devel      conda-forge/linux-64::liblzma-devel-5.8.3-hb03c661_0 
+  libmicrohttpd      conda-forge/linux-64::libmicrohttpd-1.0.2-hc2fc477_0 
+  libnghttp2         conda-forge/linux-64::libnghttp2-1.68.1-h877daf1_0 
+  libopengl          conda-forge/linux-64::libopengl-1.7.0-ha4b6fd6_3 
+  libpciaccess       conda-forge/linux-64::libpciaccess-0.19-hb03c661_0 
+  libssh2            conda-forge/linux-64::libssh2-1.11.1-hcf80075_0 
+  libstdcxx          conda-forge/linux-64::libstdcxx-15.2.0-h934c35e_20 
+  libstdcxx-ng       conda-forge/linux-64::libstdcxx-ng-15.2.0-hdf11a46_20 
+  libtasn1           conda-forge/linux-64::libtasn1-4.21.0-hb03c661_0 
+  libunistring       conda-forge/linux-64::libunistring-0.9.10-h7f98852_0 
+  libxcb             conda-forge/linux-64::libxcb-1.15-h0b41bf4_0 
+  libxkbcommon       conda-forge/linux-64::libxkbcommon-1.7.0-h662e7e4_0 
+  libxml2            conda-forge/linux-64::libxml2-2.13.9-h04c0eec_0 
+  lz4-c              conda-forge/linux-64::lz4-c-1.10.0-h5888daf_1 
+  lzo                conda-forge/linux-64::lzo-2.10-h280c20c_1002 
+  mesalib            conda-forge/linux-64::mesalib-23.3.4-hf257a20_0 
+  nettle             conda-forge/linux-64::nettle-3.10.1-h4a9d5aa_0 
+  p11-kit            conda-forge/linux-64::p11-kit-0.25.3-he72ba39_0 
+  patchelf           conda-forge/linux-64::patchelf-0.17.2-h58526e2_0 
+  pthread-stubs      conda-forge/linux-64::pthread-stubs-0.4-hb9d3cd8_1002 
+  wayland            conda-forge/linux-64::wayland-1.23.1-h3e06ad9_0 
+  xkeyboard-config   conda-forge/linux-64::xkeyboard-config-2.42-h4ab18f5_0 
+  xorg-damageproto   conda-forge/linux-64::xorg-damageproto-1.2.1-hb9d3cd8_1003 
+  xorg-fixesproto    conda-forge/linux-64::xorg-fixesproto-5.0-hb9d3cd8_1003 
+  xorg-glproto       conda-forge/linux-64::xorg-glproto-1.4.17-hb9d3cd8_1003 
+  xorg-kbproto       conda-forge/linux-64::xorg-kbproto-1.0.7-hb9d3cd8_1003 
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.8.9-h8ee46fc_0 
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.12-hb03c661_1 
+  xorg-libxdamage    conda-forge/linux-64::xorg-libxdamage-1.1.5-h7f98852_1 
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.5-hb03c661_1 
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.4-h0b41bf4_2 
+  xorg-libxfixes     conda-forge/linux-64::xorg-libxfixes-5.0.3-h7f98852_1004 
+  xorg-libxinerama   conda-forge/linux-64::xorg-libxinerama-1.1.5-h27087fc_0 
+  xorg-libxrandr     conda-forge/linux-64::xorg-libxrandr-1.5.2-h7f98852_1 
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.11-hd590300_0 
+  xorg-randrproto    conda-forge/linux-64::xorg-randrproto-1.5.0-hb9d3cd8_1002 
+  xorg-renderproto   conda-forge/linux-64::xorg-renderproto-0.11.1-hb9d3cd8_1003 
+  xorg-util-macros   conda-forge/linux-64::xorg-util-macros-1.20.2-hb9d3cd8_0 
+  xorg-xextproto     conda-forge/linux-64::xorg-xextproto-7.3.0-hb9d3cd8_1004 
+  xorg-xf86vidmodep~ conda-forge/linux-64::xorg-xf86vidmodeproto-2.3.1-hb9d3cd8_1005 
+  xorg-xproto        conda-forge/linux-64::xorg-xproto-7.0.31-hb9d3cd8_1008 
+  xz                 conda-forge/linux-64::xz-5.8.3-ha02ee65_0 
+  xz-gpl-tools       conda-forge/linux-64::xz-gpl-tools-5.8.3-ha02ee65_0 
+  xz-tools           conda-forge/linux-64::xz-tools-5.8.3-hb03c661_0 
+
+The following packages will be DOWNGRADED:
+
+  tk                                8.6.13-noxft_hd70dff1_3 --> 8.6.13-noxft_hd72426e_102 
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Collecting absl-py==2.1.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 1))
+  Downloading absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting accelerate==0.26.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 2))
+  Downloading accelerate-0.26.1-py3-none-any.whl.metadata (18 kB)
+Collecting antlr4-python3-runtime==4.9.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 3))
+  Downloading antlr4-python3-runtime-4.9.3.tar.gz (117 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting array-record==0.5.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 4))
+  Downloading array_record-0.5.1-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (699 bytes)
+Collecting asttokens==3.0.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 5))
+  Downloading asttokens-3.0.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting astunparse==1.6.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 6))
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting attrs==23.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 7))
+  Downloading attrs-23.2.0-py3-none-any.whl.metadata (9.5 kB)
+Collecting bddl==1.0.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 8))
+  Downloading bddl-1.0.1.tar.gz (164 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting beautifulsoup4==4.13.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 9))
+  Downloading beautifulsoup4-4.13.3-py3-none-any.whl.metadata (3.8 kB)
+Collecting cachetools==5.3.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 10))
+  Downloading cachetools-5.3.3-py3-none-any.whl.metadata (5.3 kB)
+Collecting certifi==2024.6.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 11))
+  Downloading certifi-2024.6.2-py3-none-any.whl.metadata (2.2 kB)
+Collecting cffi==1.16.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 12))
+  Downloading cffi-1.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting cfgv==3.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 13))
+  Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting charset-normalizer==3.3.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 14))
+  Downloading charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (33 kB)
+Collecting chex==0.1.85 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 15))
+  Downloading chex-0.1.85-py3-none-any.whl.metadata (17 kB)
+Collecting click==8.1.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 16))
+  Downloading click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+Collecting cloudpickle==2.1.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 17))
+  Downloading cloudpickle-2.1.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting contextlib2==21.6.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 18))
+  Downloading contextlib2-21.6.0-py2.py3-none-any.whl.metadata (4.1 kB)
+Collecting cycler==0.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 19))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting cython==0.29.37 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 20))
+  Downloading Cython-0.29.37-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl.metadata (3.1 kB)
+Collecting d4rl==1.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 21))
+  Downloading d4rl-1.1-py3-none-any.whl.metadata (270 bytes)
+Collecting decorator==4.4.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 22))
+  Downloading decorator-4.4.2-py2.py3-none-any.whl.metadata (4.2 kB)
+Collecting decord==0.6.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 23))
+  Downloading decord-0.6.0-py3-none-manylinux2010_x86_64.whl.metadata (422 bytes)
+Collecting distlib==0.3.8 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 24))
+  Downloading distlib-0.3.8-py2.py3-none-any.whl.metadata (5.1 kB)
+Collecting distrax==0.1.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 25))
+  Downloading distrax-0.1.5-py3-none-any.whl.metadata (13 kB)
+Collecting dm-control==1.0.27 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 26))
+  Downloading dm_control-1.0.27-py3-none-any.whl.metadata (1.6 kB)
+Collecting dm-env==1.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 27))
+  Downloading dm_env-1.6-py3-none-any.whl.metadata (966 bytes)
+Collecting dm-tree==0.1.8 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 28))
+  Downloading dm_tree-0.1.8-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.9 kB)
+Collecting docker-pycreds==0.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 29))
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting easydict==1.9 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 30))
+  Downloading easydict-1.9.tar.gz (6.4 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting egl-probe==1.0.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 31))
+  Downloading egl_probe-1.0.2.tar.gz (217 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting einops==0.4.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 32))
+  Downloading einops-0.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting etils==1.5.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 33))
+  Downloading etils-1.5.2-py3-none-any.whl.metadata (6.3 kB)
+Collecting evdev==1.8.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 34))
+  Downloading evdev-1.8.0.tar.gz (32 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting exceptiongroup==1.2.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 35))
+  Downloading exceptiongroup-1.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting executing==2.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 36))
+  Downloading executing-2.2.0-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting fasteners==0.19 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 37))
+  Downloading fasteners-0.19-py3-none-any.whl.metadata (4.9 kB)
+Collecting fastjsonschema==2.19.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 38))
+  Downloading fastjsonschema-2.19.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting filelock==3.14.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 39))
+  Downloading filelock-3.14.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting flatbuffers==24.3.25 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 40))
+  Downloading flatbuffers-24.3.25-py2.py3-none-any.whl.metadata (850 bytes)
+Collecting flax==0.7.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 41))
+  Downloading flax-0.7.5-py3-none-any.whl.metadata (10 kB)
+Collecting fonttools==4.53.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 42))
+  Downloading fonttools-4.53.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (162 kB)
+Collecting fsspec==2024.5.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 43))
+  Downloading fsspec-2024.5.0-py3-none-any.whl.metadata (11 kB)
+Collecting future==0.18.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 44))
+  Downloading future-0.18.2.tar.gz (829 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 829.2/829.2 kB 50.7 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting gast==0.5.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 45))
+  Downloading gast-0.5.4-py3-none-any.whl.metadata (1.3 kB)
+Collecting gitdb==4.0.11 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 46))
+  Downloading gitdb-4.0.11-py3-none-any.whl.metadata (1.2 kB)
+Collecting gitpython==3.1.43 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 47))
+  Downloading GitPython-3.1.43-py3-none-any.whl.metadata (13 kB)
+Collecting glfw==2.7.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 48))
+  Downloading glfw-2.7.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38-none-manylinux2014_x86_64.whl.metadata (5.4 kB)
+Collecting google-auth==2.29.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 49))
+  Downloading google_auth-2.29.0-py2.py3-none-any.whl.metadata (4.7 kB)
+Collecting google-auth-oauthlib==1.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 50))
+  Downloading google_auth_oauthlib-1.2.0-py2.py3-none-any.whl.metadata (2.7 kB)
+Collecting google-pasta==0.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 51))
+  Downloading google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting grpcio==1.64.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 52))
+  Downloading grpcio-1.64.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.3 kB)
+Collecting gym==0.23.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 53))
+  Downloading gym-0.23.1.tar.gz (626 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 626.2/626.2 kB 106.1 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting gym-notices==0.0.8 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 54))
+  Downloading gym_notices-0.0.8-py3-none-any.whl.metadata (1.0 kB)
+Collecting h5py==3.11.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 55))
+  Downloading h5py-3.11.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+Collecting huggingface-hub==0.23.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 56))
+  Downloading huggingface_hub-0.23.2-py3-none-any.whl.metadata (12 kB)
+Collecting hydra-core==1.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 57))
+  Downloading hydra_core-1.2.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting hydra-submitit-launcher==1.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 58))
+  Downloading hydra_submitit_launcher-1.2.0-py3-none-any.whl.metadata (1.1 kB)
+Collecting identify==2.5.36 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 59))
+  Downloading identify-2.5.36-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting idna==3.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 60))
+  Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+Collecting imageio-ffmpeg==0.4.9 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 61))
+  Downloading imageio_ffmpeg-0.4.9-py3-none-manylinux2010_x86_64.whl.metadata (1.7 kB)
+Collecting importlib-metadata==7.1.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 62))
+  Downloading importlib_metadata-7.1.0-py3-none-any.whl.metadata (4.7 kB)
+Collecting importlib-resources==6.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 63))
+  Downloading importlib_resources-6.4.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting iniconfig==2.0.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 64))
+  Downloading iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting ipdb==0.13.13 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 65))
+  Downloading ipdb-0.13.13-py3-none-any.whl.metadata (14 kB)
+Collecting ipython==8.18.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 66))
+  Downloading ipython-8.18.1-py3-none-any.whl.metadata (6.0 kB)
+Collecting jax==0.4.27 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 67))
+  Downloading jax-0.4.27-py3-none-any.whl.metadata (23 kB)
+Collecting jaxlib==0.4.27 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 68))
+  Downloading jaxlib-0.4.27-cp310-cp310-manylinux2014_x86_64.whl.metadata (1.8 kB)
+Collecting jedi==0.19.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 69))
+  Downloading jedi-0.19.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting jinja2==3.1.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 70))
+  Downloading jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting joblib==1.4.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 71))
+  Downloading joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting jsonschema==4.22.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 72))
+  Downloading jsonschema-4.22.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting jsonschema-specifications==2023.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 73))
+  Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting jupyter-core==5.7.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 74))
+  Downloading jupyter_core-5.7.2-py3-none-any.whl.metadata (3.4 kB)
+Collecting jupytext==1.16.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 75))
+  Downloading jupytext-1.16.2-py3-none-any.whl.metadata (13 kB)
+Collecting keras==2.15.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 76))
+  Downloading keras-2.15.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting kiwisolver==1.4.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 77))
+  Downloading kiwisolver-1.4.5-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (6.4 kB)
+Collecting labmaze==1.0.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 78))
+  Downloading labmaze-1.0.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (278 bytes)
+Collecting libclang==18.1.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 79))
+  Downloading libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl.metadata (5.2 kB)
+Collecting llvmlite==0.42.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 80))
+  Downloading llvmlite-0.42.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.8 kB)
+Collecting lxml==5.3.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 81))
+  Downloading lxml-5.3.1-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (3.7 kB)
+Collecting markdown==3.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 82))
+  Downloading Markdown-3.6-py3-none-any.whl.metadata (7.0 kB)
+Collecting markdown-it-py==3.0.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 83))
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting markupsafe==2.1.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 84))
+  Downloading MarkupSafe-2.1.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+Collecting matplotlib==3.5.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 85))
+  Downloading matplotlib-3.5.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting matplotlib-inline==0.1.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 86))
+  Downloading matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
+Collecting mdit-py-plugins==0.4.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 87))
+  Downloading mdit_py_plugins-0.4.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting mdurl==0.1.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 88))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting ml-collections==0.1.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 89))
+  Downloading ml_collections-0.1.1.tar.gz (77 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting ml-dtypes==0.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 90))
+  Downloading ml_dtypes-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+Collecting moviepy==1.0.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 91))
+  Downloading moviepy-1.0.3.tar.gz (388 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting mpmath==1.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 92))
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting msgpack==1.0.8 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 93))
+  Downloading msgpack-1.0.8-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.1 kB)
+Collecting mujoco==3.2.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 94))
+  Downloading mujoco-3.2.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (44 kB)
+Collecting mujoco-py==2.1.2.14 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 95))
+  Downloading mujoco_py-2.1.2.14-py3-none-any.whl.metadata (669 bytes)
+Collecting nbformat==5.10.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 96))
+  Downloading nbformat-5.10.4-py3-none-any.whl.metadata (3.6 kB)
+Collecting nest-asyncio==1.6.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 97))
+  Downloading nest_asyncio-1.6.0-py3-none-any.whl.metadata (2.8 kB)
+Collecting networkx==3.2.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 98))
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting nodeenv==1.9.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 99))
+  Downloading nodeenv-1.9.0-py2.py3-none-any.whl.metadata (21 kB)
+Collecting numba==0.59.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 100))
+  Downloading numba-0.59.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+Collecting nvidia-cublas-cu12==12.1.3.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 101))
+  Downloading nvidia_cublas_cu12-12.1.3.1-py3-none-manylinux1_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-cupti-cu12==12.1.105 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 102))
+  Downloading nvidia_cuda_cupti_cu12-12.1.105-py3-none-manylinux1_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.1.105 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 103))
+  Downloading nvidia_cuda_nvrtc_cu12-12.1.105-py3-none-manylinux1_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-runtime-cu12==12.1.105 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 104))
+  Downloading nvidia_cuda_runtime_cu12-12.1.105-py3-none-manylinux1_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cudnn-cu12==8.9.2.26 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 105))
+  Downloading nvidia_cudnn_cu12-8.9.2.26-py3-none-manylinux1_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cufft-cu12==11.0.2.54 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 106))
+  Downloading nvidia_cufft_cu12-11.0.2.54-py3-none-manylinux1_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-curand-cu12==10.3.2.106 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 107))
+  Downloading nvidia_curand_cu12-10.3.2.106-py3-none-manylinux1_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cusolver-cu12==11.4.5.107 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 108))
+  Downloading nvidia_cusolver_cu12-11.4.5.107-py3-none-manylinux1_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparse-cu12==12.1.0.106 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 109))
+  Downloading nvidia_cusparse_cu12-12.1.0.106-py3-none-manylinux1_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-ml-py==12.570.86 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 110))
+  Downloading nvidia_ml_py-12.570.86-py3-none-any.whl.metadata (8.7 kB)
+Collecting nvidia-nccl-cu12==2.20.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 111))
+  Downloading nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink-cu12==12.5.40 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 112))
+  Downloading nvidia_nvjitlink_cu12-12.5.40-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-nvtx-cu12==12.1.105 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 113))
+  Downloading nvidia_nvtx_cu12-12.1.105-py3-none-manylinux1_x86_64.whl.metadata (1.7 kB)
+Collecting nvitop==1.4.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 114))
+  Downloading nvitop-1.4.2-py3-none-any.whl.metadata (80 kB)
+Collecting oauthlib==3.2.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 115))
+  Downloading oauthlib-3.2.2-py3-none-any.whl.metadata (7.5 kB)
+Collecting omegaconf==2.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 116))
+  Downloading omegaconf-2.3.0-py3-none-any.whl.metadata (3.9 kB)
+Collecting opencv-python==4.6.0.66 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 117))
+  Downloading opencv_python-4.6.0.66-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB)
+Collecting openexr==3.2.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 118))
+  Downloading openexr-3.2.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting opt-einsum==3.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 119))
+  Downloading opt_einsum-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting optax==0.1.5 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 120))
+  Downloading optax-0.1.5-py3-none-any.whl.metadata (12 kB)
+Collecting orbax-checkpoint==0.4.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 121))
+  Downloading orbax_checkpoint-0.4.4-py3-none-any.whl.metadata (1.7 kB)
+Collecting packaging==24.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 122))
+  Downloading packaging-24.0-py3-none-any.whl.metadata (3.2 kB)
+Collecting parso==0.8.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 123))
+  Downloading parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
+Collecting pathtools==0.1.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 124))
+  Downloading pathtools-0.1.2.tar.gz (11 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting pexpect==4.9.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 125))
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting platformdirs==4.2.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 126))
+  Downloading platformdirs-4.2.2-py3-none-any.whl.metadata (11 kB)
+Collecting plotly==5.22.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 127))
+  Downloading plotly-5.22.0-py3-none-any.whl.metadata (7.1 kB)
+Collecting pluggy==1.5.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 128))
+  Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting pre-commit==3.3.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 129))
+  Downloading pre_commit-3.3.3-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting proglog==0.1.10 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 130))
+  Downloading proglog-0.1.10-py3-none-any.whl.metadata (639 bytes)
+Collecting promise==2.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 131))
+  Downloading promise-2.3.tar.gz (19 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting prompt-toolkit==3.0.50 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 132))
+  Downloading prompt_toolkit-3.0.50-py3-none-any.whl.metadata (6.6 kB)
+Collecting protobuf==3.20.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 133))
+  Downloading protobuf-3.20.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (679 bytes)
+Collecting psutil==5.9.8 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 134))
+  Downloading psutil-5.9.8-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (21 kB)
+Collecting ptyprocess==0.7.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 135))
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting pure-eval==0.2.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 136))
+  Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+Collecting pyasn1==0.6.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 137))
+  Downloading pyasn1-0.6.0-py2.py3-none-any.whl.metadata (8.3 kB)
+Collecting pyasn1-modules==0.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 138))
+  Downloading pyasn1_modules-0.4.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting pybind11==2.13.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 139))
+  Downloading pybind11-2.13.6-py3-none-any.whl.metadata (9.5 kB)
+Collecting pybind11-global==2.13.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 140))
+  Downloading pybind11_global-2.13.6-py3-none-any.whl.metadata (9.4 kB)
+Collecting pybullet==3.2.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 141))
+  Downloading pybullet-3.2.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.8 kB)
+Collecting pycocotools==2.0.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 142))
+  Downloading pycocotools-2.0.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.1 kB)
+Collecting pycparser==2.22 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 143))
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Collecting pygame==2.5.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 144))
+  Downloading pygame-2.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+Collecting pygments==2.18.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 145))
+  Downloading pygments-2.18.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting pymunk==6.8.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 146))
+  Downloading pymunk-6.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting pynput==1.7.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 147))
+  Downloading pynput-1.7.7-py2.py3-none-any.whl.metadata (31 kB)
+Collecting pyopengl==3.1.7 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 148))
+  Downloading PyOpenGL-3.1.7-py3-none-any.whl.metadata (3.2 kB)
+Collecting pyparsing==3.1.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 149))
+  Downloading pyparsing-3.1.2-py3-none-any.whl.metadata (5.1 kB)
+Collecting pytest==8.2.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 150))
+  Downloading pytest-8.2.1-py3-none-any.whl.metadata (7.6 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 151))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting python-xlib==0.33 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 152))
+  Downloading python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Collecting pywavelets==1.6.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 153))
+  Downloading pywavelets-1.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.0 kB)
+Collecting pyyaml==6.0.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 154))
+  Downloading PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Collecting referencing==0.35.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 155))
+  Downloading referencing-0.35.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting regex==2024.5.15 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 156))
+  Downloading regex-2024.5.15-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+Collecting requests==2.32.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 157))
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting requests-oauthlib==2.0.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 158))
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB)
+Collecting rich==13.7.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 159))
+  Downloading rich-13.7.1-py3-none-any.whl.metadata (18 kB)
+Collecting robomimic==0.2.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 160))
+  Downloading robomimic-0.2.0.tar.gz (192 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting robosuite==1.4.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 161))
+  Downloading robosuite-1.4.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting rpds-py==0.18.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 162))
+  Downloading rpds_py-0.18.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting rsa==4.9 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 163))
+  Downloading rsa-4.9-py3-none-any.whl.metadata (4.2 kB)
+Collecting safetensors==0.4.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 164))
+  Downloading safetensors-0.4.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting scikit-image==0.19.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 165))
+  Downloading scikit_image-0.19.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.0 kB)
+Collecting scikit-learn==1.5.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 166))
+  Downloading scikit_learn-1.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+Collecting scipy==1.13.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 167))
+  Downloading scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+Collecting sentry-sdk==2.3.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 168))
+  Downloading sentry_sdk-2.3.1-py2.py3-none-any.whl.metadata (10 kB)
+Collecting setproctitle==1.3.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 169))
+  Downloading setproctitle-1.3.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.9 kB)
+Collecting shapely==2.0.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 170))
+  Downloading shapely-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.0 kB)
+Collecting shortuuid==1.0.13 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 171))
+  Downloading shortuuid-1.0.13-py3-none-any.whl.metadata (5.8 kB)
+Collecting six==1.16.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 172))
+  Downloading six-1.16.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting smmap==5.0.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 173))
+  Downloading smmap-5.0.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting soupsieve==2.6 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 174))
+  Downloading soupsieve-2.6-py3-none-any.whl.metadata (4.6 kB)
+Collecting stack-data==0.6.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 175))
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting submitit==1.5.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 176))
+  Downloading submitit-1.5.1-py3-none-any.whl.metadata (8.0 kB)
+Collecting sympy==1.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 177))
+  Downloading sympy-1.12.1-py3-none-any.whl.metadata (12 kB)
+Collecting tenacity==8.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 178))
+  Downloading tenacity-8.3.0-py3-none-any.whl.metadata (1.2 kB)
+Collecting tensorboard==2.15.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 179))
+  Downloading tensorboard-2.15.2-py3-none-any.whl.metadata (1.7 kB)
+Collecting tensorboard-data-server==0.7.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 180))
+  Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl.metadata (1.1 kB)
+Collecting tensorboardx==2.6.2.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 181))
+  Downloading tensorboardX-2.6.2.2-py2.py3-none-any.whl.metadata (5.8 kB)
+Collecting tensorflow==2.15.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 182))
+  Downloading tensorflow-2.15.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.4 kB)
+Collecting tensorflow-addons==0.23.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 183))
+  Downloading tensorflow_addons-0.23.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.8 kB)
+Collecting tensorflow-datasets==4.9.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 184))
+  Downloading tensorflow_datasets-4.9.2-py3-none-any.whl.metadata (9.0 kB)
+Collecting tensorflow-estimator==2.15.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 185))
+  Downloading tensorflow_estimator-2.15.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting tensorflow-graphics==2021.12.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 186))
+  Downloading tensorflow_graphics-2021.12.3-py3-none-any.whl.metadata (1.2 kB)
+Collecting tensorflow-hub==0.16.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 187))
+  Downloading tensorflow_hub-0.16.1-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting tensorflow-io-gcs-filesystem==0.37.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 188))
+  Downloading tensorflow_io_gcs_filesystem-0.37.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (14 kB)
+Collecting tensorflow-metadata==1.15.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 189))
+  Downloading tensorflow_metadata-1.15.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting tensorflow-probability==0.23.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 190))
+  Downloading tensorflow_probability-0.23.0-py2.py3-none-any.whl.metadata (13 kB)
+Collecting tensorflow-text==2.15.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 191))
+  Downloading tensorflow_text-2.15.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.9 kB)
+Collecting tensorstore==0.1.45 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 192))
+  Downloading tensorstore-0.1.45-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.9 kB)
+Collecting termcolor==2.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 193))
+  Downloading termcolor-2.4.0-py3-none-any.whl.metadata (6.1 kB)
+Collecting tf-keras==2.15.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 194))
+  Downloading tf_keras-2.15.1-py3-none-any.whl.metadata (1.7 kB)
+Collecting thop==0.1.1-2209072238 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 195))
+  Downloading thop-0.1.1.post2209072238-py3-none-any.whl.metadata (2.7 kB)
+Collecting threadpoolctl==3.5.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 196))
+  Downloading threadpoolctl-3.5.0-py3-none-any.whl.metadata (13 kB)
+Collecting tifffile==2024.5.22 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 197))
+  Downloading tifffile-2024.5.22-py3-none-any.whl.metadata (30 kB)
+Collecting tokenizers==0.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 198))
+  Downloading tokenizers-0.12.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (6.5 kB)
+Collecting toml==0.10.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 199))
+  Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+Collecting tomli==2.0.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 200))
+  Downloading tomli-2.0.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting toolz==0.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 201))
+  Downloading toolz-0.12.1-py3-none-any.whl.metadata (5.1 kB)
+Collecting torch==2.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 202))
+  Downloading torch-2.3.0-cp310-cp310-manylinux1_x86_64.whl.metadata (26 kB)
+Collecting torchvision==0.18.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 203))
+  Downloading torchvision-0.18.0-cp310-cp310-manylinux1_x86_64.whl.metadata (6.6 kB)
+Collecting tqdm==4.66.4 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 204))
+  Downloading tqdm-4.66.4-py3-none-any.whl.metadata (57 kB)
+Collecting traitlets==5.14.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 205))
+  Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+Collecting transformers==4.21.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 206))
+  Downloading transformers-4.21.1-py3-none-any.whl.metadata (81 kB)
+Collecting trimesh==4.4.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 207))
+  Downloading trimesh-4.4.0-py3-none-any.whl.metadata (18 kB)
+Collecting triton==2.3.0 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 208))
+  Downloading triton-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+Collecting typeguard==2.13.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 209))
+  Downloading typeguard-2.13.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting typing-extensions==4.12.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 210))
+  Downloading typing_extensions-4.12.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting urllib3==2.2.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 211))
+  Downloading urllib3-2.2.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting virtualenv==20.26.2 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 212))
+  Downloading virtualenv-20.26.2-py3-none-any.whl.metadata (4.4 kB)
+Collecting wandb==0.13.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 213))
+  Downloading wandb-0.13.1-py2.py3-none-any.whl.metadata (7.4 kB)
+Collecting wcwidth==0.2.13 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 214))
+  Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+Collecting werkzeug==3.0.3 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 215))
+  Downloading werkzeug-3.0.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting wrapt==1.14.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 216))
+  Downloading wrapt-1.14.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting zipp==3.19.1 (from -r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 217))
+  Downloading zipp-3.19.1-py3-none-any.whl.metadata (3.5 kB)
+Collecting numpy>=1.17 (from accelerate==0.26.1->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 2))
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages (from astunparse==1.6.3->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 6)) (0.47.0)
+Requirement already satisfied: setuptools!=50.0.0 in /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.conda/envs/ts310/lib/python3.10/site-packages (from dm-control==1.0.27->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 26)) (83.0.0)
+Collecting pillow>=6.2.0 (from matplotlib==3.5.3->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 85))
+  Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting imageio<3.0,>=2.5 (from moviepy==1.0.3->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 91))
+  Downloading imageio-2.37.4-py3-none-any.whl.metadata (9.6 kB)
+Collecting numpy>=1.17 (from accelerate==0.26.1->-r /home/jupyter-anusha-deuk2-a8e6/temporal-straightening/reqs310.txt (line 2))
+  Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
+Downloading accelerate-0.26.1-py3-none-any.whl (270 kB)
+Downloading array_record-0.5.1-1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 149.1 MB/s  0:00:00
+Downloading asttokens-3.0.0-py3-none-any.whl (26 kB)
+Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Downloading attrs-23.2.0-py3-none-any.whl (60 kB)
+Downloading beautifulsoup4-4.13.3-py3-none-any.whl (186 kB)
+Downloading cachetools-5.3.3-py3-none-any.whl (9.3 kB)
+Downloading certifi-2024.6.2-py3-none-any.whl (164 kB)
+Downloading cffi-1.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (443 kB)
+Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+Downloading charset_normalizer-3.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+Downloading chex-0.1.85-py3-none-any.whl (95 kB)
+Downloading click-8.1.7-py3-none-any.whl (97 kB)
+Downloading cloudpickle-2.1.0-py3-none-any.whl (25 kB)
+Downloading contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading Cython-0.29.37-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 269.7 MB/s  0:00:00
+Downloading d4rl-1.1-py3-none-any.whl (26.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.4/26.4 MB 132.3 MB/s  0:00:00
+Downloading decorator-4.4.2-py2.py3-none-any.whl (9.2 kB)
+Downloading decord-0.6.0-py3-none-manylinux2010_x86_64.whl (13.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 222.2 MB/s  0:00:00
+Downloading distlib-0.3.8-py2.py3-none-any.whl (468 kB)
+Downloading distrax-0.1.5-py3-none-any.whl (319 kB)
+Downloading dm_control-1.0.27-py3-none-any.whl (56.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 131.3 MB/s  0:00:00
+Downloading dm_env-1.6-py3-none-any.whl (26 kB)
+Downloading dm_tree-0.1.8-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (152 kB)
+Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Downloading einops-0.4.1-py3-none-any.whl (28 kB)
+Downloading etils-1.5.2-py3-none-any.whl (140 kB)
+Downloading exceptiongroup-1.2.1-py3-none-any.whl (16 kB)
+Downloading executing-2.2.0-py2.py3-none-any.whl (26 kB)
+Downloading fasteners-0.19-py3-none-any.whl (18 kB)
+Downloading fastjsonschema-2.19.1-py3-none-any.whl (23 kB)
+Downloading filelock-3.14.0-py3-none-any.whl (12 kB)
+Downloading flatbuffers-24.3.25-py2.py3-none-any.whl (26 kB)
+Downloading flax-0.7.5-py3-none-any.whl (244 kB)
+Downloading fonttools-4.53.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 252.1 MB/s  0:00:00
+Downloading fsspec-2024.5.0-py3-none-any.whl (316 kB)
+Downloading gast-0.5.4-py3-none-any.whl (19 kB)
+Downloading gitdb-4.0.11-py3-none-any.whl (62 kB)
+Downloading smmap-5.0.1-py3-none-any.whl (24 kB)
+Downloading GitPython-3.1.43-py3-none-any.whl (207 kB)
+Downloading glfw-2.7.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38-none-manylinux2014_x86_64.whl (211 kB)
+Downloading google_auth-2.29.0-py2.py3-none-any.whl (189 kB)
+Downloading rsa-4.9-py3-none-any.whl (34 kB)
+Downloading google_auth_oauthlib-1.2.0-py2.py3-none-any.whl (24 kB)
+Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Downloading grpcio-1.64.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.6/5.6 MB 161.8 MB/s  0:00:00
+Downloading gym_notices-0.0.8-py3-none-any.whl (3.0 kB)
+Downloading h5py-3.11.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 246.8 MB/s  0:00:00
+Downloading huggingface_hub-0.23.2-py3-none-any.whl (401 kB)
+Downloading hydra_core-1.2.0-py3-none-any.whl (151 kB)
+Downloading omegaconf-2.3.0-py3-none-any.whl (79 kB)
+Downloading hydra_submitit_launcher-1.2.0-py3-none-any.whl (5.2 kB)
+Downloading identify-2.5.36-py2.py3-none-any.whl (98 kB)
+Downloading idna-3.7-py3-none-any.whl (66 kB)
+Downloading imageio_ffmpeg-0.4.9-py3-none-manylinux2010_x86_64.whl (26.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.9/26.9 MB 131.4 MB/s  0:00:00
+Downloading importlib_metadata-7.1.0-py3-none-any.whl (24 kB)
+Downloading importlib_resources-6.4.0-py3-none-any.whl (38 kB)
+Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Downloading ipdb-0.13.13-py3-none-any.whl (12 kB)
+Downloading ipython-8.18.1-py3-none-any.whl (808 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.2/808.2 kB 193.2 MB/s  0:00:00
+Downloading prompt_toolkit-3.0.50-py3-none-any.whl (387 kB)
+Downloading jax-0.4.27-py3-none-any.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 153.0 MB/s  0:00:00
+Downloading jaxlib-0.4.27-cp310-cp310-manylinux2014_x86_64.whl (77.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.3/77.3 MB 143.3 MB/s  0:00:00
+Downloading jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 286.4 MB/s  0:00:00
+Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
+Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+Downloading jsonschema-4.22.0-py3-none-any.whl (88 kB)
+Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
+Downloading jupyter_core-5.7.2-py3-none-any.whl (28 kB)
+Downloading jupytext-1.16.2-py3-none-any.whl (153 kB)
+Downloading keras-2.15.0-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 319.6 MB/s  0:00:00
+Downloading kiwisolver-1.4.5-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 259.6 MB/s  0:00:00
+Downloading labmaze-1.0.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 171.3 MB/s  0:00:00
+Downloading libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.5/24.5 MB 229.2 MB/s  0:00:00
+Downloading llvmlite-0.42.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.8/43.8 MB 272.2 MB/s  0:00:00
+Downloading lxml-5.3.1-cp310-cp310-manylinux_2_28_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 131.5 MB/s  0:00:00
+Downloading Markdown-3.6-py3-none-any.whl (105 kB)
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading MarkupSafe-2.1.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
+Downloading matplotlib-3.5.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.9/11.9 MB 264.3 MB/s  0:00:00
+Downloading matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
+Downloading mdit_py_plugins-0.4.1-py3-none-any.whl (54 kB)
+Downloading ml_dtypes-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 251.8 MB/s  0:00:00
+Downloading proglog-0.1.10-py3-none-any.whl (6.1 kB)
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Downloading tqdm-4.66.4-py3-none-any.whl (78 kB)
+Downloading urllib3-2.2.1-py3-none-any.whl (121 kB)
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 141.7 MB/s  0:00:00
+Downloading msgpack-1.0.8-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (385 kB)
+Downloading mujoco-3.2.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 56.6 MB/s  0:00:00
+Downloading mujoco_py-2.1.2.14-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 125.4 MB/s  0:00:00
+Downloading nbformat-5.10.4-py3-none-any.whl (78 kB)
+Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 336.4 MB/s  0:00:00
+Downloading nodeenv-1.9.0-py2.py3-none-any.whl (22 kB)
+Downloading numba-0.59.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 282.8 MB/s  0:00:00
+Downloading nvidia_cublas_cu12-12.1.3.1-py3-none-manylinux1_x86_64.whl (410.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 410.6/410.6 MB 160.8 MB/s  0:00:02
+Downloading nvidia_cuda_cupti_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (14.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.1/14.1 MB 53.6 MB/s  0:00:00
+Downloading nvidia_cuda_nvrtc_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (23.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.7/23.7 MB 123.6 MB/s  0:00:00
+Downloading nvidia_cuda_runtime_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (823 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 823.6/823.6 kB 102.6 MB/s  0:00:00
+Downloading nvidia_cudnn_cu12-8.9.2.26-py3-none-manylinux1_x86_64.whl (731.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.7/731.7 MB 158.2 MB/s  0:00:03
+Downloading nvidia_cufft_cu12-11.0.2.54-py3-none-manylinux1_x86_64.whl (121.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 121.6/121.6 MB 185.6 MB/s  0:00:00
+Downloading nvidia_curand_cu12-10.3.2.106-py3-none-manylinux1_x86_64.whl (56.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.5/56.5 MB 215.5 MB/s  0:00:00
+Downloading nvidia_cusolver_cu12-11.4.5.107-py3-none-manylinux1_x86_64.whl (124.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 124.2/124.2 MB 232.0 MB/s  0:00:00
+Downloading nvidia_cusparse_cu12-12.1.0.106-py3-none-manylinux1_x86_64.whl (196.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 196.0/196.0 MB 224.1 MB/s  0:00:00
+Downloading nvidia_ml_py-12.570.86-py3-none-any.whl (44 kB)
+Downloading nvidia_nccl_cu12-2.20.5-py3-none-manylinux2014_x86_64.whl (176.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 176.2/176.2 MB 218.5 MB/s  0:00:00
+Downloading nvidia_nvjitlink_cu12-12.5.40-py3-none-manylinux2014_x86_64.whl (21.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.3/21.3 MB 35.2 MB/s  0:00:00
+Downloading nvidia_nvtx_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (99 kB)
+Downloading nvitop-1.4.2-py3-none-any.whl (223 kB)
+Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Downloading opencv_python-4.6.0.66-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 MB 201.9 MB/s  0:00:00
+Downloading openexr-3.2.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 209.4 MB/s  0:00:00
+Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Downloading optax-0.1.5-py3-none-any.whl (164 kB)
+Downloading orbax_checkpoint-0.4.4-py3-none-any.whl (123 kB)
+Downloading packaging-24.0-py3-none-any.whl (53 kB)
+Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Downloading platformdirs-4.2.2-py3-none-any.whl (18 kB)
+Downloading plotly-5.22.0-py3-none-any.whl (16.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 212.6 MB/s  0:00:00
+Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+Downloading pre_commit-3.3.3-py2.py3-none-any.whl (202 kB)
+Downloading protobuf-3.20.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 181.0 MB/s  0:00:00
+Downloading psutil-5.9.8-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (288 kB)
+Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Downloading pyasn1-0.6.0-py2.py3-none-any.whl (85 kB)
+Downloading pyasn1_modules-0.4.0-py3-none-any.whl (181 kB)
+Downloading pybind11-2.13.6-py3-none-any.whl (243 kB)
+Downloading pybind11_global-2.13.6-py3-none-any.whl (439 kB)
+Downloading pybullet-3.2.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (103.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.2/103.2 MB 150.9 MB/s  0:00:00
+Downloading pycocotools-2.0.7-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (426 kB)
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Downloading pygame-2.5.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 136.9 MB/s  0:00:00
+Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 167.2 MB/s  0:00:00
+Downloading pymunk-6.8.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 219.2 MB/s  0:00:00
+Downloading pynput-1.7.7-py2.py3-none-any.whl (90 kB)
+Downloading PyOpenGL-3.1.7-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 314.6 MB/s  0:00:00
+Downloading pyparsing-3.1.2-py3-none-any.whl (103 kB)
+Downloading pytest-8.2.1-py3-none-any.whl (339 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading python_xlib-0.33-py2.py3-none-any.whl (182 kB)
+Downloading pywavelets-1.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 129.0 MB/s  0:00:00
+Downloading PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (705 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 705.5/705.5 kB 199.6 MB/s  0:00:00
+Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+Downloading regex-2024.5.15-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (775 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 775.1/775.1 kB 211.5 MB/s  0:00:00
+Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Downloading rich-13.7.1-py3-none-any.whl (240 kB)
+Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.5/193.5 MB 166.5 MB/s  0:00:01
+Downloading rpds_py-0.18.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 171.3 MB/s  0:00:00
+Downloading safetensors-0.4.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 247.4 MB/s  0:00:00
+Downloading scikit_image-0.19.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.9/13.9 MB 142.8 MB/s  0:00:00
+Downloading scikit_learn-1.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 257.5 MB/s  0:00:00
+Downloading scipy-1.13.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 253.6 MB/s  0:00:00
+Downloading sentry_sdk-2.3.1-py2.py3-none-any.whl (289 kB)
+Downloading setproctitle-1.3.3-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (30 kB)
+Downloading shapely-2.0.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 166.0 MB/s  0:00:00
+Downloading shortuuid-1.0.13-py3-none-any.whl (10 kB)
+Downloading soupsieve-2.6-py3-none-any.whl (36 kB)
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading submitit-1.5.1-py3-none-any.whl (74 kB)
+Downloading sympy-1.12.1-py3-none-any.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 307.5 MB/s  0:00:00
+Downloading tenacity-8.3.0-py3-none-any.whl (25 kB)
+Downloading tensorboard-2.15.2-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 236.3 MB/s  0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 192.2 MB/s  0:00:00
+Downloading tensorboardX-2.6.2.2-py2.py3-none-any.whl (101 kB)
+Downloading tensorflow-2.15.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (475.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 475.2/475.2 MB 130.6 MB/s  0:00:03
+Downloading tensorflow_estimator-2.15.0-py2.py3-none-any.whl (441 kB)
+Downloading wrapt-1.14.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
+Downloading tensorflow_addons-0.23.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (611 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 611.8/611.8 kB 121.9 MB/s  0:00:00
+Downloading typeguard-2.13.3-py3-none-any.whl (17 kB)
+Downloading tensorflow_datasets-4.9.2-py3-none-any.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 99.4 MB/s  0:00:00
+Downloading tensorflow_graphics-2021.12.3-py3-none-any.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 144.4 MB/s  0:00:00
+Downloading tensorflow_hub-0.16.1-py2.py3-none-any.whl (30 kB)
+Downloading tensorflow_io_gcs_filesystem-0.37.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 298.9 MB/s  0:00:00
+Downloading tensorflow_metadata-1.15.0-py3-none-any.whl (28 kB)
+Downloading tensorflow_probability-0.23.0-py2.py3-none-any.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 115.1 MB/s  0:00:00
+Downloading tensorflow_text-2.15.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 148.3 MB/s  0:00:00
+Downloading tensorstore-0.1.45-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 133.5 MB/s  0:00:00
+Downloading termcolor-2.4.0-py3-none-any.whl (7.7 kB)
+Downloading tf_keras-2.15.1-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 126.3 MB/s  0:00:00
+Downloading thop-0.1.1.post2209072238-py3-none-any.whl (15 kB)
+Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Downloading tifffile-2024.5.22-py3-none-any.whl (225 kB)
+Downloading tokenizers-0.12.1-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 274.1 MB/s  0:00:00
+Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+Downloading toolz-0.12.1-py3-none-any.whl (56 kB)
+Downloading torch-2.3.0-cp310-cp310-manylinux1_x86_64.whl (779.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 779.1/779.1 MB 115.4 MB/s  0:00:05
+Downloading torchvision-0.18.0-cp310-cp310-manylinux1_x86_64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 134.0 MB/s  0:00:00
+Downloading traitlets-5.14.3-py3-none-any.whl (85 kB)
+Downloading transformers-4.21.1-py3-none-any.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 143.4 MB/s  0:00:00
+Downloading trimesh-4.4.0-py3-none-any.whl (694 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 694.6/694.6 kB 180.1 MB/s  0:00:00
+Downloading triton-2.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (168.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 168.1/168.1 MB 73.6 MB/s  0:00:02
+Downloading typing_extensions-4.12.1-py3-none-any.whl (37 kB)
+Downloading virtualenv-20.26.2-py3-none-any.whl (3.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 308.5 MB/s  0:00:00
+Downloading wandb-0.13.1-py2.py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 145.5 MB/s  0:00:00
+Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+Downloading werkzeug-3.0.3-py3-none-any.whl (227 kB)
+Downloading zipp-3.19.1-py3-none-any.whl (9.0 kB)
+Downloading imageio-2.37.4-py3-none-any.whl (318 kB)
+Downloading numpy-1.26.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.2/18.2 MB 361.6 MB/s  0:00:00
+Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 186.1 MB/s  0:00:00
+Building wheels for collected packages: antlr4-python3-runtime, bddl, gym, easydict, egl-probe, evdev, future, ml-collections, moviepy, pathtools, promise, robomimic
+  Building wheel for antlr4-python3-runtime (pyproject.toml): started
+  Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
+  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144589 sha256=3c6c0b00f7635a4404d6158545c6f8b65c325d877760fcb47956054f2310925c
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/12/93/dd/1f6a127edc45659556564c5730f6d4e300888f4bca2d4c5a88
+  Building wheel for bddl (pyproject.toml): started
+  Building wheel for bddl (pyproject.toml): finished with status 'done'
+  Created wheel for bddl: filename=bddl-1.0.1-py3-none-any.whl size=212417 sha256=7ffe20142ee1f46c9217d5c8fe8911f952989b70e463791a46a89989c17fffbb
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/88/21/28/2b333f737080e0316359f9d85942d8af690ecf3f1f626ec000
+  Building wheel for gym (pyproject.toml): started
+  Building wheel for gym (pyproject.toml): finished with status 'done'
+  Created wheel for gym: filename=gym-0.23.1-py3-none-any.whl size=701460 sha256=7d41e47b644d621bfdefc060b0d8a095c15ed49fca5f7ca19e9327485de67362
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/1a/00/fb/fe5cf2860fb9b7bc860e28f00095a1f42c7b726dd6f42d1acc
+  Building wheel for easydict (pyproject.toml): started
+  Building wheel for easydict (pyproject.toml): finished with status 'done'
+  Created wheel for easydict: filename=easydict-1.9-py3-none-any.whl size=6423 sha256=e6ac5c8733b6ec2594637b8493af522728e6d178bfe32a76562a2ab7a55c27f0
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/fd/d2/35/4c11d19a72280492846f4c4df975311a2bac475e8021f86c1d
+  Building wheel for egl-probe (pyproject.toml): started
+  Building wheel for egl-probe (pyproject.toml): finished with status 'done'
+  Created wheel for egl-probe: filename=egl_probe-1.0.2-cp310-cp310-linux_x86_64.whl size=476862 sha256=222af72b792881e2edcfa5f5dcd5d54c8c80c506ffbc2c24fc0a700b2e3107eb
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/4a/27/b6/55a3dc8ddd82b0d7b99f3b61cfac265953409e69ee33729ae4
+  Building wheel for evdev (pyproject.toml): started
+  Building wheel for evdev (pyproject.toml): finished with status 'done'
+  Created wheel for evdev: filename=evdev-1.8.0-cp310-cp310-linux_x86_64.whl size=75315 sha256=18a309471aaa0fb0bf76075959bf740cb67e45fc325e82f015611782283d8933
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/a6/12/2a/4c402ccfcfd70f182cb07c99dd068828ca7717fcdebad24d6d
+  Building wheel for future (pyproject.toml): started
+  Building wheel for future (pyproject.toml): finished with status 'done'
+  Created wheel for future: filename=future-0.18.2-py3-none-any.whl size=491149 sha256=d06e760182575d2880f877ca519f184fb542cdd9b40cc364e8c9e86967fc8451
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/22/73/06/557dc4f4ef68179b9d763930d6eec26b88ed7c389b19588a1c
+  Building wheel for ml-collections (pyproject.toml): started
+  Building wheel for ml-collections (pyproject.toml): finished with status 'done'
+  Created wheel for ml-collections: filename=ml_collections-0.1.1-py3-none-any.whl size=94612 sha256=859f3088ffa749efec803e18d560a2c6f88f629bef172a7d9dced77b564521bf
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/7b/89/c9/a9b87790789e94aadcfc393c283e3ecd5ab916aed0a31be8fe
+  Building wheel for moviepy (pyproject.toml): started
+  Building wheel for moviepy (pyproject.toml): finished with status 'done'
+  Created wheel for moviepy: filename=moviepy-1.0.3-py3-none-any.whl size=110795 sha256=bdf152053e04512bb52fa04222461e025a4948193a0278801355ae864d14bee4
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/96/32/2d/e10123bd88fbfc02fed53cc18c80a171d3c87479ed845fa7c1
+  Building wheel for pathtools (pyproject.toml): started
+  Building wheel for pathtools (pyproject.toml): finished with status 'done'
+  Created wheel for pathtools: filename=pathtools-0.1.2-py3-none-any.whl size=8883 sha256=d01cc525e201f8bae076cc98f37ab6cfa2365e1d504a214492b59d443243aacc
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/e7/f3/22/152153d6eb222ee7a56ff8617d80ee5207207a8c00a7aab794
+  Building wheel for promise (pyproject.toml): started
+  Building wheel for promise (pyproject.toml): finished with status 'done'
+  Created wheel for promise: filename=promise-2.3-py3-none-any.whl size=21580 sha256=eac4d130c5e71041d9f9b45ee5a11175348e5e4142e8cb99dce8cca188355ca8
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/54/4e/28/3ed0e1c8a752867445bab994d2340724928aa3ab059c57c8db
+  Building wheel for robomimic (pyproject.toml): started
+  Building wheel for robomimic (pyproject.toml): finished with status 'done'
+  Created wheel for robomimic: filename=robomimic-0.2.0-py3-none-any.whl size=223311 sha256=35d58940a21276a8ba5574f953aca6a8a534db69ada4483713545344d9989316
+  Stored in directory: /opt/dlami/nvme/home/jupyter-anusha-deuk2-a8e6/.cache/pip/wheels/37/0f/95/cc119aa4f1d4ea2f93d2732d544a2eba9d5f25aac9a37a5338
+Successfully built antlr4-python3-runtime bddl gym easydict egl-probe evdev future ml-collections moviepy pathtools promise robomimic
+Installing collected packages: wcwidth, tokenizers, pyopengl, pybullet, pure-eval, ptyprocess, pathtools, nvidia-ml-py, mpmath, libclang, gym-notices, glfw, flatbuffers, fastjsonschema, einops, egl-probe, easydict, dm-tree, distlib, antlr4-python3-runtime, zipp, wrapt, urllib3, typing-extensions, typeguard, traitlets, tqdm, toolz, tomli, toml, threadpoolctl, termcolor, tensorflow-io-gcs-filesystem, tensorflow-estimator, tensorboard-data-server, tenacity, sympy, soupsieve, smmap, six, shortuuid, setproctitle, safetensors, rpds-py, regex, pyyaml, pyparsing, pygments, pygame, pycparser, pybind11-global, pybind11, pyasn1, psutil, protobuf, prompt-toolkit, pluggy, platformdirs, pillow, pexpect, parso, packaging, openexr, oauthlib, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, nodeenv, networkx, nest-asyncio, msgpack, mdurl, markupsafe, markdown, lxml, llvmlite, kiwisolver, keras, joblib, iniconfig, importlib-resources, imageio-ffmpeg, idna, identify, grpcio, gast, future, fsspec, fonttools, filelock, fasteners, executing, exceptiongroup, evdev, etils, decorator, cython, cycler, contextlib2, cloudpickle, click, charset-normalizer, cfgv, certifi, cachetools, attrs, asttokens, absl-py, werkzeug, virtualenv, triton, trimesh, tifffile, tensorstore, tensorflow-probability, tensorflow-metadata, tensorflow-addons, tensorboardx, submitit, stack-data, shapely, sentry-sdk, scipy, rsa, requests, referencing, pywavelets, python-xlib, python-dateutil, pytest, pyasn1-modules, promise, proglog, plotly, opt-einsum, opencv-python, omegaconf, nvitop, nvidia-cusparse-cu12, nvidia-cudnn-cu12, numba, ml-dtypes, ml-collections, matplotlib-inline, markdown-it-py, labmaze, jupyter-core, jinja2, jedi, importlib-metadata, imageio, h5py, gym, google-pasta, gitdb, docker-pycreds, dm-env, decord, cffi, beautifulsoup4, scikit-learn, scikit-image, rich, requests-oauthlib, pynput, pymunk, pre-commit, nvidia-cusolver-cu12, mujoco-py, moviepy, mdit-py-plugins, matplotlib, jsonschema-specifications, jaxlib, jax, ipython, hydra-core, huggingface-hub, google-auth, gitpython, astunparse, wandb, transformers, torch, pycocotools, orbax-checkpoint, mujoco, jsonschema, ipdb, hydra-submitit-launcher, google-auth-oauthlib, chex, array-record, torchvision, thop, tensorflow-datasets, tensorboard, robosuite, optax, nbformat, dm-control, distrax, accelerate, tensorflow, robomimic, jupytext, flax, d4rl, tf-keras, tensorflow-graphics, bddl, tensorflow-hub, tensorflow-text
+  Attempting uninstall: packaging
+    Found existing installation: packaging 26.2
+    Uninstalling packaging-26.2:
+      Successfully uninstalled packaging-26.2
+
+Successfully installed absl-py-2.1.0 accelerate-0.26.1 antlr4-python3-runtime-4.9.3 array-record-0.5.1 asttokens-3.0.0 astunparse-1.6.3 attrs-23.2.0 bddl-1.0.1 beautifulsoup4-4.13.3 cachetools-5.3.3 certifi-2024.6.2 cffi-1.16.0 cfgv-3.4.0 charset-normalizer-3.3.2 chex-0.1.85 click-8.1.7 cloudpickle-2.1.0 contextlib2-21.6.0 cycler-0.12.1 cython-0.29.37 d4rl-1.1 decorator-4.4.2 decord-0.6.0 distlib-0.3.8 distrax-0.1.5 dm-control-1.0.27 dm-env-1.6 dm-tree-0.1.8 docker-pycreds-0.4.0 easydict-1.9 egl-probe-1.0.2 einops-0.4.1 etils-1.5.2 evdev-1.8.0 exceptiongroup-1.2.1 executing-2.2.0 fasteners-0.19 fastjsonschema-2.19.1 filelock-3.14.0 flatbuffers-24.3.25 flax-0.7.5 fonttools-4.53.0 fsspec-2024.5.0 future-0.18.2 gast-0.5.4 gitdb-4.0.11 gitpython-3.1.43 glfw-2.7.0 google-auth-2.29.0 google-auth-oauthlib-1.2.0 google-pasta-0.2.0 grpcio-1.64.0 gym-0.23.1 gym-notices-0.0.8 h5py-3.11.0 huggingface-hub-0.23.2 hydra-core-1.2.0 hydra-submitit-launcher-1.2.0 identify-2.5.36 idna-3.7 imageio-2.37.4 imageio-ffmpeg-0.4.9 importlib-metadata-7.1.0 importlib-resources-6.4.0 iniconfig-2.0.0 ipdb-0.13.13 ipython-8.18.1 jax-0.4.27 jaxlib-0.4.27 jedi-0.19.2 jinja2-3.1.4 joblib-1.4.2 jsonschema-4.22.0 jsonschema-specifications-2023.12.1 jupyter-core-5.7.2 jupytext-1.16.2 keras-2.15.0 kiwisolver-1.4.5 labmaze-1.0.6 libclang-18.1.1 llvmlite-0.42.0 lxml-5.3.1 markdown-3.6 markdown-it-py-3.0.0 markupsafe-2.1.5 matplotlib-3.5.3 matplotlib-inline-0.1.7 mdit-py-plugins-0.4.1 mdurl-0.1.2 ml-collections-0.1.1 ml-dtypes-0.2.0 moviepy-1.0.3 mpmath-1.3.0 msgpack-1.0.8 mujoco-3.2.7 mujoco-py-2.1.2.14 nbformat-5.10.4 nest-asyncio-1.6.0 networkx-3.2.1 nodeenv-1.9.0 numba-0.59.1 numpy-1.26.4 nvidia-cublas-cu12-12.1.3.1 nvidia-cuda-cupti-cu12-12.1.105 nvidia-cuda-nvrtc-cu12-12.1.105 nvidia-cuda-runtime-cu12-12.1.105 nvidia-cudnn-cu12-8.9.2.26 nvidia-cufft-cu12-11.0.2.54 nvidia-curand-cu12-10.3.2.106 nvidia-cusolver-cu12-11.4.5.107 nvidia-cusparse-cu12-12.1.0.106 nvidia-ml-py-12.570.86 nvidia-nccl-cu12-2.20.5 nvidia-nvjitlink-cu12-12.5.40 nvidia-nvtx-cu12-12.1.105 nvitop-1.4.2 oauthlib-3.2.2 omegaconf-2.3.0 opencv-python-4.6.0.66 openexr-3.2.4 opt-einsum-3.3.0 optax-0.1.5 orbax-checkpoint-0.4.4 packaging-24.0 parso-0.8.4 pathtools-0.1.2 pexpect-4.9.0 pillow-12.3.0 platformdirs-4.2.2 plotly-5.22.0 pluggy-1.5.0 pre-commit-3.3.3 proglog-0.1.10 promise-2.3 prompt-toolkit-3.0.50 protobuf-3.20.3 psutil-5.9.8 ptyprocess-0.7.0 pure-eval-0.2.3 pyasn1-0.6.0 pyasn1-modules-0.4.0 pybind11-2.13.6 pybind11-global-2.13.6 pybullet-3.2.7 pycocotools-2.0.7 pycparser-2.22 pygame-2.5.2 pygments-2.18.0 pymunk-6.8.0 pynput-1.7.7 pyopengl-3.1.7 pyparsing-3.1.2 pytest-8.2.1 python-dateutil-2.9.0.post0 python-xlib-0.33 pywavelets-1.6.0 pyyaml-6.0.1 referencing-0.35.1 regex-2024.5.15 requests-2.32.3 requests-oauthlib-2.0.0 rich-13.7.1 robomimic-0.2.0 robosuite-1.4.1 rpds-py-0.18.1 rsa-4.9 safetensors-0.4.3 scikit-image-0.19.3 scikit-learn-1.5.0 scipy-1.13.1 sentry-sdk-2.3.1 setproctitle-1.3.3 shapely-2.0.3 shortuuid-1.0.13 six-1.16.0 smmap-5.0.1 soupsieve-2.6 stack-data-0.6.3 submitit-1.5.1 sympy-1.12.1 tenacity-8.3.0 tensorboard-2.15.2 tensorboard-data-server-0.7.2 tensorboardx-2.6.2.2 tensorflow-2.15.0 tensorflow-addons-0.23.0 tensorflow-datasets-4.9.2 tensorflow-estimator-2.15.0 tensorflow-graphics-2021.12.3 tensorflow-hub-0.16.1 tensorflow-io-gcs-filesystem-0.37.0 tensorflow-metadata-1.15.0 tensorflow-probability-0.23.0 tensorflow-text-2.15.0 tensorstore-0.1.45 termcolor-2.4.0 tf-keras-2.15.1 thop-0.1.1.post2209072238 threadpoolctl-3.5.0 tifffile-2024.5.22 tokenizers-0.12.1 toml-0.10.2 tomli-2.0.1 toolz-0.12.1 torch-2.3.0 torchvision-0.18.0 tqdm-4.66.4 traitlets-5.14.3 transformers-4.21.1 trimesh-4.4.0 triton-2.3.0 typeguard-2.13.3 typing-extensions-4.12.1 urllib3-2.2.1 virtualenv-20.26.2 wandb-0.13.1 wcwidth-0.2.13 werkzeug-3.0.3 wrapt-1.14.1 zipp-3.19.1
+Collecting setuptools<81
+  Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+Downloading setuptools-80.10.2-py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 30.2 MB/s  0:00:00
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 83.0.0
+    Uninstalling setuptools-83.0.0:
+      Successfully uninstalled setuptools-83.0.0
+Successfully installed setuptools-80.10.2
