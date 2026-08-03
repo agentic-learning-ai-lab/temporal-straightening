@@ -165,14 +165,41 @@ Main figure: heatmap of **val R²** × (position, speed, direction) × (readout 
 
 ---
 
+## Selected-layer region holdout (apples-to-apples)
+
+Use this when you want mentor-facing numbers on the **selected-layer tensors** from ``selected_layers.json``, with the median maze-half split:
+
+| Probe | Tensor | Frames |
+|---|---|---|
+| `dino_pooled_patches_raw` | `dino/6/pooled_patches` | 1 frame |
+| `dino_pooled_patches_diff` | Δ of that (consecutive window frames = 5 env steps) | 2 frames |
+| `predictor_pooled_visual_diff` | Δ of `predictor/1/pooled_visual` | history steps |
+
+```bash
+export DATASET_DIR=~/data
+
+for cond in r0_direction_only r2_full_matched calibrated_speed factorized layer_aware_factorized; do
+  python probing/run_selected_layer_holdout.py \
+    --checkpoint baseline_artifacts/checkpoints/umaze_physics_layer_ablations/$cond \
+    --data-dir $DATASET_DIR/point_maze \
+    --output-root probing/selected_layer_holdout
+done
+
+python probing/summarize_holdout.py --root probing/selected_layer_holdout
+```
+
+Needs GPU once per condition. Reuses the layer-probe window sampling (`max_windows=512`, `num_frames=4`, `frameskip=5`, ridge `α=10`). Extraction lives entirely under `probing/` (no `models/` edits).
+
 ## Code map
 
 ```
 probing/
-  labels.py           # state → position / speed / direction targets
-  hooks.py            # ActivationHookManager + knockout/mean
-  linear_probe.py     # Ridge probes + episode split
-  run_umaze_probes.py # end-to-end CLI
+  labels.py                       # state → position / speed / direction targets
+  hooks.py                        # ActivationHookManager + knockout/mean
+  linear_probe.py                 # Ridge probes + episode / location split
+  run_umaze_probes.py             # end-to-end CLI (projector / hooks / final predictor)
+  selected_layer_features.py      # selected-layer feature extract (dino/6, predictor/1)
+  run_selected_layer_holdout.py   # those tensors + region holdout
 ```
 
 Key repo dependencies:
