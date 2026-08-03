@@ -52,11 +52,53 @@ from probing.linear_probe import (
 )
 
 
+def _load_model_from_ckpt(model_ckpt: Path, train_cfg, num_action_repeat: int, device):
+    """Load VWorldModel without importing plan.py (avoids mujoco_py / env side effects)."""
+    import hydra
+
+    from models.dino import DinoV2Encoder
+
+    model_keys = (
+        "encoder",
+        "predictor",
+        "decoder",
+        "proprio_encoder",
+        "action_encoder",
+    )
+    # Touch encoder class so torch.hub dinov2 is importable when unpickling.
+    _ = DinoV2Encoder("dinov2_vits14", "x_norm_patchtokens")
+    with model_ckpt.open("rb") as f:
+        payload = torch.load(f, map_location=device)
+    result = {k: payload[k].to(device) for k in model_keys if k in payload}
+    if "encoder" not in result:
+        result["encoder"] = hydra.utils.instantiate(train_cfg.encoder)
+    if "predictor" not in result:
+        raise ValueError("Predictor not found in model checkpoint")
+    if not train_cfg.has_decoder:
+        result["decoder"] = None
+    elif "decoder" not in result:
+        raise ValueError("Decoder missing from checkpoint and has_decoder=True")
+
+    model = hydra.utils.instantiate(
+        train_cfg.model,
+        encoder=result["encoder"],
+        proprio_encoder=result["proprio_encoder"],
+        action_encoder=result["action_encoder"],
+        predictor=result["predictor"],
+        decoder=result["decoder"],
+        proprio_dim=train_cfg.proprio_emb_dim,
+        action_dim=train_cfg.action_emb_dim,
+        concat_dim=train_cfg.concat_dim,
+        num_action_repeat=num_action_repeat,
+        num_proprio_repeat=train_cfg.num_proprio_repeat,
+    )
+    model.to(device)
+    return model
+
+
 def _load_model_and_dataset(model_dir: Path, epoch: int, data_path: str | None):
     import hydra
     from omegaconf import OmegaConf
-
-    from plan import load_model
 
     hydra_yaml = model_dir / "hydra.yaml"
     if not hydra_yaml.exists():
@@ -71,7 +113,7 @@ def _load_model_and_dataset(model_dir: Path, epoch: int, data_path: str | None):
         raise FileNotFoundError(f"Missing checkpoint {ckpt}")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = load_model(ckpt, model_cfg, model_cfg.num_action_repeat, device)
+    model = _load_model_from_ckpt(ckpt, model_cfg, model_cfg.num_action_repeat, device)
     model.eval()
 
     _, traj_dset = hydra.utils.call(
