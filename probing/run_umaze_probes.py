@@ -12,20 +12,26 @@ python probing/run_umaze_probes.py \\
   --model-dir baseline_artifacts/checkpoints/umaze_speed_ablations/r0_direction_only \\
   --epoch 20 \\
   --max-rollouts 80 \\
-  --output probing/out/r0
+  --output probing/speed_holdout/r0_direction_only
 
 # 3) Compare readouts:
-python probing/run_umaze_probes.py --model-dir ... --readout agg_mlp --output probing/out/r0_agg
+python probing/run_umaze_probes.py --model-dir ... --readout agg_mlp --output probing/speed_holdout/r0_agg
 
 # 4) Location holdout (train left/bottom, test right/top, and swaps):
 python probing/run_umaze_probes.py \\
   --model-dir .../r0_direction_only --epoch 20 \\
-  --location-holdout --output probing/out/r0
+  --location-holdout --output probing/speed_holdout/r0_direction_only
 
 # 5) Re-run holdout from an existing activations cache (no GPU encode):
 python probing/run_umaze_probes.py \\
-  --from-cache probing/out/r0/activations.pt --location-holdout \\
-  --output probing/out/r0
+  --from-cache probing/speed_holdout/r0_direction_only/activations.pt --location-holdout \\
+  --output probing/speed_holdout/r0_direction_only
+
+# 6) Daniel-style DINO feature-diff + location holdout (auto path if --output omitted):
+python probing/run_umaze_probes.py \\
+  --from-cache probing/speed_holdout/r0_direction_only/activations.pt \\
+  --probe-source dino.block.5 --feature-mode diff --location-holdout
+# writes probing/dino5_diff_holdout/r0_direction_only/
 """
 
 from __future__ import annotations
@@ -51,6 +57,25 @@ from probing.linear_probe import (
     run_location_holdout,
     tensors_to_numpy,
 )
+
+
+def resolve_output_dir(output: Path | None, *, probe_source: str, feature_mode: str, model_dir: Path | None, from_cache: Path | None) -> Path:
+    """Map probe settings to probing/<experiment>/<condition>/ unless --output is set."""
+    if output is not None:
+        return output
+    if probe_source == "dino.block.5" and feature_mode == "diff":
+        experiment = "dino5_diff_holdout"
+    elif feature_mode == "diff":
+        experiment = f"{probe_source.replace('.', '_')}_diff_holdout"
+    else:
+        experiment = "speed_holdout"
+    if model_dir is not None:
+        condition = model_dir.name
+    elif from_cache is not None:
+        condition = from_cache.parent.name
+    else:
+        condition = "umaze"
+    return Path("probing") / experiment / condition
 
 
 def _load_model_from_ckpt(model_ckpt: Path, train_cfg, num_action_repeat: int, device):
@@ -379,7 +404,7 @@ def main() -> None:
     parser.add_argument("--readout", choices=["post_projector", "agg_mlp", "flatten"], default="post_projector")
     parser.add_argument("--val-fraction", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--output", type=Path, default=Path("probing/out/umaze"))
+    parser.add_argument("--output", type=Path, default=None, help="Output dir (default: probing/speed_holdout/<cond> or probing/dino5_diff_holdout/<cond>)")
     parser.add_argument("--labels-only", action="store_true")
     parser.add_argument("--skip-interventions", action="store_true")
     parser.add_argument("--location-holdout", action="store_true", help="Spatial train/test split")
@@ -400,7 +425,15 @@ def main() -> None:
         run_labels_only(data_path, args.max_rollouts, args.frameskip or 5)
         return
 
+    args.output = resolve_output_dir(
+        args.output,
+        probe_source=args.probe_source,
+        feature_mode=args.feature_mode,
+        model_dir=args.model_dir,
+        from_cache=args.from_cache,
+    )
     args.output.mkdir(parents=True, exist_ok=True)
+    print(f"Output dir: {args.output}")
     holdout_axes = tuple(a.strip() for a in args.holdout_axes.split(",") if a.strip())
 
     def _run_probe_and_holdout(cache: dict, *, save_activations: bool) -> LinearProbeSuite:

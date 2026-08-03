@@ -99,35 +99,44 @@ export DATASET_DIR=/path/to/data
 # Sanity-check labels (no checkpoint)
 python probing/run_umaze_probes.py --labels-only
 
-# Full run — point at any UMaze hydra run dir
+# Mentor location holdout on post_projector (single-frame)
+# writes probing/speed_holdout/<condition>/
 python probing/run_umaze_probes.py \
-  --model-dir baseline_artifacts/checkpoints/umaze_speed_ablations/r0_direction_only \
+  --model-dir baseline_artifacts/checkpoints/umaze_physics_layer_ablations/r0_direction_only \
   --epoch 20 \
   --max-rollouts 80 \
-  --output probing/out/r0
-
-# Compare agg readout (matches straightening geometry)
-python probing/run_umaze_probes.py \
-  --model-dir .../r1_speed_only \
-  --readout agg_mlp \
-  --output probing/out/r1_agg
-
-# Location holdout while encoding
-python probing/run_umaze_probes.py \
-  --model-dir baseline_artifacts/checkpoints/umaze_speed_ablations/r0_direction_only \
-  --epoch 20 \
   --location-holdout \
-  --skip-interventions \
-  --output probing/out/r0
+  --skip-interventions
 
-# Or re-run holdout from a saved cache (no GPU encode)
+# Daniel-style DINO mid-block feature diffs + same location holdout
+# writes probing/dino5_diff_holdout/<condition>/
 python probing/run_umaze_probes.py \
-  --from-cache probing/out/r0/activations.pt \
-  --location-holdout \
-  --output probing/out/r0
+  --from-cache probing/speed_holdout/r0_direction_only/activations.pt \
+  --probe-source dino.block.5 \
+  --feature-mode diff \
+  --location-holdout
+
+# Roll up all conditions into one table
+python probing/summarize_holdout.py --root probing
 ```
 
-**Outputs:**
+Omit `--output` to use the defaults above (derived from `--probe-source` / `--feature-mode` and the condition name). Pass `--output` only to override.
+
+**Layout:**
+
+```text
+probing/
+  speed_holdout/<condition>/          # readout=post_projector, feature_mode=raw
+    activations.pt
+    probe_results.json
+    location_holdout.json
+  dino5_diff_holdout/<condition>/     # probe_source=dino.block.5, feature_mode=diff
+    probe_results.json
+    location_holdout.json
+  holdout_summary.json                # from summarize_holdout.py
+```
+
+**Per-run outputs:**
 
 - `activations.pt` — features, labels, episode_ids, optional hook_features
 - `probe_results.json` — per-target R² / RMSE (episode split)

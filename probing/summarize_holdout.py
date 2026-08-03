@@ -14,8 +14,12 @@ TARGETS = ["position_x", "position_y", "speed", "direction_cos", "direction_sin"
 def summarize_run(path: Path) -> dict:
     data = json.loads(path.read_text())
     summary = data.get("summary", {})
+    condition = path.parent.name
+    experiment = path.parent.parent.name
     row = {
-        "run": path.parent.name,
+        "experiment": experiment,
+        "condition": condition,
+        "run": f"{experiment}/{condition}",
         "path": str(path),
         "threshold_mode": data.get("threshold_mode"),
         "n_splits": len(data.get("splits", [])),
@@ -35,7 +39,7 @@ def summarize_run(path: Path) -> dict:
 
 
 def print_table(rows: list[dict]) -> None:
-    print(f"{'run':42s}  {'speed':>8s}  {'pos_base':>8s}  {'pos_x':>8s}  {'pos_y':>8s}")
+    print(f"{'run':48s}  {'speed':>8s}  {'pos_base':>8s}  {'pos_x':>8s}  {'pos_y':>8s}")
     for row in rows:
         t = row["targets"]
         speed = t["speed"].get("mean_heldout_r2")
@@ -43,7 +47,7 @@ def print_table(rows: list[dict]) -> None:
         px = t["position_x"].get("mean_heldout_r2")
         py = t["position_y"].get("mean_heldout_r2")
         print(
-            f"{row['run']:42s}  "
+            f"{row['run']:48s}  "
             f"{speed if speed is not None else float('nan'):8.3f}  "
             f"{base if base is not None else float('nan'):8.3f}  "
             f"{px if px is not None else float('nan'):8.3f}  "
@@ -56,8 +60,8 @@ def main() -> None:
     parser.add_argument(
         "--root",
         type=Path,
-        default=Path("probing/out"),
-        help="Directory containing per-run output folders",
+        default=Path("probing"),
+        help="Root to search (finds */*/location_holdout.json)",
     )
     parser.add_argument(
         "--output",
@@ -67,7 +71,9 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    paths = sorted(args.root.glob("*/location_holdout.json"))
+    paths = sorted(args.root.glob("*/**/location_holdout.json"))
+    if not paths:
+        paths = sorted(args.root.glob("*/location_holdout.json"))
     if not paths:
         raise SystemExit(f"No location_holdout.json under {args.root}")
 
