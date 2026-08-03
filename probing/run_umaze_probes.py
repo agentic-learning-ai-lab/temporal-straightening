@@ -32,6 +32,12 @@ python probing/run_umaze_probes.py \\
   --from-cache probing/speed_holdout/r0_direction_only/activations.pt \\
   --probe-source dino.block.5 --feature-mode diff --location-holdout
 # writes probing/dino5_diff_holdout/r0_direction_only/
+
+# 7) Predictor location holdout (needs a fresh encode that fills predictor_pack):
+python probing/run_umaze_probes.py \\
+  --model-dir .../r0_direction_only --epoch 20 \\
+  --location-holdout --skip-interventions --probe-source predictor
+# writes probing/predictor_holdout/r0_direction_only/
 """
 
 from __future__ import annotations
@@ -63,7 +69,9 @@ def resolve_output_dir(output: Path | None, *, probe_source: str, feature_mode: 
     """Map probe settings to probing/<experiment>/<condition>/ unless --output is set."""
     if output is not None:
         return output
-    if probe_source == "dino.block.5" and feature_mode == "diff":
+    if probe_source == "predictor":
+        experiment = "predictor_holdout"
+    elif probe_source == "dino.block.5" and feature_mode == "diff":
         experiment = "dino5_diff_holdout"
     elif feature_mode == "diff":
         experiment = f"{probe_source.replace('.', '_')}_diff_holdout"
@@ -72,6 +80,7 @@ def resolve_output_dir(output: Path | None, *, probe_source: str, feature_mode: 
     if model_dir is not None:
         condition = model_dir.name
     elif from_cache is not None:
+        # caches live under speed_holdout/<cond>/; keep the condition name
         condition = from_cache.parent.name
     else:
         condition = "umaze"
@@ -172,6 +181,9 @@ def collect_activations(
 
     hook_names: list[str] = []
     hook_site_rows: dict[str, list[torch.Tensor]] = {}
+    predictor_rows: list[torch.Tensor] = []
+    predictor_label_rows: dict[str, list[torch.Tensor]] = {k: [] for k in DEFAULT_TARGETS}
+    predictor_episode_rows: list[torch.Tensor] = []
     if hook_manager is not None:
         hook_names = hook_manager.register_umaze_defaults()
         hook_site_rows = {n: [] for n in hook_names}
@@ -186,10 +198,12 @@ def collect_activations(
         visual = base_dset.load_visual_frames(rollout_idx, frame_idx)
         proprio = base_dset.proprios[rollout_idx, frame_idx]
         state = base_dset.states[rollout_idx, frame_idx]
+        action = base_dset.actions[rollout_idx, frame_idx]
         obs = {
             "visual": visual.unsqueeze(0).to(device),
             "proprio": proprio.unsqueeze(0).to(device),
         }
+        act = action.unsqueeze(0).to(device)
 
         if hook_manager is not None:
             hook_manager.activations.clear()
@@ -197,7 +211,19 @@ def collect_activations(
             for name in hook_names:
                 if name in hook_manager.activations:
                     flat = flatten_activation(name, hook_manager.activations[name])
-                    hook_site_rows[name].append(flat)
+                    # Encoder hooks fire once per encode; predictor needs its own pass.
+                    if name != "predictor":
+                        hook_site_rows[name].append(flat)
+
+            pred_feat, keep = hook_manager.capture_predictor_features(obs, act)
+            if keep:
+                predictor_rows.append(pred_feat)
+                labels_full = state_tensor_to_probe_labels(state)
+                for key in predictor_label_rows:
+                    predictor_label_rows[key].append(labels_full[key][keep])
+                predictor_episode_rows.append(
+                    torch.full((len(keep),), rollout_idx, dtype=torch.long)
+                )
         else:
             features = model.encode_obs(obs)["visual"].mean(dim=2)
 
@@ -224,6 +250,12 @@ def collect_activations(
         out["hook_features"] = {
             name: torch.cat(rows, dim=0) for name, rows in hook_site_rows.items() if rows
         }
+        if predictor_rows:
+            out["predictor_pack"] = {
+                "features": torch.cat(predictor_rows, dim=0),
+                "labels": {k: torch.cat(v, dim=0) for k, v in predictor_label_rows.items()},
+                "episode_ids": torch.cat(predictor_episode_rows, dim=0),
+            }
     return out
 
 
@@ -259,22 +291,36 @@ def train_probes_from_cache(cache: dict, *, val_fraction: float, seed: int) -> L
 
 
 def select_probe_cache(cache: dict, *, probe_source: str = "readout", feature_mode: str = "raw") -> dict:
-    """Select readout or hook features; optional within-episode diffs."""
-    if probe_source == "readout":
+    """Select readout/hook/predictor features; optional within-episode diffs."""
+    if probe_source == "predictor":
+        pack = cache.get("predictor_pack")
+        if pack is None:
+            raise KeyError(
+                "probe source 'predictor' needs predictor_pack in the cache; "
+                "re-encode with the updated collect_activations (encode+predict)."
+            )
+        features = pack["features"]
+        labels = pack["labels"]
+        episode_ids = pack["episode_ids"]
+    elif probe_source == "readout":
         features = cache["features"]
+        labels = cache["labels"]
+        episode_ids = cache["episode_ids"]
     else:
         hooks = cache.get("hook_features") or {}
         if probe_source not in hooks:
             available = ", ".join(sorted(hooks)) or "(none)"
             raise KeyError(f"probe source {probe_source!r} not in hook_features; available: {available}")
         features = hooks[probe_source]
+        labels = cache["labels"]
+        episode_ids = cache["episode_ids"]
 
-    labels = cache["labels"]
-    episode_ids = cache["episode_ids"]
     if feature_mode == "raw":
         return {
             **cache,
             "features": features,
+            "labels": labels,
+            "episode_ids": episode_ids,
             "n_frames": int(features.shape[0]),
             "probe_source": probe_source,
             "feature_mode": feature_mode,

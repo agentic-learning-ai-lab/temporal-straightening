@@ -116,6 +116,15 @@ python probing/run_umaze_probes.py \
   --feature-mode diff \
   --location-holdout
 
+# Predictor features (encode+predict windows) + location holdout
+# needs a fresh encode; writes probing/predictor_holdout/<condition>/
+python probing/run_umaze_probes.py \
+  --model-dir baseline_artifacts/checkpoints/umaze_physics_layer_ablations/r0_direction_only \
+  --epoch 20 \
+  --location-holdout \
+  --skip-interventions \
+  --probe-source predictor
+
 # Roll up all conditions into one table
 python probing/summarize_holdout.py --root probing
 ```
@@ -127,13 +136,9 @@ Omit `--output` to use the defaults above (derived from `--probe-source` / `--fe
 ```text
 probing/
   speed_holdout/<condition>/          # readout=post_projector, feature_mode=raw
-    activations.pt
-    probe_results.json
-    location_holdout.json
   dino5_diff_holdout/<condition>/     # probe_source=dino.block.5, feature_mode=diff
-    probe_results.json
-    location_holdout.json
-  holdout_summary.json                # from summarize_holdout.py
+  predictor_holdout/<condition>/      # probe_source=predictor (temporal windows)
+  holdout_summary.json
 ```
 
 **Per-run outputs:**

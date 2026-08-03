@@ -116,6 +116,27 @@ class ActivationHookManager:
             return visual.reshape(b, t, p * d)
         raise ValueError(f"Unknown readout: {readout}")
 
+    @torch.no_grad()
+    def capture_predictor_features(
+        self, obs: dict[str, torch.Tensor], act: torch.Tensor
+    ) -> tuple[torch.Tensor, list[int]]:
+        """Sliding num_hist encode→predict windows; pool last-step visual tokens."""
+        self.activations.clear()
+        z = self.model.encode(obs, act)
+        num_hist = int(self.model.num_hist)
+        t_total = z.shape[1]
+        if t_total < num_hist:
+            return torch.empty(0, 0), []
+
+        rows = []
+        keep: list[int] = []
+        for t in range(num_hist - 1, t_total):
+            z_pred = self.model.predict(z[:, t - num_hist + 1 : t + 1])
+            visual = self.model.visual_only(z_pred)[:, -1]
+            rows.append(visual.mean(dim=1))
+            keep.append(t)
+        return torch.cat(rows, dim=0), keep
+
 
 def flatten_activation(_name: str, tensor: torch.Tensor, pool: str = "mean") -> torch.Tensor:
     """Hook activation -> (N, F) with batch/time merged."""
