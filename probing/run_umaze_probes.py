@@ -191,14 +191,21 @@ def collect_activations(
     n_rollouts = min(max_rollouts, len(base_dset))
     for rollout_idx in range(n_rollouts):
         seq_len = int(base_dset.get_seq_length(rollout_idx))
-        frame_idx = list(range(0, seq_len, frameskip))
+        # Match TrajSlicerDataset: only steps with a full frameskip action block.
+        frame_idx = list(range(0, seq_len - frameskip + 1, frameskip))
         if len(frame_idx) < 2:
             continue
 
         visual = base_dset.load_visual_frames(rollout_idx, frame_idx)
         proprio = base_dset.proprios[rollout_idx, frame_idx]
         state = base_dset.states[rollout_idx, frame_idx]
-        action = base_dset.actions[rollout_idx, frame_idx]
+        # Concatenate frameskip env actions per model step: (T, frameskip * d).
+        act_rows = []
+        for start in frame_idx:
+            chunk = base_dset.actions[rollout_idx, start : start + frameskip]
+            act_rows.append(chunk.reshape(-1))
+        action = torch.stack(act_rows, dim=0)
+
         obs = {
             "visual": visual.unsqueeze(0).to(device),
             "proprio": proprio.unsqueeze(0).to(device),
@@ -211,7 +218,6 @@ def collect_activations(
             for name in hook_names:
                 if name in hook_manager.activations:
                     flat = flatten_activation(name, hook_manager.activations[name])
-                    # Encoder hooks fire once per encode; predictor needs its own pass.
                     if name != "predictor":
                         hook_site_rows[name].append(flat)
 
