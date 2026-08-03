@@ -51,13 +51,7 @@ class LinearProbeSuite:
         self.models: dict[str, Ridge] = {}
         self.results: list[ProbeResult] = []
 
-    def fit(
-        self,
-        x_train: np.ndarray,
-        y_train: dict[str, np.ndarray],
-        x_val: np.ndarray,
-        y_val: dict[str, np.ndarray],
-    ) -> list[ProbeResult]:
+    def fit(self, x_train: np.ndarray, y_train: dict[str, np.ndarray], x_val: np.ndarray, y_val: dict[str, np.ndarray]) -> list[ProbeResult]:
         self.models.clear()
         self.scalers.clear()
         self.results.clear()
@@ -109,9 +103,7 @@ class LinearProbeSuite:
             and "direction_sin" in self.models
             and np.isfinite(y_val["direction_cos"]).sum() >= 5
         ):
-            valid = np.isfinite(y_val["direction_cos"]) & np.isfinite(
-                y_val["direction_sin"]
-            )
+            valid = np.isfinite(y_val["direction_cos"]) & np.isfinite(y_val["direction_sin"])
             cos_pred = self.models["direction_cos"].predict(x_val_s[valid])
             sin_pred = self.models["direction_sin"].predict(x_val_s[valid])
             angle_err = angular_error_deg(
@@ -152,11 +144,7 @@ class LinearProbeSuite:
         path.write_text(json.dumps(payload, indent=2))
 
 
-def episode_train_val_split(
-    episode_ids: np.ndarray,
-    val_fraction: float = 0.2,
-    seed: int = 0,
-) -> tuple[np.ndarray, np.ndarray]:
+def episode_train_val_split(episode_ids: np.ndarray, val_fraction: float = 0.2, seed: int = 0) -> tuple[np.ndarray, np.ndarray]:
     """Split frame indices by episode (no leakage across trajectories)."""
     rng = np.random.default_rng(seed)
     unique_eps = np.unique(episode_ids)
@@ -168,12 +156,8 @@ def episode_train_val_split(
     return train_mask, val_mask
 
 
-def location_threshold(
-    positions: np.ndarray,
-    *,
-    mode: str = "median",
-) -> float:
-    """Choose a spatial cut for location holdout (median or midpoint of range)."""
+def location_threshold(positions: np.ndarray, *, mode: str = "median") -> float:
+    """Spatial cut for location holdout (median or midpoint)."""
     finite = positions[np.isfinite(positions)]
     if finite.size == 0:
         raise ValueError("No finite positions available for location holdout.")
@@ -185,64 +169,33 @@ def location_threshold(
 
 
 def location_holdout_masks(
-    pos_x: np.ndarray,
-    pos_y: np.ndarray,
-    *,
-    axis: str = "x",
-    threshold: float | None = None,
-    threshold_mode: str = "median",
-    train_side: str = "low",
+    pos_x: np.ndarray, pos_y: np.ndarray, *, axis: str = "x", threshold: float | None = None,
+    threshold_mode: str = "median", train_side: str = "low",
 ) -> tuple[np.ndarray, np.ndarray, float]:
-    """
-    Split frames by maze region along one axis.
-
-    train_side="low" trains on coordinate < threshold and tests on >= threshold.
-    train_side="high" swaps the regions.
-    """
+    """Split frames by maze half along one axis."""
     if axis not in {"x", "y"}:
         raise ValueError("axis must be 'x' or 'y'")
     if train_side not in {"low", "high"}:
         raise ValueError("train_side must be 'low' or 'high'")
-
     coord = pos_x if axis == "x" else pos_y
     if threshold is None:
         threshold = location_threshold(coord, mode=threshold_mode)
-
-    low_mask = np.isfinite(coord) & (coord < threshold)
-    high_mask = np.isfinite(coord) & (coord >= threshold)
+    low = np.isfinite(coord) & (coord < threshold)
+    high = np.isfinite(coord) & (coord >= threshold)
     if train_side == "low":
-        return low_mask, high_mask, float(threshold)
-    return high_mask, low_mask, float(threshold)
+        return low, high, float(threshold)
+    return high, low, float(threshold)
 
 
 def run_location_holdout(
-    features: np.ndarray,
-    labels: dict[str, np.ndarray],
-    *,
-    axes: tuple[str, ...] = ("x", "y"),
-    threshold_mode: str = "median",
-    alpha: float = 1.0,
-    targets: list[str] | None = None,
+    features: np.ndarray, labels: dict[str, np.ndarray], *, axes: tuple[str, ...] = ("x", "y"),
+    threshold_mode: str = "median", alpha: float = 1.0, targets: list[str] | None = None,
 ) -> dict:
-    """
-    Train probes in one maze region and evaluate in the complementary region.
-
-    For each axis, runs both directions (low→high and high→low) so a one-sided
-    geographic quirk is visible.
-
-    Also reports a position-only baseline for non-position targets: if features
-    barely beat (x, y) under the same split, the probe is likely location-driven.
-    """
+    """Train probes in one maze half and evaluate in the complementary half."""
     report: dict = {
         "threshold_mode": threshold_mode,
         "splits": [],
         "summary": {},
-        "note": (
-            "High episode-split R2 with collapsed location-holdout R2 suggests "
-            "region-specific confounding. If holdout R2 stays high but the "
-            "position-only baseline matches it, features may still be reading "
-            "a global position→speed map."
-        ),
     }
     target_names = targets or list(DEFAULT_TARGETS)
     pos_features = np.stack([labels["position_x"], labels["position_y"]], axis=1)
@@ -293,9 +246,7 @@ def run_location_holdout(
                 for r in suite.results
             ]
 
-            baseline_targets = [
-                t for t in target_names if t not in {"position_x", "position_y"}
-            ]
+            baseline_targets = [t for t in target_names if t not in {"position_x", "position_y"}]
             if baseline_targets:
                 baseline = LinearProbeSuite(alpha=alpha, targets=baseline_targets)
                 baseline.fit(
@@ -313,7 +264,6 @@ def run_location_holdout(
                     }
                     for r in baseline.results
                 ]
-
             report["splits"].append(entry)
 
     # Mean held-out R² per target across completed splits.
@@ -335,8 +285,7 @@ def run_location_holdout(
             "n_splits": len(vals),
             "position_baseline_mean_heldout_r2": (
                 float(np.mean(baseline_by_target[target]))
-                if target in baseline_by_target and baseline_by_target[target]
-                else None
+                if baseline_by_target.get(target) else None
             ),
         }
         for target, vals in by_target.items()
@@ -345,9 +294,7 @@ def run_location_holdout(
 
 
 def tensors_to_numpy(
-    features: torch.Tensor,
-    labels: dict[str, torch.Tensor],
-    episode_ids: torch.Tensor,
+    features: torch.Tensor, labels: dict[str, torch.Tensor], episode_ids: torch.Tensor
 ) -> tuple[np.ndarray, dict[str, np.ndarray], np.ndarray]:
     x = features.reshape(features.shape[0], -1).cpu().numpy()
     y = {k: v.reshape(-1).cpu().numpy() for k, v in labels.items()}

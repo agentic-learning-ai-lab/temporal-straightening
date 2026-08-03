@@ -45,6 +45,7 @@ if str(REPO_ROOT) not in sys.path:
 from probing.hooks import ActivationHookManager, flatten_activation
 from probing.labels import state_tensor_to_probe_labels
 from probing.linear_probe import (
+    DEFAULT_TARGETS,
     LinearProbeSuite,
     episode_train_val_split,
     run_location_holdout,
@@ -130,43 +131,25 @@ def _load_point_maze_only(data_path: str, max_rollouts: int | None):
     from datasets.img_transforms import default_transform
     from datasets.point_maze_dset import PointMazeDataset
 
-    dset = PointMazeDataset(
-        data_path=data_path,
-        normalize_action=True,
-        transform=default_transform(img_size=224),
-    )
+    dset = PointMazeDataset(data_path=data_path, normalize_action=True, transform=default_transform(img_size=224))
     n = len(dset) if max_rollouts is None else min(max_rollouts, len(dset))
     return dset, n
 
 
 @torch.no_grad()
 def collect_activations(
-    model,
-    base_dset,
-    *,
-    device: torch.device,
-    frameskip: int,
-    max_rollouts: int,
-    readout: str,
-    hook_manager: ActivationHookManager | None = None,
+    model, base_dset, *, device: torch.device, frameskip: int, max_rollouts: int,
+    readout: str, hook_manager: ActivationHookManager | None = None,
 ) -> dict:
     feature_rows: list[torch.Tensor] = []
-    label_rows: dict[str, list[torch.Tensor]] = {
-        k: []
-        for k in [
-            "position_x",
-            "position_y",
-            "speed",
-            "direction_cos",
-            "direction_sin",
-        ]
-    }
+    label_rows: dict[str, list[torch.Tensor]] = {k: [] for k in DEFAULT_TARGETS}
     episode_rows: list[torch.Tensor] = []
 
-    hook_names = []
+    hook_names: list[str] = []
+    hook_site_rows: dict[str, list[torch.Tensor]] = {}
     if hook_manager is not None:
         hook_names = hook_manager.register_umaze_defaults()
-        hook_site_rows: dict[str, list[torch.Tensor]] = {n: [] for n in hook_names}
+        hook_site_rows = {n: [] for n in hook_names}
 
     n_rollouts = min(max_rollouts, len(base_dset))
     for rollout_idx in range(n_rollouts):
@@ -178,7 +161,6 @@ def collect_activations(
         visual = base_dset.load_visual_frames(rollout_idx, frame_idx)
         proprio = base_dset.proprios[rollout_idx, frame_idx]
         state = base_dset.states[rollout_idx, frame_idx]
-
         obs = {
             "visual": visual.unsqueeze(0).to(device),
             "proprio": proprio.unsqueeze(0).to(device),
@@ -195,7 +177,6 @@ def collect_activations(
             features = model.encode_obs(obs)["visual"].mean(dim=2)
 
         labels = state_tensor_to_probe_labels(state)
-
         t = features.shape[1]
         feature_rows.append(features.reshape(t, -1))
         episode_rows.append(torch.full((t,), rollout_idx, dtype=torch.long))
@@ -205,13 +186,14 @@ def collect_activations(
     if not feature_rows:
         raise RuntimeError("No frames collected; check dataset path and frameskip.")
 
+    episode_ids = torch.cat(episode_rows, dim=0)
     out = {
         "features": torch.cat(feature_rows, dim=0),
         "labels": {k: torch.cat(v, dim=0) for k, v in label_rows.items()},
-        "episode_ids": torch.cat(episode_rows, dim=0),
+        "episode_ids": episode_ids,
         "readout": readout,
         "n_rollouts": n_rollouts,
-        "n_frames": int(torch.cat(episode_rows, dim=0).shape[0]),
+        "n_frames": int(episode_ids.shape[0]),
     }
     if hook_manager is not None:
         out["hook_features"] = {
@@ -251,44 +233,84 @@ def train_probes_from_cache(cache: dict, *, val_fraction: float, seed: int) -> L
     return suite
 
 
-def location_holdout_from_cache(
-    cache: dict,
-    *,
-    axes: tuple[str, ...] = ("x", "y"),
-    threshold_mode: str = "median",
-) -> dict:
-    """Train in one maze half, evaluate in the other (mentor location-generalization check)."""
+def select_probe_cache(cache: dict, *, probe_source: str = "readout", feature_mode: str = "raw") -> dict:
+    """Select readout or hook features; optional within-episode diffs."""
+    if probe_source == "readout":
+        features = cache["features"]
+    else:
+        hooks = cache.get("hook_features") or {}
+        if probe_source not in hooks:
+            available = ", ".join(sorted(hooks)) or "(none)"
+            raise KeyError(f"probe source {probe_source!r} not in hook_features; available: {available}")
+        features = hooks[probe_source]
+
+    labels = cache["labels"]
+    episode_ids = cache["episode_ids"]
+    if feature_mode == "raw":
+        return {
+            **cache,
+            "features": features,
+            "n_frames": int(features.shape[0]),
+            "probe_source": probe_source,
+            "feature_mode": feature_mode,
+        }
+    if feature_mode != "diff":
+        raise ValueError(f"Unknown feature_mode: {feature_mode}")
+
+    feat_rows, ep_rows = [], []
+    label_rows = {k: [] for k in labels}
+    ids = episode_ids.cpu().numpy() if torch.is_tensor(episode_ids) else np.asarray(episode_ids)
+    for ep in np.unique(ids):
+        idx = np.where(ids == ep)[0]
+        if len(idx) < 2:
+            continue
+        f = features[idx]
+        feat_rows.append(f[1:] - f[:-1])
+        for k, v in labels.items():
+            label_rows[k].append(v[idx][1:])
+        ep_rows.append(episode_ids[idx][1:])
+
+    if not feat_rows:
+        raise RuntimeError("No within-episode pairs available for feature_mode=diff")
+
+    return {
+        **cache,
+        "features": torch.cat(feat_rows, dim=0),
+        "labels": {k: torch.cat(v, dim=0) for k, v in label_rows.items()},
+        "episode_ids": torch.cat(ep_rows, dim=0),
+        "n_frames": int(sum(t.shape[0] for t in feat_rows)),
+        "probe_source": probe_source,
+        "feature_mode": feature_mode,
+    }
+
+
+def location_holdout_from_cache(cache: dict, *, axes: tuple[str, ...] = ("x", "y"), threshold_mode: str = "median") -> dict:
+    """Train in one maze half, evaluate in the other."""
     x, y, _ = tensors_to_numpy(cache["features"], cache["labels"], cache["episode_ids"])
-    return run_location_holdout(
-        x,
-        y,
-        axes=axes,
-        threshold_mode=threshold_mode,
-    )
+    return run_location_holdout(x, y, axes=axes, threshold_mode=threshold_mode)
 
 
 def _print_location_holdout(report: dict) -> None:
     print("\nLocation holdout (train in one region, test in the complementary region):")
     print(f"  threshold_mode={report['threshold_mode']}")
     for split in report["splits"]:
-        tag = f"{split['axis']}:{split['train_side']}→other"
+        tag = f"{split['axis']}:{split['train_side']}->other"
         if "skipped" in split:
             print(f"  {tag:18s}  skipped ({split['skipped']})")
             continue
         by_target = {r["target"]: r for r in split["results"]}
         speed = by_target.get("speed", {})
-        baseline = {
-            r["target"]: r for r in split.get("position_baseline", [])
-        }.get("speed", {})
+        baseline_by_target = {r["target"]: r for r in split.get("position_baseline", [])}
+        baseline = baseline_by_target.get("speed", {})
         base_txt = ""
         if baseline:
-            base_txt = f"  pos→speed={baseline.get('heldout_r2', float('nan')):.3f}"
+            base_txt = f"  pos->speed={baseline.get('heldout_r2', float('nan')):.3f}"
         print(
             f"  {tag:18s}  thr={split['threshold']:.3f}  "
             f"n_train={split['n_train']} n_test={split['n_test']}  "
             f"speed heldout_r2={speed.get('heldout_r2', float('nan')):.3f}{base_txt}"
         )
-    print("\n  Mean held-out R² across splits:")
+    print("\n  Mean held-out R2 across splits:")
     for target, stats in report["summary"].items():
         base = stats.get("position_baseline_mean_heldout_r2")
         base_txt = f"  pos_baseline={base:.3f}" if base is not None else ""
@@ -299,22 +321,13 @@ def _print_location_holdout(report: dict) -> None:
 
 
 @torch.no_grad()
-def smoke_test_interventions(
-    model,
-    base_dset,
-    hook_manager: ActivationHookManager,
-    *,
-    device: torch.device,
-    frameskip: int,
-    suite: LinearProbeSuite,
-) -> dict:
-    """Knockout / mean-replace one hook site on a single frame; report probe delta."""
+def smoke_test_interventions(model, base_dset, hook_manager: ActivationHookManager, *, device: torch.device, frameskip: int, suite: LinearProbeSuite) -> dict:
+    """Knockout / mean-replace one hook site; report probe delta."""
     rollout_idx = 0
     seq_len = int(base_dset.get_seq_length(rollout_idx))
     frame_idx = list(range(0, seq_len, frameskip))[:5]
     visual = base_dset.load_visual_frames(rollout_idx, frame_idx)
     proprio = base_dset.proprios[rollout_idx, frame_idx]
-    state = base_dset.states[rollout_idx, frame_idx]
     obs = {
         "visual": visual.unsqueeze(0).to(device),
         "proprio": proprio.unsqueeze(0).to(device),
@@ -323,8 +336,6 @@ def smoke_test_interventions(
     hook_manager.clear_interventions()
     baseline = hook_manager.capture_encode_obs(obs, readout="post_projector")
     x_base = baseline.reshape(-1, baseline.shape[-1]).cpu().numpy()
-    y = state_tensor_to_probe_labels(state)
-    y_np = {k: v.cpu().numpy() for k, v in y.items()}
     pred_base = suite.predict(x_base)
 
     if not hook_manager.registered_names:
@@ -349,11 +360,10 @@ def smoke_test_interventions(
             perturbed = hook_manager.capture_encode_obs(obs, readout="post_projector")
             x_pert = perturbed.reshape(-1, perturbed.shape[-1]).cpu().numpy()
             pred_pert = suite.predict(x_pert)
-            delta = {
+            reports[f"{hook_name}:{mode}"] = {
                 target: float(np.mean(np.abs(pred_pert[target] - pred_base[target])))
                 for target in pred_base
             }
-            reports[f"{hook_name}:{mode}"] = delta
 
     hook_manager.clear_interventions()
     return reports
@@ -366,88 +376,84 @@ def main() -> None:
     parser.add_argument("--data-path", type=str, default=None, help="Override point_maze dataset path")
     parser.add_argument("--max-rollouts", type=int, default=80)
     parser.add_argument("--frameskip", type=int, default=None)
-    parser.add_argument(
-        "--readout",
-        choices=["post_projector", "agg_mlp", "flatten"],
-        default="post_projector",
-    )
+    parser.add_argument("--readout", choices=["post_projector", "agg_mlp", "flatten"], default="post_projector")
     parser.add_argument("--val-fraction", type=float, default=0.2)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--output", type=Path, default=Path("probing/out/umaze"))
     parser.add_argument("--labels-only", action="store_true")
     parser.add_argument("--skip-interventions", action="store_true")
-    parser.add_argument(
-        "--location-holdout",
-        action="store_true",
-        help="Also train/eval probes with a spatial split (mentor location-generalization check)",
-    )
-    parser.add_argument(
-        "--holdout-axes",
-        type=str,
-        default="x,y",
-        help="Comma-separated axes for location holdout, e.g. x or x,y",
-    )
-    parser.add_argument(
-        "--holdout-threshold",
-        choices=["median", "midpoint"],
-        default="median",
-        help="How to choose the spatial cut for location holdout",
-    )
-    parser.add_argument(
-        "--from-cache",
-        type=Path,
-        default=None,
-        help="Skip encoding; load activations.pt and (re)run probe + optional location holdout",
-    )
+    parser.add_argument("--location-holdout", action="store_true", help="Spatial train/test split")
+    parser.add_argument("--holdout-axes", type=str, default="x,y", help="e.g. x or x,y")
+    parser.add_argument("--holdout-threshold", choices=["median", "midpoint"], default="median")
+    parser.add_argument("--from-cache", type=Path, default=None, help="Load activations.pt; skip encode")
+    parser.add_argument("--probe-source", type=str, default="readout", help="readout or hook name")
+    parser.add_argument("--feature-mode", choices=["raw", "diff"], default="raw", help="raw or within-ep diff")
     args = parser.parse_args()
 
-    data_path = args.data_path or f"{Path.home()}/data/point_maze"
-    if args.data_path is None:
+    if args.data_path is not None:
+        data_path = args.data_path
+    else:
         import os
-
-        data_path = os.environ.get("DATASET_DIR", str(REPO_ROOT / "data"))
-        data_path = str(Path(data_path) / "point_maze")
+        data_path = str(Path(os.environ.get("DATASET_DIR", str(REPO_ROOT / "data"))) / "point_maze")
 
     if args.labels_only:
-        frameskip = args.frameskip or 5
-        run_labels_only(data_path, args.max_rollouts, frameskip)
+        run_labels_only(data_path, args.max_rollouts, args.frameskip or 5)
         return
 
     args.output.mkdir(parents=True, exist_ok=True)
     holdout_axes = tuple(a.strip() for a in args.holdout_axes.split(",") if a.strip())
 
-    if args.from_cache is not None:
-        cache = torch.load(args.from_cache, map_location="cpu", weights_only=False)
-        suite = train_probes_from_cache(
-            cache, val_fraction=args.val_fraction, seed=args.seed
+    def _run_probe_and_holdout(cache: dict, *, save_activations: bool) -> LinearProbeSuite:
+        probe_cache = select_probe_cache(
+            cache,
+            probe_source=args.probe_source,
+            feature_mode=args.feature_mode,
         )
+        suite = train_probes_from_cache(
+            probe_cache,
+            val_fraction=args.val_fraction,
+            seed=args.seed,
+        )
+        if save_activations:
+            torch.save(cache, args.output / "activations.pt")
         suite.save_report(args.output / "probe_results.json")
-        print(f"\nLoaded cache {args.from_cache}")
-        print(f"Frames={cache['n_frames']}  feature_dim={cache['features'].shape[-1]}")
-        print("\nEpisode-split validation R²:")
+        print(
+            f"\nProbe source={args.probe_source}  feature_mode={args.feature_mode}  "
+            f"frames={probe_cache['n_frames']}  dim={probe_cache['features'].shape[-1]}"
+        )
+        print("\nEpisode-split validation R2:")
         for result in suite.results:
+            extra = ""
+            if "direction_mae_deg" in result.extra:
+                extra = f", direction MAE={result.extra['direction_mae_deg']:.1f} deg"
             print(
                 f"  {result.target:16s}  val_r2={result.val_r2:6.3f}  "
-                f"val_rmse={result.val_rmse:.4f}"
+                f"val_rmse={result.val_rmse:.4f}{extra}"
             )
         if args.location_holdout:
             holdout = location_holdout_from_cache(
-                cache, axes=holdout_axes, threshold_mode=args.holdout_threshold
+                probe_cache,
+                axes=holdout_axes,
+                threshold_mode=args.holdout_threshold,
             )
-            (args.output / "location_holdout.json").write_text(
-                json.dumps(holdout, indent=2)
-            )
+            (args.output / "location_holdout.json").write_text(json.dumps(holdout, indent=2))
             _print_location_holdout(holdout)
             print(f"\nWrote {args.output}/location_holdout.json")
-        else:
-            print("\nTip: pass --location-holdout to run the spatial generalization check.")
+        return suite
+
+    if args.from_cache is not None:
+        cache = torch.load(args.from_cache, map_location="cpu", weights_only=False)
+        print(f"\nLoaded cache {args.from_cache}")
+        if cache.get("hook_features"):
+            print("Available hooks:", ", ".join(sorted(cache["hook_features"])))
+        _run_probe_and_holdout(cache, save_activations=False)
         return
 
     if args.model_dir is None:
         parser.error("--model-dir is required unless --labels-only or --from-cache is set")
 
     model, base_dset, model_cfg, device = _load_model_and_dataset(
-        args.model_dir, args.epoch, args.data_path
+        args.model_dir, args.epoch, data_path
     )
     frameskip = args.frameskip or int(model_cfg.frameskip)
 
@@ -461,51 +467,39 @@ def main() -> None:
         readout=args.readout,
         hook_manager=hook_manager,
     )
-
-    suite = train_probes_from_cache(
-        cache, val_fraction=args.val_fraction, seed=args.seed
-    )
-
-    torch.save(cache, args.output / "activations.pt")
-    suite.save_report(args.output / "probe_results.json")
-
     print(f"\nCollected {cache['n_frames']} frames from {cache['n_rollouts']} rollouts")
     print(f"Readout: {args.readout}  feature_dim={cache['features'].shape[-1]}")
-    print("\nEpisode-split validation R²:")
-    for result in suite.results:
-        extra = ""
-        if "direction_mae_deg" in result.extra:
-            extra = f", direction MAE={result.extra['direction_mae_deg']:.1f}°"
-        print(
-            f"  {result.target:16s}  val_r2={result.val_r2:6.3f}  "
-            f"val_rmse={result.val_rmse:.4f}{extra}"
-        )
+    if cache.get("hook_features"):
+        print("Hook sites:", ", ".join(sorted(cache["hook_features"])))
 
-    if args.location_holdout:
-        holdout = location_holdout_from_cache(
-            cache, axes=holdout_axes, threshold_mode=args.holdout_threshold
-        )
-        (args.output / "location_holdout.json").write_text(json.dumps(holdout, indent=2))
-        _print_location_holdout(holdout)
+    suite = _run_probe_and_holdout(cache, save_activations=True)
 
     if not args.skip_interventions:
+        # Interventions always use the single-frame readout probe (not hook/diff).
+        intervention_suite = suite
+        if args.probe_source != "readout" or args.feature_mode != "raw":
+            intervention_suite = train_probes_from_cache(
+                select_probe_cache(
+                    cache,
+                    probe_source="readout",
+                    feature_mode="raw",
+                ),
+                val_fraction=args.val_fraction,
+                seed=args.seed,
+            )
         intervention_report = smoke_test_interventions(
             model,
             base_dset,
             hook_manager,
             device=device,
             frameskip=frameskip,
-            suite=suite,
+            suite=intervention_suite,
         )
-        (args.output / "intervention_smoke.json").write_text(
-            json.dumps(intervention_report, indent=2)
-        )
-        print("\nIntervention smoke test (mean |Δ probe pred| on 5 frames):")
+        (args.output / "intervention_smoke.json").write_text(json.dumps(intervention_report, indent=2))
+        print("\nIntervention smoke test (mean |d probe pred| on 5 frames):")
         for site, deltas in intervention_report.items():
-            direction_delta = deltas.get("direction_cos", 0.0) + deltas.get(
-                "direction_sin", 0.0
-            )
-            print(f"  {site:22s}  directionΔ≈{direction_delta:.4f}")
+            direction_delta = deltas.get("direction_cos", 0.0) + deltas.get("direction_sin", 0.0)
+            print(f"  {site:22s}  direction_d~={direction_delta:.4f}")
 
     print(f"\nWrote {args.output}/activations.pt and probe_results.json")
     if args.location_holdout:

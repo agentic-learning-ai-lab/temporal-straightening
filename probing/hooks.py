@@ -3,18 +3,13 @@
 from __future__ import annotations
 
 from collections.abc import Callable
-from typing import Any
 
 import torch
 import torch.nn as nn
 
 
 class ActivationHookManager:
-    """
-    Register forward hooks on encoder / projector / predictor submodules.
-
-    Supports knockout (zero) and mean-replacement interventions during forward.
-    """
+    """Forward hooks + knockout/mean interventions on encoder/projector/predictor."""
 
     def __init__(self, model: nn.Module):
         self.model = model
@@ -31,18 +26,8 @@ class ActivationHookManager:
         self.activations.clear()
         self.interventions.clear()
 
-    def set_intervention(
-        self,
-        name: str,
-        mode: str,
-        value: torch.Tensor | None = None,
-    ) -> None:
-        """
-        Args:
-            name: registered hook name.
-            mode: ``knockout`` (zero activations) or ``mean`` (replace with ``value``).
-            value: required for ``mean``; tensor broadcastable to hooked output.
-        """
+    def set_intervention(self, name: str, mode: str, value: torch.Tensor | None = None) -> None:
+        """mode: ``knockout`` or ``mean`` (needs ``value``)."""
         if mode not in {"knockout", "mean"}:
             raise ValueError(f"Unknown intervention mode: {mode}")
         if mode == "mean" and value is None:
@@ -66,9 +51,7 @@ class ActivationHookManager:
                 if mode == "knockout":
                     tensor = torch.zeros_like(tensor)
                 else:
-                    tensor = value.to(tensor.device, dtype=tensor.dtype).expand_as(
-                        tensor
-                    )
+                    tensor = value.to(tensor.device, dtype=tensor.dtype).expand_as(tensor)
 
             if self._capture_enabled:
                 self.activations[name] = tensor.detach().cpu()
@@ -87,12 +70,7 @@ class ActivationHookManager:
         self.registered_names.append(name)
 
     def register_umaze_defaults(self, *, dino_block_indices: list[int] | None = None) -> list[str]:
-        """
-        Register common probe sites for DINO-channel UMaze models.
-
-        Returns:
-            List of registered hook names.
-        """
+        """Register DINO blocks / projector / encoder / predictor probe sites."""
         encoder = self.model.encoder
         names: list[str] = []
 
@@ -120,20 +98,8 @@ class ActivationHookManager:
         return names
 
     @torch.no_grad()
-    def capture_encode_obs(
-        self,
-        obs: dict[str, torch.Tensor],
-        *,
-        readout: str = "post_projector",
-    ) -> torch.Tensor:
-        """
-        Run ``encode_obs`` and return a flat feature vector per (batch, time) step.
-
-        Readouts:
-            ``post_projector``: mean-pooled visual tokens after encoder (default).
-            ``agg_mlp``: MLP aggregation head (matches straightening losses).
-            ``flatten``: flattened patch grid.
-        """
+    def capture_encode_obs(self, obs: dict[str, torch.Tensor], *, readout: str = "post_projector") -> torch.Tensor:
+        """Run encode_obs; readout in {post_projector, agg_mlp, flatten}."""
         self.activations.clear()
         out = self.model.encode_obs(obs)
         visual = out["visual"]  # (B, T, P, D)
@@ -151,15 +117,10 @@ class ActivationHookManager:
         raise ValueError(f"Unknown readout: {readout}")
 
 
-def flatten_activation(name: str, tensor: torch.Tensor, pool: str = "mean") -> torch.Tensor:
-    """
-    Convert hooked activation to ``(N, F)`` feature matrix.
-
-    ``N`` merges batch and time dimensions when present.
-    """
+def flatten_activation(_name: str, tensor: torch.Tensor, pool: str = "mean") -> torch.Tensor:
+    """Hook activation -> (N, F) with batch/time merged."""
     x = tensor
     if x.ndim == 4:
-        # (B, T, P, D)
         if pool == "mean":
             x = x.mean(dim=2)
         elif pool == "flatten":
@@ -169,7 +130,6 @@ def flatten_activation(name: str, tensor: torch.Tensor, pool: str = "mean") -> t
             raise ValueError(pool)
         x = x.reshape(-1, x.shape[-1])
     elif x.ndim == 3:
-        # (B, T, D) or (B, N, D)
         if pool == "mean" and x.shape[1] > 1 and x.shape[-1] <= 512:
             x = x.mean(dim=1)
         else:

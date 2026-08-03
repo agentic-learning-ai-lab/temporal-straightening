@@ -5,23 +5,8 @@ from __future__ import annotations
 import torch
 
 
-def state_tensor_to_probe_labels(
-    states: torch.Tensor,
-    *,
-    min_speed: float = 1e-4,
-) -> dict[str, torch.Tensor]:
-    """
-    Build probe targets from raw simulator state (not normalized proprio).
-
-    Args:
-        states: ``(T, 4)`` or ``(B, T, 4)`` with columns
-            ``[qpos_x, qpos_y, qvel_x, qvel_y]``.
-        min_speed: speeds below this get direction set to NaN (excluded in training).
-
-    Returns:
-        Dict of float tensors with trailing shape ``(T,)`` or ``(B, T)``:
-        ``position_x``, ``position_y``, ``speed``, ``direction_cos``, ``direction_sin``.
-    """
+def state_tensor_to_probe_labels(states: torch.Tensor, *, min_speed: float = 1e-4) -> dict[str, torch.Tensor]:
+    """Probe targets from state [..., 4] = [x, y, vx, vy]; low-speed direction -> NaN."""
     if states.ndim == 2:
         states = states.unsqueeze(0)
         squeeze = True
@@ -57,6 +42,4 @@ def labels_to_matrix(labels: dict[str, torch.Tensor], keys: list[str]) -> torch.
 
 def valid_direction_mask(labels: dict[str, torch.Tensor]) -> torch.Tensor:
     """Boolean mask for frames with reliable heading (non-NaN cos/sin)."""
-    return torch.isfinite(labels["direction_cos"]) & torch.isfinite(
-        labels["direction_sin"]
-    )
+    return torch.isfinite(labels["direction_cos"]) & torch.isfinite(labels["direction_sin"])
