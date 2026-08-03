@@ -1,0 +1,604 @@
+{
+  "runs": [
+    {
+      "experiment": "dino_pooled_patches_diff",
+      "condition": "calibrated_speed",
+      "run": "dino_pooled_patches_diff/calibrated_speed",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_diff/calibrated_speed/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -17.483134478330612,
+          "min_heldout_r2": -38.474021911621094,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -10.672988682985306,
+          "min_heldout_r2": -25.616247177124023,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.2074193358421326,
+          "min_heldout_r2": -1.6135838031768799,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878354549407959
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.2955881655216217,
+          "min_heldout_r2": -0.9556827545166016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.769464835524559
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.021347925066947937,
+          "min_heldout_r2": -0.6552776098251343,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.14294417202472687
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_diff",
+      "condition": "factorized",
+      "run": "dino_pooled_patches_diff/factorized",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_diff/factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -17.483134478330612,
+          "min_heldout_r2": -38.474021911621094,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -10.672988682985306,
+          "min_heldout_r2": -25.616247177124023,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.2074193358421326,
+          "min_heldout_r2": -1.6135838031768799,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878354549407959
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.2955881655216217,
+          "min_heldout_r2": -0.9556827545166016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.769464835524559
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.021347925066947937,
+          "min_heldout_r2": -0.6552776098251343,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.14294417202472687
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_diff",
+      "condition": "layer_aware_factorized",
+      "run": "dino_pooled_patches_diff/layer_aware_factorized",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_diff/layer_aware_factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -17.483134478330612,
+          "min_heldout_r2": -38.474021911621094,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -10.672988682985306,
+          "min_heldout_r2": -25.616247177124023,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.2074193358421326,
+          "min_heldout_r2": -1.6135838031768799,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878354549407959
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.2955881655216217,
+          "min_heldout_r2": -0.9556827545166016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.769464835524559
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.021347925066947937,
+          "min_heldout_r2": -0.6552776098251343,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.14294417202472687
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_diff",
+      "condition": "r0_direction_only",
+      "run": "dino_pooled_patches_diff/r0_direction_only",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_diff/r0_direction_only/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -17.483134478330612,
+          "min_heldout_r2": -38.474021911621094,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -10.672988682985306,
+          "min_heldout_r2": -25.616247177124023,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.2074193358421326,
+          "min_heldout_r2": -1.6135838031768799,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878354549407959
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.2955881655216217,
+          "min_heldout_r2": -0.9556827545166016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.769464835524559
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.021347925066947937,
+          "min_heldout_r2": -0.6552776098251343,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.14294417202472687
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_diff",
+      "condition": "r2_full_matched",
+      "run": "dino_pooled_patches_diff/r2_full_matched",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_diff/r2_full_matched/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -17.483134478330612,
+          "min_heldout_r2": -38.474021911621094,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -10.672988682985306,
+          "min_heldout_r2": -25.616247177124023,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.2074193358421326,
+          "min_heldout_r2": -1.6135838031768799,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878354549407959
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.2955881655216217,
+          "min_heldout_r2": -0.9556827545166016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.769464835524559
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.021347925066947937,
+          "min_heldout_r2": -0.6552776098251343,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.14294417202472687
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_raw",
+      "condition": "calibrated_speed",
+      "run": "dino_pooled_patches_raw/calibrated_speed",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_raw/calibrated_speed/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -11.824836269021034,
+          "min_heldout_r2": -24.493690490722656,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -4.53455376625061,
+          "min_heldout_r2": -11.038435935974121,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.9614242315292358,
+          "min_heldout_r2": -4.172117710113525,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.3438173234462738
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -1.915072500705719,
+          "min_heldout_r2": -2.179028272628784,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.06358328461647034
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -1.467706948518753,
+          "min_heldout_r2": -2.1808314323425293,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.005178391933441162
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_raw",
+      "condition": "factorized",
+      "run": "dino_pooled_patches_raw/factorized",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_raw/factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -11.824836269021034,
+          "min_heldout_r2": -24.493690490722656,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -4.53455376625061,
+          "min_heldout_r2": -11.038435935974121,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.9614242315292358,
+          "min_heldout_r2": -4.172117710113525,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.3438173234462738
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -1.915072500705719,
+          "min_heldout_r2": -2.179028272628784,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.06358328461647034
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -1.467706948518753,
+          "min_heldout_r2": -2.1808314323425293,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.005178391933441162
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_raw",
+      "condition": "layer_aware_factorized",
+      "run": "dino_pooled_patches_raw/layer_aware_factorized",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_raw/layer_aware_factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -11.824836269021034,
+          "min_heldout_r2": -24.493690490722656,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -4.53455376625061,
+          "min_heldout_r2": -11.038435935974121,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.9614242315292358,
+          "min_heldout_r2": -4.172117710113525,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.3438173234462738
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -1.915072500705719,
+          "min_heldout_r2": -2.179028272628784,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.06358328461647034
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -1.467706948518753,
+          "min_heldout_r2": -2.1808314323425293,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.005178391933441162
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_raw",
+      "condition": "r0_direction_only",
+      "run": "dino_pooled_patches_raw/r0_direction_only",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_raw/r0_direction_only/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -11.824836269021034,
+          "min_heldout_r2": -24.493690490722656,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -4.53455376625061,
+          "min_heldout_r2": -11.038435935974121,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.9614242315292358,
+          "min_heldout_r2": -4.172117710113525,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.3438173234462738
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -1.915072500705719,
+          "min_heldout_r2": -2.179028272628784,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.06358328461647034
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -1.467706948518753,
+          "min_heldout_r2": -2.1808314323425293,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.005178391933441162
+        }
+      }
+    },
+    {
+      "experiment": "dino_pooled_patches_raw",
+      "condition": "r2_full_matched",
+      "run": "dino_pooled_patches_raw/r2_full_matched",
+      "path": "probing/selected_layer_holdout/dino_pooled_patches_raw/r2_full_matched/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -11.824836269021034,
+          "min_heldout_r2": -24.493690490722656,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -4.53455376625061,
+          "min_heldout_r2": -11.038435935974121,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -1.9614242315292358,
+          "min_heldout_r2": -4.172117710113525,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.3438173234462738
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -1.915072500705719,
+          "min_heldout_r2": -2.179028272628784,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.06358328461647034
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -1.467706948518753,
+          "min_heldout_r2": -2.1808314323425293,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.005178391933441162
+        }
+      }
+    },
+    {
+      "experiment": "predictor_pooled_visual_diff",
+      "condition": "calibrated_speed",
+      "run": "predictor_pooled_visual_diff/calibrated_speed",
+      "path": "probing/selected_layer_holdout/predictor_pooled_visual_diff/calibrated_speed/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -15.784120172262192,
+          "min_heldout_r2": -34.58487319946289,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -7.86459419131279,
+          "min_heldout_r2": -17.924758911132812,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -0.200640469789505,
+          "min_heldout_r2": -0.5682919025421143,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878805309534073
+        },
+        "direction_cos": {
+          "mean_heldout_r2": 0.041392549872398376,
+          "min_heldout_r2": -0.06568408012390137,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.9564412087202072
+        },
+        "direction_sin": {
+          "mean_heldout_r2": 0.12165750563144684,
+          "min_heldout_r2": 0.059756696224212646,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.15408742427825928
+        }
+      }
+    },
+    {
+      "experiment": "predictor_pooled_visual_diff",
+      "condition": "factorized",
+      "run": "predictor_pooled_visual_diff/factorized",
+      "path": "probing/selected_layer_holdout/predictor_pooled_visual_diff/factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -15.712120488286018,
+          "min_heldout_r2": -34.11772918701172,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -8.315076977014542,
+          "min_heldout_r2": -19.90207290649414,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -0.09685483574867249,
+          "min_heldout_r2": -0.1954556703567505,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878805309534073
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.5185693502426147,
+          "min_heldout_r2": -1.374967098236084,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.9564412087202072
+        },
+        "direction_sin": {
+          "mean_heldout_r2": 0.18115663528442383,
+          "min_heldout_r2": 0.0019994378089904785,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.15408742427825928
+        }
+      }
+    },
+    {
+      "experiment": "predictor_pooled_visual_diff",
+      "condition": "layer_aware_factorized",
+      "run": "predictor_pooled_visual_diff/layer_aware_factorized",
+      "path": "probing/selected_layer_holdout/predictor_pooled_visual_diff/layer_aware_factorized/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -15.373883724212646,
+          "min_heldout_r2": -33.24114990234375,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -8.596856623888016,
+          "min_heldout_r2": -21.323883056640625,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -0.372356116771698,
+          "min_heldout_r2": -0.872818112373352,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878805309534073
+        },
+        "direction_cos": {
+          "mean_heldout_r2": 0.7294143289327621,
+          "min_heldout_r2": 0.6950863003730774,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.9564412087202072
+        },
+        "direction_sin": {
+          "mean_heldout_r2": 0.7440715730190277,
+          "min_heldout_r2": 0.7316844463348389,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.15408742427825928
+        }
+      }
+    },
+    {
+      "experiment": "predictor_pooled_visual_diff",
+      "condition": "r0_direction_only",
+      "run": "predictor_pooled_visual_diff/r0_direction_only",
+      "path": "probing/selected_layer_holdout/predictor_pooled_visual_diff/r0_direction_only/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -15.410874456167221,
+          "min_heldout_r2": -34.27984619140625,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -7.872788697481155,
+          "min_heldout_r2": -18.138671875,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -0.13882963359355927,
+          "min_heldout_r2": -0.3814072608947754,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878805309534073
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.011495530605316162,
+          "min_heldout_r2": -0.14549779891967773,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.9564412087202072
+        },
+        "direction_sin": {
+          "mean_heldout_r2": 0.3507608026266098,
+          "min_heldout_r2": 0.2833229899406433,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.15408742427825928
+        }
+      }
+    },
+    {
+      "experiment": "predictor_pooled_visual_diff",
+      "condition": "r2_full_matched",
+      "run": "predictor_pooled_visual_diff/r2_full_matched",
+      "path": "probing/selected_layer_holdout/predictor_pooled_visual_diff/r2_full_matched/location_holdout.json",
+      "threshold_mode": "median",
+      "n_splits": 4,
+      "targets": {
+        "position_x": {
+          "mean_heldout_r2": -15.592783853411674,
+          "min_heldout_r2": -34.562191009521484,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "position_y": {
+          "mean_heldout_r2": -7.973260074853897,
+          "min_heldout_r2": -18.734806060791016,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": null
+        },
+        "speed": {
+          "mean_heldout_r2": -0.09407751262187958,
+          "min_heldout_r2": -0.3092052936553955,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.1878805309534073
+        },
+        "direction_cos": {
+          "mean_heldout_r2": -0.19699066877365112,
+          "min_heldout_r2": -0.44919276237487793,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.9564412087202072
+        },
+        "direction_sin": {
+          "mean_heldout_r2": -0.1924334019422531,
+          "min_heldout_r2": -0.8323467969894409,
+          "n_splits": 4,
+          "position_baseline_mean_heldout_r2": -0.15408742427825928
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "threshold_mode": "median",
+  "splits": [
+    {
+      "axis": "x",
+      "train_side": "low",
+      "threshold": 1.7789173126220703,
+      "n_train": 512,
+      "n_test": 512,
+      "results": [
+        {
+          "target": "position_x",
+          "train_r2": 0.02772653102874756,
+          "heldout_r2": -28.67376136779785,
+          "train_rmse": 0.323501855134964,
+          "heldout_rmse": 1.9437965154647827,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "position_y",
+          "train_r2": 0.09722435474395752,
+          "heldout_r2": 0.06358087062835693,
+          "train_rmse": 0.9138602614402771,
+          "heldout_rmse": 0.9181157350540161,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "speed",
+          "train_r2": 0.07947450876235962,
+          "heldout_r2": 0.020084381103515625,
+          "train_rmse": 0.2655872702598572,
+          "heldout_rmse": 0.27139797806739807,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "train_r2": 0.2602187991142273,
+          "heldout_r2": -0.06568408012390137,
+          "train_rmse": 0.5712878704071045,
+          "heldout_rmse": 0.6658505201339722,
+          "n_train": 512,
+          "n_heldout": 512,
+          "direction_mae_deg": 69.99917602539062
+        },
+        {
+          "target": "direction_sin",
+          "train_r2": 0.26516038179397583,
+          "heldout_r2": 0.1829664707183838,
+          "train_rmse": 0.638003408908844,
+          "heldout_rmse": 0.6847305297851562,
+          "n_train": 512,
+          "n_heldout": 512
+        }
+      ],
+      "position_baseline": [
+        {
+          "target": "speed",
+          "heldout_r2": -0.06443321704864502,
+          "heldout_rmse": 0.2828599512577057,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "heldout_r2": -1.7533729076385498,
+          "heldout_rmse": 1.0702741146087646,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_sin",
+          "heldout_r2": -0.013782024383544922,
+          "heldout_rmse": 0.7627321481704712,
+          "n_heldout": 512
+        }
+      ]
+    },
+    {
+      "axis": "x",
+      "train_side": "high",
+      "threshold": 1.7789173126220703,
+      "n_train": 512,
+      "n_test": 512,
+      "results": [
+        {
+          "target": "position_x",
+          "train_r2": 0.13797539472579956,
+          "heldout_r2": -34.58487319946289,
+          "train_rmse": 0.3313022255897522,
+          "heldout_rmse": 1.9571101665496826,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "position_y",
+          "train_r2": 0.15978336334228516,
+          "heldout_r2": 0.029589414596557617,
+          "train_rmse": 0.8696768879890442,
+          "heldout_rmse": 0.9474747776985168,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "speed",
+          "train_r2": 0.04306715726852417,
+          "heldout_r2": 0.039678335189819336,
+          "train_rmse": 0.2681964337825775,
+          "heldout_rmse": 0.27126747369766235,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "train_r2": 0.1754721999168396,
+          "heldout_r2": -0.014727234840393066,
+          "train_rmse": 0.5856863856315613,
+          "heldout_rmse": 0.6690799593925476,
+          "n_train": 512,
+          "n_heldout": 512,
+          "direction_mae_deg": 71.47926330566406
+        },
+        {
+          "target": "direction_sin",
+          "train_r2": 0.2840379476547241,
+          "heldout_r2": 0.1650996208190918,
+          "train_rmse": 0.6409804224967957,
+          "heldout_rmse": 0.6800550222396851,
+          "n_train": 512,
+          "n_heldout": 512
+        }
+      ],
+      "position_baseline": [
+        {
+          "target": "speed",
+          "heldout_r2": 0.00894230604171753,
+          "heldout_rmse": 0.27557438611984253,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "heldout_r2": -1.8928511142730713,
+          "heldout_rmse": 1.1297085285186768,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_sin",
+          "heldout_r2": -0.06479132175445557,
+          "heldout_rmse": 0.7679960131645203,
+          "n_heldout": 512
+        }
+      ]
+    },
+    {
+      "axis": "y",
+      "train_side": "low",
+      "threshold": 1.910096526145935,
+      "n_train": 512,
+      "n_test": 512,
+      "results": [
+        {
+          "target": "position_x",
+          "train_r2": 0.07930290699005127,
+          "heldout_r2": 0.07939952611923218,
+          "train_rmse": 1.0026788711547852,
+          "heldout_rmse": 0.9479878544807434,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "position_y",
+          "train_r2": 0.10692691802978516,
+          "heldout_r2": -17.924758911132812,
+          "train_rmse": 0.44185662269592285,
+          "heldout_rmse": 1.6788268089294434,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "speed",
+          "train_r2": 0.13998442888259888,
+          "heldout_r2": -0.5682919025421143,
+          "train_rmse": 0.2532535493373871,
+          "heldout_rmse": 0.34617337584495544,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "train_r2": 0.18761825561523438,
+          "heldout_r2": 0.10633182525634766,
+          "train_rmse": 0.5395919680595398,
+          "heldout_rmse": 0.6739890575408936,
+          "n_train": 512,
+          "n_heldout": 512,
+          "direction_mae_deg": 66.63629913330078
+        },
+        {
+          "target": "direction_sin",
+          "train_r2": 0.2564029097557068,
+          "heldout_r2": 0.07880723476409912,
+          "train_rmse": 0.6901850700378418,
+          "heldout_rmse": 0.6640631556510925,
+          "n_train": 512,
+          "n_heldout": 512
+        }
+      ],
+      "position_baseline": [
+        {
+          "target": "speed",
+          "heldout_r2": -0.3146103620529175,
+          "heldout_rmse": 0.3169412314891815,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "heldout_r2": 0.019915521144866943,
+          "heldout_rmse": 0.7058240175247192,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_sin",
+          "heldout_r2": -0.427010178565979,
+          "heldout_rmse": 0.8265091776847839,
+          "n_heldout": 512
+        }
+      ]
+    },
+    {
+      "axis": "y",
+      "train_side": "high",
+      "threshold": 1.910096526145935,
+      "n_train": 512,
+      "n_test": 512,
+      "results": [
+        {
+          "target": "position_x",
+          "train_r2": 0.10634487867355347,
+          "heldout_r2": 0.04275435209274292,
+          "train_rmse": 0.9340113401412964,
+          "heldout_rmse": 1.0223866701126099,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "position_y",
+          "train_r2": 0.05838125944137573,
+          "heldout_r2": -13.626788139343262,
+          "train_rmse": 0.3744796812534332,
+          "heldout_rmse": 1.788184642791748,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "speed",
+          "train_r2": 0.1889675259590149,
+          "heldout_r2": -0.2940326929092407,
+          "train_rmse": 0.24894265830516815,
+          "heldout_rmse": 0.31065258383750916,
+          "n_train": 512,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "train_r2": 0.1615791916847229,
+          "heldout_r2": 0.13964968919754028,
+          "train_rmse": 0.6528233885765076,
+          "heldout_rmse": 0.5552941560745239,
+          "n_train": 512,
+          "n_heldout": 512,
+          "direction_mae_deg": 72.8232421875
+        },
+        {
+          "target": "direction_sin",
+          "train_r2": 0.37451785802841187,
+          "heldout_r2": 0.059756696224212646,
+          "train_rmse": 0.5471943616867065,
+          "heldout_rmse": 0.7760984897613525,
+          "n_train": 512,
+          "n_heldout": 512
+        }
+      ],
+      "position_baseline": [
+        {
+          "target": "speed",
+          "heldout_r2": -0.3814208507537842,
+          "heldout_rmse": 0.32097068428993225,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_cos",
+          "heldout_r2": -0.1994563341140747,
+          "heldout_rmse": 0.6556584239006042,
+          "n_heldout": 512
+        },
+        {
+          "target": "direction_sin",
+          "heldout_r2": -0.11076617240905762,
+          "heldout_rmse": 0.843544602394104,
+          "n_heldout": 512
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "position_x": {
+      "mean_heldout_r2": -15.784120172262192,
+      "min_heldout_r2": -34.58487319946289,
+      "n_splits": 4,
+      "position_baseline_mean_heldout_r2": null
+    },
+    "position_y": {
+      "mean_heldout_r2": -7.86459419131279,
+      "min_heldout_r2": -17.924758911132812,
+      "n_splits": 4,
+      "position_baseline_mean_heldout_r2": null
+    },
+    "speed": {
+      "mean_heldout_r2": -0.200640469789505,
+      "min_heldout_r2": -0.5682919025421143,
+      "n_splits": 4,
+      "position_baseline_mean_heldout_r2": -0.1878805309534073
+    },
+    "direction_cos": {
+      "mean_heldout_r2": 0.041392549872398376,
+      "min_heldout_r2": -0.06568408012390137,
+      "n_splits": 4,
+      "position_baseline_mean_heldout_r2": -0.9564412087202072
+    },
+    "direction_sin": {
+      "mean_heldout_r2": 0.12165750563144684,
+      "min_heldout_r2": 0.059756696224212646,
+      "n_splits": 4,
+      "position_baseline_mean_heldout_r2": -0.15408742427825928
+    }
+  },
+  "meta": {
+    "condition": "calibrated_speed",
+    "checkpoint": "baseline_artifacts/checkpoints/umaze_physics_layer_ablations/calibrated_speed",
+    "data_dir": "/home/jupyter-deuk-1b56/data/point_maze",
+    "max_windows": 512,
+    "n_windows": 512,
+    "frameskip": 5,
+    "num_frames": 4,
+    "seed": 0,
+    "ridge": 10.0,
+    "dino_layer": 6,
+    "dino_representation": "pooled_patches",
+    "predictor_layer": 1,
+    "predictor_representation": "pooled_visual",
+    "split": "location_median_halves",
+    "feature_source": "selected_layers",
+    "probe": "predictor_pooled_visual_diff",
+    "representation": "predictor/1/pooled_visual",
+    "transition": true,
+    "n_rows": 1024,
+    "feature_dim": 8
+  }
+}
