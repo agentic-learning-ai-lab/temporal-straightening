@@ -24,7 +24,7 @@ export MUJOCO_PY_FORCE_CPU="${MUJOCO_PY_FORCE_CPU:-1}"
 export MUJOCO_PY_MUJOCO_PATH="${MUJOCO_PY_MUJOCO_PATH:-$HOME/.mujoco/mujoco210}"
 export LD_LIBRARY_PATH="$HOME/.conda/envs/ts310/lib:${LD_LIBRARY_PATH:-}:$HOME/.mujoco/mujoco210/bin:/usr/lib/nvidia"
 
-status_log="$LOG_DIR/umaze_q1_anusha.status"
+status_log="$LOG_DIR/umaze_q1.status"
 
 status() {
   echo "$(date -Is) $*" | tee -a "$status_log"
