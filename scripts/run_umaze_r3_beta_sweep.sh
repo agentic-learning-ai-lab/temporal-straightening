@@ -46,6 +46,12 @@ lock_file="$PWD/logs/umaze_r3_beta_sweep.lock"
 target_epochs="${TARGET_EPOCHS:-20}"
 gpu_max_used_mib="${TRAINING_GPU_MAX_USED_MIB:-1024}"
 
+# The default loader re-reads a whole ~15 MB episode tensor per training
+# sample -- about 2 TB of disk reads per epoch on umaze. preprocess_frames.py
+# writes one file per frame so training reads only what it needs. Requires
+# that preprocessing to have run; set USE_FRAME_FILES=false if it has not.
+use_frame_files="${USE_FRAME_FILES:-true}"
+
 # Total penalty budget, split between r0 and r1 according to beta. See the
 # header: each arm uses scale = penalty_scale/(1+beta), so the coefficients on
 # r0 and r1 always sum to penalty_scale.
@@ -187,6 +193,7 @@ run_one() {
       --config-name umaze_ablation_base \
       "training.straighten=$token" \
       "training.epochs=$remaining" \
+      "env.dataset.use_frame_files=$use_frame_files" \
       "ckpt_base_path=$out" \
       "hydra.run.dir=$out" \
       > "$out/launcher.log" 2>&1
