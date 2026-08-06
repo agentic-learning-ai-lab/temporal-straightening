@@ -8,8 +8,21 @@
 #     r3 = r0 + beta * r1
 #
 # beta sets how much the speed-constancy term counts relative to the
-# straightness term. This script trains one model per beta value with the
-# penalty scale held fixed, so beta is the only quantity that varies.
+# straightness term.
+#
+# The per-arm scale is normalized as SCALE/(1+beta) so that every arm spends
+# the same total penalty budget:
+#
+#     coefficient on r0 = SCALE/(1+beta)
+#     coefficient on r1 = SCALE*beta/(1+beta)
+#     the two always sum to SCALE
+#
+# Without this, a fixed scale would make beta change two things at once -- the
+# direction/speed balance AND the total regularization strength, which varies
+# 100x across the default ladder. Then a difference between arms could not be
+# attributed to beta. Normalized, beta is purely a mixing weight
+# w = beta/(1+beta), sweeping 1% to 99% of the budget onto speed constancy.
+# Set NORMALIZE_SCALE=0 for the old fixed-scale behaviour.
 #
 # beta is not a config field -- it is encoded in the training.straighten
 # token as aggr3b<BETA>_<SCALE> (see visual_world_model.py:89-112).
@@ -32,9 +45,11 @@ lock_file="$PWD/logs/umaze_r3_beta_sweep.lock"
 target_epochs="${TARGET_EPOCHS:-20}"
 gpu_max_used_mib="${TRAINING_GPU_MAX_USED_MIB:-1024}"
 
-# Penalty scale is held constant across every arm so that beta is the only
-# independent variable.
+# Total penalty budget, split between r0 and r1 according to beta. See the
+# header: each arm uses scale = penalty_scale/(1+beta), so the coefficients on
+# r0 and r1 always sum to penalty_scale.
 penalty_scale="${PENALTY_SCALE:-1e-1}"
+normalize_scale="${NORMALIZE_SCALE:-1}"
 
 # The four existing umaze ablations are already points on this beta axis,
 # because r2 == 2*r0 + r1 == 2*r3(beta=0.5) exactly:
@@ -44,11 +59,12 @@ penalty_scale="${PENALTY_SCALE:-1e-1}"
 #   aggr3b1_1e-1  r3_beta1           ==  beta 1
 #   aggr1_1e-1    r1_speed_only      ==  beta -> infinity
 #
-# So the arms below deliberately skip 0.5 and 1 and instead walk half-decade
-# steps out to both limits: small beta approaches pure direction, large beta
-# approaches pure speed constancy. Together with the four runs above this
-# gives twelve points spanning four decades.
-betas="${BETAS:-0.01 0.03 0.1 0.3 3 10 30 100}"
+# Those four ran at fixed scale, so they are not budget-matched to the arms
+# below. beta=1 is included here deliberately: run at the normalized scale it
+# bridges the two sets, since the existing r3_beta1 is the same beta at the
+# old fixed scale. The rest walk half-decade steps out to both limits -- small
+# beta approaches pure direction, large beta approaches pure speed constancy.
+betas="${BETAS:-0.01 0.03 0.1 0.3 1 3 10 30 100}"
 
 # Two arms train concurrently on four GPUs each, matching the known-stable
 # effective-batch-32 layout used by the other umaze ablations.
@@ -200,6 +216,16 @@ condition_name() {
   echo "r3_beta${1//./p}"
 }
 
+# penalty_scale/(1+beta), so the r0 and r1 coefficients sum to penalty_scale
+# for every arm. awk because bash has no floating point.
+arm_scale() {
+  if (( normalize_scale )); then
+    awk -v s="$penalty_scale" -v b="$1" 'BEGIN { printf "%.6g", s / (1 + b) }'
+  else
+    echo "$penalty_scale"
+  fi
+}
+
 check_disk
 
 read -r -a beta_list <<< "$betas"
@@ -210,7 +236,7 @@ index=0
 while (( index < ${#beta_list[@]} )); do
   beta_a="${beta_list[$index]}"
   args=(
-    "aggr3b${beta_a}_${penalty_scale}"
+    "aggr3b${beta_a}_$(arm_scale "$beta_a")"
     "$(condition_name "$beta_a")"
     "$gpu_group_a"
     "$((base_port + index * 10))"
@@ -218,7 +244,7 @@ while (( index < ${#beta_list[@]} )); do
   if (( index + 1 < ${#beta_list[@]} )); then
     beta_b="${beta_list[$((index + 1))]}"
     args+=(
-      "aggr3b${beta_b}_${penalty_scale}"
+      "aggr3b${beta_b}_$(arm_scale "$beta_b")"
       "$(condition_name "$beta_b")"
       "$gpu_group_b"
       "$((base_port + (index + 1) * 10))"
