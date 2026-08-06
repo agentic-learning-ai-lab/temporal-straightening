@@ -28,8 +28,9 @@
 # token as aggr3b<BETA>_<SCALE> (see visual_world_model.py:89-112).
 #
 # Usage:
-#   ./scripts/run_umaze_r3_beta_sweep.sh              # full ladder, 8 arms
+#   ./scripts/run_umaze_r3_beta_sweep.sh                   # full ladder, 9 arms
 #   BETAS="0.05 20" ./scripts/run_umaze_r3_beta_sweep.sh   # cheap 2-arm probe
+#   GPU_GROUPS="0,1,2,3;4,7" ./scripts/run_umaze_r3_beta_sweep.sh
 #
 # On a shared node, raise TRAINING_GPU_MAX_USED_MIB above whatever resident
 # inference servers hold, or wait_for_gpus will block forever.
@@ -66,10 +67,20 @@ normalize_scale="${NORMALIZE_SCALE:-1}"
 # beta approaches pure direction, large beta approaches pure speed constancy.
 betas="${BETAS:-0.01 0.03 0.1 0.3 1 3 10 30 100}"
 
-# Two arms train concurrently on four GPUs each, matching the known-stable
-# effective-batch-32 layout used by the other umaze ablations.
-gpu_group_a="${GPU_GROUP_A:-0,1,2,3}"
-gpu_group_b="${GPU_GROUP_B:-4,5,6,7}"
+# Semicolon-separated GPU groups. One arm runs per group, all concurrently,
+# so the number of groups sets how many arms are in flight at once.
+#
+# Each group's size must divide the effective batch size of 32, because
+# train.py asserts batch_size % num_processes == 0 -- so 1, 2, 4 or 8 GPUs
+# per group, never 3 or 5 or 6. Effective batch stays 32 whatever the group
+# size (train.py divides it across processes), so arms remain comparable;
+# only their wall-clock differs.
+#
+# Examples for a partly-occupied node:
+#   GPU_GROUPS="0,1,2,3;4,7"     6 free cards -> 2 arms (4-way and 2-way)
+#   GPU_GROUPS="0,1;2,3;4,7"     6 free cards -> 3 arms, 2-way each
+#   GPU_GROUPS="1,2,3,4"         5 free cards -> 1 arm at a time
+gpu_groups="${GPU_GROUPS:-0,1,2,3;4,5,6,7}"
 base_port="${BASE_PORT:-29750}"
 min_free_gib="${MIN_FREE_GIB:-50}"
 
@@ -231,27 +242,26 @@ check_disk
 read -r -a beta_list <<< "$betas"
 echo "$(date -Is) SWEEP_START betas=$betas scale=$penalty_scale epochs=$target_epochs" >> "$status_log"
 
-# Arms are paired two-at-a-time; an odd final arm runs alone on group A.
+# One wave per full set of GPU groups; a short final wave uses the first
+# groups only.
+IFS=';' read -r -a group_list <<< "$gpu_groups"
+num_groups="${#group_list[@]}"
+echo "$(date -Is) GPU_GROUPS groups=$num_groups spec=$gpu_groups" >> "$status_log"
+
 index=0
 while (( index < ${#beta_list[@]} )); do
-  beta_a="${beta_list[$index]}"
-  args=(
-    "aggr3b${beta_a}_$(arm_scale "$beta_a")"
-    "$(condition_name "$beta_a")"
-    "$gpu_group_a"
-    "$((base_port + index * 10))"
-  )
-  if (( index + 1 < ${#beta_list[@]} )); then
-    beta_b="${beta_list[$((index + 1))]}"
+  args=()
+  for (( slot = 0; slot < num_groups && index + slot < ${#beta_list[@]}; slot++ )); do
+    beta="${beta_list[$((index + slot))]}"
     args+=(
-      "aggr3b${beta_b}_$(arm_scale "$beta_b")"
-      "$(condition_name "$beta_b")"
-      "$gpu_group_b"
-      "$((base_port + (index + 1) * 10))"
+      "aggr3b${beta}_$(arm_scale "$beta")"
+      "$(condition_name "$beta")"
+      "${group_list[$slot]}"
+      "$((base_port + (index + slot) * 10))"
     )
-  fi
+  done
   run_wave "${args[@]}"
-  index=$((index + 2))
+  index=$((index + num_groups))
 done
 
 echo "$(date -Is) SWEEP_COMPLETE betas=$betas" >> "$status_log"
