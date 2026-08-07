@@ -10,6 +10,11 @@
 # The per-episode success/state_dist values are printed by the evaluator and
 # land in plan_seed_<S>.log, if a success-vs-epsilon curve is wanted later.
 #
+# With decode_for_viz on (the default), each run also writes to its own
+# plan_seed_<S>/ directory:
+#   output_final_<idx>_success.mp4 / _failure.mp4   real vs imagined rollout
+#   plus image grids of the same comparison
+#
 # NOTE: this rewrites env.dataset in each arm's hydra.yaml (data_path,
 # use_frame_files=false, use_preprocessed=false). plan.py reads the dataset
 # config from that frozen file and CLI overrides do not reach it. Only dataset
@@ -33,6 +38,17 @@ model_epoch="${MODEL_EPOCH:-20}"
 n_evals="${N_EVALS:-50}"
 seeds="${SEEDS:-100 200 300}"
 gpus="${GPUS:-3,4,5,7}"
+
+# Decoding the imagined rollout writes, per episode, an mp4 named
+# output_final_<idx>_<success|failure>.mp4 showing the real env rollout above
+# the model's imagined one, plus image grids. Worth the cost: it shows the
+# failure mode rather than just scoring it.
+#
+# The decoder runs over every evaluated episode, not just the plotted ones, so
+# this raises peak memory. If a run OOMs, either drop DECODE_FOR_VIZ to false
+# or lower N_EVALS. n_plot_samples caps how many get rendered.
+decode_for_viz="${DECODE_FOR_VIZ:-true}"
+n_plot_samples="${N_PLOT_SAMPLES:-10}"
 
 mkdir -p "$plan_root" "$PWD/logs"
 
@@ -99,7 +115,8 @@ plan_arm() {
         model_epoch="$model_epoch" \
         n_evals="$n_evals" \
         seed="$seed" \
-        decode_for_viz=false \
+        decode_for_viz="$decode_for_viz" \
+        n_plot_samples="$n_plot_samples" \
         hydra.run.dir="$out/plan_seed_$seed" \
         > "$out/plan_seed_$seed.log" 2>&1
     then
