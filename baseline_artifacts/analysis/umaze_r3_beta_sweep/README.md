@@ -3,8 +3,11 @@
 All conditions: open-loop GD planning, `plan_gd.yaml`, seeds 100/200/300,
 50 evaluations per seed, epoch-20 checkpoints.
 
-The penalty is `scale * (r0 + beta * r1)`, so each condition is two
-coefficients: **direction** (`scale`) and **speed** (`scale * beta`).
+The penalty is our R3 trajectory-penalty term (`trajectory_penalties` in
+`models/visual_world_model.py`): `r3 = r0 + beta * r1`, where `r0` is the
+direction (curvature) term and `r1` is the speed term. Applied to the loss
+as `scale * (r0 + beta * r1)`, each condition is two coefficients:
+**direction** (`scale`) and **speed** (`scale * beta`).
 Rows are ordered by direction coefficient.
 
 | condition | token | direction | speed | seeds | success rate | state dist | visual dist |
