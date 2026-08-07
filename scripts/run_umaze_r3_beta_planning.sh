@@ -50,6 +50,17 @@ gpus="${GPUS:-3,4,5,7}"
 decode_for_viz="${DECODE_FOR_VIZ:-true}"
 n_plot_samples="${N_PLOT_SAMPLES:-10}"
 
+# Evaluations run in chunks, not all at once. The GD planner backprops through
+# the world-model rollout for every evaluation simultaneously, and these arms
+# use x_norm_patchtokens -- attention is (n_evals, 16, 588, 588) per layer per
+# step, which OOMs a 40GB card at n_evals=50. run_cls_a100.sh gets away with
+# n_evals=50 only because CLS models have 3 tokens, not 588.
+#
+# plan.py:294 replays the RNG draws, so chunk <offset> covers exactly the same
+# episodes the monolithic run would have. Chunks are pooled equal-weighted
+# afterwards, matching baseline_artifacts/results/wall_baseline.json.
+chunk_size="${CHUNK_SIZE:-10}"
+
 mkdir -p "$plan_root" "$PWD/logs"
 
 exec 9>"$lock_file"
@@ -102,30 +113,35 @@ plan_arm() {
 
   freeze_dataset_config "$run/hydra.yaml"
 
-  local seed
+  local seed offset tag chunk_dir
   for seed in $seeds; do
-    if [[ -s "$out/plan_seed_$seed/logs.json" ]]; then
-      status "SKIP arm=$arm seed=$seed"
-      continue
-    fi
-    status "PLAN_START arm=$arm seed=$seed gpu=$gpu n_evals=$n_evals"
-    if CUDA_VISIBLE_DEVICES="$gpu" python plan.py \
-        --config-name plan_gd.yaml \
-        ckpt_base_path="$run" \
-        model_epoch="$model_epoch" \
-        n_evals="$n_evals" \
-        seed="$seed" \
-        decode_for_viz="$decode_for_viz" \
-        n_plot_samples="$n_plot_samples" \
-        hydra.run.dir="$out/plan_seed_$seed" \
-        > "$out/plan_seed_$seed.log" 2>&1
-    then
-      status "PLAN_DONE arm=$arm seed=$seed rate=$(
-        grep -oE 'Success rate:[[:space:]]*[0-9.]+' "$out/plan_seed_$seed.log" \
-          | tail -1 | grep -oE '[0-9.]+$')"
-    else
-      status "PLAN_FAILED arm=$arm seed=$seed (see $out/plan_seed_$seed.log)"
-    fi
+    for (( offset = 0; offset < n_evals; offset += chunk_size )); do
+      tag="$(printf 'chunk_%02d' "$offset")"
+      chunk_dir="$out/plan_seed_$seed/$tag"
+      if [[ -s "$chunk_dir/logs.json" ]]; then
+        status "SKIP arm=$arm seed=$seed $tag"
+        continue
+      fi
+      status "PLAN_START arm=$arm seed=$seed $tag gpu=$gpu size=$chunk_size"
+      if CUDA_VISIBLE_DEVICES="$gpu" python plan.py \
+          --config-name plan_gd.yaml \
+          ckpt_base_path="$run" \
+          model_epoch="$model_epoch" \
+          n_evals="$chunk_size" \
+          +eval_start_index="$offset" \
+          seed="$seed" \
+          decode_for_viz="$decode_for_viz" \
+          n_plot_samples="$n_plot_samples" \
+          hydra.run.dir="$chunk_dir" \
+          > "$out/plan_seed_${seed}_${tag}.log" 2>&1
+      then
+        status "PLAN_DONE arm=$arm seed=$seed $tag rate=$(
+          grep -oE 'Success rate:[[:space:]]*[0-9.]+' "$out/plan_seed_${seed}_${tag}.log" \
+            | tail -1 | grep -oE '[0-9.]+$')"
+      else
+        status "PLAN_FAILED arm=$arm seed=$seed $tag (see $out/plan_seed_${seed}_${tag}.log)"
+      fi
+    done
   done
 }
 
