@@ -69,9 +69,18 @@ class PointMazeWrapper(MazeEnv):
     def eval_state(self, goal_state, cur_state):
         success = np.linalg.norm(goal_state[:2] - cur_state[:2]) < 0.5
         state_dist = np.linalg.norm(goal_state - cur_state)
+        # state_dist mixes position and velocity, and velocity dominates it:
+        # a model reaching the goal 96% of the time still averages ~2.7 here,
+        # which cannot be position when success needs position under 0.5. Report
+        # the components separately so a change in state_dist can be attributed
+        # to one or the other. pos_dist is exactly what 'success' thresholds.
+        pos_dist = np.linalg.norm(goal_state[:2] - cur_state[:2])
+        vel_dist = np.linalg.norm(goal_state[2:] - cur_state[2:])
         return {
             'success': success,
             'state_dist': state_dist,
+            'pos_dist': pos_dist,
+            'vel_dist': vel_dist,
         }
 
     def prepare(self, seed, init_state):
