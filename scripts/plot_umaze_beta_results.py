@@ -112,8 +112,17 @@ def main():
                          ha="center", fontsize=9, color=INK)
     ax1.set_xlabel("direction coefficient", fontsize=10, color=INK_MUTED)
     ax1.set_ylabel("planning success rate", fontsize=10, color=INK_MUTED)
-    ax1.set_title("Budget held at 0.1: success tracks direction",
-                  fontsize=11, color=INK, pad=10, loc="left")
+    # Speed is not fixed here: it is the rest of the budget, so it rises as
+    # direction falls. A second scale on the same axis says so, rather than
+    # leaving the reader to assume speed is held constant.
+    secax = ax1.secondary_xaxis(
+        "top", functions=(lambda v: BUDGET_TOTAL - v, lambda v: BUDGET_TOTAL - v))
+    secax.set_xlabel("speed coefficient  (= 0.1 − direction)",
+                     fontsize=9, color=SERIES_2, labelpad=6)
+    secax.tick_params(colors=SERIES_2, labelsize=8)
+    secax.spines["top"].set_color(GRID)
+    ax1.set_title("Budget held at 0.1: direction traded against speed",
+                  fontsize=11, color=INK, pad=34, loc="left")
 
     # Right: the non-relationship. Direction pinned, speed swept.
     xs2 = [r["speed"] for r in fixed]
@@ -128,8 +137,8 @@ def main():
                      textcoords="offset points", xytext=(0, 12),
                      ha="center", fontsize=9, color=INK)
     ax2.set_xlabel("speed coefficient", fontsize=10, color=INK_MUTED)
-    ax2.set_title("Direction pinned at 0.1: speed changes nothing",
-                  fontsize=11, color=INK, pad=10, loc="left")
+    ax2.set_title("Direction pinned at 0.1: speed added on top",
+                  fontsize=11, color=INK, pad=34, loc="left")
 
     fig.suptitle("UMaze planning success vs. penalty coefficients",
                  fontsize=13, color=INK, x=0.02, ha="left", y=0.99)
