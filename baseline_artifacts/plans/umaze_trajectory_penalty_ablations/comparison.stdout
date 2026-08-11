@@ -1,0 +1,396 @@
+{
+  "status": "complete",
+  "conditions": {
+    "r0": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r0_direction_only/seed_100/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r0_direction_only/seed_200/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r0_direction_only/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 4.539411544799805,
+          "final_eval/mean_div_visual_emb": 16.966005325317383,
+          "final_eval/mean_proprio_dist": 0.9002940654754639,
+          "final_eval/mean_state_dist": 2.7309789657592773,
+          "final_eval/mean_visual_dist": 0.3931141050170068,
+          "final_eval/success_rate": 0.96
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 6.955146789550781,
+          "final_eval/mean_div_visual_emb": 16.988811492919922,
+          "final_eval/mean_proprio_dist": 0.8353219628334045,
+          "final_eval/mean_state_dist": 2.5289289951324463,
+          "final_eval/mean_visual_dist": 0.38012050914115647,
+          "final_eval/success_rate": 0.98
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 5.544734954833984,
+          "final_eval/mean_div_visual_emb": 17.818782806396484,
+          "final_eval/mean_proprio_dist": 0.971234142780304,
+          "final_eval/mean_state_dist": 2.9303371906280518,
+          "final_eval/mean_visual_dist": 0.4124038052721089,
+          "final_eval/success_rate": 0.94
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 5.67976442972819,
+          "population_std": 0.9908309349566718
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 17.257866541544598,
+          "population_std": 0.39673695941746573
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.9022833903630575,
+          "population_std": 0.05550374296454184
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.7300817171732583,
+          "population_std": 0.16387543774470573
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.39521280647675744,
+          "population_std": 0.013262885888386975
+        },
+        "final_eval/success_rate": {
+          "mean": 0.96,
+          "population_std": 0.016329931618554536
+        }
+      }
+    },
+    "r1": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r1_speed_only/seed_100/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r1_speed_only/seed_200/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r1_speed_only/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 5.79295668844025,
+          "final_eval/mean_div_visual_emb": 7.675142962351021,
+          "final_eval/mean_proprio_dist": 1.006154203414917,
+          "final_eval/mean_state_dist": 2.5336838245391844,
+          "final_eval/mean_visual_dist": 0.5175644398384354,
+          "final_eval/success_rate": 0.16
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 8.552768116876232,
+          "final_eval/mean_div_visual_emb": 7.726183516138515,
+          "final_eval/mean_proprio_dist": 1.2371413946151733,
+          "final_eval/mean_state_dist": 3.065829706192017,
+          "final_eval/mean_visual_dist": 0.5106390837585034,
+          "final_eval/success_rate": 0.18
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 7.453373763027747,
+          "final_eval/mean_div_visual_emb": 7.707161772151405,
+          "final_eval/mean_proprio_dist": 1.1823683023452758,
+          "final_eval/mean_state_dist": 2.944872426986694,
+          "final_eval/mean_visual_dist": 0.5241474011479592,
+          "final_eval/success_rate": 0.14
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 7.2663661894480756,
+          "population_std": 1.1344216307774284
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 7.702829416880314,
+          "population_std": 0.02106120460910253
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 1.1418879667917887,
+          "population_std": 0.09854868103138378
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.848128652572632,
+          "population_std": 0.2277635151583426
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.5174503082482994,
+          "population_std": 0.005515337958123006
+        },
+        "final_eval/success_rate": {
+          "mean": 0.16,
+          "population_std": 0.016329931618554512
+        }
+      }
+    },
+    "r2": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r2_full_matched/seed_100/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r2_full_matched/seed_200/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r2_full_matched/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 2.960229078650554,
+          "final_eval/mean_div_visual_emb": 15.582706510335141,
+          "final_eval/mean_proprio_dist": 0.7985841751098632,
+          "final_eval/mean_state_dist": 2.4235531806945803,
+          "final_eval/mean_visual_dist": 0.3875391953656463,
+          "final_eval/success_rate": 0.98
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 3.7438614555423464,
+          "final_eval/mean_div_visual_emb": 15.813617569797549,
+          "final_eval/mean_proprio_dist": 0.7591399192810059,
+          "final_eval/mean_state_dist": 2.2697256326675417,
+          "final_eval/mean_visual_dist": 0.39466411564625853,
+          "final_eval/success_rate": 0.96
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 3.4171658099199664,
+          "final_eval/mean_div_visual_emb": 15.591219822272148,
+          "final_eval/mean_proprio_dist": 0.8746863961219787,
+          "final_eval/mean_state_dist": 2.54315767288208,
+          "final_eval/mean_visual_dist": 0.4309301923894558,
+          "final_eval/success_rate": 0.94
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 3.373752114704289,
+          "population_std": 0.3213860474335912
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 15.662514634134945,
+          "population_std": 0.1069024227802366
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.810803496837616,
+          "population_std": 0.047956445136568916
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.412145495414734,
+          "population_std": 0.11191923164066209
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.4043778344671202,
+          "population_std": 0.01899933166680928
+        },
+        "final_eval/success_rate": {
+          "mean": 0.96,
+          "population_std": 0.016329931618554536
+        }
+      }
+    },
+    "r3": {
+      "status": "complete",
+      "seeds": [
+        100,
+        200,
+        300
+      ],
+      "n_seeds": 3,
+      "n_evals_per_seed": [
+        50,
+        50,
+        50
+      ],
+      "seed_summaries": [
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_100/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_200/aggregate.json",
+        "baseline_artifacts/plans/umaze_trajectory_penalty_ablations/r3_beta1/seed_300/aggregate.json"
+      ],
+      "per_seed": {
+        "100": {
+          "final_eval/mean_div_proprio_emb": 5.344904465325311,
+          "final_eval/mean_div_visual_emb": 16.29323018601841,
+          "final_eval/mean_proprio_dist": 0.9144057750701904,
+          "final_eval/mean_state_dist": 2.7102811336517334,
+          "final_eval/mean_visual_dist": 0.4026727253401361,
+          "final_eval/success_rate": 0.98
+        },
+        "200": {
+          "final_eval/mean_div_proprio_emb": 3.442099347918617,
+          "final_eval/mean_div_visual_emb": 16.599984780123968,
+          "final_eval/mean_proprio_dist": 0.9057011127471923,
+          "final_eval/mean_state_dist": 2.7001798152923584,
+          "final_eval/mean_visual_dist": 0.39680564413265307,
+          "final_eval/success_rate": 0.96
+        },
+        "300": {
+          "final_eval/mean_div_proprio_emb": 5.113071874011302,
+          "final_eval/mean_div_visual_emb": 16.744427901235845,
+          "final_eval/mean_proprio_dist": 0.8485305786132813,
+          "final_eval/mean_state_dist": 2.555432891845703,
+          "final_eval/mean_visual_dist": 0.42313536352040815,
+          "final_eval/success_rate": 0.9
+        }
+      },
+      "aggregate": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 4.63335856241841,
+          "population_std": 0.8476479122437729
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": 16.54588095579274,
+          "population_std": 0.18813162486196885
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.8895458221435547,
+          "population_std": 0.02921906270371085
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 2.6552979469299314,
+          "population_std": 0.0707355689799757
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.4075379109977324,
+          "population_std": 0.011286158318094553
+        },
+        "final_eval/success_rate": {
+          "mean": 0.9466666666666667,
+          "population_std": 0.03399346342395188
+        }
+      }
+    }
+  },
+  "paired_deltas": {
+    "r1": {
+      "treatment_minus_baseline": "r1-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": 1.586601759719886,
+          "population_std": 0.26755435645507464,
+          "standard_error": 0.15447257972219444
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": -9.555037124664283,
+          "population_std": 0.39373301567093555,
+          "standard_error": 0.22732186258645778
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": 0.2396045764287312,
+          "population_std": 0.12249054216607287,
+          "standard_error": 0.07071994749276538
+        },
+        "final_eval/mean_state_dist": {
+          "mean": 0.11804693539937332,
+          "population_std": 0.3085416138922911,
+          "standard_error": 0.17813658383691586
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.12223750177154195,
+          "population_std": 0.007822933348640846,
+          "standard_error": 0.004516572674690293
+        },
+        "final_eval/success_rate": {
+          "mean": -0.7999999999999999,
+          "population_std": 5.233641528945917e-17,
+          "standard_error": 3.0216443455789297e-17
+        }
+      }
+    },
+    "r2": {
+      "treatment_minus_baseline": "r2-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": -2.306012315023901,
+          "population_std": 0.6781452236493754,
+          "standard_error": 0.39152732742362584
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": -1.5953519074096505,
+          "population_std": 0.45504215602847087,
+          "standard_error": 0.2627187112756654
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": -0.0914798935254415,
+          "population_std": 0.011020589586827497,
+          "standard_error": 0.0063627403645832425
+        },
+        "final_eval/mean_state_dist": {
+          "mean": -0.31793622175852443,
+          "population_std": 0.05277200040268928,
+          "standard_error": 0.030467928638167694
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.00916502799036282,
+          "population_std": 0.010548774229351231,
+          "standard_error": 0.00609033764093652
+        },
+        "final_eval/success_rate": {
+          "mean": 0.0,
+          "population_std": 0.016329931618554536,
+          "standard_error": 0.009428090415820644
+        }
+      }
+    },
+    "r3": {
+      "treatment_minus_baseline": "r3-r0",
+      "metrics": {
+        "final_eval/mean_div_proprio_emb": {
+          "mean": -1.04640586730978,
+          "population_std": 1.8158339195439779,
+          "standard_error": 1.048372202252369
+        },
+        "final_eval/mean_div_visual_emb": {
+          "mean": -0.7119855857518557,
+          "population_std": 0.2812357492270783,
+          "standard_error": 0.16237153552199973
+        },
+        "final_eval/mean_proprio_dist": {
+          "mean": -0.012737568219502782,
+          "population_std": 0.08107978132087863,
+          "standard_error": 0.04681143357144527
+        },
+        "final_eval/mean_state_dist": {
+          "mean": -0.07478377024332679,
+          "population_std": 0.22622307576774672,
+          "standard_error": 0.13060995369141368
+        },
+        "final_eval/mean_visual_dist": {
+          "mean": 0.012325104520975053,
+          "population_std": 0.0031199727693237665,
+          "standard_error": 0.0018013171182333788
+        },
+        "final_eval/success_rate": {
+          "mean": -0.013333333333333308,
+          "population_std": 0.024944382578492925,
+          "standard_error": 0.014401645996461902
+        }
+      }
+    }
+  }
+}

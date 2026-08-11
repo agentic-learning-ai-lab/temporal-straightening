@@ -1,0 +1,212 @@
+{
+  "run_id": "medium-full-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-full-20260702-01",
+  "environment": "point_maze_medium",
+  "analysis": "latent straightness and speed constancy diagnostics",
+  "max_rollouts": 50,
+  "metric_definitions": {
+    "cosine_curvature_mean": "mean(1 - cosine(v_t, v_t+1)); lower is directionally straighter",
+    "path_endpoint_ratio_mean": "latent path length divided by endpoint distance; 1 is globally straight",
+    "latent_speed_cv_time_mean": "mean over token trajectories of std(speed_t)/mean(speed_t); lower is more constant speed",
+    "latent_speed_p95_p05_ratio": "global p95 latent step speed divided by p05 latent step speed; lower means fewer speed lurches",
+    "relative_speed_jump_mean": "mean abs(speed_t+1 - speed_t) normalized by trajectory mean speed",
+    "state_position_speed_cv_mean": "same CV diagnostic on physical x/y state, for context only"
+  },
+  "results": [
+    {
+      "variant": "authors_dino_patch_straightened",
+      "encoder": "dino",
+      "straighten": "cos1e-1",
+      "model_dir": "/mnt/ts/runs/medium-full-20260702-01/checkpoints/authors_dino_patch_straightened/test/medium_cos1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "rollouts_analyzed": 50,
+      "frames_per_rollout_mean": 20.0,
+      "metrics": {
+        "cosine_curvature_mean": 1.3402140294833114,
+        "cosine_alignment_mean": -0.3402140294528176,
+        "path_endpoint_ratio_mean": 16.021229298090446,
+        "latent_speed_mean": 3.7496148487388945,
+        "latent_speed_std": 4.015553707982339,
+        "latent_speed_cv_time_mean": 0.39731128462875376,
+        "latent_speed_p95_p05_ratio": 4.7802107934312446,
+        "relative_speed_jump_mean": 0.379056861793398,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "distributions": {
+        "cosine_curvature": {
+          "mean": 1.3402140294833114,
+          "std": 0.31913306941220254,
+          "p05": 0.7780771940946579,
+          "p50": 1.3651869297027588,
+          "p95": 1.8312710642814636
+        },
+        "latent_speed": {
+          "mean": 3.7496148487388945,
+          "std": 4.015553707982339,
+          "p05": 1.306573784351349,
+          "p50": 3.1657469272613525,
+          "p95": 6.245702886581419
+        },
+        "latent_speed_cv": {
+          "mean": 0.39731128462875376,
+          "std": 0.2218387216428443,
+          "p05": 0.22327628210186956,
+          "p50": 0.3446151614189148,
+          "p95": 0.9513663768768302
+        },
+        "relative_speed_jump": {
+          "mean": 0.379056861793398,
+          "std": 0.4028099942109369,
+          "p05": 0.024268763698637487,
+          "p50": 0.28636254370212555,
+          "p95": 0.9688810139894485
+        },
+        "path_endpoint_ratio": {
+          "mean": 16.021229298090446,
+          "std": 6.375795192281361,
+          "p05": 8.509485960006714,
+          "p50": 14.9350004196167,
+          "p95": 25.023099231719968
+        },
+        "state_position_speed_cv": {
+          "mean": 0.5634144884347916,
+          "std": 0.11958329823489329,
+          "p05": 0.3867462769150734,
+          "p50": 0.5791367292404175,
+          "p95": 0.7506875962018966
+        }
+      },
+      "elapsed_minutes": 7.04
+    },
+    {
+      "variant": "dino_patch_no_straightening",
+      "encoder": "dino",
+      "straighten": "False",
+      "model_dir": "/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_patch_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "rollouts_analyzed": 50,
+      "frames_per_rollout_mean": 20.0,
+      "metrics": {
+        "cosine_curvature_mean": 1.3402140294833114,
+        "cosine_alignment_mean": -0.3402140294528176,
+        "path_endpoint_ratio_mean": 16.021229298090446,
+        "latent_speed_mean": 3.7496148487388945,
+        "latent_speed_std": 4.015553707982339,
+        "latent_speed_cv_time_mean": 0.39731128462875376,
+        "latent_speed_p95_p05_ratio": 4.7802107934312446,
+        "relative_speed_jump_mean": 0.379056861793398,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "distributions": {
+        "cosine_curvature": {
+          "mean": 1.3402140294833114,
+          "std": 0.31913306941220254,
+          "p05": 0.7780771940946579,
+          "p50": 1.3651869297027588,
+          "p95": 1.8312710642814636
+        },
+        "latent_speed": {
+          "mean": 3.7496148487388945,
+          "std": 4.015553707982339,
+          "p05": 1.306573784351349,
+          "p50": 3.1657469272613525,
+          "p95": 6.245702886581419
+        },
+        "latent_speed_cv": {
+          "mean": 0.39731128462875376,
+          "std": 0.2218387216428443,
+          "p05": 0.22327628210186956,
+          "p50": 0.3446151614189148,
+          "p95": 0.9513663768768302
+        },
+        "relative_speed_jump": {
+          "mean": 0.379056861793398,
+          "std": 0.4028099942109369,
+          "p05": 0.024268763698637487,
+          "p50": 0.28636254370212555,
+          "p95": 0.9688810139894485
+        },
+        "path_endpoint_ratio": {
+          "mean": 16.021229298090446,
+          "std": 6.375795192281361,
+          "p05": 8.509485960006714,
+          "p50": 14.9350004196167,
+          "p95": 25.023099231719968
+        },
+        "state_position_speed_cv": {
+          "mean": 0.5634144884347916,
+          "std": 0.11958329823489329,
+          "p05": 0.3867462769150734,
+          "p50": 0.5791367292404175,
+          "p95": 0.7506875962018966
+        }
+      },
+      "elapsed_minutes": 6.12
+    },
+    {
+      "variant": "dino_cls_no_straightening",
+      "encoder": "dino_cls",
+      "straighten": "False",
+      "model_dir": "/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "rollouts_analyzed": 50,
+      "frames_per_rollout_mean": 20.0,
+      "metrics": {
+        "cosine_curvature_mean": 1.3532535892062718,
+        "cosine_alignment_mean": -0.35325359001936807,
+        "path_endpoint_ratio_mean": 15.915687065124512,
+        "latent_speed_mean": 3.4592053215911513,
+        "latent_speed_std": 1.2382204098819878,
+        "latent_speed_cv_time_mean": 0.33770902425050736,
+        "latent_speed_p95_p05_ratio": 3.924737376345304,
+        "relative_speed_jump_mean": 0.3635931445264335,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "distributions": {
+        "cosine_curvature": {
+          "mean": 1.3532535892062718,
+          "std": 0.31331996961514846,
+          "p05": 0.7930153131484986,
+          "p50": 1.381877601146698,
+          "p95": 1.828944879770279
+        },
+        "latent_speed": {
+          "mean": 3.4592053215911513,
+          "std": 1.2382204098819878,
+          "p05": 1.4540018856525423,
+          "p50": 3.3864318132400513,
+          "p95": 5.70657947063446
+        },
+        "latent_speed_cv": {
+          "mean": 0.33770902425050736,
+          "std": 0.07640951526913192,
+          "p05": 0.2153642915189266,
+          "p50": 0.3305405378341675,
+          "p95": 0.4789415404200552
+        },
+        "relative_speed_jump": {
+          "mean": 0.3635931445264335,
+          "std": 0.28987238383300595,
+          "p05": 0.026423092838376766,
+          "p50": 0.2961460053920746,
+          "p95": 0.9288994044065474
+        },
+        "path_endpoint_ratio": {
+          "mean": 15.915687065124512,
+          "std": 3.7531933557652093,
+          "p05": 11.129553079605103,
+          "p50": 15.478348731994629,
+          "p95": 22.41599187850952
+        },
+        "state_position_speed_cv": {
+          "mean": 0.5634144884347916,
+          "std": 0.11958329823489329,
+          "p05": 0.3867462769150734,
+          "p50": 0.5791367292404175,
+          "p95": 0.7506875962018966
+        }
+      },
+      "elapsed_minutes": 0.04
+    }
+  ]
+}

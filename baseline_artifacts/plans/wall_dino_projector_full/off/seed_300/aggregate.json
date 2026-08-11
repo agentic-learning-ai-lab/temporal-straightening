@@ -1,0 +1,112 @@
+{
+  "status": "complete",
+  "seed": 300,
+  "n_evals": 50,
+  "eval_seeds": [
+    1,
+    301,
+    601,
+    901,
+    1201,
+    1501,
+    1801,
+    2101,
+    2401,
+    2701,
+    3001,
+    3301,
+    3601,
+    3901,
+    4201,
+    4501,
+    4801,
+    5101,
+    5401,
+    5701,
+    6001,
+    6301,
+    6601,
+    6901,
+    7201,
+    7501,
+    7801,
+    8101,
+    8401,
+    8701,
+    9001,
+    9301,
+    9601,
+    9901,
+    10201,
+    10501,
+    10801,
+    11101,
+    11401,
+    11701,
+    12001,
+    12301,
+    12601,
+    12901,
+    13201,
+    13501,
+    13801,
+    14101,
+    14401,
+    14701
+  ],
+  "chunks": [
+    {
+      "eval_start_index": 0,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/chunk_0",
+      "first_seed": 1,
+      "last_seed": 2701
+    },
+    {
+      "eval_start_index": 10,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/chunk_10",
+      "first_seed": 3001,
+      "last_seed": 5701
+    },
+    {
+      "eval_start_index": 20,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/chunk_20",
+      "first_seed": 6001,
+      "last_seed": 8701
+    },
+    {
+      "eval_start_index": 30,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/chunk_30",
+      "first_seed": 9001,
+      "last_seed": 11701
+    },
+    {
+      "eval_start_index": 40,
+      "n_evals": 10,
+      "path": "baseline_artifacts/plans/wall_dino_projector_full/off/seed_300/chunk_40",
+      "first_seed": 12001,
+      "last_seed": 14701
+    }
+  ],
+  "metrics": {
+    "final_eval": {
+      "final_eval/mean_div_proprio_emb": 7.1923973532468795,
+      "final_eval/mean_div_visual_emb": 25.777341990309438,
+      "final_eval/mean_proprio_dist": 3.8866304397583007,
+      "final_eval/mean_state_dist": 6.632660627365112,
+      "final_eval/mean_visual_dist": 0.5519385755062103,
+      "final_eval/success_rate": 0.84
+    },
+    "mpc": {
+      "mpc/mean_div_proprio_emb": 7.1923973532468795,
+      "mpc/mean_div_visual_emb": 25.777341990309438,
+      "mpc/mean_proprio_dist": 3.8866304397583007,
+      "mpc/mean_state_dist": 6.632660627365112,
+      "mpc/mean_visual_dist": 0.5519385755062103,
+      "mpc/success_rate": 0.84
+    }
+  }
+}

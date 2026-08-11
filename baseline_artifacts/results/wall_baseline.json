@@ -1,0 +1,126 @@
+{
+  "environment": "wall",
+  "baseline": "DINOv2 patch 14x14x384, no straightening, open-loop GD",
+  "status": "complete",
+  "sampling_seeds": [
+    100,
+    200,
+    300
+  ],
+  "evaluations_per_seed": 50,
+  "total_evaluations": 150,
+  "chunk_offsets": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "per_seed_metrics": {
+    "100": {
+      "success_rate": 0.6799999999999999,
+      "mean_state_dist": 11.323512840270997,
+      "mean_visual_dist": 0.6398555338382721,
+      "mean_proprio_dist": 6.958042097091675,
+      "mean_div_visual_emb": 509.0831788097465,
+      "mean_div_proprio_emb": 21.600503436999965
+    },
+    "200": {
+      "success_rate": 0.5,
+      "mean_state_dist": 13.700808906555176,
+      "mean_visual_dist": 0.8015827059745788,
+      "mean_proprio_dist": 8.06006155014038,
+      "mean_div_visual_emb": 531.1306456777514,
+      "mean_div_proprio_emb": 16.032937432745467
+    },
+    "300": {
+      "success_rate": 0.6599999999999999,
+      "mean_state_dist": 12.879691123962402,
+      "mean_visual_dist": 0.646817946434021,
+      "mean_proprio_dist": 7.60324912071228,
+      "mean_div_visual_emb": 488.99612078818416,
+      "mean_div_proprio_emb": 12.802862305954854
+    }
+  },
+  "aggregate_metrics": {
+    "success_rate": {
+      "mean": 0.6133333333333333,
+      "std_population": 0.08055363982396378,
+      "std_sample": 0.0986576572463249
+    },
+    "mean_state_dist": {
+      "mean": 12.634670956929526,
+      "std_population": 0.9858702782760596,
+      "std_sample": 1.2074395671760025
+    },
+    "mean_visual_dist": {
+      "mean": 0.696085395415624,
+      "std_population": 0.07465199572535568,
+      "std_sample": 0.0914296489037762
+    },
+    "mean_proprio_dist": {
+      "mean": 7.540450922648112,
+      "std_population": 0.4520836419546881,
+      "std_sample": 0.5536871219240356
+    },
+    "mean_div_visual_emb": {
+      "mean": 509.7366484252274,
+      "std_population": 17.207552873106984,
+      "std_sample": 21.07486213053738
+    },
+    "mean_div_proprio_emb": {
+      "mean": 16.81210105856676,
+      "std_population": 3.633634024363343,
+      "std_sample": 4.450274635852985
+    }
+  },
+  "success_rate_percent": {
+    "per_seed": [
+      68.0,
+      50.0,
+      65.99999999999999
+    ],
+    "mean": 61.33333333333333,
+    "std_population": 8.055363982396377
+  },
+  "published_table5_percent": {
+    "mean": 73.33,
+    "std": 3.4
+  },
+  "checkpoint": "baseline_artifacts/checkpoints/wall/test/wall_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_20.pth",
+  "checkpoint_sha256": "fba13171e749564807016188db6f1074d9bc5285c825421cb68459e92e1fc0aa",
+  "config": "conf/plan_gd.yaml",
+  "planner": {
+    "horizon": 25,
+    "optimizer": "Adam",
+    "learning_rate": 0.1,
+    "opt_steps": 100,
+    "action_initialization": "zero",
+    "decode_for_viz": true
+  },
+  "sampling_fix_commit": "466382d",
+  "chunk_logs": [
+    "baseline_artifacts/plans/wall_reproduction/seed_100/chunk_00/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_100/chunk_10/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_100/chunk_20/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_100/chunk_30/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_100/chunk_40/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_200/chunk_00/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_200/chunk_10/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_200/chunk_20/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_200/chunk_30/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_200/chunk_40/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_300/chunk_00/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_300/chunk_10/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_300/chunk_20/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_300/chunk_30/logs.json",
+    "baseline_artifacts/plans/wall_reproduction/seed_300/chunk_40/logs.json"
+  ],
+  "decoded_final_videos": 150,
+  "distinct_plan_target_hashes": 15,
+  "aggregation": {
+    "mean_metrics": "equal-weighted mean across five 10-eval chunks per seed",
+    "divergence_norms": "root-sum-square across chunks per seed",
+    "reported_std": "population standard deviation across three sampling seeds"
+  }
+}

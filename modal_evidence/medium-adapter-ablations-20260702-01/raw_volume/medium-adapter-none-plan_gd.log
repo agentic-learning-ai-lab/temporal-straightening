@@ -1,0 +1,102 @@
+
+$ python plan.py --config-name plan_gd.yaml ckpt_base_path=/mnt/ts/runs/medium-adapter-none-20260702-01/checkpoints/dino_channel_no_straightening/test/medium_False_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05 model_name=dino_channel_no_straightening model_epoch=20 n_evals=50 goal_H=25 goal_source=dset objective.alpha=0 objective.mode=last planner.max_iter=1 planner.n_taken_actions=25 planner.sub_planner.horizon=25 planner.sub_planner.lr=1 planner.sub_planner.sample_type=randn planner.sub_planner.action_noise=0.003 planner.sub_planner.opt_steps=1000 planner.sub_planner.eval_every=-1 decode_for_viz=false +wandb_logging=false hydra.run.dir=/mnt/ts/runs/medium-adapter-none-20260702-01/plans/dino_channel_no_straightening hydra.sweep.dir=/mnt/ts/runs/medium-adapter-none-20260702-01/plans/dino_channel_no_straightening hydra.job.chdir=True
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/opt/conda/lib/python3.10/site-packages/wandb/util.py:118: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+  sentry_hub = sentry_sdk.Hub(sentry_client)
+/opt/conda/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import parse_version
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Compiling /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx because it depends on /opt/conda/lib/python3.10/site-packages/mujoco_py/pxd/mujoco.pxd.
+[1/1] Cythonizing /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+INFO:absl:MUJOCO_GL=osmesa, attempting to import specified OpenGL backend.
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO:absl:MuJoCo library version is: 3.2.7
+pybullet build time: Jan 29 2025 23:16:28
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/workspace/temporal-straightening/custom_resolvers.py:4: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=None)
+[2026-07-03 00:31:48,323][__main__][INFO] - Planning result saved dir: /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-adapter-none-20260702-01/plans/dino_channel_no_straightening
+Loaded 50 rollouts
+[[42, 17, 30, 34, 20, 25, 0, 8, 36, 18, 28, 39, 3, 2, 41, 1, 37, 6, 14, 12, 11, 32, 43, 16, 5, 38, 31, 44, 26, 45, 15, 47, 4, 10, 21, 19, 33, 27, 13, 48, 46, 23, 22, 35, 7], [24, 49, 29, 40, 9]]
+Using cache found in /mnt/ts/torch_home/hub/facebookresearch_dinov2_main
+[2026-07-03 00:31:49,542][dinov2][INFO] - using MLP layer as FFN
+[2026-07-03 00:31:49,986][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+Resuming from epoch 20: /mnt/ts/runs/medium-adapter-none-20260702-01/checkpoints/dino_channel_no_straightening/test/medium_False_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05/checkpoints/model_20.pth
+[2026-07-03 00:31:50,629][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-03 00:31:50,629][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-03 00:31:50,630][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-03 00:31:50,630][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-03 00:31:50,631][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-03 00:31:50,631][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-03 00:31:50,631][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-03 00:31:50,632][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-03 00:31:50,632][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-03 00:31:50,632][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-03 00:31:50,633][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-03 00:31:50,633][models.visual_world_model][INFO] - Model emb_dim: 28
+[timing] setup_model_s=2.312
+eval_seed:  [1, 101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901, 2001, 2101, 2201, 2301, 2401, 2501, 2601, 2701, 2801, 2901, 3001, 3101, 3201, 3301, 3401, 3501, 3601, 3701, 3801, 3901, 4001, 4101, 4201, 4301, 4401, 4501, 4601, 4701, 4801, 4901]
+Dumped plan targets to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-adapter-none-20260702-01/plans/dino_channel_no_straightening/plan_targets.pkl
+[timing] setup_workspace_s=10.287
+
+  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 1/1000 [00:00<14:55,  1.12it/s]

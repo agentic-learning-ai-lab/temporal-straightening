@@ -1,0 +1,185 @@
+{
+  "media_file_count": 2520,
+  "contact_sheets": {
+    "epoch20_validation": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/ablation_epoch20_validation_contact_sheet.png",
+    "epoch20_train0_rollout": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/ablation_epoch20_train0_rollout_contact_sheet.png"
+  },
+  "image_metrics": {
+    "epoch20_validation": {
+      "images": {
+        "dino_patch_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/valid/valid_e00020_b0.png",
+          "sha256": "2b90becbddd18f34d1532792117f1f360db4e47d32e05ccbafa3ee848f8b728c",
+          "size": [
+            4522,
+            680
+          ]
+        },
+        "dino_patch_cos_plus_speed": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cos-aggspeed-20260702-01/checkpoints/dino_patch_cos_plus_speed/test/medium_cos1e-1+aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/valid/valid_e00020_b0.png",
+          "sha256": "2b90becbddd18f34d1532792117f1f360db4e47d32e05ccbafa3ee848f8b728c",
+          "size": [
+            4522,
+            680
+          ]
+        },
+        "dino_cls_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/valid/valid_e00020_b0.png",
+          "sha256": "c32b7b5b9d69aff1f88cc28876777581e730ae57b54b6f9c1b71311020a6c700",
+          "size": [
+            4522,
+            680
+          ]
+        }
+      },
+      "pairwise": [
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_patch_cos_plus_speed",
+          "same_size": true,
+          "identical_sha256": true,
+          "mean_abs_pixel_diff_0_255": 0.0,
+          "nonzero_channel_fraction": 0.0,
+          "max_abs_pixel_diff": 0
+        },
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.6432496682883679,
+          "nonzero_channel_fraction": 0.33956766917293235,
+          "max_abs_pixel_diff": 149
+        },
+        {
+          "a": "dino_patch_cos_plus_speed",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.6432496682883679,
+          "nonzero_channel_fraction": 0.33956766917293235,
+          "max_abs_pixel_diff": 149
+        }
+      ]
+    },
+    "epoch20_train0_rollout": {
+      "images": {
+        "dino_patch_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_train_0.png",
+          "sha256": "0b0eefa7bccc28854b03800af2933db821f3571c9b9262bd99aa511b34da4061",
+          "size": [
+            2488,
+            454
+          ]
+        },
+        "dino_patch_cos_plus_speed": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cos-aggspeed-20260702-01/checkpoints/dino_patch_cos_plus_speed/test/medium_cos1e-1+aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_train_0.png",
+          "sha256": "0b0eefa7bccc28854b03800af2933db821f3571c9b9262bd99aa511b34da4061",
+          "size": [
+            2488,
+            454
+          ]
+        },
+        "dino_cls_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_train_0.png",
+          "sha256": "cc2f82ef2b754071a001cc4a27659ebc5211fc7144c5f2a4e2e77c3d8daae71c",
+          "size": [
+            2488,
+            454
+          ]
+        }
+      },
+      "pairwise": [
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_patch_cos_plus_speed",
+          "same_size": true,
+          "identical_sha256": true,
+          "mean_abs_pixel_diff_0_255": 0.0,
+          "nonzero_channel_fraction": 0.0,
+          "max_abs_pixel_diff": 0
+        },
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.7434935856575586,
+          "nonzero_channel_fraction": 0.350591207841693,
+          "max_abs_pixel_diff": 125
+        },
+        {
+          "a": "dino_patch_cos_plus_speed",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.7434935856575586,
+          "nonzero_channel_fraction": 0.350591207841693,
+          "max_abs_pixel_diff": 125
+        }
+      ]
+    },
+    "epoch20_val0_rollout": {
+      "images": {
+        "dino_patch_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-aggspeed-20260702-01/checkpoints/dino_patch_speed_constancy/test/medium_aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_val_0.png",
+          "sha256": "a2118809086537488a7ffbcf794fa5098f0da8eda55423b0d47c29b13c92e3f8",
+          "size": [
+            2488,
+            454
+          ]
+        },
+        "dino_patch_cos_plus_speed": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cos-aggspeed-20260702-01/checkpoints/dino_patch_cos_plus_speed/test/medium_cos1e-1+aggspeed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_val_0.png",
+          "sha256": "a2118809086537488a7ffbcf794fa5098f0da8eda55423b0d47c29b13c92e3f8",
+          "size": [
+            2488,
+            454
+          ]
+        },
+        "dino_cls_speed_constancy": {
+          "path": "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/extracted/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/rollout_plots/e20_rollout/e20_val_0.png",
+          "sha256": "697dcb0b1ae51bad63123826fd893e089385353029aa3ac687cb8e9e542fd7eb",
+          "size": [
+            2488,
+            454
+          ]
+        }
+      },
+      "pairwise": [
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_patch_cos_plus_speed",
+          "same_size": true,
+          "identical_sha256": true,
+          "mean_abs_pixel_diff_0_255": 0.0,
+          "nonzero_channel_fraction": 0.0,
+          "max_abs_pixel_diff": 0
+        },
+        {
+          "a": "dino_patch_speed_constancy",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.7515519427171127,
+          "nonzero_channel_fraction": 0.35105953510772414,
+          "max_abs_pixel_diff": 148
+        },
+        {
+          "a": "dino_patch_cos_plus_speed",
+          "b": "dino_cls_speed_constancy",
+          "same_size": true,
+          "identical_sha256": false,
+          "mean_abs_pixel_diff_0_255": 0.7515519427171127,
+          "nonzero_channel_fraction": 0.35105953510772414,
+          "max_abs_pixel_diff": 148
+        }
+      ]
+    }
+  },
+  "archive_manifests": [
+    "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/archives/medium-ablation-aggspeed-20260702-01-media-evidence-manifest.json",
+    "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/archives/medium-ablation-cls-speed-20260702-01-media-evidence-manifest.json",
+    "/Users/utsavsharma/Documents/GitHub/temporal-straightening/modal_evidence/medium-ablations-20260702-01/archives/medium-ablation-cos-aggspeed-20260702-01-media-evidence-manifest.json"
+  ]
+}

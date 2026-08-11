@@ -1,0 +1,21 @@
+[2026-07-17 23:39:15,979][__main__][INFO] - Planning result saved dir: /opt/dlami/nvme/home/jupyter-deuk-e40b/row7_plan_out/plan_seed_600/chunk_00
+[2026-07-17 23:39:17,271][dinov2][INFO] - using MLP layer as FFN
+[2026-07-17 23:39:17,684][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-17 23:39:18,063][models.visual_world_model][INFO] - Model emb_dim: 28

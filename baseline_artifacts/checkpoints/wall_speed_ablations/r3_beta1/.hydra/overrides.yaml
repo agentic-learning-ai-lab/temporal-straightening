@@ -1,0 +1,2 @@
+- training.straighten=aggr3b1_1e-1
+- ckpt_base_path=baseline_artifacts/checkpoints/wall_speed_ablations/r3_beta1

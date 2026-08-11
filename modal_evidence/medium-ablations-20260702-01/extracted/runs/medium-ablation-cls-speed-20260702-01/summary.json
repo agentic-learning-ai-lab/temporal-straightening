@@ -1,0 +1,35 @@
+{
+  "run_id": "medium-ablation-cls-speed-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-ablation-cls-speed-20260702-01",
+  "dataset": "/mnt/ts/datasets/medium_random_50x100/point_maze_medium",
+  "epochs": 20,
+  "n_episodes": 50,
+  "episode_length": 100,
+  "policy": "random",
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "dino_cls_speed_constancy",
+      "encoder": "dino_cls",
+      "straighten": "speed1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.086,
+        "val_loss": 0.0754
+      },
+      "model_dir": "/mnt/ts/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "plan_dir": "/mnt/ts/runs/medium-ablation-cls-speed-20260702-01/plans/dino_cls_speed_constancy",
+      "plan": {
+        "final_eval/success_rate": 0.22,
+        "final_eval/mean_state_dist": 3.5456480979919434,
+        "final_eval/mean_visual_dist": 0.29708466198979594,
+        "final_eval/mean_proprio_dist": 1.4222931861877441,
+        "final_eval/mean_div_visual_emb": 36.9257926940918,
+        "final_eval/mean_div_proprio_emb": 17.049652099609375
+      },
+      "elapsed_minutes": 23.23
+    }
+  ]
+}

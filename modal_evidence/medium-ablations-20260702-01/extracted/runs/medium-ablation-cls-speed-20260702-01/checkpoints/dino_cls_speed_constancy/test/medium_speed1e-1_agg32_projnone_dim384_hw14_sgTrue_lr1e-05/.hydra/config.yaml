@@ -1,0 +1,104 @@
+ckpt_base_path: /mnt/ts/runs/medium-ablation-cls-speed-20260702-01/checkpoints/dino_cls_speed_constancy
+training:
+  seed: 0
+  epochs: 20
+  batch_size: 32
+  save_every_x_epoch: 1
+  save_every_x_iterations: 1000
+  straighten: speed1e-1
+  decoder_start_epoch: 1
+  reconstruct_every_x_batch: 999999
+  num_reconstruct_samples: 5
+  encoder_lr: 1.0e-05
+  decoder_lr: 0.0003
+  predictor_lr: 0.0005
+  action_encoder_lr: 0.0005
+  stop_grad: true
+  vcreg: false
+  vcreg_apply_to: enc
+  vcreg_std_coeff: 0
+  vcreg_cov_coeff: 0
+  mixed_precision: bf16
+img_size: 224
+frameskip: 5
+concat_dim: 1
+normalize_action: true
+action_emb_dim: 10
+num_action_repeat: 1
+proprio_emb_dim: 10
+num_proprio_repeat: 1
+num_hist: 3
+num_pred: 1
+has_predictor: true
+has_decoder: true
+model:
+  _target_: models.visual_world_model.VWorldModel
+  image_size: ${img_size}
+  num_hist: ${num_hist}
+  num_pred: ${num_pred}
+  train_encoder: true
+  train_predictor: true
+  train_decoder: true
+plan_settings:
+  plan_cfg_path: null
+  planner:
+  - gd
+  - cem
+  goal_source:
+  - dset
+  - random_state
+  goal_H:
+  - 5
+  alpha:
+  - 0.1
+  - 1
+debug: false
+env:
+  name: point_maze_medium
+  save_name: medium
+  args: []
+  kwargs: {}
+  dataset:
+    _target_: datasets.point_maze_dset.load_point_maze_slice_train_val
+    n_rollout: null
+    normalize_action: ${normalize_action}
+    data_path: ${oc.env:DATASET_DIR}/point_maze_medium
+    split_ratio: 0.9
+    use_preprocessed: false
+    use_frame_files: false
+    transform:
+      _target_: datasets.img_transforms.default_transform
+      img_size: ${img_size}
+  decoder_path: null
+  num_workers: 0
+encoder:
+  _target_: models.dino.DinoV2Encoder
+  name: dinov2_vits14
+  feature_key: x_norm_clstoken
+action_encoder:
+  _target_: models.proprio.ProprioceptiveEmbedding
+  num_frames: 1
+  tubelet_size: 1
+  use_3d_pos: false
+  use_layernorm: true
+proprio_encoder:
+  _target_: models.proprio.ProprioceptiveEmbedding
+  num_frames: 1
+  tubelet_size: 1
+  use_3d_pos: false
+  use_layernorm: true
+decoder:
+  _target_: models.vqvae.VQVAE
+  channel: 384
+  n_embed: 2048
+  n_res_block: 4
+  n_res_channel: 128
+  quantize: false
+predictor:
+  _target_: models.vit.ViTPredictor
+  depth: 6
+  heads: 16
+  mlp_dim: 2048
+  dropout: 0.1
+  emb_dropout: 0
+  pool: mean

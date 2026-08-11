@@ -1,0 +1,6 @@
+- ckpt_base_path=/home/jupyter-deuk-e40b/temporal-straightening-umaze-speed/baseline_artifacts/checkpoints/umaze_speed_ablations/r3_beta1
+- model_epoch=20
+- n_evals=10
+- seed=300
+- +eval_start_index=40
+- decode_for_viz=false

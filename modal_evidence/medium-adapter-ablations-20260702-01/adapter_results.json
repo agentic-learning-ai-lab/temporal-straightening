@@ -1,0 +1,175 @@
+{
+  "status": "complete planner and latent diagnostics after Modal spend limit was resolved",
+  "environment": "medium",
+  "purpose": "Trainable DINO-channel adapter ablation to test whether speed constancy can affect the measured latent path.",
+  "methodology": {
+    "dataset": "50 random-policy Medium episodes, 100 frames per episode",
+    "epochs_requested": 20,
+    "planner": {
+      "algorithm": "gradient descent",
+      "n_evals": 50,
+      "goal_horizon": 25
+    },
+    "latent_diagnostics": [
+      "cosine_curvature_mean",
+      "path_endpoint_ratio_mean",
+      "latent_speed_cv_time_mean",
+      "latent_speed_p95_p05_ratio",
+      "relative_speed_jump_mean"
+    ]
+  },
+  "caveats": [
+    "dino_channel_speed_constancy planner used the latest checkpoint because model_20 was unavailable in that run summary.",
+    "dino_channel_speed_constancy latent analysis resolved that latest checkpoint to epoch 18 and used 20 rollouts after the 50-rollout diagnostic stalled.",
+    "All other adapter latent diagnostics used epoch 20 and 50 rollouts."
+  ],
+  "summary": {
+    "no_straightening_success_rate": 0.1,
+    "cosine_success_rate": 0.12,
+    "speed_success_rate": 0.14,
+    "cosine_plus_speed_success_rate": 0.1,
+    "interpretation": "Cosine straightening improved directional straightness versus no straightening but increased speed variation. Speed-only improved speed regularity but not directional straightness. Cosine plus speed had the best curvature and path ratio and the best mean state distance, but not the best success rate."
+  },
+  "rows": [
+    {
+      "variant": "dino_channel_no_straightening",
+      "run_id": "medium-adapter-none-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "False",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1064,
+        "val_loss": 0.0957
+      },
+      "planner": {
+        "model_epoch": 20,
+        "success_rate": 0.1,
+        "mean_state_dist": 3.5815274715423584,
+        "mean_visual_dist": 0.32761041135204083,
+        "mean_proprio_dist": 1.4707962274551392
+      },
+      "latent": {
+        "model_epoch": 20,
+        "rollouts_analyzed": 50,
+        "cosine_curvature_mean": 1.3060238571978615,
+        "cosine_alignment_mean": -0.30602385716362857,
+        "path_endpoint_ratio_mean": 16.566550150477156,
+        "latent_speed_mean": 0.28506288832064547,
+        "latent_speed_std": 0.2358398447927111,
+        "latent_speed_cv_time_mean": 0.4577265500292486,
+        "latent_speed_p95_p05_ratio": 9.805947304344578,
+        "relative_speed_jump_mean": 0.4501399641036176,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "evidence": {
+        "planner_summary": "pulled/medium-adapter-none-summary_plans_fixed.json",
+        "latent_summary": "pulled/medium-adapter-none-latent_analysis.json"
+      }
+    },
+    {
+      "variant": "dino_channel_cos_straightened",
+      "run_id": "medium-adapter-cos-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2104,
+        "val_loss": 0.19
+      },
+      "planner": {
+        "model_epoch": 20,
+        "success_rate": 0.12,
+        "mean_state_dist": 3.3450887203216553,
+        "mean_visual_dist": 0.32073487988945576,
+        "mean_proprio_dist": 1.3738412857055664
+      },
+      "latent": {
+        "model_epoch": 20,
+        "rollouts_analyzed": 50,
+        "cosine_curvature_mean": 1.0270844537486024,
+        "cosine_alignment_mean": -0.027084453783136352,
+        "path_endpoint_ratio_mean": 12.3965174138546,
+        "latent_speed_mean": 0.3984481195665578,
+        "latent_speed_std": 0.31482498319062685,
+        "latent_speed_cv_time_mean": 0.577190648689866,
+        "latent_speed_p95_p05_ratio": 12.36535030112566,
+        "relative_speed_jump_mean": 0.6052615089688574,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "evidence": {
+        "planner_summary": "pulled/medium-adapter-cos-summary_plans_fixed.json",
+        "latent_summary": "pulled/medium-adapter-cos-latent_analysis.json"
+      }
+    },
+    {
+      "variant": "dino_channel_speed_constancy",
+      "run_id": "medium-adapter-speed-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "speed1e-1",
+      "train": {
+        "epoch": 17,
+        "train_loss": 0.0939,
+        "val_loss": 0.0742
+      },
+      "planner": {
+        "model_epoch": "latest",
+        "success_rate": 0.14,
+        "mean_state_dist": 3.4116828441619873,
+        "mean_visual_dist": 0.31880939094387756,
+        "mean_proprio_dist": 1.4016495943069458
+      },
+      "latent": {
+        "model_epoch": 18,
+        "rollouts_analyzed": 20,
+        "cosine_curvature_mean": 1.3431179992018305,
+        "cosine_alignment_mean": -0.3431179990803864,
+        "path_endpoint_ratio_mean": 17.415696139968173,
+        "latent_speed_mean": 0.03641827345502761,
+        "latent_speed_std": 0.030083107547285083,
+        "latent_speed_cv_time_mean": 0.40376526537370316,
+        "latent_speed_p95_p05_ratio": 9.582564898275464,
+        "relative_speed_jump_mean": 0.38649852846740496,
+        "state_position_speed_cv_mean": 0.5612502947449685
+      },
+      "evidence": {
+        "planner_summary": "pulled/medium-adapter-speed-summary_plans_fixed.json",
+        "latent_summary": "pulled/medium-adapter-speed-latent_analysis.json"
+      }
+    },
+    {
+      "variant": "dino_channel_cos_plus_speed",
+      "run_id": "medium-adapter-cos-speed-20260702-01",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1+speed1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1856,
+        "val_loss": 0.168
+      },
+      "planner": {
+        "model_epoch": 20,
+        "success_rate": 0.1,
+        "mean_state_dist": 3.1175668239593506,
+        "mean_visual_dist": 0.324910049957483,
+        "mean_proprio_dist": 1.2445582151412964
+      },
+      "latent": {
+        "model_epoch": 20,
+        "rollouts_analyzed": 50,
+        "cosine_curvature_mean": 0.9806482326889795,
+        "cosine_alignment_mean": 0.01935176732594595,
+        "path_endpoint_ratio_mean": 11.90149032894446,
+        "latent_speed_mean": 0.025286287969582495,
+        "latent_speed_std": 0.018865426278036418,
+        "latent_speed_cv_time_mean": 0.4914020040570473,
+        "latent_speed_p95_p05_ratio": 10.493219530610984,
+        "relative_speed_jump_mean": 0.4911410857187457,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "evidence": {
+        "planner_summary": "pulled/medium-adapter-cos-speed-summary_plans_fixed.json",
+        "latent_summary": "pulled/medium-adapter-cos-speed-latent_analysis.json"
+      }
+    }
+  ]
+}

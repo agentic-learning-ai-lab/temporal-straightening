@@ -1,0 +1,31 @@
+{
+  "run_id": "medium-adapter-speed-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-adapter-speed-20260702-01",
+  "epochs": 20,
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "dino_channel_speed_constancy",
+      "encoder": "dino_channel",
+      "straighten": "speed1e-1",
+      "model_dir": "/mnt/ts/runs/medium-adapter-speed-20260702-01/checkpoints/dino_channel_speed_constancy/test/medium_speed1e-1_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05",
+      "model_epoch": "latest",
+      "plan_dir": "/mnt/ts/runs/medium-adapter-speed-20260702-01/plans_fixed/dino_channel_speed_constancy",
+      "plan": {
+        "final_eval/success_rate": 0.14,
+        "final_eval/mean_state_dist": 3.4116828441619873,
+        "final_eval/mean_visual_dist": 0.31880939094387756,
+        "final_eval/mean_proprio_dist": 1.4016495943069458,
+        "final_eval/mean_div_visual_emb": 60.655033111572266,
+        "final_eval/mean_div_proprio_emb": 16.80565071105957
+      },
+      "train": {
+        "epoch": 17,
+        "train_loss": 0.0939,
+        "val_loss": 0.0742
+      },
+      "elapsed_minutes": 8.0
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+
+$ python plan.py --config-name plan_gd.yaml ckpt_base_path=/mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05 model_name=dino_cls_no_straightening model_epoch=20 n_evals=50 goal_H=25 goal_source=dset objective.alpha=0 objective.mode=last planner.max_iter=1 planner.n_taken_actions=25 planner.sub_planner.horizon=25 planner.sub_planner.lr=1 planner.sub_planner.sample_type=randn planner.sub_planner.action_noise=0.003 planner.sub_planner.opt_steps=1000 planner.sub_planner.eval_every=-1 decode_for_viz=false +wandb_logging=false hydra.run.dir=/mnt/ts/runs/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening hydra.sweep.dir=/mnt/ts/runs/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening hydra.job.chdir=True
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+/opt/conda/lib/python3.10/site-packages/wandb/util.py:118: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+  sentry_hub = sentry_sdk.Hub(sentry_client)
+/opt/conda/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py:30: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import parse_version
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/opt/conda/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('ruamel')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Compiling /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx because it depends on /opt/conda/lib/python3.10/site-packages/mujoco_py/pxd/mujoco.pxd.
+[1/1] Cythonizing /opt/conda/lib/python3.10/site-packages/mujoco_py/cymj.pyx
+<frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+INFO:absl:MUJOCO_GL=osmesa, attempting to import specified OpenGL backend.
+INFO:OpenGL.acceleratesupport:No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+INFO:absl:MuJoCo library version is: 3.2.7
+pybullet build time: Jan 29 2025 23:16:28
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-open-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v0[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-umaze-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-medium-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/opt/conda/lib/python3.10/site-packages/gym/envs/registration.py:595: UserWarning: [33mWARN: Overriding environment maze2d-eval-large-dense-v1[0m
+  logger.warn(f"Overriding environment {id}")
+/workspace/temporal-straightening/custom_resolvers.py:4: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path=None)
+[2026-07-02 17:16:24,335][__main__][INFO] - Planning result saved dir: /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening
+Loaded 50 rollouts
+[[42, 17, 30, 34, 20, 25, 0, 8, 36, 18, 28, 39, 3, 2, 41, 1, 37, 6, 14, 12, 11, 32, 43, 16, 5, 38, 31, 44, 26, 45, 15, 47, 4, 10, 21, 19, 33, 27, 13, 48, 46, 23, 22, 35, 7], [24, 49, 29, 40, 9]]
+Using cache found in /mnt/ts/torch_home/hub/facebookresearch_dinov2_main
+[2026-07-02 17:16:25,714][dinov2][INFO] - using MLP layer as FFN
+[2026-07-02 17:16:26,120][models.dino][WARNING] - Unknown projector 'none' for patch tokens; proceeding without projector.
+Resuming from epoch 20: /mnt/ts/runs/medium-full-20260702-01/checkpoints/dino_cls_no_straightening/test/medium_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_20.pth
+[2026-07-02 17:16:27,707][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-02 17:16:27,708][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-02 17:16:27,708][models.visual_world_model][INFO] - proprio encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(4, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 17:16:27,708][models.visual_world_model][INFO] - action encoder: ProprioceptiveEmbedding(
+  (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+  (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+)
+[2026-07-02 17:16:27,709][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-02 17:16:27,709][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-02 17:16:27,709][models.visual_world_model][INFO] - emb_dim: 404
+[2026-07-02 17:16:27,709][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-02 17:16:27,710][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-02 17:16:27,710][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-02 17:16:27,710][models.visual_world_model][INFO] - Model emb_dim: 404
+[timing] setup_model_s=3.378
+eval_seed:  [1, 101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901, 2001, 2101, 2201, 2301, 2401, 2501, 2601, 2701, 2801, 2901, 3001, 3101, 3201, 3301, 3401, 3501, 3601, 3701, 3801, 3901, 4001, 4101, 4201, 4301, 4401, 4501, 4601, 4701, 4801, 4901]
+Dumped plan targets to /__modal/volumes/vo-0WevHLDp8lzpYcSwfuwmkq/runs/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening/plan_targets.pkl
+[timing] setup_workspace_s=9.521
+
+  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 1/1000 [00:00<06:50,  2.44it/s]
+  0%|          | 4/1000 [00:00<01:45,  9.48it/s]
+  1%|          | 8/1000 [00:00<00:59, 16.55it/s]
+  1%|          | 12/1000 [00:00<00:46, 21.38it/s]
+  2%|▏         | 16/1000 [00:00<00:39, 25.01it/s]
+  2%|▏         | 20/1000 [00:01<00:35, 27.29it/s]
+  2%|▏         | 24/1000 [00:01<00:34, 28.43it/s]
+  3%|▎         | 28/1000 [00:01<00:32, 29.70it/s]
+  3%|▎         | 32/1000 [00:01<00:31, 30.29it/s]
+  4%|▎         | 36/1000 [00:01<00:31, 30.96it/s]
+  4%|▍         | 40/1000 [00:01<00:30, 31.48it/s]
+  4%|▍         | 44/1000 [00:01<00:30, 31.80it/s]
+  5%|▍         | 48/1000 [00:01<00:29, 32.00it/s]
+  5%|▌         | 52/1000 [00:01<00:29, 32.48it/s]
+  6%|▌         | 56/1000 [00:02<00:28, 32.84it/s]
+  6%|▌         | 60/1000 [00:02<00:29, 32.35it/s]
+  6%|▋         | 64/1000 [00:02<00:29, 32.13it/s]
+  7%|▋         | 68/1000 [00:02<00:28, 32.51it/s]
+  7%|▋         | 72/1000 [00:02<00:28, 32.95it/s]
+  8%|▊         | 76/1000 [00:02<00:28, 32.72it/s]
+  8%|▊         | 80/1000 [00:02<00:28, 32.84it/s]
+  8%|▊         | 84/1000 [00:02<00:27, 33.13it/s]
+  9%|▉         | 88/1000 [00:03<00:27, 33.35it/s]
+  9%|▉         | 92/1000 [00:03<00:27, 33.50it/s]
+ 10%|▉         | 96/1000 [00:03<00:26, 33.58it/s]
+ 10%|█         | 100/1000 [00:03<00:26, 33.67it/s]
+ 10%|█         | 104/1000 [00:03<00:27, 33.16it/s]
+ 11%|█         | 108/1000 [00:03<00:27, 33.01it/s]
+ 11%|█         | 112/1000 [00:03<00:26, 32.94it/s]
+ 12%|█▏        | 116/1000 [00:03<00:26, 32.85it/s]
+ 12%|█▏        | 120/1000 [00:04<00:26, 32.82it/s]
+ 12%|█▏        | 124/1000 [00:04<00:26, 32.82it/s]
+ 13%|█▎        | 128/1000 [00:04<00:26, 32.70it/s]
+ 13%|█▎        | 132/1000 [00:04<00:26, 32.75it/s]
+ 14%|█▎        | 136/1000 [00:04<00:26, 32.79it/s]
+ 14%|█▍        | 140/1000 [00:04<00:26, 32.67it/s]
+ 14%|█▍        | 144/1000 [00:04<00:26, 32.67it/s]
+ 15%|█▍        | 148/1000 [00:04<00:25, 32.97it/s]
+ 15%|█▌        | 152/1000 [00:05<00:25, 33.22it/s]
+ 16%|█▌        | 156/1000 [00:05<00:25, 32.81it/s]
+ 16%|█▌        | 160/1000 [00:05<00:25, 32.70it/s]
+ 16%|█▋        | 164/1000 [00:05<00:25, 32.57it/s]
+ 17%|█▋        | 168/1000 [00:05<00:25, 32.57it/s]
+ 17%|█▋        | 172/1000 [00:05<00:25, 32.55it/s]
+ 18%|█▊        | 176/1000 [00:05<00:25, 32.46it/s]
+ 18%|█▊        | 180/1000 [00:05<00:24, 32.83it/s]
+ 18%|█▊        | 184/1000 [00:06<00:25, 32.54it/s]
+ 19%|█▉        | 188/1000 [00:06<00:24, 32.62it/s]
+ 19%|█▉        | 192/1000 [00:06<00:24, 32.58it/s]
+ 20%|█▉        | 196/1000 [00:06<00:24, 32.63it/s]
+ 20%|██        | 200/1000 [00:06<00:24, 32.58it/s]
+ 20%|██        | 204/1000 [00:06<00:24, 32.62it/s]
+ 21%|██        | 208/1000 [00:06<00:24, 32.63it/s]
+ 21%|██        | 212/1000 [00:06<00:24, 32.67it/s]
+ 22%|██▏       | 216/1000 [00:06<00:24, 32.53it/s]
+ 22%|██▏       | 220/1000 [00:07<00:23, 32.91it/s]
+ 22%|██▏       | 224/1000 [00:07<00:23, 33.20it/s]
+ 23%|██▎       | 228/1000 [00:07<00:23, 32.59it/s]
+ 23%|██▎       | 232/1000 [00:07<00:23, 32.41it/s]
+ 24%|██▎       | 236/1000 [00:07<00:23, 32.87it/s]
+ 24%|██▍       | 240/1000 [00:07<00:22, 33.23it/s]
+ 24%|██▍       | 244/1000 [00:07<00:22, 33.38it/s]
+ 25%|██▍       | 248/1000 [00:07<00:22, 33.57it/s]
+ 25%|██▌       | 252/1000 [00:08<00:22, 33.71it/s]
+ 26%|██▌       | 256/1000 [00:08<00:22, 33.04it/s]
+ 26%|██▌       | 260/1000 [00:08<00:22, 33.02it/s]
+ 26%|██▋       | 264/1000 [00:08<00:22, 32.99it/s]
+ 27%|██▋       | 268/1000 [00:08<00:22, 32.77it/s]
+ 27%|██▋       | 272/1000 [00:08<00:22, 32.70it/s]
+ 28%|██▊       | 276/1000 [00:08<00:22, 32.50it/s]
+ 28%|██▊       | 280/1000 [00:08<00:21, 32.94it/s]
+ 28%|██▊       | 284/1000 [00:09<00:21, 33.24it/s]
+ 29%|██▉       | 288/1000 [00:09<00:21, 33.46it/s]
+ 29%|██▉       | 292/1000 [00:09<00:21, 33.61it/s]
+ 30%|██▉       | 296/1000 [00:09<00:20, 33.62it/s]
+ 30%|███       | 300/1000 [00:09<00:20, 33.66it/s]
+ 30%|███       | 304/1000 [00:09<00:20, 33.72it/s]
+ 31%|███       | 308/1000 [00:09<00:20, 33.28it/s]
+ 31%|███       | 312/1000 [00:09<00:21, 32.55it/s]
+ 32%|███▏      | 316/1000 [00:10<00:21, 32.30it/s]
+ 32%|███▏      | 320/1000 [00:10<00:21, 32.03it/s]
+ 32%|███▏      | 324/1000 [00:10<00:20, 32.29it/s]
+ 33%|███▎      | 328/1000 [00:10<00:21, 31.41it/s]
+ 33%|███▎      | 332/1000 [00:10<00:21, 30.53it/s]
+ 34%|███▎      | 336/1000 [00:10<00:23, 28.20it/s]
+ 34%|███▍      | 339/1000 [00:10<00:23, 28.35it/s]
+ 34%|███▍      | 342/1000 [00:10<00:23, 28.24it/s]
+ 35%|███▍      | 346/1000 [00:11<00:22, 29.48it/s]
+ 35%|███▌      | 350/1000 [00:11<00:21, 29.86it/s]
+ 35%|███▌      | 353/1000 [00:11<00:22, 28.80it/s]
+ 36%|███▌      | 357/1000 [00:11<00:21, 29.60it/s]
+ 36%|███▌      | 361/1000 [00:11<00:20, 30.80it/s]
+ 36%|███▋      | 365/1000 [00:11<00:19, 31.75it/s]
+ 37%|███▋      | 369/1000 [00:11<00:19, 32.40it/s]
+ 37%|███▋      | 373/1000 [00:11<00:19, 32.18it/s]
+ 38%|███▊      | 377/1000 [00:12<00:19, 32.44it/s]
+ 38%|███▊      | 381/1000 [00:12<00:19, 32.56it/s]
+ 38%|███▊      | 385/1000 [00:12<00:18, 32.70it/s]
+ 39%|███▉      | 389/1000 [00:12<00:18, 32.70it/s]
+ 39%|███▉      | 393/1000 [00:12<00:18, 32.43it/s]
+ 40%|███▉      | 397/1000 [00:12<00:18, 32.78it/s]
+ 40%|████      | 401/1000 [00:12<00:18, 33.05it/s]
+ 40%|████      | 405/1000 [00:12<00:17, 33.27it/s]
+ 41%|████      | 409/1000 [00:12<00:17, 33.39it/s]
+ 41%|████▏     | 413/1000 [00:13<00:17, 33.55it/s]
+ 42%|████▏     | 417/1000 [00:13<00:17, 33.66it/s]
+ 42%|████▏     | 421/1000 [00:13<00:17, 33.75it/s]
+ 42%|████▎     | 425/1000 [00:13<00:17, 33.73it/s]
+ 43%|████▎     | 429/1000 [00:13<00:16, 33.79it/s]
+ 43%|████▎     | 433/1000 [00:13<00:16, 33.37it/s]
+ 44%|████▎     | 437/1000 [00:13<00:16, 33.16it/s]
+ 44%|████▍     | 441/1000 [00:13<00:16, 33.04it/s]
+ 44%|████▍     | 445/1000 [00:14<00:16, 33.32it/s]
+ 45%|████▍     | 449/1000 [00:14<00:16, 33.50it/s]
+ 45%|████▌     | 453/1000 [00:14<00:16, 33.55it/s]
+ 46%|████▌     | 457/1000 [00:14<00:16, 33.52it/s]
+ 46%|████▌     | 461/1000 [00:14<00:16, 33.02it/s]
+ 46%|████▋     | 465/1000 [00:14<00:16, 32.90it/s]
+ 47%|████▋     | 469/1000 [00:14<00:16, 32.88it/s]
+ 47%|████▋     | 473/1000 [00:14<00:16, 32.84it/s]
+ 48%|████▊     | 477/1000 [00:15<00:15, 32.80it/s]
+ 48%|████▊     | 481/1000 [00:15<00:15, 32.53it/s]
+ 48%|████▊     | 485/1000 [00:15<00:15, 32.90it/s]
+ 49%|████▉     | 489/1000 [00:15<00:15, 33.12it/s]
+ 49%|████▉     | 493/1000 [00:15<00:15, 33.32it/s]
+ 50%|████▉     | 497/1000 [00:15<00:15, 33.43it/s]
+ 50%|█████     | 501/1000 [00:15<00:14, 33.53it/s]
+ 50%|█████     | 505/1000 [00:15<00:15, 32.70it/s]
+ 51%|█████     | 509/1000 [00:15<00:14, 33.02it/s]
+ 51%|█████▏    | 513/1000 [00:16<00:14, 33.31it/s]
+ 52%|█████▏    | 517/1000 [00:16<00:14, 33.52it/s]
+ 52%|█████▏    | 521/1000 [00:16<00:14, 33.66it/s]
+ 52%|█████▎    | 525/1000 [00:16<00:14, 33.75it/s]
+ 53%|█████▎    | 529/1000 [00:16<00:13, 33.89it/s]
+ 53%|█████▎    | 533/1000 [00:16<00:13, 33.99it/s]
+ 54%|█████▎    | 537/1000 [00:16<00:13, 33.88it/s]
+ 54%|█████▍    | 541/1000 [00:16<00:13, 33.90it/s]
+ 55%|█████▍    | 545/1000 [00:17<00:13, 33.95it/s]
+ 55%|█████▍    | 549/1000 [00:17<00:13, 34.02it/s]
+ 55%|█████▌    | 553/1000 [00:17<00:13, 34.04it/s]
+ 56%|█████▌    | 557/1000 [00:17<00:13, 34.07it/s]
+ 56%|█████▌    | 561/1000 [00:17<00:12, 34.08it/s]
+ 56%|█████▋    | 565/1000 [00:17<00:12, 34.11it/s]
+ 57%|█████▋    | 569/1000 [00:17<00:12, 34.11it/s]
+ 57%|█████▋    | 573/1000 [00:17<00:12, 34.12it/s]
+ 58%|█████▊    | 577/1000 [00:17<00:12, 34.03it/s]
+ 58%|█████▊    | 581/1000 [00:18<00:12, 33.94it/s]
+ 58%|█████▊    | 585/1000 [00:18<00:12, 33.88it/s]
+ 59%|█████▉    | 589/1000 [00:18<00:12, 33.33it/s]
+ 59%|█████▉    | 593/1000 [00:18<00:12, 33.13it/s]
+ 60%|█████▉    | 597/1000 [00:18<00:12, 33.02it/s]
+ 60%|██████    | 601/1000 [00:18<00:12, 32.93it/s]
+ 60%|██████    | 605/1000 [00:18<00:12, 32.75it/s]
+ 61%|██████    | 609/1000 [00:18<00:11, 32.74it/s]
+ 61%|██████▏   | 613/1000 [00:19<00:11, 32.49it/s]
+ 62%|██████▏   | 617/1000 [00:19<00:11, 32.88it/s]
+ 62%|██████▏   | 621/1000 [00:19<00:11, 33.09it/s]
+ 62%|██████▎   | 625/1000 [00:19<00:11, 32.89it/s]
+ 63%|██████▎   | 629/1000 [00:19<00:11, 32.82it/s]
+ 63%|██████▎   | 633/1000 [00:19<00:11, 32.85it/s]
+ 64%|██████▎   | 637/1000 [00:19<00:11, 32.90it/s]
+ 64%|██████▍   | 641/1000 [00:19<00:10, 32.78it/s]
+ 64%|██████▍   | 645/1000 [00:20<00:10, 32.50it/s]
+ 65%|██████▍   | 649/1000 [00:20<00:10, 32.91it/s]
+ 65%|██████▌   | 653/1000 [00:20<00:10, 33.20it/s]
+ 66%|██████▌   | 657/1000 [00:20<00:10, 33.33it/s]
+ 66%|██████▌   | 661/1000 [00:20<00:10, 33.43it/s]
+ 66%|██████▋   | 665/1000 [00:20<00:10, 33.47it/s]
+ 67%|██████▋   | 669/1000 [00:20<00:09, 33.58it/s]
+ 67%|██████▋   | 673/1000 [00:20<00:09, 33.59it/s]
+ 68%|██████▊   | 677/1000 [00:21<00:09, 33.56it/s]
+ 68%|██████▊   | 681/1000 [00:21<00:09, 33.54it/s]
+ 68%|██████▊   | 685/1000 [00:21<00:09, 33.67it/s]
+ 69%|██████▉   | 689/1000 [00:21<00:09, 33.71it/s]
+ 69%|██████▉   | 693/1000 [00:21<00:09, 33.72it/s]
+ 70%|██████▉   | 697/1000 [00:21<00:08, 33.82it/s]
+ 70%|███████   | 701/1000 [00:21<00:08, 33.88it/s]
+ 70%|███████   | 705/1000 [00:21<00:08, 33.93it/s]
+ 71%|███████   | 709/1000 [00:21<00:08, 33.98it/s]
+ 71%|███████▏  | 713/1000 [00:22<00:08, 33.72it/s]
+ 72%|███████▏  | 717/1000 [00:22<00:08, 33.14it/s]
+ 72%|███████▏  | 721/1000 [00:22<00:08, 33.05it/s]
+ 72%|███████▎  | 725/1000 [00:22<00:08, 33.35it/s]
+ 73%|███████▎  | 729/1000 [00:22<00:08, 33.54it/s]
+ 73%|███████▎  | 733/1000 [00:22<00:07, 33.69it/s]
+ 74%|███████▎  | 737/1000 [00:22<00:07, 33.81it/s]
+ 74%|███████▍  | 741/1000 [00:22<00:07, 33.13it/s]
+ 74%|███████▍  | 745/1000 [00:23<00:07, 32.81it/s]
+ 75%|███████▍  | 749/1000 [00:23<00:07, 33.09it/s]
+ 75%|███████▌  | 753/1000 [00:23<00:07, 33.37it/s]
+ 76%|███████▌  | 757/1000 [00:23<00:07, 33.51it/s]
+ 76%|███████▌  | 761/1000 [00:23<00:07, 33.67it/s]
+ 76%|███████▋  | 765/1000 [00:23<00:06, 33.64it/s]
+ 77%|███████▋  | 769/1000 [00:23<00:06, 33.72it/s]
+ 77%|███████▋  | 773/1000 [00:23<00:06, 33.77it/s]
+ 78%|███████▊  | 777/1000 [00:23<00:06, 33.85it/s]
+ 78%|███████▊  | 781/1000 [00:24<00:06, 33.93it/s]
+ 78%|███████▊  | 785/1000 [00:24<00:06, 33.90it/s]
+ 79%|███████▉  | 789/1000 [00:24<00:06, 33.88it/s]
+ 79%|███████▉  | 793/1000 [00:24<00:06, 32.98it/s]
+ 80%|███████▉  | 797/1000 [00:24<00:06, 33.22it/s]
+ 80%|████████  | 801/1000 [00:24<00:05, 33.39it/s]
+ 80%|████████  | 805/1000 [00:24<00:05, 33.56it/s]
+ 81%|████████  | 809/1000 [00:24<00:05, 33.67it/s]
+ 81%|████████▏ | 813/1000 [00:25<00:05, 33.76it/s]
+ 82%|████████▏ | 817/1000 [00:25<00:05, 33.51it/s]
+ 82%|████████▏ | 821/1000 [00:25<00:05, 32.89it/s]
+ 82%|████████▎ | 825/1000 [00:25<00:05, 33.11it/s]
+ 83%|████████▎ | 829/1000 [00:25<00:05, 33.25it/s]
+ 83%|████████▎ | 833/1000 [00:25<00:04, 33.47it/s]
+ 84%|████████▎ | 837/1000 [00:25<00:04, 33.63it/s]
+ 84%|████████▍ | 841/1000 [00:25<00:04, 33.74it/s]
+ 84%|████████▍ | 845/1000 [00:26<00:04, 33.83it/s]
+ 85%|████████▍ | 849/1000 [00:26<00:04, 33.26it/s]
+ 85%|████████▌ | 853/1000 [00:26<00:04, 33.18it/s]
+ 86%|████████▌ | 857/1000 [00:26<00:04, 33.10it/s]
+ 86%|████████▌ | 861/1000 [00:26<00:04, 33.14it/s]
+ 86%|████████▋ | 865/1000 [00:26<00:04, 33.19it/s]
+ 87%|████████▋ | 869/1000 [00:26<00:03, 33.22it/s]
+ 87%|████████▋ | 873/1000 [00:26<00:03, 33.15it/s]
+ 88%|████████▊ | 877/1000 [00:26<00:03, 32.89it/s]
+ 88%|████████▊ | 881/1000 [00:27<00:03, 33.17it/s]
+ 88%|████████▊ | 885/1000 [00:27<00:03, 32.78it/s]
+ 89%|████████▉ | 889/1000 [00:27<00:03, 32.18it/s]
+ 89%|████████▉ | 893/1000 [00:27<00:03, 32.25it/s]
+ 90%|████████▉ | 897/1000 [00:27<00:03, 32.38it/s]
+ 90%|█████████ | 901/1000 [00:27<00:03, 32.28it/s]
+ 90%|█████████ | 905/1000 [00:27<00:02, 32.78it/s]
+ 91%|█████████ | 909/1000 [00:27<00:02, 32.88it/s]
+ 91%|█████████▏| 913/1000 [00:28<00:02, 33.14it/s]
+ 92%|█████████▏| 917/1000 [00:28<00:02, 32.63it/s]
+ 92%|█████████▏| 921/1000 [00:28<00:02, 32.55it/s]
+ 92%|█████████▎| 925/1000 [00:28<00:02, 32.62it/s]
+ 93%|█████████▎| 929/1000 [00:28<00:02, 32.59it/s]
+ 93%|█████████▎| 933/1000 [00:28<00:02, 32.92it/s]
+ 94%|█████████▎| 937/1000 [00:28<00:01, 33.00it/s]
+ 94%|█████████▍| 941/1000 [00:28<00:01, 32.90it/s]
+ 94%|█████████▍| 945/1000 [00:29<00:01, 32.88it/s]
+ 95%|█████████▍| 949/1000 [00:29<00:01, 32.14it/s]
+ 95%|█████████▌| 953/1000 [00:29<00:01, 32.42it/s]
+ 96%|█████████▌| 957/1000 [00:29<00:01, 32.60it/s]
+ 96%|█████████▌| 961/1000 [00:29<00:01, 32.80it/s]
+ 96%|█████████▋| 965/1000 [00:29<00:01, 33.03it/s]
+ 97%|█████████▋| 969/1000 [00:29<00:00, 32.60it/s]
+ 97%|█████████▋| 973/1000 [00:29<00:00, 32.08it/s]
+ 98%|█████████▊| 977/1000 [00:30<00:00, 31.85it/s]
+ 98%|█████████▊| 981/1000 [00:30<00:00, 31.75it/s]
+ 98%|█████████▊| 985/1000 [00:30<00:00, 32.03it/s]
+ 99%|█████████▉| 989/1000 [00:30<00:00, 31.54it/s]
+ 99%|█████████▉| 993/1000 [00:30<00:00, 32.05it/s]
+100%|█████████▉| 997/1000 [00:30<00:00, 32.51it/s]
+100%|██████████| 1000/1000 [00:30<00:00, 32.49it/s]
+MPC iter 0 Eval ------- 
+Success rate:  0.22
+{'success': array([ True, False, False, False, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False, False,  True, False,  True,  True, False,
+       False, False, False,  True, False, False, False,  True, False,
+       False, False, False,  True, False, False, False, False, False,
+        True, False,  True, False, False]), 'state_dist': array([2.905217 , 3.6436753, 5.016943 , 1.0163331, 4.1173654, 5.012302 ,
+       1.4485893, 6.0099373, 5.7751904, 5.9768066, 2.7669652, 3.3093529,
+       1.381998 , 3.835572 , 4.3877325, 3.7646458, 1.650597 , 1.9635764,
+       4.286479 , 1.987413 , 2.4326267, 2.7642052, 0.5493734, 2.983575 ,
+       1.4908022, 4.220575 , 5.8618746, 4.76957  , 1.9162697, 2.8875468,
+       2.7117603, 3.8846054, 4.1382837, 4.889439 , 1.2887754, 1.9382081,
+       4.841173 , 2.8501706, 3.8432426, 1.3546035, 4.167213 , 4.536463 ,
+       3.5711527, 4.7036037, 4.84565  , 4.890924 , 5.5731454, 4.3544736,
+       4.552119 , 4.214299 ], dtype=float32)}
+self.is_success:  [ True False False False False False False False False False False False
+ False  True False False False False False  True False False  True False
+  True  True False False False False  True False False False  True False
+ False False False  True False False False False False  True False  True
+ False False]
+Success rate:  0.22
+{'success': array([ True, False, False, False, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False, False,  True, False,  True,  True, False,
+       False, False, False,  True, False, False, False,  True, False,
+       False, False, False,  True, False, False, False, False, False,
+        True, False,  True, False, False]), 'state_dist': array([2.905217 , 3.6436753, 5.016943 , 1.0163331, 4.1173654, 5.012302 ,
+       1.4485893, 6.0099373, 5.7751904, 5.9768066, 2.7669652, 3.3093529,
+       1.381998 , 3.835572 , 4.3877325, 3.7646458, 1.650597 , 1.9635764,
+       4.286479 , 1.987413 , 2.4326267, 2.7642052, 0.5493734, 2.983575 ,
+       1.4908022, 4.220575 , 5.8618746, 4.76957  , 1.9162697, 2.8875468,
+       2.7117603, 3.8846054, 4.1382837, 4.889439 , 1.2887754, 1.9382081,
+       4.841173 , 2.8501706, 3.8432426, 1.3546035, 4.167213 , 4.536463 ,
+       3.5711527, 4.7036037, 4.84565  , 4.890924 , 5.5731454, 4.3544736,
+       4.552119 , 4.214299 ], dtype=float32)}
+[timing] perform_planning_s=34.463
+[timing] total_planning_main_s=47.362

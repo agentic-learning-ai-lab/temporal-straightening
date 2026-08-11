@@ -1,0 +1,32 @@
+{
+  "run_id": "medium-ablation-cls-speed-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-ablation-cls-speed-20260702-01",
+  "tar_path": "/mnt/ts/exports/medium-ablation-cls-speed-20260702-01-media-evidence.tar",
+  "include_epoch_checkpoints": false,
+  "files_included": 855,
+  "files_skipped": 21,
+  "skipped_epoch_checkpoints": [
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_1.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_10.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_11.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_12.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_13.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_14.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_15.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_16.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_17.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_18.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_19.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_2.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_20.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_3.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_4.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_5.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_6.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_7.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_8.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_9.pth",
+    "checkpoints/dino_cls_speed_constancy/test/medium_speed1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05/checkpoints/model_latest.pth"
+  ],
+  "tar_size_bytes": 394383360
+}

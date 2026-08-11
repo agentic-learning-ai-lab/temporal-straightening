@@ -1,0 +1,31 @@
+{
+  "run_id": "medium-adapter-cos-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-adapter-cos-20260702-01",
+  "epochs": 20,
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "dino_channel_cos_straightened",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1",
+      "model_dir": "/mnt/ts/runs/medium-adapter-cos-20260702-01/checkpoints/dino_channel_cos_straightened/test/medium_cos1e-1_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "plan_dir": "/mnt/ts/runs/medium-adapter-cos-20260702-01/plans_fixed/dino_channel_cos_straightened",
+      "plan": {
+        "final_eval/success_rate": 0.12,
+        "final_eval/mean_state_dist": 3.3450887203216553,
+        "final_eval/mean_visual_dist": 0.32073487988945576,
+        "final_eval/mean_proprio_dist": 1.3738412857055664,
+        "final_eval/mean_div_visual_emb": 150.7593994140625,
+        "final_eval/mean_div_proprio_emb": 14.305621147155762
+      },
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2104,
+        "val_loss": 0.19
+      },
+      "elapsed_minutes": 8.33
+    }
+  ]
+}

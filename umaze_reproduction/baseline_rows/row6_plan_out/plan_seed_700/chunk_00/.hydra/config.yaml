@@ -1,0 +1,31 @@
+ckpt_base_path: /home/jupyter-deuk-e40b/ts_ckpts_row6/test/umaze_False_agg32_projnone_dim384_hw14_sgTrue_lr1e-06
+model_name: null
+model_epoch: 20
+seed: 700
+n_evals: 10
+goal_source: dset
+goal_H: 25
+n_plot_samples: 10
+decode_for_viz: false
+num_start_frames: 1
+debug_dset_init: false
+objective:
+  _target_: planning.objectives.create_objective_fn
+  alpha: 0
+  base: 2
+  mode: last
+planner:
+  _target_: planning.mpc.MPCPlanner
+  max_iter: 1
+  n_taken_actions: 25
+  sub_planner:
+    target: planning.gd.GDPlanner
+    lr: 0.1
+    sample_type: zero
+    action_noise: 0
+    horizon: 25
+    var_scale: 1
+    opt_steps: 100
+    eval_every: -1
+  name: mpc_gd
+eval_start_index: 0

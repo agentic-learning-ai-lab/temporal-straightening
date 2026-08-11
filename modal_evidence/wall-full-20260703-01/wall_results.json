@@ -1,0 +1,87 @@
+{
+  "status": "complete",
+  "environment": "wall",
+  "purpose": "Wall environment reproduction for authors-style temporal straightening and DINO patch baseline.",
+  "methodology": {
+    "dataset": "/mnt/ts/datasets/wall_random_50x100/wall_single",
+    "episodes": 50,
+    "episode_length": 100,
+    "policy": "random",
+    "epochs": 20,
+    "planner": {
+      "algorithm": "gradient descent",
+      "n_evals": 50,
+      "goal_horizon": 25,
+      "opt_steps": 1000
+    }
+  },
+  "notes": [
+    "The Wall pipeline initially failed because the legacy Wall import expected WallDataset and generated visual observations had inconsistent shapes.",
+    "The retry succeeded after adding a WallDataset compatibility placeholder and canonicalizing generated Wall images to fixed-size HWC tensors.",
+    "The Wall planner path generated logs and plan target pickles, but no rendered image/contact-sheet media."
+  ],
+  "summary": {
+    "authors_success_rate": 0.02,
+    "dino_success_rate": 0.02,
+    "authors_mean_state_dist": 33.464290618896484,
+    "dino_mean_state_dist": 33.464290618896484,
+    "interpretation": "DINO patch without straightening trained to a lower validation loss than authors-style cosine straightening on Wall, but the gradient-descent planner produced identical final success and distance metrics for these two Wall runs."
+  },
+  "rows": [
+    {
+      "variant": "authors_dino_patch_straightened",
+      "run_id": "wall-full-20260703-01",
+      "encoder": "dino",
+      "straighten": "cos1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2824,
+        "val_loss": 0.2715
+      },
+      "planner": {
+        "model_epoch": 20,
+        "success_rate": 0.02,
+        "mean_state_dist": 33.464290618896484,
+        "mean_visual_dist": 1.1893874406814575,
+        "mean_proprio_dist": 21.40005874633789,
+        "mean_div_visual_emb": 1621.2991943359375,
+        "mean_div_proprio_emb": 37.301761627197266
+      },
+      "elapsed_minutes": 34.82,
+      "evidence": {
+        "summary": "pulled/wall-full-summary.json",
+        "train_log": "pulled/wall-full-authors-train.log",
+        "planner_log": "pulled/wall-full-authors-plan.log",
+        "planner_jsonl": "pulled/wall-full-authors-plan-logs.json",
+        "dataset_log": "pulled/wall-full-generate_wall_dataset.log"
+      }
+    },
+    {
+      "variant": "dino_patch_no_straightening",
+      "run_id": "wall-dino-20260703-01",
+      "encoder": "dino",
+      "straighten": "False",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1385,
+        "val_loss": 0.1209
+      },
+      "planner": {
+        "model_epoch": 20,
+        "success_rate": 0.02,
+        "mean_state_dist": 33.464290618896484,
+        "mean_visual_dist": 1.1893874406814575,
+        "mean_proprio_dist": 21.40005874633789,
+        "mean_div_visual_emb": 1621.2991943359375,
+        "mean_div_proprio_emb": 37.301761627197266
+      },
+      "elapsed_minutes": 39.54,
+      "evidence": {
+        "summary": "pulled/wall-dino-summary.json",
+        "train_log": "pulled/wall-dino-train.log",
+        "planner_log": "pulled/wall-dino-plan.log",
+        "planner_jsonl": "pulled/wall-dino-plan-logs.json"
+      }
+    }
+  ]
+}

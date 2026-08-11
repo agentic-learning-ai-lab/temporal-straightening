@@ -1,0 +1,101 @@
+{
+  "run_id": "medium-full-20260702-01",
+  "environment": "point_maze_medium",
+  "dataset": {
+    "path_modal": "/mnt/ts/datasets/medium_random_50x100/point_maze_medium",
+    "episodes": 50,
+    "episode_length": 100,
+    "policy": "random",
+    "generation_log": "modal_evidence/medium-full-20260702-01/logs/generate_medium_dataset.log"
+  },
+  "training": {
+    "epochs": 20,
+    "modal_full_run": "https://modal.com/apps/usharma123/main/ap-K4JvRZKJhWtAPf2a3rd1W2",
+    "summary_json": "modal_evidence/medium-full-20260702-01/summary.json",
+    "note": "Original full-run planner commands used stale Hydra overrides and failed after training; corrected planner evidence is under plans_fixed."
+  },
+  "planning": {
+    "n_evals": 50,
+    "goal_H": 25,
+    "fixed_modal_runs": {
+      "training_full_run": "https://modal.com/apps/usharma123/main/ap-K4JvRZKJhWtAPf2a3rd1W2",
+      "authors_fixed_planner": "https://modal.com/apps/usharma123/main/ap-zKWH3GRDt5zYMUJLD1qFXc",
+      "dino_patch_fixed_planner": "https://modal.com/apps/usharma123/main/ap-QsoLtRwFuUf34QKvJHTqBX",
+      "dino_cls_fixed_planner": "https://modal.com/apps/usharma123/main/ap-uM635flofsixaWomdWe9cE"
+    }
+  },
+  "results": [
+    {
+      "variant": "authors_dino_patch_straightened",
+      "label": "Authors approach baseline",
+      "encoder": "dino patch",
+      "straighten": "cos1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2552,
+        "val_loss": 0.2385,
+        "log": "modal_evidence/medium-full-20260702-01/logs/authors_dino_patch_straightened/train.log"
+      },
+      "plan": {
+        "final_eval/success_rate": 0.14,
+        "final_eval/mean_state_dist": 4.494283676147461,
+        "final_eval/mean_visual_dist": 0.31553292410714284,
+        "final_eval/mean_proprio_dist": 1.805794358253479,
+        "final_eval/mean_div_visual_emb": 778.6959228515625,
+        "final_eval/mean_div_proprio_emb": 21.708824157714844
+      },
+      "evidence": {
+        "planner_log": "modal_evidence/medium-full-20260702-01/logs/authors_dino_patch_straightened/plan_gd_fixed.log",
+        "planner_jsonl": "modal_evidence/medium-full-20260702-01/plans_fixed/authors_dino_patch_straightened/logs.json"
+      }
+    },
+    {
+      "variant": "dino_patch_no_straightening",
+      "label": "DINO patch, no straightening",
+      "encoder": "dino patch",
+      "straighten": "False",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.1195,
+        "val_loss": 0.1025,
+        "log": "modal_evidence/medium-full-20260702-01/logs/dino_patch_no_straightening/train.log"
+      },
+      "plan": {
+        "final_eval/success_rate": 0.14,
+        "final_eval/mean_state_dist": 4.494283676147461,
+        "final_eval/mean_visual_dist": 0.31553292410714284,
+        "final_eval/mean_proprio_dist": 1.805794358253479,
+        "final_eval/mean_div_visual_emb": 778.6959228515625,
+        "final_eval/mean_div_proprio_emb": 21.708824157714844
+      },
+      "evidence": {
+        "planner_log": "modal_evidence/medium-full-20260702-01/logs/dino_patch_no_straightening/plan_gd_fixed.log",
+        "planner_jsonl": "modal_evidence/medium-full-20260702-01/plans_fixed/dino_patch_no_straightening/logs.json"
+      }
+    },
+    {
+      "variant": "dino_cls_no_straightening",
+      "label": "DINO CLS, no straightening",
+      "encoder": "dino cls",
+      "straighten": "False",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.0785,
+        "val_loss": 0.0691,
+        "log": "modal_evidence/medium-full-20260702-01/logs/dino_cls_no_straightening/train.log"
+      },
+      "plan": {
+        "final_eval/success_rate": 0.22,
+        "final_eval/mean_state_dist": 3.5456480979919434,
+        "final_eval/mean_visual_dist": 0.29708466198979594,
+        "final_eval/mean_proprio_dist": 1.4222931861877441,
+        "final_eval/mean_div_visual_emb": 36.9257926940918,
+        "final_eval/mean_div_proprio_emb": 17.049652099609375
+      },
+      "evidence": {
+        "planner_log": "modal_evidence/medium-full-20260702-01/logs/dino_cls_no_straightening/plan_gd_fixed.log",
+        "planner_jsonl": "modal_evidence/medium-full-20260702-01/plans_fixed/dino_cls_no_straightening/logs.json"
+      }
+    }
+  ]
+}

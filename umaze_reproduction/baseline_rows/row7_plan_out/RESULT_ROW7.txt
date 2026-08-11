@@ -1,0 +1,14 @@
+===== UMAZE / DINOv2 (patch) + proj 14x14x8 / NO STRAIGHTENING (open-loop GD) =====
+config: encoder=dino_channel, projector=channel dim 8, straightening OFF,
+        training.encoder_lr=1e-6 (Table 3 footnote: 1e-6 for no straightening)
+n_evals=50/seed as 5x10-eval chunks, seeds=400 500 600 700 800 900 1000
+hardware: 1x A100-SXM4-40GB (of 8), CHUNKED (40GB < the >=48GB a 50-eval patch batch needs)
+aggregation: equal-weighted mean across chunks per seed (as wall_baseline.json)
+per-seed success (%): 62.00, 58.00, 52.00, 46.00, 54.00, 50.00, 42.00
+OURS  = 52.00 +/- 6.32 %  (mean +/- pop-std, n=7)
+PAPER = 44.00 +/- 7.12 %  (Wang et al. ICML 2026, arXiv:2603.12231v2,
+        Table 1 row 7: DINOv2 (patch)+proj, 14x14x8, Lcurv OFF, UMaze, Open-loop.
+        Table 5 lists the same config at 44.00 +/- 7.12 GD -- the tables agree.)
+
+THIS IS THE CONTROL FOR umaze_reproduction's 94.00. The paper's claim is
+44 -> 94 with straightening (Section 5.3). Compare the two directly.

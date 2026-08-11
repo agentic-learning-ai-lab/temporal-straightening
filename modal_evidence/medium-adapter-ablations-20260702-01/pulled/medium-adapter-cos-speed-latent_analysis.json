@@ -1,0 +1,82 @@
+{
+  "run_id": "medium-adapter-cos-speed-20260702-01",
+  "run_root": "/mnt/ts/runs/medium-adapter-cos-speed-20260702-01",
+  "environment": "point_maze_medium",
+  "analysis": "latent straightness and speed constancy diagnostics",
+  "max_rollouts": 50,
+  "metric_definitions": {
+    "cosine_curvature_mean": "mean(1 - cosine(v_t, v_t+1)); lower is directionally straighter",
+    "path_endpoint_ratio_mean": "latent path length divided by endpoint distance; 1 is globally straight",
+    "latent_speed_cv_time_mean": "mean over token trajectories of std(speed_t)/mean(speed_t); lower is more constant speed",
+    "latent_speed_p95_p05_ratio": "global p95 latent step speed divided by p05 latent step speed; lower means fewer speed lurches",
+    "relative_speed_jump_mean": "mean abs(speed_t+1 - speed_t) normalized by trajectory mean speed",
+    "state_position_speed_cv_mean": "same CV diagnostic on physical x/y state, for context only"
+  },
+  "results": [
+    {
+      "variant": "dino_channel_cos_plus_speed",
+      "encoder": "dino_channel",
+      "straighten": "cos1e-1+speed1e-1",
+      "model_dir": "/mnt/ts/runs/medium-adapter-cos-speed-20260702-01/checkpoints/dino_channel_cos_plus_speed/test/medium_cos1e-1+speed1e-1_agg32_projchannel_dim8_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "rollouts_analyzed": 50,
+      "frames_per_rollout_mean": 20.0,
+      "metrics": {
+        "cosine_curvature_mean": 0.9806482326889795,
+        "cosine_alignment_mean": 0.01935176732594595,
+        "path_endpoint_ratio_mean": 11.90149032894446,
+        "latent_speed_mean": 0.025286287969582495,
+        "latent_speed_std": 0.018865426278036418,
+        "latent_speed_cv_time_mean": 0.4914020040570473,
+        "latent_speed_p95_p05_ratio": 10.493219530610984,
+        "relative_speed_jump_mean": 0.4911410857187457,
+        "state_position_speed_cv_mean": 0.5634144884347916
+      },
+      "distributions": {
+        "cosine_curvature": {
+          "mean": 0.9806482326889795,
+          "std": 0.5535539695965064,
+          "p05": 0.1631364852190018,
+          "p50": 0.9490650296211243,
+          "p95": 1.871650183200836
+        },
+        "latent_speed": {
+          "mean": 0.025286287969582495,
+          "std": 0.018865426278036418,
+          "p05": 0.00583472466096282,
+          "p50": 0.020427272655069828,
+          "p95": 0.06123553998768323
+        },
+        "latent_speed_cv": {
+          "mean": 0.4914020040570473,
+          "std": 0.10667593804571136,
+          "p05": 0.32548492699861525,
+          "p50": 0.4837491065263748,
+          "p95": 0.6755433291196823
+        },
+        "relative_speed_jump": {
+          "mean": 0.4911410857187457,
+          "std": 0.4151279700179447,
+          "p05": 0.034228970110416417,
+          "p50": 0.38893818855285645,
+          "p95": 1.2937811434268949
+        },
+        "path_endpoint_ratio": {
+          "mean": 11.90149032894446,
+          "std": 10.25779028122898,
+          "p05": 3.8056895732879643,
+          "p50": 8.756043910980225,
+          "p95": 30.370996475219677
+        },
+        "state_position_speed_cv": {
+          "mean": 0.5634144884347916,
+          "std": 0.11958329823489329,
+          "p05": 0.3867462769150734,
+          "p50": 0.5791367292404175,
+          "p95": 0.7506875962018966
+        }
+      },
+      "elapsed_minutes": 6.44
+    }
+  ]
+}

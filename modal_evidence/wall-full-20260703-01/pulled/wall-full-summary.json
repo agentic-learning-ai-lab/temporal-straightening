@@ -1,0 +1,37 @@
+{
+  "run_id": "wall-full-20260703-01",
+  "run_root": "/mnt/ts/runs/wall-full-20260703-01",
+  "environment": "wall",
+  "train_env": "wall",
+  "dataset": "/mnt/ts/datasets/wall_random_50x100/wall_single",
+  "epochs": 20,
+  "n_episodes": 50,
+  "episode_length": 100,
+  "policy": "random",
+  "plan_n_evals": 50,
+  "plan_goal_h": 25,
+  "results": [
+    {
+      "variant": "authors_dino_patch_straightened",
+      "encoder": "dino",
+      "straighten": "cos1e-1",
+      "train": {
+        "epoch": 20,
+        "train_loss": 0.2824,
+        "val_loss": 0.2715
+      },
+      "model_dir": "/mnt/ts/runs/wall-full-20260703-01/checkpoints/authors_dino_patch_straightened/test/wall_cos1e-1_agg32_projnone_dim384_hw14_sgTrue_lr1e-05",
+      "model_epoch": 20,
+      "plan_dir": "/mnt/ts/runs/wall-full-20260703-01/plans/authors_dino_patch_straightened",
+      "plan": {
+        "final_eval/success_rate": 0.02,
+        "final_eval/mean_state_dist": 33.464290618896484,
+        "final_eval/mean_visual_dist": 1.1893874406814575,
+        "final_eval/mean_proprio_dist": 21.40005874633789,
+        "final_eval/mean_div_visual_emb": 1621.2991943359375,
+        "final_eval/mean_div_proprio_emb": 37.301761627197266
+      },
+      "elapsed_minutes": 34.82
+    }
+  ]
+}

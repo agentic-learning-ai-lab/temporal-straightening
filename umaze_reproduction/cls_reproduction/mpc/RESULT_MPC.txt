@@ -1,0 +1,12 @@
+===== UMAZE / DINOv2 (CLS) / NO STRAIGHTENING / MPC (closed-loop GD) =====
+plan_gd_mpc.yaml: max_iter=20, n_taken_actions=5. Same model_20.pth as open-loop.
+  seed 100: 74.00%  (37/50)
+  seed 200: 76.00%  (38/50)
+  seed 300: 72.00%  (36/50)
+
+OURS  = 74.00 +/- 1.63 %  (n=3)
+PAPER = 82.67 +/- 9.98 %  (Table 1 row 1, UMaze MPC)
+
+Open-loop on the SAME 3 seeds: 28/8/14 -> 16.67 +/- 8.38
+MPC lifts the mean +57 pts AND cuts the seed spread (8.38 -> 1.63):
+replanning recovers the open-loop overshoot failures. (Interpretation.)

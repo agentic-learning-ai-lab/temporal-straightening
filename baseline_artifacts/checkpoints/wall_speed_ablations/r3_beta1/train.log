@@ -1,0 +1,446 @@
+[2026-07-17 04:59:42,806][__main__][INFO] - Model saved dir: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 04:59:42,978][__main__][INFO] - Model saved dir: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 04:59:42,982][__main__][INFO] - Model saved dir: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 04:59:42,985][__main__][INFO] - Model saved dir: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 04:59:43,544][__main__][INFO] - Accelerate mixed precision: bf16
+[2026-07-17 04:59:43,544][__main__][INFO] - rank: 3  model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,544][__main__][INFO] - device: cuda:3   model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,545][__main__][INFO] - Decoder training will start at epoch 1
+[2026-07-17 04:59:43,550][__main__][INFO] - Accelerate mixed precision: bf16
+[2026-07-17 04:59:43,551][__main__][INFO] - rank: 0  model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,551][__main__][INFO] - device: cuda:0   model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,551][__main__][INFO] - Decoder training will start at epoch 1
+[2026-07-17 04:59:43,954][__main__][INFO] - Accelerate mixed precision: bf16
+[2026-07-17 04:59:43,955][__main__][INFO] - rank: 2  model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,955][__main__][INFO] - device: cuda:2   model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,956][__main__][INFO] - Decoder training will start at epoch 1
+[2026-07-17 04:59:43,960][__main__][INFO] - Accelerate mixed precision: bf16
+[2026-07-17 04:59:43,960][__main__][INFO] - rank: 1  model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,960][__main__][INFO] - device: cuda:1   model_name: /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42_f5_h3_p1
+[2026-07-17 04:59:43,961][__main__][INFO] - Decoder training will start at epoch 1
+[2026-07-17 04:59:44,733][__main__][INFO] - Loading dataset from /home/jupyter-deuk-e40b/ts_data/data/wall_single ...
+[2026-07-17 04:59:44,733][__main__][INFO] - Loading dataset from /home/jupyter-deuk-e40b/ts_data/data/wall_single ...
+[2026-07-17 04:59:44,734][__main__][INFO] - Loading dataset from /home/jupyter-deuk-e40b/ts_data/data/wall_single ...
+[2026-07-17 04:59:44,963][__main__][INFO] - dataloader batch size: 8
+[2026-07-17 04:59:44,964][__main__][INFO] - Train encoder, predictor, decoder:            True            True            True
+[2026-07-17 04:59:44,982][dinov2][INFO] - using MLP layer as FFN
+[2026-07-17 04:59:45,019][__main__][INFO] - dataloader batch size: 8
+[2026-07-17 04:59:45,020][__main__][INFO] - Train encoder, predictor, decoder:            True            True            True
+[2026-07-17 04:59:45,024][__main__][INFO] - dataloader batch size: 8
+[2026-07-17 04:59:45,025][__main__][INFO] - Train encoder, predictor, decoder:            True            True            True
+[2026-07-17 04:59:45,038][dinov2][INFO] - using MLP layer as FFN
+[2026-07-17 04:59:45,043][dinov2][INFO] - using MLP layer as FFN
+[2026-07-17 04:59:45,382][__main__][INFO] - Encoder base_model is frozen.
+[2026-07-17 04:59:45,382][__main__][INFO] - Encoder base_model frozen; non-backbone encoder modules are trainable.
+[2026-07-17 04:59:45,441][__main__][INFO] - Encoder base_model is frozen.
+[2026-07-17 04:59:45,441][__main__][INFO] - Encoder base_model frozen; non-backbone encoder modules are trainable.
+[2026-07-17 04:59:45,443][__main__][INFO] - Encoder base_model is frozen.
+[2026-07-17 04:59:45,444][__main__][INFO] - Encoder base_model frozen; non-backbone encoder modules are trainable.
+[2026-07-17 04:59:45,918][__main__][INFO] - Loading dataset from /home/jupyter-deuk-e40b/ts_data/data/wall_single ...
+[2026-07-17 04:59:45,980][__main__][INFO] - dataloader batch size: 8
+[2026-07-17 04:59:45,980][__main__][INFO] - Train encoder, predictor, decoder:            True            True            True
+[2026-07-17 04:59:45,998][dinov2][INFO] - using MLP layer as FFN
+[2026-07-17 04:59:46,395][__main__][INFO] - Encoder base_model is frozen.
+[2026-07-17 04:59:46,396][__main__][INFO] - Encoder base_model frozen; non-backbone encoder modules are trainable.
+[2026-07-17 04:59:46,431][__main__][INFO] - Passing projector_cfg to decoder
+[2026-07-17 04:59:46,431][__main__][INFO] - Passing projector_cfg to decoder
+[2026-07-17 04:59:46,431][__main__][INFO] - Passing projector_cfg to decoder
+[2026-07-17 04:59:46,432][__main__][INFO] - Passing projector_cfg to decoder
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_action_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - num_proprio_repeat: 1
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(2, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(2, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(2, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(2, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Trajectory penalty enabled: mode=r3, aggregate=True, scale=0.1, beta=1.0
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Trajectory penalty enabled: mode=r3, aggregate=True, scale=0.1, beta=1.0
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action encoder: DistributedDataParallel(
+  (module): ProprioceptiveEmbedding(
+    (patch_embed): Conv1d(10, 10, kernel_size=(1,), stride=(1,))
+    (norm): LayerNorm((10,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Trajectory penalty enabled: mode=r3, aggregate=True, scale=0.1, beta=1.0
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - proprio_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - action_dim: 10, after repeat: 10
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Model emb_dim: 28
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - emb_dim: 28
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-17 04:59:46,592][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Straightening disabled
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Model emb_dim: 28
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Speed constancy disabled
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Model emb_dim: 28
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Trajectory penalty enabled: mode=r3, aggregate=True, scale=0.1, beta=1.0
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Stop-grad enabled: True
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - VCReg enabled: False, apply_to=enc, std_coeff=0.0, cov_coeff=0.0
+[2026-07-17 04:59:46,593][models.visual_world_model][INFO] - Model emb_dim: 28
+[2026-07-17 04:59:46,594][__main__][INFO] - [model] trainable params: 14034647 / 36091223
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.conv_layers.0.weight shape=(192, 384, 3, 3)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.conv_layers.0.bias shape=(192,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.conv_layers.1.weight shape=(8, 192, 3, 3)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.conv_layers.1.bias shape=(8,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.batch_norm_layers.0.weight shape=(192,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.batch_norm_layers.0.bias shape=(192,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.batch_norm_layers.1.weight shape=(8,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.batch_norm_layers.1.bias shape=(8,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.layer_norm_layers.0.weight shape=(192,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.layer_norm_layers.0.bias shape=(192,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.layer_norm_layers.1.weight shape=(8,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.projector.layer_norm_layers.1.bias shape=(8,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.0.weight shape=(512, 1568)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.0.bias shape=(512,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.2.weight shape=(512, 512)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.2.bias shape=(512,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.4.weight shape=(128, 512)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_mlp.4.bias shape=(128,)
+[2026-07-17 04:59:46,595][__main__][INFO] - [model] trainable: encoder.module.agg_post_norm.weight shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: encoder.module.agg_post_norm.bias shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: proprio_encoder.module.patch_embed.weight shape=(10, 2, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: proprio_encoder.module.patch_embed.bias shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: proprio_encoder.module.norm.weight shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: proprio_encoder.module.norm.bias shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: action_encoder.module.patch_embed.weight shape=(10, 10, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: action_encoder.module.patch_embed.bias shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: action_encoder.module.norm.weight shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: action_encoder.module.norm.bias shape=(10,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.proj_decoder.deconv_layers.0.weight shape=(8, 192, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.proj_decoder.deconv_layers.0.bias shape=(192,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.proj_decoder.deconv_layers.1.weight shape=(192, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.proj_decoder.deconv_layers.1.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.0.weight shape=(384, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.0.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.1.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.1.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.1.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.1.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.2.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.2.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.2.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.2.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.3.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.3.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.3.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.3.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.4.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.4.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.4.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.4.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.6.weight shape=(384, 192, 4, 4)
+[2026-07-17 04:59:46,596][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.6.bias shape=(192,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.8.weight shape=(192, 384, 4, 4)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.upsample_b.blocks.8.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.0.weight shape=(384, 384, 3, 3)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.0.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.1.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.1.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.1.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.1.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.2.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.2.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.2.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.2.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.3.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.3.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.3.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.3.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.4.conv.1.weight shape=(128, 384, 3, 3)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.4.conv.1.bias shape=(128,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.4.conv.3.weight shape=(384, 128, 1, 1)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.4.conv.3.bias shape=(384,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.6.weight shape=(384, 192, 4, 4)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.6.bias shape=(192,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.8.weight shape=(192, 3, 4, 4)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: decoder.module.dec.blocks.8.bias shape=(3,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.pos_embedding shape=(1, 588, 28)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.norm.weight shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.norm.bias shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,597][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.0.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.1.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.2.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,598][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.3.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.4.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.0.norm.weight shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.0.norm.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.0.to_qkv.weight shape=(3072, 28)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.0.to_out.0.weight shape=(28, 1024)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.0.to_out.0.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.0.weight shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.0.bias shape=(28,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.1.weight shape=(2048, 28)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.1.bias shape=(2048,)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.4.weight shape=(28, 2048)
+[2026-07-17 04:59:46,599][__main__][INFO] - [model] trainable: predictor.module.transformer.layers.5.1.net.4.bias shape=(28,)
+[2026-07-17 04:59:46,603][__main__][INFO] - Epoch 1 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 04:59:58,667][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:01:41,492][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:03:18,285][__main__][INFO] - Epoch 1  Training loss: 0.2459                  Validation loss: 0.1542
+[2026-07-17 05:03:18,285][__main__][INFO] - Epoch 1  Training loss: 0.2459                  Validation loss: 0.1542
+[2026-07-17 05:03:18,285][__main__][INFO] - Epoch 1  Training loss: 0.2459                  Validation loss: 0.1542
+[2026-07-17 05:03:18,285][__main__][INFO] - Epoch 1  Training loss: 0.2459                  Validation loss: 0.1542
+[2026-07-17 05:03:18,891][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:03:18,891][__main__][INFO] - Epoch 2 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:03:28,533][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:05:10,596][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:06:45,627][__main__][INFO] - Epoch 2  Training loss: 0.1641                  Validation loss: 0.1394
+[2026-07-17 05:06:45,627][__main__][INFO] - Epoch 2  Training loss: 0.1641                  Validation loss: 0.1394
+[2026-07-17 05:06:45,627][__main__][INFO] - Epoch 2  Training loss: 0.1641                  Validation loss: 0.1394
+[2026-07-17 05:06:45,627][__main__][INFO] - Epoch 2  Training loss: 0.1641                  Validation loss: 0.1394
+[2026-07-17 05:06:46,255][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:06:46,256][__main__][INFO] - Epoch 3 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:06:55,676][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:08:38,950][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:10:15,867][__main__][INFO] - Epoch 3  Training loss: 0.1471                  Validation loss: 0.1285
+[2026-07-17 05:10:15,867][__main__][INFO] - Epoch 3  Training loss: 0.1471                  Validation loss: 0.1285
+[2026-07-17 05:10:15,867][__main__][INFO] - Epoch 3  Training loss: 0.1471                  Validation loss: 0.1285
+[2026-07-17 05:10:15,867][__main__][INFO] - Epoch 3  Training loss: 0.1471                  Validation loss: 0.1285
+[2026-07-17 05:10:16,480][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:10:16,481][__main__][INFO] - Epoch 4 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:10:25,804][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:12:07,468][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:13:41,669][__main__][INFO] - Epoch 4  Training loss: 0.1375                  Validation loss: 0.1274
+[2026-07-17 05:13:41,669][__main__][INFO] - Epoch 4  Training loss: 0.1375                  Validation loss: 0.1274
+[2026-07-17 05:13:41,670][__main__][INFO] - Epoch 4  Training loss: 0.1375                  Validation loss: 0.1274
+[2026-07-17 05:13:41,670][__main__][INFO] - Epoch 4  Training loss: 0.1375                  Validation loss: 0.1274
+[2026-07-17 05:13:42,277][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:13:42,277][__main__][INFO] - Epoch 5 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:13:51,541][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:15:34,553][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:17:09,063][__main__][INFO] - Epoch 5  Training loss: 0.1314                  Validation loss: 0.1235
+[2026-07-17 05:17:09,063][__main__][INFO] - Epoch 5  Training loss: 0.1314                  Validation loss: 0.1235
+[2026-07-17 05:17:09,063][__main__][INFO] - Epoch 5  Training loss: 0.1314                  Validation loss: 0.1235
+[2026-07-17 05:17:09,063][__main__][INFO] - Epoch 5  Training loss: 0.1314                  Validation loss: 0.1235
+[2026-07-17 05:17:09,677][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:17:09,677][__main__][INFO] - Epoch 6 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:17:19,121][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:19:00,997][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:20:33,313][__main__][INFO] - Epoch 6  Training loss: 0.1257                  Validation loss: 0.1199
+[2026-07-17 05:20:33,313][__main__][INFO] - Epoch 6  Training loss: 0.1257                  Validation loss: 0.1199
+[2026-07-17 05:20:33,313][__main__][INFO] - Epoch 6  Training loss: 0.1257                  Validation loss: 0.1199
+[2026-07-17 05:20:33,313][__main__][INFO] - Epoch 6  Training loss: 0.1257                  Validation loss: 0.1199
+[2026-07-17 05:20:33,916][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:20:33,917][__main__][INFO] - Epoch 7 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:20:43,095][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:22:25,297][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:24:01,994][__main__][INFO] - Epoch 7  Training loss: 0.1223                  Validation loss: 0.1157
+[2026-07-17 05:24:01,994][__main__][INFO] - Epoch 7  Training loss: 0.1223                  Validation loss: 0.1157
+[2026-07-17 05:24:01,994][__main__][INFO] - Epoch 7  Training loss: 0.1223                  Validation loss: 0.1157
+[2026-07-17 05:24:01,994][__main__][INFO] - Epoch 7  Training loss: 0.1223                  Validation loss: 0.1157
+[2026-07-17 05:24:02,631][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:24:02,631][__main__][INFO] - Epoch 8 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:24:12,245][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:25:55,431][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:27:30,064][__main__][INFO] - Epoch 8  Training loss: 0.1188                  Validation loss: 0.1131
+[2026-07-17 05:27:30,064][__main__][INFO] - Epoch 8  Training loss: 0.1188                  Validation loss: 0.1131
+[2026-07-17 05:27:30,064][__main__][INFO] - Epoch 8  Training loss: 0.1188                  Validation loss: 0.1131
+[2026-07-17 05:27:30,064][__main__][INFO] - Epoch 8  Training loss: 0.1188                  Validation loss: 0.1131
+[2026-07-17 05:27:30,665][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:27:30,665][__main__][INFO] - Epoch 9 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:27:39,881][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:29:22,528][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:30:56,990][__main__][INFO] - Epoch 9  Training loss: 0.1167                  Validation loss: 0.1143
+[2026-07-17 05:30:56,990][__main__][INFO] - Epoch 9  Training loss: 0.1167                  Validation loss: 0.1143
+[2026-07-17 05:30:56,990][__main__][INFO] - Epoch 9  Training loss: 0.1167                  Validation loss: 0.1143
+[2026-07-17 05:30:56,990][__main__][INFO] - Epoch 9  Training loss: 0.1167                  Validation loss: 0.1143
+[2026-07-17 05:30:57,595][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:30:57,596][__main__][INFO] - Epoch 10 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:31:06,705][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:32:49,096][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:34:23,952][__main__][INFO] - Epoch 10  Training loss: 0.1153                  Validation loss: 0.1111
+[2026-07-17 05:34:23,952][__main__][INFO] - Epoch 10  Training loss: 0.1153                  Validation loss: 0.1111
+[2026-07-17 05:34:23,952][__main__][INFO] - Epoch 10  Training loss: 0.1153                  Validation loss: 0.1111
+[2026-07-17 05:34:23,952][__main__][INFO] - Epoch 10  Training loss: 0.1153                  Validation loss: 0.1111
+[2026-07-17 05:34:24,584][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:34:24,584][__main__][INFO] - Epoch 11 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:34:33,893][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:36:15,789][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:37:50,114][__main__][INFO] - Epoch 11  Training loss: 0.1134                  Validation loss: 0.1095
+[2026-07-17 05:37:50,114][__main__][INFO] - Epoch 11  Training loss: 0.1134                  Validation loss: 0.1095
+[2026-07-17 05:37:50,114][__main__][INFO] - Epoch 11  Training loss: 0.1134                  Validation loss: 0.1095
+[2026-07-17 05:37:50,114][__main__][INFO] - Epoch 11  Training loss: 0.1134                  Validation loss: 0.1095
+[2026-07-17 05:37:50,714][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:37:50,714][__main__][INFO] - Epoch 12 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:37:59,993][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:39:44,201][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:41:19,235][__main__][INFO] - Epoch 12  Training loss: 0.1111                  Validation loss: 0.1078
+[2026-07-17 05:41:19,236][__main__][INFO] - Epoch 12  Training loss: 0.1111                  Validation loss: 0.1078
+[2026-07-17 05:41:19,236][__main__][INFO] - Epoch 12  Training loss: 0.1111                  Validation loss: 0.1078
+[2026-07-17 05:41:19,236][__main__][INFO] - Epoch 12  Training loss: 0.1111                  Validation loss: 0.1078
+[2026-07-17 05:41:19,832][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:41:19,832][__main__][INFO] - Epoch 13 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:41:29,125][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:43:10,786][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:44:46,591][__main__][INFO] - Epoch 13  Training loss: 0.1104                  Validation loss: 0.1067
+[2026-07-17 05:44:46,591][__main__][INFO] - Epoch 13  Training loss: 0.1104                  Validation loss: 0.1067
+[2026-07-17 05:44:46,591][__main__][INFO] - Epoch 13  Training loss: 0.1104                  Validation loss: 0.1067
+[2026-07-17 05:44:46,591][__main__][INFO] - Epoch 13  Training loss: 0.1104                  Validation loss: 0.1067
+[2026-07-17 05:44:47,199][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:44:47,200][__main__][INFO] - Epoch 14 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:44:56,350][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:46:39,404][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:48:12,804][__main__][INFO] - Epoch 14  Training loss: 0.1085                  Validation loss: 0.1079
+[2026-07-17 05:48:12,804][__main__][INFO] - Epoch 14  Training loss: 0.1085                  Validation loss: 0.1079
+[2026-07-17 05:48:12,804][__main__][INFO] - Epoch 14  Training loss: 0.1085                  Validation loss: 0.1079
+[2026-07-17 05:48:12,804][__main__][INFO] - Epoch 14  Training loss: 0.1085                  Validation loss: 0.1079
+[2026-07-17 05:48:13,405][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:48:13,406][__main__][INFO] - Epoch 15 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:48:22,588][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:50:04,151][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:51:37,755][__main__][INFO] - Epoch 15  Training loss: 0.1088                  Validation loss: 0.1061
+[2026-07-17 05:51:37,755][__main__][INFO] - Epoch 15  Training loss: 0.1088                  Validation loss: 0.1061
+[2026-07-17 05:51:37,755][__main__][INFO] - Epoch 15  Training loss: 0.1088                  Validation loss: 0.1061
+[2026-07-17 05:51:37,755][__main__][INFO] - Epoch 15  Training loss: 0.1088                  Validation loss: 0.1061
+[2026-07-17 05:51:38,348][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:51:38,348][__main__][INFO] - Epoch 16 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:51:47,409][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:53:28,596][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:55:01,559][__main__][INFO] - Epoch 16  Training loss: 0.1078                  Validation loss: 0.1052
+[2026-07-17 05:55:01,559][__main__][INFO] - Epoch 16  Training loss: 0.1078                  Validation loss: 0.1052
+[2026-07-17 05:55:01,559][__main__][INFO] - Epoch 16  Training loss: 0.1078                  Validation loss: 0.1052
+[2026-07-17 05:55:01,559][__main__][INFO] - Epoch 16  Training loss: 0.1078                  Validation loss: 0.1052
+[2026-07-17 05:55:02,165][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:55:02,166][__main__][INFO] - Epoch 17 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:55:11,368][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:56:52,824][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:58:25,313][__main__][INFO] - Epoch 17  Training loss: 0.1060                  Validation loss: 0.1041
+[2026-07-17 05:58:25,313][__main__][INFO] - Epoch 17  Training loss: 0.1060                  Validation loss: 0.1041
+[2026-07-17 05:58:25,313][__main__][INFO] - Epoch 17  Training loss: 0.1060                  Validation loss: 0.1041
+[2026-07-17 05:58:25,313][__main__][INFO] - Epoch 17  Training loss: 0.1060                  Validation loss: 0.1041
+[2026-07-17 05:58:25,913][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 05:58:25,914][__main__][INFO] - Epoch 18 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 05:58:35,360][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:00:16,816][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:01:49,129][__main__][INFO] - Epoch 18  Training loss: 0.1052                  Validation loss: 0.1037
+[2026-07-17 06:01:49,129][__main__][INFO] - Epoch 18  Training loss: 0.1052                  Validation loss: 0.1037
+[2026-07-17 06:01:49,129][__main__][INFO] - Epoch 18  Training loss: 0.1052                  Validation loss: 0.1037
+[2026-07-17 06:01:49,129][__main__][INFO] - Epoch 18  Training loss: 0.1052                  Validation loss: 0.1037
+[2026-07-17 06:01:49,732][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:01:49,732][__main__][INFO] - Epoch 19 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 06:01:58,936][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:03:40,837][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:05:13,252][__main__][INFO] - Epoch 19  Training loss: 0.1049                  Validation loss: 0.1028
+[2026-07-17 06:05:13,252][__main__][INFO] - Epoch 19  Training loss: 0.1049                  Validation loss: 0.1028
+[2026-07-17 06:05:13,252][__main__][INFO] - Epoch 19  Training loss: 0.1049                  Validation loss: 0.1028
+[2026-07-17 06:05:13,252][__main__][INFO] - Epoch 19  Training loss: 0.1049                  Validation loss: 0.1028
+[2026-07-17 06:05:13,853][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:05:13,854][__main__][INFO] - Epoch 20 decoder_active=True (train_decoder=True, decoder_start_epoch=1)
+[2026-07-17 06:05:22,995][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:07:04,489][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42
+[2026-07-17 06:08:37,440][__main__][INFO] - Epoch 20  Training loss: 0.1042                  Validation loss: 0.1021
+[2026-07-17 06:08:37,440][__main__][INFO] - Epoch 20  Training loss: 0.1042                  Validation loss: 0.1021
+[2026-07-17 06:08:37,440][__main__][INFO] - Epoch 20  Training loss: 0.1042                  Validation loss: 0.1021
+[2026-07-17 06:08:37,440][__main__][INFO] - Epoch 20  Training loss: 0.1042                  Validation loss: 0.1021
+[2026-07-17 06:08:38,119][__main__][INFO] - Saved model to /opt/dlami/nvme/home/jupyter-deuk-e40b/temporal-straightening/outputs/2026-07-17/04-59-42

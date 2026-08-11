@@ -2,6 +2,7 @@ import torch
 import decord
 import numpy as np
 from pathlib import Path
+from einops import rearrange
 from typing import Callable, Optional
 from .traj_dset import TrajDataset, get_train_val_sliced, TrajSlicerDataset
 decord.bridge.set_bridge("torch")
@@ -86,7 +87,10 @@ class WallDataset(TrajDataset):
         proprio = self.proprios[idx, frames]
         door_location = self.door_locations[idx, frames]
         wall_location = self.wall_locations[idx, frames]
-        image = image[frames] / 255
+        image = image[frames]
+        if image.ndim == 4 and image.shape[-1] == 3:
+            image = rearrange(image, "T H W C -> T C H W")
+        image = image.float() / 255
         if self.transform:
             image = self.transform(image)
         obs = {"visual": image,"proprio": proprio}
