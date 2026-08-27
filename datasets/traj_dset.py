@@ -91,20 +91,30 @@ class TrajSlicerDataset(TrajDataset):
 
     def __getitem__(self, idx):
         i, start, end = self.slices[idx]
-        if hasattr(self.dataset, "load_visual_frames"):
+        ds = self.dataset
+        # The fast paths below reach the dataset through ATTRIBUTE access, which
+        # TrajSubset.__getattr__ forwards to its parent UNMAPPED (only item access
+        # maps through Subset.__getitem__). Resolve the split indices here and
+        # read the parent directly; otherwise train/val slicers over a random
+        # split both read parent episodes 0..len(subset)-1 — overlapping splits,
+        # with window bounds computed for a different episode.
+        while isinstance(ds, TrajSubset):
+            i = ds.indices[i]
+            ds = ds.dataset
+        if hasattr(ds, "load_visual_frames"):
             frame_idx = list(range(start, end, self.frameskip))
-            visual = self.dataset.load_visual_frames(i, frame_idx)
-            proprio = self.dataset.proprios[i, frame_idx]
+            visual = ds.load_visual_frames(i, frame_idx)
+            proprio = ds.proprios[i, frame_idx]
             obs = {"visual": visual, "proprio": proprio}
-            state = self.dataset.states[i, frame_idx]
-            act = self.dataset.actions[i, start:end]
-        elif hasattr(self.dataset, "get_frames"):
-            obs, act, state, _ = self.dataset.get_frames(i, range(start, end))
+            state = ds.states[i, frame_idx]
+            act = ds.actions[i, start:end]
+        elif hasattr(ds, "get_frames"):
+            obs, act, state, _ = ds.get_frames(i, range(start, end))
             for k, v in obs.items():
                 obs[k] = v[:: self.frameskip]
             state = state[:: self.frameskip]
         else:
-            obs, act, state, _ = self.dataset[i]
+            obs, act, state, _ = ds[i]
             for k, v in obs.items():
                 obs[k] = v[start:end:self.frameskip]
             state = state[start:end:self.frameskip]
