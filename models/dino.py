@@ -139,6 +139,16 @@ class DinoV2Encoder(nn.Module):
                     self.emb_dim = self.projector.conv_layers[-1].out_channels
                 elif hasattr(self.projector, "head"):
                     self.emb_dim = self.projector.head.out_channels
+                if projector == "global":
+                    # The global projector pools the token grid to pool_hw^2 tokens
+                    # (one token per frame when pool_hw=1). latent_ndim must be final
+                    # HERE: train.py sizes the predictor's num_patches from it before
+                    # any forward runs. Previously it was only finalized inside
+                    # forward(), so a dino_global predictor was built for the full
+                    # 14x14 grid while the encoder emitted one token per frame, and
+                    # the causal mask (sliced to the runtime length) silently
+                    # degenerated to fully-visible attention.
+                    self.latent_ndim = 2 if int(getattr(self.projector, "pool_hw", 1)) > 1 else 1
             else:
                 logger.warning(
                     "Unknown projector '%s' for patch tokens; proceeding without projector.",
