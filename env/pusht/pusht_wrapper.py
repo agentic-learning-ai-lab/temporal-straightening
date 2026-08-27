@@ -61,8 +61,13 @@ class PushTWrapper(PushTEnv):
         """
         # if position difference is < 20, and angle difference < np.pi/9, then success
         pos_diff = np.linalg.norm(goal_state[:4] - cur_state[:4])
-        angle_diff = np.abs(goal_state[4] - cur_state[4])
-        angle_diff = np.minimum(angle_diff, 2 * np.pi - angle_diff)
+        # Shortest arc between the angles, normalizing the difference to [-pi, pi)
+        # first. Only random goals need this: sample_random_init_goal_states draws
+        # unwrapped angles (randn()*2pi - pi), and the bare min(d, 2pi - d)
+        # previously went negative for d > 2pi, making the orientation check
+        # vacuously true. Dataset goals store wrapped angles, so dset-goal
+        # evaluations were never affected.
+        angle_diff = np.abs((goal_state[4] - cur_state[4] + np.pi) % (2 * np.pi) - np.pi)
         success = pos_diff < 20 and angle_diff < np.pi / 9
         state_dist = np.linalg.norm(goal_state - cur_state)
         return {
