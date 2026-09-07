@@ -1,6 +1,7 @@
 import torch
 import torchvision
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class resnet18(nn.Module):
@@ -259,4 +260,110 @@ class ResNetSpatial(nn.Module):
                 out = out.reshape(*orig_shape[:-3], 1, -1)
             else:
                 out = out.reshape(*orig_shape[:-3], self.num_tokens, -1)
+        return out
+
+
+class GeM(nn.Module):
+    """Generalized mean pooling with learnable p (p=1 avg, p→∞ max)."""
+
+    def __init__(self, p=3.0, eps=1e-6):
+        super().__init__()
+        self.p = nn.Parameter(torch.ones(1) * p)
+        self.eps = eps
+
+    def forward(self, x):
+        return F.adaptive_avg_pool2d(
+            x.clamp(min=self.eps).pow(self.p), (1, 1)
+        ).pow(1.0 / self.p)
+
+
+class resblock_v2(nn.Module):
+    """Residual block with GroupNorm + GELU."""
+
+    def __init__(self, input_dim, output_dim, kernel_size, resample=None):
+        super().__init__()
+        self.input_dim = input_dim
+        self.output_dim = output_dim
+        self.resample = resample
+
+        padding = (kernel_size - 1) // 2
+        num_groups = lambda c: min(32, max(1, c // 4))
+
+        if resample == "down":
+            self.skip = nn.Sequential(
+                nn.AvgPool2d(2, stride=2),
+                nn.Conv2d(input_dim, output_dim, kernel_size, padding=padding),
+            )
+            self.conv1 = nn.Conv2d(input_dim, input_dim, kernel_size, padding=padding, bias=False)
+            self.conv2 = nn.Sequential(
+                nn.Conv2d(input_dim, output_dim, kernel_size, padding=padding),
+                nn.MaxPool2d(2, stride=2),
+            )
+            self.norm1 = nn.GroupNorm(num_groups(input_dim), input_dim)
+            self.norm2 = nn.GroupNorm(num_groups(output_dim), output_dim)
+        else:
+            self.skip = nn.Conv2d(input_dim, output_dim, 1) if input_dim != output_dim else nn.Identity()
+            self.conv1 = nn.Conv2d(input_dim, output_dim, kernel_size, padding=padding, bias=False)
+            self.conv2 = nn.Conv2d(output_dim, output_dim, kernel_size, padding=padding)
+            self.norm1 = nn.GroupNorm(num_groups(output_dim), output_dim)
+            self.norm2 = nn.GroupNorm(num_groups(output_dim), output_dim)
+
+        self.act1 = nn.GELU()
+        self.act2 = nn.GELU()
+
+    def forward(self, x):
+        idnty = x if (self.input_dim == self.output_dim and self.resample is None) else self.skip(x)
+        residual = self.conv1(x)
+        residual = self.norm1(residual)
+        residual = self.act1(residual)
+        residual = self.conv2(residual)
+        residual = self.norm2(residual)
+        residual = self.act2(residual)
+        return idnty + residual
+
+
+class SmallResNetGeM(nn.Module):
+    """resblock_v2 backbone with learnable GeM pooling into a single global token."""
+
+    def __init__(self, dim=384, gem_p=3.0):
+        super().__init__()
+        self.name = "small_resnet_gem"
+        self.emb_dim = dim
+        self.latent_ndim = 1
+
+        self.rb1 = resblock_v2(3, 32, 3, resample="down")
+        self.rb2 = resblock_v2(32, 64, 3, resample="down")
+        self.rb3 = resblock_v2(64, 128, 3, resample="down")
+        self.rb4 = resblock_v2(128, 256, 3, resample="down")
+        self.rb5 = resblock_v2(256, 512, 3, resample="down")
+
+        self.gem = GeM(p=gem_p)
+        self.flat = nn.Flatten()
+        self.projection = nn.Sequential(
+            nn.Linear(512, dim),
+            nn.GELU(),
+            nn.Linear(dim, dim),
+            nn.LayerNorm(dim),
+        )
+
+    def forward(self, x):
+        dims = len(x.shape)
+        orig_shape = x.shape
+        if dims == 3:
+            x = x.unsqueeze(0)
+        elif dims > 4:
+            x = x.reshape(-1, *orig_shape[-3:])
+        x = self.rb1(x)
+        x = self.rb2(x)
+        x = self.rb3(x)
+        x = self.rb4(x)
+        x = self.rb5(x)
+        x = self.gem(x)
+        out = self.flat(x)
+        out = self.projection(out)
+        out = out.unsqueeze(1)
+        if dims == 3:
+            out = out.squeeze(0)
+        elif dims > 4:
+            out = out.reshape(*orig_shape[:-3], 1, -1)
         return out

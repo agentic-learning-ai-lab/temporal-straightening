@@ -1,0 +1,3 @@
+_target_: models.encoder.resnet.SmallResNetGeM
+dim: 384
+gem_p: 3.0
