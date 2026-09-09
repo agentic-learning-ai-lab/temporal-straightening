@@ -8,6 +8,13 @@
 
 ![teaser_figure](assets/architecture.png)
 
+## Updates
+
+- Fixed predictor sizing for the global projector (`encoder=dino_global`): `latent_ndim` is now final at construction, restoring the causal mask during training. The affected Table 1 row (`DINOv2 (patch) + proj, 1×384`) improves and the paper's conclusion still holds — see [UPDATES.md](UPDATES.md) for details and re-run numbers.
+- Fixed the PushT success check: the angle difference is normalized before the shortest-arc comparison. Only randomly sampled goals were affected; dataset goals (the paper's protocol) store wrapped angles and were never affected.
+- Fixed train/val split integrity: during code migration, the fast paths added to `TrajSlicerDataset` (`load_visual_frames` / `get_frames`) read episodes by attribute access, bypassing the subset's index map, so random train/val splits overlapped during training; they now read through the map. Validated: re-running the paper's Table 1 protocol with the fix reproduces the reported results.
+- Added the `scratch_resnet_gem` encoder (ResNet + learnable GeM pooling) from the AdaJEPA release — the encoder behind the paper's pusht `ResNet (scratch), 1×384` cells, which leads to better performance than the default ResNet global features.
+- Restored the `env/wall/data` package that a `.gitignore` pattern had kept out of the release; wall planning runs previously failed at import.
 
 ## Getting Started
 
@@ -100,6 +107,9 @@ encoder=scratch_resnet_spatial training.straighten=[False|aggcos1e-1]
 
 # ResNet global features (from scratch)
 encoder=scratch_resnet training.straighten=[False|cos1e-1]
+
+# ResNet global features with GeM pooling (from scratch)
+encoder=scratch_resnet_gem training.straighten=[False|cos1e-3] 
 ```
 
 Straightening options:
